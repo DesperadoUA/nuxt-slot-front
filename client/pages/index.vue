@@ -1,4 +1,6 @@
 <template>
+<div></div>
+<!--
   <main>
       <app_banner></app_banner>
       <app_h1 :value="data.body.h1"></app_h1>
@@ -6,10 +8,11 @@
       <app_content :value="data.body.content"></app_content>
       <app_blog_card :posts="data.body.blog"></app_blog_card>
   </main>
+  -->
 </template>
 
 <script>
-    import DAL_Page from '../DAL/static_pages'
+   /* import DAL_Page from '../DAL/static_pages'
     import app_h1 from '../components/h1/app-h1'
     import app_content from '../components/content/app-content'
     import app_casino_loop from '../components/casino_loop/app_casino_loop'
@@ -180,6 +183,7 @@ export default {
         }
     }
 }
+*/
 </script>
 
 <style>
