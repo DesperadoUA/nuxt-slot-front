@@ -1,11 +1,13 @@
 <template>
   <section class="intro">
-        <div class="container--cms text-center">
-            <h1>{{data.h1}}</h1>
-            <p class="intro__sub-heading">Complete guide to the best Canadian casinos</p>
-            <p>CanadaCasino is your guide to all things online casino! Here, you will find honest casino and game reviews, together with useful guides that have been expertly put together to help you enjoy the best online casino experience from Canada!</p>
-        </div>
-    </section>
+    <div class="container--cms text-center">
+      <h1>{{ data.h1 }}</h1>
+      <p class="intro__sub-heading">Complete guide to the best Canadian casinos</p>
+      <p>CanadaCasino is your guide to all things online casino! Here, you will find honest casino and game reviews,
+        together with useful guides that have been expertly put together to help you enjoy the best online casino
+        experience from Canada!</p>
+    </div>
+  </section>
 </template>
 
 <script>
@@ -22,6 +24,25 @@
     }
 </script>
 
-<style>
-    
+<style lang="scss">
+.intro {
+  font-size: 14px;
+  line-height: 1.8333;
+  color: var(--theme-cr-txt-alt);
+  margin-bottom: 25px;
+
+  @media (min-width: 992px) {
+    margin-bottom: 50px;
+    font-size: 18px;
+  }
+}
+
+.intro__sub-heading {
+  font-size: 24px;
+  line-height: 1.25;
+
+  @media (min-width: 992px) {
+    font-size: 32px;
+  }
+}
 </style>
