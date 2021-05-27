@@ -37,6 +37,153 @@
     }
 </script>
 
-<style>
-  
+<style lang="scss">
+.main-nav {
+  @media (min-width: 992px) {
+    margin-right: auto;
+    margin-left: 5.729vw;
+  }
+}
+
+.main-nav__list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+
+  @media (min-width: 992px) {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  li {
+    @media (max-width: 992px) {
+      text-align: center;
+      margin-bottom: 26px;
+    }
+
+    &:not(:first-child) {
+      @media (min-width: 992px) {
+        margin-left: 3.183vw;
+      }
+
+      @media (min-width: 1600px) {
+        margin-left: 2.0833vw;
+      }
+    }
+  }
+}
+
+.main-nav__link {
+  color: var(--theme-cr-txt-alt);
+  opacity: .5;
+  font-size: 16px;
+  font-weight: 400;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+
+  @media (max-width: 992px) {
+    font-size: 24px;
+    font-weight: 500;
+  }
+
+  .active > &,
+  .is-active > &,
+  &.active,
+  &.is-active {
+    opacity: 1;
+  }
+
+  &:hover {
+    @media (min-width: 992px) {
+      opacity: 1;
+    }
+  }
+
+  .icon {
+    margin-right: 5px;
+  }
+}
+
+.navbar__btn {
+  position: relative;
+  width: 39px;
+  height: 39px;
+  border-radius: 50%;
+  background-color: var(--btn-primary);
+  border: 0;
+  cursor: pointer;
+  z-index: 1002;
+  display: none;
+  align-items: center;
+  justify-content: center;
+
+  @media (max-width: 992px) {
+    display: flex;
+  }
+
+  .bar {
+    transition: var(--animation-speed) transform;
+    position: relative;
+    background-color: #fff;
+    background-clip: padding-box;
+    border-radius: 50%;
+    width: 6px;
+    height: 6px;
+
+    .is-menu-open & {
+      transform: rotate(-90deg);
+    }
+
+    &:before {
+      left: 100%;
+      margin-left: 4px;
+    }
+
+    &:after {
+      right: 100%;
+      margin-right: 4px;
+    }
+
+    &:before,
+    &:after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      transform: rotate(0) translateY(-50%);
+      background-clip: padding-box;
+      background-color: #fff;
+      transform-origin: 0 50%;
+      border-radius: 50%;
+      width: 6px;
+      height: 6px;
+    }
+  }
+}
+
+.mobile-menu {
+  @media (max-width: 992px) {
+    transition: var(--animation-speed) var(--animation-type);
+    overflow: hidden;
+    position: fixed;
+    z-index: 999;
+    top: 0;
+    left: 100%;
+    height: 100vh;
+    width: 100vw;
+    background-color: rgba(#fff, .62);
+    padding: 124px 26px 30px;
+    display: flex;
+    flex-direction: column;
+
+    .is-modal-open & {
+      display: none;
+    }
+
+    .is-menu-open & {
+      transform: translateX(-100%);
+    }
+  }
+}
+
 </style>

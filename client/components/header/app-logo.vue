@@ -1,7 +1,7 @@
 <template>
     <a href="">
-        <img class="logo" :src="options.value" alt="Casino Online">
-    </a>  
+        <img class="logo" src="img/logo.svg" alt="Casino Online">
+    </a>
 </template>
 <script>
     export default {
@@ -12,13 +12,21 @@
             }
         },
         async mounted(){
-          await this.$store.dispatch('options/setOptions')
+          /*await this.$store.dispatch('options/setOptions')
           const options = this.$store.getters['options/getOptions']
-          this.options = options.filter(item => item.key === 'logo')[0]
+          this.options = options.filter(item => item.key === 'logo')[0]*/
         }
     }
 </script>
 
-<style>
-  
+<style lang="scss">
+.logo {
+  width: 177px;
+  height: 31px;
+
+  @media (min-width: 1280px) {
+    width: 199px;
+    height: 35px;
+  }
+}
 </style>
