@@ -1,7 +1,7 @@
 <template>
       <div>
         <app_intro :data="data.body" />
-        <app_best_offer />
+        <app_best_offer :data="data.body.bonuses" />
       </div>
 </template>
 
@@ -21,7 +21,6 @@ export default {
         const request = {
             url: 'main'
         }
-    
         const response = await DAL_Page.getData(request)
         const body = response.data 
         const data = body
