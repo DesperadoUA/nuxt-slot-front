@@ -2,70 +2,20 @@
     <section class="best-offer">
         <div class="container">
             <h2>Лучшие предложения</h2>
-
+    
             <div class="best-offer__container-slider js-best-offer-swiper">
                 <div class="best-offer__list swiper-wrapper">
-                    <div class="offer-item">
-                        <div class="circle-rating" data-fill="75" style="--circle-cr: #236054; --bar-cr: #00ff66;">
-                            <picture>
-                                <source type="image/webp" srcset="components/best-offers/img/slotoking.webp">
-                                <source type="image/png" srcset="components/best-offers/img/slotoking.png">
-                                <img class="offer-item__logo" src="components/best-offers/img/slotoking.png" alt="">
-                            </picture>
+                    <div class="offer-item" v-for="(item, index) in data" :key="index">
+                        <div class="circle-rating" 
+                            :data-fill="item.rating" 
+                            style="--circle-cr: #236054; --bar-cr: #00ff66;">
+                            <img class="offer-item__logo" :src="item.icon" :alt="item.title">
                             <div class="circle-rating__bar"></div>
                         </div>
-
+    
                         <div class="offer-item__content">
-                            <h3 class="offer-item__ttl">Slotoking</h3>
-                            <p>Welcome Offer: 200 Free Spins & $1,250 Deposit Match!</p>
-                        </div>
-                    </div>
-
-                    <div class="offer-item">
-                        <div class="circle-rating" data-fill="70" style="--circle-cr: #236054; --bar-cr: #00ff66;">
-                            <picture>
-                                <source type="image/webp" srcset="components/best-offers/img/reel.webp">
-                                <source type="image/png" srcset="components/best-offers/img/reel.png">
-                                <img class="offer-item__logo" src="components/best-offers/img/reel.png" alt="">
-                            </picture>
-                            <div class="circle-rating__bar"></div>
-                        </div>
-
-                        <div class="offer-item__content">
-                            <h3 class="offer-item__ttl">Reel Emperor</h3>
-                            <p>Welcome Offer: 200 Free Spins & $1,250 Deposit Match!</p>
-                        </div>
-                    </div>
-
-                    <div class="offer-item">
-                        <div class="circle-rating" data-fill="45" style="--circle-cr: rgba(255, 0, 0, 0.23); --bar-cr: #f00;">
-                            <picture>
-                                <source type="image/webp" srcset="components/best-offers/img/777.webp">
-                                <source type="image/png" srcset="components/best-offers/img/777.png">
-                                <img class="offer-item__logo" src="components/best-offers/img/777.png" alt="">
-                            </picture>
-                            <div class="circle-rating__bar"></div>
-                        </div>
-
-                        <div class="offer-item__content">
-                            <h3 class="offer-item__ttl">777 Original</h3>
-                            <p>Welcome Offer: 200 Free Spins & $1,250 Deposit Match!</p>
-                        </div>
-                    </div>
-
-                    <div class="offer-item">
-                        <div class="circle-rating" data-fill="50" style="--circle-cr: rgba(255, 199, 0, 0.23); --bar-cr: #ffc700;">
-                            <picture>
-                                <source type="image/webp" srcset="components/best-offers/img/unibet.webp">
-                                <source type="image/png" srcset="components/best-offers/img/unibet.png">
-                                <img class="offer-item__logo" src="components/best-offers/img/unibet.png" alt="">
-                            </picture>
-                            <div class="circle-rating__bar"></div>
-                        </div>
-
-                        <div class="offer-item__content">
-                            <h3 class="offer-item__ttl">Unibet Casino</h3>
-                            <p>Welcome Offer: 200 Free Spins & $1,250 Deposit Match!</p>
+                            <h3 class="offer-item__ttl">{{item.title}}</h3>
+                            <p>{{item.short_desc}}</p>
                         </div>
                     </div>
                 </div>
@@ -132,9 +82,11 @@ $bar-thin: 5px;
     width: 62px;
     height: 62px;
 }
+
 .offer-item__content {
     font-size: 12px;
     line-height: 1.333;
+
     p {
         margin-bottom: 0;
     }
@@ -182,24 +134,10 @@ $bar-thin: 5px;
         border: $bar-thin solid var(--bar-cr);
         border-radius: 50%;
         box-sizing: content-box;
-        clip: rect(0, $dim/2, $dim, 0);
+        //clip: rect(0, $dim/2, $dim, 0);
         pointer-events: none;
         z-index: 2;
     }
 }
 /*Fill start*/
-@for $i from 0 through 100 {
-    &[data-fill="#{$i}"] {
-        $rotate: 3.6deg * $i;
-        .circle-rating__bar {
-            clip: if(($i<51), rect(0, $dim, $dim, $dim/2), rect(auto, auto, auto));
-            &:before {
-                transform: rotate(if(($i<51), ($rotate), 180deg));
-            }
-            &:after {
-                transform: rotate(if(($i>51), ($rotate), 0deg));
-            }
-        }
-    }
-}
 </style>

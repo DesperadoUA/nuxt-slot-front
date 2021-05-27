@@ -1,7 +1,7 @@
 <template>
     <NuxtLink no-prefetch to="/" v-if="options !== null" >
         <img class="logo" :src="options.value" alt="Casino Online">
-    </NuxtLink> 
+    </NuxtLink>
 </template>
 <script>
     export default {
@@ -23,6 +23,7 @@
 .logo {
   width: 177px;
   height: 31px;
+
   @media (min-width: 1280px) {
     width: 199px;
     height: 35px;
