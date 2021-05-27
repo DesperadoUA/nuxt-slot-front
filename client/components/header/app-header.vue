@@ -46,16 +46,6 @@
                 options: {},
                 settings: {}
             }
-        },
-        async mounted(){
-          await this.$store.dispatch('options/setOptions')
-          const options = this.$store.getters['options/getOptions']
-          this.options = options
-
-          const data = {lang: 1}
-          await this.$store.dispatch('settings/setSettings', data)
-          const settings = this.$store.getters['settings/getSettings']
-          this.settings = settings
         }
     }
 </script>

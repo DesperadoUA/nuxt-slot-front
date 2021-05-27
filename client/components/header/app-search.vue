@@ -14,13 +14,6 @@
             return {
                 options: {}
             }
-        },
-        async mounted(){
-          /*
-          await this.$store.dispatch('options/setOptions')
-          const options = this.$store.getters['options/getOptions']
-          this.options = options
-          */
         }
     }
 </script>

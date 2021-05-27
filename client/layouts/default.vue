@@ -1,20 +1,20 @@
 <template>
   <div>
+    <Header />
     <main class="main">
-      <Header />
-      <!--<nuxt /> -->
+      <nuxt />
     </main>
-    <Footer />
+    <!--<Footer /> -->
   </div>
 </template>
 
 <script>
     import Header from '../components/header/app-header'
-    import Footer from '../components/footer/app-footer'
+   // import Footer from '../components/footer/app-footer'
     export default {
         name: "app-main",
-        components: {Header, Footer},
-     //components: {Header}
+     //   components: {Header, Footer},
+     components: {Header}
     }
 </script>
 
@@ -94,16 +94,12 @@
     fill: currentColor;
   }
 
-  %container-general {
+  .container {
     margin-left: auto;
     margin-right: auto;
     width: 100%;
     padding-left: var(--side-gutters);
     padding-right: var(--side-gutters);
-  }
-
-  .container {
-    @extend %container-general;
     max-width: var(--container);
   }
 

@@ -12,7 +12,7 @@ export const actions = {
     async setSettings({commit}, data) {
         if(this.state.settings.settings === null)  {
             const result = await DAL_Settings.getSettings(data)
-            commit('setSettings', result.data)
+            commit('setSettings', result.data.body)
         } 
     },
 }

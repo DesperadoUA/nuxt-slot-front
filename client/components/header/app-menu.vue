@@ -2,16 +2,13 @@
     <div>
         <nav class="main-nav mobile-menu">
             <ul class="main-nav__list">
-                <li>
-                    <a href="" class="is-active main-nav__link">
-                        <svg class="icon icon-bonus"><use xlink:href="#icon-bonus"></use></svg>
-                        Бонусы
-                    </a>
+                <li v-for="(item, index) in settings"
+                  :key="index">
+                    <NuxtLink no-prefetch :to="item.value_1" class="is-active main-nav__link">
+                        <img :src="item.src" />
+                        {{item.value_2}}
+                    </NuxtLink>
                 </li>
-                <li><a href="" class="main-nav__link"><svg class="icon icon-spin"><use xlink:href="#icon-spin"></use></svg>Фри Спины</a></li>
-                <li><a href="" class="main-nav__link"><svg class="icon icon-cherry"><use xlink:href="#icon-cherry"></use></svg>Слоты</a></li>
-                <li><a href="" class="main-nav__link"><svg class="icon icon-star"><use xlink:href="#icon-star"></use></svg>Обзор казино</a></li>
-                <li><a href="" class="main-nav__link"><svg class="icon icon-fire"><use xlink:href="#icon-fire"></use></svg>Предложения</a></li>
             </ul>
         </nav>
         <div class="navbar__btn js--menu-trigger" aria-expanded="false" aria-label="Menu Button" role="button">
@@ -24,15 +21,16 @@
         name: "app-menu",
         data(){
             return {
-                options: {}
+                settings: []
             }
         },
         async mounted(){
-          /*
-          await this.$store.dispatch('options/setOptions')
-          const options = this.$store.getters['options/getOptions']
-          this.options = options
-          */
+          const data = {lang: 1}
+          await this.$store.dispatch('settings/setSettings', data)
+          const settings = this.$store.getters['settings/getSettings']
+          if(settings.length !== 0) {
+             this.settings = settings.filter(item => item.key === 'header_menu' )[0].value
+          }
         }
     }
 </script>

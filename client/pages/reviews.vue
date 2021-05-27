@@ -1,27 +1,23 @@
 <template>
-      <div>
-        <app_intro :data="data.body" />
-        <app_best_offer />
-      </div>
+  <main>
+      
+  </main>
 </template>
 
 <script>
     import DAL_Page from '../DAL/static_pages'
-   import app_intro from '../components/intro/app-intro'
-   import app_best_offer from '../components/best-offer/app-best-offer'
 export default {
-    name: "main-page",
+    name: "review-page",
     data: () => {
         return {
-            data: {}
+            data: null
         }
     },
-    components: {app_intro, app_best_offer},
+    components: {},
     async asyncData({store, route}) {
         const request = {
-            url: 'main'
+            url: 'reviews'
         }
-    
         const response = await DAL_Page.getData(request)
         const body = response.data 
         const data = body
