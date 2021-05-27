@@ -19,7 +19,6 @@
 
 <script>
     import DAL_Page from '../../DAL/static_pages'
-    import app_banner from '../../components/banner/app_banner_casino'
     import app_breadcrumb from '../../components/breadcrumb/app_breadcrumb'
     import app_casino_top from '../../components/casino_top/app_casino_top'
     import app_content from '../../components/content/app-content'
@@ -30,7 +29,7 @@
     import app_slick_button from '../../components/slick_button/app_slick_button'
     export default {
         name: "app_single_casino",
-        components: {app_banner, app_content, app_breadcrumb, app_casino_top, 
+        components: {app_content, app_breadcrumb, app_casino_top, 
         app_reviews, app_form_review, app_faq, app_video, app_slick_button},
         data: () => {
             return {

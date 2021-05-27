@@ -1,20 +1,14 @@
 <template>
-  <main>
-      <app_banner :data="data.body"></app_banner>
-      <!--<app_h1 :value="data.body.h1"></app_h1>
-      <app_casino_loop :posts="data.body.casino"></app_casino_loop>
-      <app_content :value="data.body.content"></app_content>
-      <app_blog_card :posts="data.body.blog"></app_blog_card>-->
-  </main>
+      <div>
+        <app_intro :data="data.body" />
+        <app_best_offer />
+      </div>
 </template>
 
 <script>
     import DAL_Page from '../DAL/static_pages'
-   // import app_h1 from '../components/h1/app-h1'
-   // import app_content from '../components/content/app-content'
-   // import app_casino_loop from '../components/casino_loop/app_casino_loop'
-   import app_banner from '../components/banner/app_banner_main'
-   // import app_blog_card from '../components/blog_card/app_blog_card'
+   import app_intro from '../components/intro/app-intro'
+   import app_best_offer from '../components/best-offer/app-best-offer'
 export default {
     name: "main-page",
     data: () => {
@@ -22,7 +16,7 @@ export default {
             data: {}
         }
     },
-    components: {app_banner},
+    components: {app_intro, app_best_offer},
     async asyncData({store, route}) {
         const request = {
             url: 'main'

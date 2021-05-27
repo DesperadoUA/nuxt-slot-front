@@ -1,12 +1,11 @@
 <template>
   <main>
-      <app_banner v-if="data !== null" :data="data.body"></app_banner>
+      
   </main>
 </template>
 
 <script>
     import DAL_Page from '../DAL/static_pages'
-    import app_banner from '../components/banner/app_banner_main'
 export default {
     name: "review-page",
     data: () => {
@@ -14,7 +13,7 @@ export default {
             data: null
         }
     },
-    components: {app_banner},
+    components: {},
     async asyncData({store, route}) {
         const request = {
             url: 'reviews'

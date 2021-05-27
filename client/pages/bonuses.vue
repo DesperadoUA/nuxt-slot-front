@@ -1,6 +1,5 @@
 <template>
   <main>
-      <app_banner></app_banner>
       <app_h1 :value="data.body.h1"></app_h1>
       <app_casino_loop :posts="data.body.casino"></app_casino_loop>
       <app_content :value="data.body.content"></app_content>
@@ -13,8 +12,6 @@
     import app_h1 from '../components/h1/app-h1'
     import app_content from '../components/content/app-content'
     import app_casino_loop from '../components/casino_loop/app_casino_loop'
-    import app_banner from '../components/banner/app_banner_main'
-    import app_blog_card from '../components/blog_card/app_blog_card'
 export default {
     name: "bonuses",
     data: () => {
@@ -22,7 +19,7 @@ export default {
             data: {}
         }
     },
-    components: {app_h1, app_content, app_casino_loop, app_banner, app_blog_card},
+    components: {app_h1, app_content, app_casino_loop, app_blog_card},
     async asyncData({store, route}) {
         const request = {
             type: 'page',

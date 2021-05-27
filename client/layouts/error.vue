@@ -1,6 +1,5 @@
 <template>
   <div>
-    <app_banner :value="data.body.h1"></app_banner>
     <section>
         <div class="container blog_section home_link">
             <NuxtLink to="/">Home page</NuxtLink>
@@ -10,7 +9,6 @@
 </template>
 
 <script>
-  import app_banner from '../components/banner/app_banner_casino'
   export default {
     props: ['error'],
     data: () => {
@@ -22,7 +20,7 @@
                },
             }
         },
-    components: {app_banner},
+    components: {},
     layout: 'error'
   }
 </script>
