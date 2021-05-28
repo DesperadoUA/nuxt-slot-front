@@ -20,13 +20,5 @@
 </script>
 
 <style lang="scss">
-.logo {
-  width: 177px;
-  height: 31px;
 
-  @media (min-width: 1280px) {
-    width: 199px;
-    height: 35px;
-  }
-}
 </style>

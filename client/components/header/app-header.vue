@@ -52,46 +52,33 @@
 
 <style lang="scss">
 :root {
-  --scrollbar-width: 0;
+    --scrollbar-width: 0;
 }
 
 .header {
-  padding-top: 14px;
-  padding-bottom: 14px;
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  max-width: calc(100vw - var(--scrollbar-width));
-  z-index: 999;
-
-  /*.scrolled & {
-      background-color: rgba(#fff, .8);
-  }*/
-
-  @media (min-width: 992px) {
+    padding-top: 14px;
+    padding-bottom: 14px;
     position: absolute;
-    padding-top: 40px;
-    padding-bottom: 25px;
-  }
+    top: 0;
+    left: 0;
+    width: 100%;
+    max-width: calc(100vw - var(--scrollbar-width));
+    z-index: 999;
+
+    /*.scrolled & {
+        background-color: rgba(#fff, .8);
+    }*/
+
+    @media (min-width: 992px) {
+        position: absolute;
+        padding-top: 40px;
+        padding-bottom: 25px;
+    }
 }
 
 .header__container {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-
-
-  @media (max-width: 992px) {
-    max-width: 83.073vw;
-  }
-
-  @media (max-width: 530px) {
-    max-width: none;
-  }
-
-  @media (min-width: 1600px) {
-    padding-right: 115px;
-  }
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
 </style>

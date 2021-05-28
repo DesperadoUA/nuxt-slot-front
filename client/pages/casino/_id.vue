@@ -24,7 +24,6 @@
     import app_content from '../../components/content/app-content'
     import app_faq from '../../components/faq/app_faq'
     import app_reviews from '../../components/reviews/app_reviews'
-    import app_form_review from '../../components/form_review/app_form_review'
     import app_video from '../../components/video/app_video'
     import app_slick_button from '../../components/slick_button/app_slick_button'
     export default {
