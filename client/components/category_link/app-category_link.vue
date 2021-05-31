@@ -21,11 +21,16 @@
         },
         data(){
             return {
+                url: ''
             }
+        },
+        mounted(){
+            this.url = $nuxt.$route.path
         },
         filters: {
              linkClasses(item) {
-                 
+                 console.log(this.url)
+                 return 'categories__link'
             }
         }
     }

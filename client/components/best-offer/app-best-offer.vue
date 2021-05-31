@@ -35,11 +35,9 @@
 </script>
 
 <style lang="scss">
-:root {
+.best-offer {
     --offer-gutter: 14px;
     --offer-width: 270px;
-}
-.best-offer {
     margin-bottom: 41px;
     color: var(--theme-cr-txt-alt);
 
@@ -52,22 +50,26 @@
         margin-bottom: 70px;
     }
 }
-/*
+
+.best-offer__ttl {
+
+}
+
 .best-offer__list {
     display: flex;
     flex-wrap: wrap;
-    margin-left: calc(var(--offer-gutter)/-2);
-    margin-right: calc(var(--offer-gutter)/-2);
+    margin-left: calc(var(--offer-gutter) / -2);
+    margin-right: calc(var(--offer-gutter) / -2);
 
     .offer-item {
         width: calc(var(--offer-width) - var(--offer-gutter));
         flex-basis: calc(var(--offer-width) - var(--offer-gutter));
-        margin-left: calc(var(--offer-gutter)/2);
-        margin-right: calc(var(--offer-gutter)/2);
+        margin-left: calc(var(--offer-gutter) / 2);
+        margin-right: calc(var(--offer-gutter) / 2);
         flex-shrink: 0;
     }
 }
-/*
+
 .offer-item {
     color: currentColor;
     text-decoration: none;
@@ -116,5 +118,4 @@
     line-height: 19px;
     margin-bottom: 7px;
 }
-*/
 </style>
