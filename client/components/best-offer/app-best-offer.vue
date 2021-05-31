@@ -35,4 +35,86 @@
 </script>
 
 <style lang="scss">
+:root {
+    --offer-gutter: 14px;
+    --offer-width: 270px;
+}
+.best-offer {
+    margin-bottom: 41px;
+    color: var(--theme-cr-txt-alt);
+
+    @media (min-width: 768px) {
+        --offer-width: 50%;
+    }
+
+    @media (min-width: 992px) {
+        --offer-width: 25%;
+        margin-bottom: 70px;
+    }
+}
+/*
+.best-offer__list {
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: calc(var(--offer-gutter)/-2);
+    margin-right: calc(var(--offer-gutter)/-2);
+
+    .offer-item {
+        width: calc(var(--offer-width) - var(--offer-gutter));
+        flex-basis: calc(var(--offer-width) - var(--offer-gutter));
+        margin-left: calc(var(--offer-gutter)/2);
+        margin-right: calc(var(--offer-gutter)/2);
+        flex-shrink: 0;
+    }
+}
+/*
+.offer-item {
+    color: currentColor;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    border-radius: 14px;
+    background: rgba(#000, .2);
+    backdrop-filter: blur(20px);
+    max-width: var(--offer-width);
+    padding: 17px 5px 18px 9px;
+
+    @media (min-width: 992px) {
+        &:hover {
+            background: rgba(#000, .4);
+        }
+    }
+
+    .circle-rating {
+        margin-right: 10px;
+    }
+}
+
+.offer-item__logo {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+    border-radius: 50%;
+    width: 62px;
+    height: 62px;
+}
+
+.offer-item__content {
+    font-size: 12px;
+    line-height: 1.333;
+
+    p {
+        margin-bottom: 0;
+    }
+}
+
+.offer-item__ttl {
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 19px;
+    margin-bottom: 7px;
+}
+*/
 </style>

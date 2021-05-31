@@ -1,8 +1,6 @@
 <template>
     <div class="cms">
-        <div class="container"  v-html="value">
-
-        </div>
+        <div class="container"  v-html="value"></div>
     </div>
 </template>
 
