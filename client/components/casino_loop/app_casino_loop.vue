@@ -10,12 +10,12 @@
 
                     <div class="casino-item__rating">
                         <div class="circle-rating">
-                            <svg viewBox="0 0 36 36" class="circle-rating__chart">
-                                <path class="circle-rating__circle-bg" 
+                            <svg viewBox="0 0 36 36" class="circle-rating__chart" style="--cr-rating: #ffc700;">
+                                <path class="circle-rating__circle-bg"
                                       d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"/>
                                 <!-- значение рейтинга - 1ый параметр в атрибуте stroke-dasharray -->
-                                <path class="circle-rating__circle" 
-                                      :stroke-dasharray="item.rating + ', 100'" 
+                                <path class="circle-rating__circle"
+                                      :stroke-dasharray="item.rating + ', 100'"
                                       d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"/>
                             </svg>
                             <div class="circle-rating__percentage">{{item.rating}}</div>
@@ -64,8 +64,8 @@
                     </div>
 
                     <div class="casino-item__btns">
-                         <NuxtLink no-prefetch 
-                                  :to="item.permalink"  
+                         <NuxtLink no-prefetch
+                                  :to="item.permalink"
                                   class="casino-item__btn --green">Обзор казино</NuxtLink>
                         <button class="casino-item__btn --blue" @click="refActivate(item)">Перейти</button>
                     </div>
@@ -123,7 +123,7 @@
                     <NuxtLink class="btn_review" no-prefetch :to="item.permalink" >Обзор</NuxtLink>
                   </div>
               </div>
-          </div>  
+          </div>
           <div class="casino_table_btn_wrapper" v-if="posts.length > (numberPostOnQuery*postCurrentPage)">
               <button class="btn_review" @click="postShowMore">Загрузить еще</button>
           </div>
@@ -163,7 +163,7 @@
                     const max = item.ref.length - 1
                     const random = Math.floor(Math.random() * (max - min + 1)) + min
                     window.open(item.ref[random].casino_ref, '_blank')
-                } 
+                }
             },
             postShowMore(){
                 this.postCurrentPage += 1
@@ -234,6 +234,8 @@
 
 .casino-item__logo {
     border-radius: 14px 0 0 14px;
+    flex-shrink: 0;
+    flex-basis: calc(100% - 112px);
 }
 
 .casino-item__rating {
@@ -342,10 +344,15 @@
 
 .casino-item__btn {
     color: #fff;
+    font-family: var(--base-font-family);
     font-size: 16px;
     font-weight: 700;
     min-height: 40px;
     text-decoration: none;
+    border: 0;
+    padding: 3px 5px;
+    width: 100%;
+    cursor: pointer;
     display: flex;
     align-items: center;
     justify-content: center;

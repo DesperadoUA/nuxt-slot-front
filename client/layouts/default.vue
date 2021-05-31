@@ -225,6 +225,7 @@ img {
     text-anchor: middle;
 }
 %btn-general {
+    font-family: var(--base-font-family);
     display: inline-flex;
     justify-content: center;
     align-items: center;
