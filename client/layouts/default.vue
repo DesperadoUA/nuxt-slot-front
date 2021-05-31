@@ -180,6 +180,50 @@ img {
     fill: currentColor;
 }
 
+.circle-rating {
+    position: relative;
+    flex-shrink: 0;
+    font-size: 76px;
+    flex-basis: 1em;
+    width: 1em;
+    height: 1em;
+    margin-bottom: 5px;
+}
+
+.circle-rating__chart {
+    display: block;
+}
+
+.circle-rating__circle-bg {
+    fill: none;
+    opacity: .23;
+    stroke: var(--cr-rating);
+    stroke-width: 2;
+}
+
+.circle-rating__circle {
+    fill: none;
+    stroke: var(--cr-rating);
+    stroke-width: 2;
+    stroke-linecap: round;
+    animation: progress 1s ease-out forwards;
+}
+
+@keyframes progress {
+    0% {
+        stroke-dasharray: 0 100;
+    }
+}
+
+.circle-rating__percentage {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    font-weight: 800;
+    font-size: 24px;
+    text-anchor: middle;
+}
 %btn-general {
     display: inline-flex;
     justify-content: center;
@@ -204,30 +248,27 @@ img {
 
 .btn-primary {
     @extend %btn-general;
-    font-size: 14px;
-    border-radius: 19px;
-    background-color: var(--btn-primary);
-    font-weight: 500;
+    font-size: 16px;
+    background-color: rgba(#fff, .1);
+    border-radius: 10px;
+    font-weight: 700;
     line-height: 1.5;
     position: relative;
     z-index: 0;
     color: #fff;
-    min-height: 38px;
+    min-height: 50px;
     padding: 5px .9em;
 
     @media (min-width: 992px) {
-        background-color: var(--btn-primary);
-
-        &:after {
-            opacity: 1;
-            visibility: visible;
+        &:hover {
+            background-color: rgba(#fff, .2);
         }
     }
 
     /* hack for IE11 */
     @media all and (-ms-high-contrast:none) {
         *::-ms-backdrop, & {
-            height: 38px;
+            height: 50px;
         }
     }
 
@@ -235,12 +276,6 @@ img {
     &[disabled] {
         background-color: var(--disabled-bg);
         color: var(--disabled-cr);
-    }
-
-    .icon-arrow-next {
-        font-size: .714em;
-        margin-left: 5px;
-        margin-top: 1px;
     }
 }
 
@@ -294,6 +329,7 @@ img {
     display: flex;
     width: 100%;
 }
+
 .main {
     overflow: hidden;
     position: relative;
@@ -307,6 +343,5 @@ img {
         padding-top: 146px;
     }
 }
-
 
 </style>

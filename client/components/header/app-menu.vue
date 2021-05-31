@@ -4,7 +4,7 @@
             <ul class="main-nav__list">
                 <li v-for="(item, index) in settings"
                   :key="index">
-                    <NuxtLink no-prefetch :to="item.value_1" class="is-active main-nav__link">
+                    <NuxtLink no-prefetch :to="item.value_1" class="main-nav__link">
                         <img :src="item.src"  class="main-nav__icon"/>
                         {{item.value_2}}
                     </NuxtLink>
@@ -12,7 +12,7 @@
             </ul>
         </nav>
         <div class="navbar__btn js--menu-trigger" aria-expanded="false" aria-label="Menu Button" role="button">
-                    <span class="bar"></span>
+            <span class="bar"></span>
         </div>
     </div>
 </template>
@@ -36,25 +36,6 @@
 </script>
 
 <style lang="scss">
-body {
-    @media (max-width: 991px) {
-        &.is-menu-open {
-            overflow: hidden;
-
-            //.logo,
-            .btn-callback,
-            .main,
-            .footer {
-                filter: blur(15px);
-            }
-
-            .btn-top {
-                display: none;
-            }
-        }
-    }
-}
-
 .main-nav {
     @media (min-width: 992px) {
         margin-right: auto;

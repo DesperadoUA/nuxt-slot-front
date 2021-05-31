@@ -1,17 +1,21 @@
 <template>
     <section class="best-offer">
         <div class="container">
-            <h2>Лучшие предложения</h2>
-            <div class="best-offer__container-slider js-best-offer-swiper">
-                <div class="best-offer__list swiper-wrapper">
+            <h2 class="best-offer__ttl">Лучшие предложения</h2>
+
+            <div class="best-offer__container-slider">
+                <div class="best-offer__list">
                     <NuxtLink no-prefetch :to="item.permalink" class="offer-item" v-for="(item, index) in value" :key="index">
-                        <div class="circle-rating" 
-                            :data-fill="item.rating" 
-                            style="--circle-cr: #236054; --bar-cr: #00ff66;">
+                        <div class="circle-rating" :data-fill="item.rating">
+                            <!-- цвет рейтинга: переменная "--cr-rating" в атрибуте style -->
+                            <svg viewBox="0 0 36 36" class="circle-rating__chart" style="--cr-rating: #f00;">
+                                <path class="circle-rating__circle-bg" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"/>
+                                <!-- значение рейтинга - 1ый параметр в атрибуте stroke-dasharray -->
+                                <path class="circle-rating__circle" stroke-dasharray="30, 100" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"/>
+                            </svg>
                             <img class="offer-item__logo" :src="item.icon" :alt="item.title">
-                            <div class="circle-rating__bar"></div>
                         </div>
-    
+
                         <div class="offer-item__content">
                             <h3 class="offer-item__ttl">{{item.title}}</h3>
                             <p>{{item.short_desc}}</p>
@@ -52,7 +56,10 @@
 }
 
 .best-offer__ttl {
-
+    font-size: 28px;
+    line-height: 1.358;
+    margin-bottom: 22px;
+    text-align: center;
 }
 
 .best-offer__list {

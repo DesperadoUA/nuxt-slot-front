@@ -10,7 +10,8 @@
 
                     <div class="casino-item__rating">
                         <div class="circle-rating">
-                            <svg viewBox="0 0 36 36" class="circle-rating__chart">
+                            <!-- цвет рейтинга: переменная "--cr-rating" в атрибуте style -->
+                            <svg viewBox="0 0 36 36" class="circle-rating__chart" style="--cr-rating: #f00;">
                                 <path class="circle-rating__circle-bg" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"/>
                                 <!-- значение рейтинга - 1ый параметр в атрибуте stroke-dasharray -->
                                 <path class="circle-rating__circle" stroke-dasharray="30, 100" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"/>
@@ -75,7 +76,8 @@
 
                     <div class="casino-item__rating">
                         <div class="circle-rating">
-                            <svg viewBox="0 0 36 36" class="circle-rating__chart">
+                            <!-- цвет рейтинга: переменная "--cr-rating" в атрибуте style -->
+                            <svg viewBox="0 0 36 36" class="circle-rating__chart" style="--cr-rating: #0f6;">
                                 <path class="circle-rating__circle-bg" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"/>
                                 <!-- значение рейтинга - 1ый параметр в атрибуте stroke-dasharray -->
                                 <path class="circle-rating__circle" stroke-dasharray="30, 100" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"/>
@@ -140,11 +142,11 @@
 
                     <div class="casino-item__rating">
                         <div class="circle-rating">
-                            <svg viewBox="0 0 36 36" class="circle-rating__chart">
-                                <path class="circle-rating__circle-bg" 
-                                      d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"/>
+                            <!-- цвет рейтинга: переменная "--cr-rating" в атрибуте style -->
+                            <svg viewBox="0 0 36 36" class="circle-rating__chart" style="--cr-rating: #ffc700;">
+                                <path class="circle-rating__circle-bg" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"/>
                                 <!-- значение рейтинга - 1ый параметр в атрибуте stroke-dasharray -->
-                                <path class="circle-rating__circle" stroke-dasharray="75, 100" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"/>
+                                <path class="circle-rating__circle" stroke-dasharray="30, 100" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"/>
                             </svg>
                             <div class="circle-rating__percentage">75</div>
                         </div>
@@ -249,7 +251,7 @@
                     <NuxtLink class="btn_review" no-prefetch :to="item.permalink" >Обзор</NuxtLink>
                   </div>
               </div>
-          </div>  
+          </div>
           <div class="casino_table_btn_wrapper" v-if="posts.length > (numberPostOnQuery*postCurrentPage)">
               <button class="btn_review" @click="postShowMore">Загрузить еще</button>
           </div>
@@ -284,7 +286,7 @@
                     const max = item.ref.length - 1
                     const random = Math.floor(Math.random() * (max - min + 1)) + min
                     window.open(item.ref[random].casino_ref, '_blank')
-                } 
+                }
             },
             postShowMore(){
                 this.postCurrentPage += 1
