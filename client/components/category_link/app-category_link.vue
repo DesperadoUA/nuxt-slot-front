@@ -2,8 +2,8 @@
     <div class="categories">
         <div class="categories__container">
               <NuxtLink no-prefetch :to="item.permalink" 
-                        :class="{item, index} | linkClasses" 
-                        v-for="(item, index) in value" 
+                        :class="item.class" 
+                        v-for="(item, index) in currentData" 
                         :key="index">{{item.title}}
               </NuxtLink>
         </div>
@@ -21,15 +21,23 @@
         },
         data(){
             return {
-                url: ''
+                currentData: []
             }
         },
         mounted(){
-            this.url = $nuxt.$route.path
+            this.value.forEach((element, index)=> {
+              const item = element
+              if(this.$route.path === '/') {
+                item.class = index === 0 ? 'categories__link is-active' : 'categories__link'
+              } else {
+                  if(item.permalink === this.$route.path) item.class = 'categories__link is-active'
+                  else item.class = 'categories__link'
+              }
+              this.currentData.push(item)  
+            })
         },
         filters: {
              linkClasses(item) {
-                 console.log(this.url)
                  return 'categories__link'
             }
         }

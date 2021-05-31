@@ -2,21 +2,23 @@
 <div class="casinos">
     <div class="container">
         <div class="casinos__container">
-            <div class="casino-item">
+            <div class="casino-item" v-for="(item, index) in value" :key="index" >
                 <div class="casino-item__top">
                     <div class="casino-item__logo">
-                        <img src="img/logo-slotoking.png" alt="">
+                        <img :src="item.thumbnail" alt="">
                     </div>
 
                     <div class="casino-item__rating">
                         <div class="circle-rating">
-                            <!-- цвет рейтинга: переменная "--cr-rating" в атрибуте style -->
-                            <svg viewBox="0 0 36 36" class="circle-rating__chart" style="--cr-rating: #f00;">
-                                <path class="circle-rating__circle-bg" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"/>
+                            <svg viewBox="0 0 36 36" class="circle-rating__chart">
+                                <path class="circle-rating__circle-bg" 
+                                      d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"/>
                                 <!-- значение рейтинга - 1ый параметр в атрибуте stroke-dasharray -->
-                                <path class="circle-rating__circle" stroke-dasharray="30, 100" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"/>
+                                <path class="circle-rating__circle" 
+                                      :stroke-dasharray="item.rating + ', 100'" 
+                                      d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"/>
                             </svg>
-                            <div class="circle-rating__percentage">30</div>
+                            <div class="circle-rating__percentage">{{item.rating}}</div>
                         </div>
                         <span class="casinos-rating__txt">Рейтинг</span>
                     </div>
@@ -24,178 +26,48 @@
 
                 <div class="casino-item__content">
                     <div class="casino-param">
-                        <div class="casino-param__item">
-                            <img class="casino-param__img" src="img/fire.svg" width="17" alt="">
+                        <div :class="item.regular_offers == 1 ? 'casino-param__item': 'casino-param__item disabled'">
+                            <img class="casino-param__img" src="/img/fire.svg" width="17" alt="">
                             <span class="casino-param__txt">Regular Offers</span>
                         </div>
 
-                        <div class="casino-param__item">
-                            <img class="casino-param__img" src="img/chat.svg" width="19" alt="">
+                        <div :class="item.live_chat == 1 ? 'casino-param__item': 'casino-param__item disabled'">
+                            <img class="casino-param__img" src="/img/chat.svg" width="19" alt="">
                             <span class="casino-param__txt">Live Chat</span>
                         </div>
 
-                        <div class="casino-param__item disabled">
-                            <img class="casino-param__img" src="img/casino.svg" width="19" alt="">
+                        <div :class="item.live_casino == 1 ? 'casino-param__item': 'casino-param__item disabled'">
+                            <img class="casino-param__img" src="/img/casino.svg" width="19" alt="">
                             <span class="casino-param__txt">Live Casino</span>
                         </div>
 
-                        <div class="casino-param__item">
-                            <img class="casino-param__img" src="img/fire.svg" width="17" alt="">
+                        <div :class="item.vip_program == 1 ? 'casino-param__item': 'casino-param__item disabled'">
+                            <img class="casino-param__img" src="/img/star.svg" width="17" alt="">
                             <span class="casino-param__txt">Vip Program</span>
                         </div>
                     </div>
 
                     <div class="casino-bonuses">
                         <div class="casino-bonus">
-                            <span class="casino-bonus__value" style="color: #ffe600;">24 000 UAH</span>
+                            <span class="casino-bonus__value" style="color: #ffe600;">{{item.bonus}}</span>
                             <span class="casino-bonus__ttl">Приветственный бонус</span>
 
-                            <div class="casino-bonus__wager">40x Вейджер</div>
+                            <div class="casino-bonus__wager">{{item.bonus_wagering}}</div>
                         </div>
 
                         <div class="casino-bonus">
-                            <span class="casino-bonus__value" style="color: #12d4ff;">225</span>
+                            <span class="casino-bonus__value" style="color: #12d4ff;">{{item.freespins}}</span>
                             <span class="casino-bonus__ttl">Фри спины</span>
 
-                            <div class="casino-bonus__wager">30x Вейджер</div>
+                            <div class="casino-bonus__wager">{{item.freespins_wagering}}</div>
                         </div>
                     </div>
 
                     <div class="casino-item__btns">
-                        <a href="" class="casino-item__btn --green">Обзор казино</a>
-                        <a href="" class="casino-item__btn --blue">Перейти</a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="casino-item">
-                <div class="casino-item__top">
-                    <div class="casino-item__logo">
-                        <img src="img/logo-slotoking.png" alt="">
-                    </div>
-
-                    <div class="casino-item__rating">
-                        <div class="circle-rating">
-                            <!-- цвет рейтинга: переменная "--cr-rating" в атрибуте style -->
-                            <svg viewBox="0 0 36 36" class="circle-rating__chart" style="--cr-rating: #0f6;">
-                                <path class="circle-rating__circle-bg" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"/>
-                                <!-- значение рейтинга - 1ый параметр в атрибуте stroke-dasharray -->
-                                <path class="circle-rating__circle" stroke-dasharray="30, 100" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"/>
-                            </svg>
-                            <div class="circle-rating__percentage">30</div>
-                        </div>
-                        <span class="casinos-rating__txt">Рейтинг</span>
-                    </div>
-                </div>
-
-                <div class="casino-item__content">
-                    <div class="casino-param">
-                        <div class="casino-param__item">
-                            <img class="casino-param__img" src="img/fire.svg" width="17" alt="">
-                            <span class="casino-param__txt">Regular Offers</span>
-                        </div>
-
-                        <div class="casino-param__item">
-                            <img class="casino-param__img" src="img/chat.svg" width="19" alt="">
-                            <span class="casino-param__txt">Live Chat</span>
-                        </div>
-
-                        <div class="casino-param__item disabled">
-                            <img class="casino-param__img" src="img/casino.svg" width="19" alt="">
-                            <span class="casino-param__txt">Live Casino</span>
-                        </div>
-
-                        <div class="casino-param__item">
-                            <img class="casino-param__img" src="img/fire.svg" width="17" alt="">
-                            <span class="casino-param__txt">Vip Program</span>
-                        </div>
-                    </div>
-
-                    <div class="casino-bonuses">
-                        <div class="casino-bonus">
-                            <span class="casino-bonus__value" style="color: #ffe600;">24 000 UAH</span>
-                            <span class="casino-bonus__ttl">Приветственный бонус</span>
-
-                            <div class="casino-bonus__wager">40x Вейджер</div>
-                        </div>
-
-                        <div class="casino-bonus">
-                            <span class="casino-bonus__value" style="color: #12d4ff;">225</span>
-                            <span class="casino-bonus__ttl">Фри спины</span>
-
-                            <div class="casino-bonus__wager">30x Вейджер</div>
-                        </div>
-                    </div>
-
-                    <div class="casino-item__btns">
-                        <a href="" class="casino-item__btn --green">Обзор казино</a>
-                        <a href="" class="casino-item__btn --blue">Перейти</a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="casino-item">
-                <div class="casino-item__top">
-                    <div class="casino-item__logo">
-                        <img src="img/logo-slotoking.png" alt="">
-                    </div>
-
-                    <div class="casino-item__rating">
-                        <div class="circle-rating">
-                            <!-- цвет рейтинга: переменная "--cr-rating" в атрибуте style -->
-                            <svg viewBox="0 0 36 36" class="circle-rating__chart" style="--cr-rating: #ffc700;">
-                                <path class="circle-rating__circle-bg" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"/>
-                                <!-- значение рейтинга - 1ый параметр в атрибуте stroke-dasharray -->
-                                <path class="circle-rating__circle" stroke-dasharray="30, 100" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"/>
-                            </svg>
-                            <div class="circle-rating__percentage">75</div>
-                        </div>
-                        <span class="casinos-rating__txt">Рейтинг</span>
-                    </div>
-                </div>
-
-                <div class="casino-item__content">
-                    <div class="casino-param">
-                        <div class="casino-param__item">
-                            <img class="casino-param__img" src="img/fire.svg" width="17" alt="">
-                            <span class="casino-param__txt">Regular Offers</span>
-                        </div>
-
-                        <div class="casino-param__item">
-                            <img class="casino-param__img" src="img/chat.svg" width="19" alt="">
-                            <span class="casino-param__txt">Live Chat</span>
-                        </div>
-
-                        <div class="casino-param__item disabled">
-                            <img class="casino-param__img" src="img/casino.svg" width="19" alt="">
-                            <span class="casino-param__txt">Live Casino</span>
-                        </div>
-
-                        <div class="casino-param__item">
-                            <img class="casino-param__img" src="img/fire.svg" width="17" alt="">
-                            <span class="casino-param__txt">Vip Program</span>
-                        </div>
-                    </div>
-
-                    <div class="casino-bonuses">
-                        <div class="casino-bonus">
-                            <span class="casino-bonus__value" style="color: #ffe600;">24 000 UAH</span>
-                            <span class="casino-bonus__ttl">Приветственный бонус</span>
-
-                            <div class="casino-bonus__wager">40x Вейджер</div>
-                        </div>
-
-                        <div class="casino-bonus">
-                            <span class="casino-bonus__value" style="color: #12d4ff;">225</span>
-                            <span class="casino-bonus__ttl">Фри спины</span>
-
-                            <div class="casino-bonus__wager">30x Вейджер</div>
-                        </div>
-                    </div>
-
-                    <div class="casino-item__btns">
-                        <a href="" class="casino-item__btn --green">Обзор казино</a>
-                        <a href="" class="casino-item__btn --blue">Перейти</a>
+                         <NuxtLink no-prefetch 
+                                  :to="item.permalink"  
+                                  class="casino-item__btn --green">Обзор казино</NuxtLink>
+                        <button class="casino-item__btn --blue" @click="refActivate(item)">Перейти</button>
                     </div>
                 </div>
             </div>
@@ -251,7 +123,7 @@
                     <NuxtLink class="btn_review" no-prefetch :to="item.permalink" >Обзор</NuxtLink>
                   </div>
               </div>
-          </div>
+          </div>  
           <div class="casino_table_btn_wrapper" v-if="posts.length > (numberPostOnQuery*postCurrentPage)">
               <button class="btn_review" @click="postShowMore">Загрузить еще</button>
           </div>
@@ -262,10 +134,15 @@
 <script>
     export default {
         name: "app_casino_loop",
-        props: ['posts'],
+        props: {
+            value: {
+                type: Array,
+                default: []
+            }
+        },
         data(){
             return {
-                numberPostOnQuery: 20,
+                numberPostOnQuery: 12,
                 postCurrentPage: 1
             }
         },
@@ -286,7 +163,7 @@
                     const max = item.ref.length - 1
                     const random = Math.floor(Math.random() * (max - min + 1)) + min
                     window.open(item.ref[random].casino_ref, '_blank')
-                }
+                } 
             },
             postShowMore(){
                 this.postCurrentPage += 1

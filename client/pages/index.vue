@@ -3,7 +3,7 @@
         <app_intro :value="data.body" />
         <app_best_offer :value="data.body.bonuses" />
         <app_category_link :value="data.body.category_link" />
-        <app_casino_loop />
+        <app_casino_loop :value="data.body.casino" />
         <app_content :value="data.body.content"/>
       </div>
 </template>
