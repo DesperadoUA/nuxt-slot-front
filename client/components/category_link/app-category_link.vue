@@ -2,7 +2,7 @@
     <div class="categories">
         <div class="categories__container">
               <NuxtLink no-prefetch :to="item.permalink" 
-                        class="categories__link" 
+                        :class="{item, index} | linkClasses" 
                         v-for="(item, index) in value" 
                         :key="index">{{item.title}}
               </NuxtLink>
@@ -23,6 +23,11 @@
             return {
             }
         },
+        filters: {
+             linkClasses(item) {
+                 
+            }
+        }
     }
 </script>
 

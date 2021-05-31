@@ -5,7 +5,7 @@
                 <li v-for="(item, index) in settings"
                   :key="index">
                     <NuxtLink no-prefetch :to="item.value_1" class="is-active main-nav__link">
-                        <img :src="item.src" />
+                        <img :src="item.src"  class="main-nav__icon"/>
                         {{item.value_2}}
                     </NuxtLink>
                 </li>
@@ -58,7 +58,6 @@ body {
 .main-nav {
     @media (min-width: 992px) {
         margin-right: auto;
-        margin-left: 5.729vw;
     }
 }
 
@@ -112,12 +111,15 @@ body {
     }
 
     @media (min-width: 992px) {
-        opacity: 1;
+        &:hover {
+            opacity: 1;
+        }
     }
+}
 
-    .icon {
-        margin-right: 5px;
-    }
+.main-nav__icon {
+    margin-right: 5px;
+    max-width: 18px;
 }
 
 .navbar__btn {
