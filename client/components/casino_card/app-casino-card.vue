@@ -1,0 +1,84 @@
+<template>
+    <div class="container">
+        <div class="casino-card">
+            <div class="casino-card__logo">
+                <img :src="value.thumbnail" :alt="value.title">
+            </div>
+
+            <div class="casino-card__rating">
+                <div class="circle-rating">
+                    <svg viewBox="0 0 36 36" class="circle-rating__chart" :style="value | classRating">
+                        <path class="circle-rating__circle-bg" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"/>
+                        <!-- значение рейтинга - 1ый параметр в атрибуте stroke-dasharray -->
+                        <path class="circle-rating__circle" :stroke-dasharray="value.rating + ', 100'" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"/>
+                    </svg>
+                    <div class="circle-rating__percentage">{{value.rating}}</div>
+                </div>
+                <span class="casinos-rating__txt">Рейтинг</span>
+            </div>
+
+            <div class="casino-card-param">
+                <div :class="value.live_casino == 1 ? 'casino-card-param__item': 'casino-card-param__item disabled'">
+                    <img class="casino-card-param__img"
+                         src="/img/fire.svg" width="17" alt="">
+                    <span class="casino-card-param__txt">Regular Offers</span>
+                </div>
+
+                <div :class="value.live_chat == 1 ? 'casino-card-param__item': 'casino-card-param__item disabled'">
+                    <img class="casino-card-param__img"
+                         src="/img/chat.svg"
+                         width="19" alt="">
+                    <span class="casino-card-param__txt">Live Chat</span>
+                </div>
+
+                <div :class="value.live_casino == 1 ? 'casino-card-param__item': 'casino-card-param__item disabled'">
+                    <img class="casino-card-param__img"
+                         src="/img/casino.svg" width="19" alt="">
+                    <span class="casino-card-param__txt">Live Casino</span>
+                </div>
+
+                <div :class="value.vip_program == 1 ? 'casino-card-param__item': 'casino-card-param__item disabled'" >
+                    <img class="casino-card-param__img"
+                         src="/img/fire.svg" width="17" alt="">
+                    <span class="casino-card-param__txt">Vip Program</span>
+                </div>
+            </div>
+
+            <div class="casino-card-bonus">
+                <span class="casino-card-bonus__value" style="color: #ffe600;">{{value.bonus}}</span>
+                <span class="casino-card-bonus__ttl">Приветственный бонус</span>
+                <div class="casino-card-bonus__wager">{{value.bonus_wagering}}</div>
+            </div>
+
+            <div class="casino-card-bonus">
+                <span class="casino-card-bonus__value" style="color: #12d4ff;">{{value.freespins}}</span>
+                <span class="casino-card-bonus__ttl">Фри спины</span>
+                <div class="casino-card-bonus__wager">{{value.freespins_wagering}}</div>
+            </div>
+
+            <button type="button" class="casino-card__cta btn-tertiary">Перейти</button>
+        </div>
+    </div>
+</template>
+
+<script>
+    export default {
+        name: "app-casino-card",
+        props: ['value'],
+        data(){
+            return {
+            }
+        },
+        filters: {
+            classRating(item) {
+                if(item.rating < 33) return '--cr-rating: #f00'
+                if(item.rating > 33 && item.rating < 67) return '--cr-rating: #ffc700'
+                if(item.rating > 67) return '--cr-rating: #0f6'
+            }
+        }
+    }
+</script>
+
+<style lang="scss">
+    
+</style>

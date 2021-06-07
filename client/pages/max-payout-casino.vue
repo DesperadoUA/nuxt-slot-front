@@ -14,7 +14,7 @@
     import app_casino_loop_downloads from '../components/casino_loop_downloads/app_casino_loop_downloads'
     import app_category_link from '../components/category_link/app-category_link'
     export default {
-        name: "free-bonus-casino",
+        name: "max-payout-casino",
         data: () => {
             return {
                 data: null
@@ -24,7 +24,7 @@
         async asyncData({store, route}) {
             const request = new DAL_Builder()
             const response = await request.postType('category')
-                                          .url('free-bonus-casino')
+                                          .url('max-payout-casino')
                                           .get()
             if(response.data.status === '404') {
                 error({ statusCode: 404, message: 'Post not found' })

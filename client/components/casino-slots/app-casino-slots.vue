@@ -1,0 +1,132 @@
+<template>
+  <section class="casino-slots" v-if="value.length !== 0">
+    <div class="container">
+      <h2 class="casino-slots__ttl">Популярные слоты в {{title}}</h2>
+
+      <div class="casino-slots__list">
+        <NuxtLink v-for="(item, index) in value"
+                 :key="index"
+                 :to="item.permalink"
+                 class="casino-group-item">
+          <div class="circle-rating">
+            <svg viewBox="0 0 36 36" class="circle-rating__chart" :style="item | classRating">
+              <path class="circle-rating__circle-bg" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"/>
+              <!-- значение рейтинга - 1ый параметр в атрибуте stroke-dasharray -->
+              <path class="circle-rating__circle" :stroke-dasharray="item.rating + ', 100'" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"/>
+            </svg>
+            <picture>
+              <img class="circle-rating__logo"
+                   :src="item.icon"
+                   :alt="item.title">
+            </picture>
+          </div>
+
+          <div class="casino-group-item__content">
+            <div class="casino-group-item__name">{{item.title}}</div>
+            <div class="casino-group-item__rating">Рейтинг: <b>{{item.rating}}</b></div>
+            <svg class="casino-group-item__arrow" width="9" height="14" viewBox="0 0 9 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M1 1L7 7L1 13" stroke="white" stroke-width="2" stroke-linecap="round"/>
+            </svg>
+          </div>
+        </NuxtLink>
+      </div>
+    </div>
+  </section>
+</template>
+
+<script>
+    export default {
+        name: "app-casino-slots",
+        props: {
+            value: {
+                type: Array,
+                default: []
+            },
+            title: {
+              type: String,
+              default: ''
+            }
+        },
+        filters:{
+            rating(item){
+                return Math.trunc(item/10)
+            },
+            classRating(item) {
+                if(item.rating < 33) return '--cr-rating: #f00'
+                if(item.rating > 33 && item.rating < 67) return '--cr-rating: #ffc700'
+                if(item.rating > 67) return '--cr-rating: #0f6'
+            }
+        },
+    }
+</script>
+
+<style lang="scss" scoped>
+  .casino-slots {
+    --slots-gutters: 70px;
+    --slots-width: 33.333%;
+
+    background-color: var(--theme-bg-1);
+    padding-top: 41px;
+    padding-bottom: 37px;
+  }
+
+  .casino-slots__ttl {
+    font-size: 28px;
+    line-height: 1.8;
+    font-weight: 700;
+    margin-bottom: 16px;
+  }
+
+  .casino-slots__list {
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: calc(var(--slots-gutters) / -2);
+    margin-right: calc(var(--slots-gutters) / -2);
+
+    .casino-group-item {
+      width: calc(var(--slots-width) - var(--slots-gutters));
+      flex-basis: calc(var(--slots-width) - var(--slots-gutters));
+      margin-left: calc(var(--slots-gutters) / 2);
+      margin-right: calc(var(--slots-gutters) / 2);
+      flex-shrink: 0;
+    }
+  }
+
+  .casino-group-item {
+    background-color: rgba(#0B0038, .7);
+    border: 1px solid rgba(#fff, .1);
+    border-radius: 10px;
+    padding: 6px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+    line-height: 1.072;
+    color: #fff;
+    text-decoration: none;
+    margin-bottom: 8px;
+
+    @media (min-width: 992px) {
+      &:hover {
+        background-color: rgba(#0b0038, .8);
+      }
+    }
+
+    .circle-rating {
+      margin-right: 16px;
+      margin-bottom: 0;
+    }
+  }
+
+  .casino-group-item__arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 16px;
+  }
+
+  .casino-group-item__name {
+    line-height: 1.643;
+    font-weight: 700;
+  }
+</style>

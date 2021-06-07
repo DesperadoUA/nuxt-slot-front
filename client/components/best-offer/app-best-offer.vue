@@ -8,12 +8,12 @@
                     <NuxtLink no-prefetch :to="item.permalink" class="offer-item" v-for="(item, index) in value" :key="index">
                         <div class="circle-rating" :data-fill="item.rating">
                             <!-- цвет рейтинга: переменная "--cr-rating" в атрибуте style -->
-                            <svg viewBox="0 0 36 36" class="circle-rating__chart" style="--cr-rating: #f00;">
+                            <svg viewBox="0 0 36 36" class="circle-rating__chart" :style="item |classRating">
                                 <path class="circle-rating__circle-bg" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"/>
                                 <!-- значение рейтинга - 1ый параметр в атрибуте stroke-dasharray -->
-                                <path class="circle-rating__circle" stroke-dasharray="30, 100" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"/>
+                                <path class="circle-rating__circle" :stroke-dasharray="item.rating + ', 100'" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"/>
                             </svg>
-                            <img class="offer-item__logo" :src="item.icon" :alt="item.title">
+                            <img class="circle-rating__logo" :src="item.icon" :alt="item.title">
                         </div>
 
                         <div class="offer-item__content">
@@ -35,6 +35,13 @@
             return {
             }
         },
+        filters: {
+            classRating(item) {
+                if(item.rating < 33) return '--cr-rating: #f00'
+                if(item.rating > 33 && item.rating < 67) return '--cr-rating: #ffc700'
+                if(item.rating > 67) return '--cr-rating: #0f6'
+            }
+        }
     }
 </script>
 
@@ -99,7 +106,7 @@
     }
 }
 
-.offer-item__logo {
+.circle-rating__logo {
     position: absolute;
     left: 50%;
     top: 50%;

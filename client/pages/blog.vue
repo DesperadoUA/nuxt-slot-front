@@ -1,30 +1,24 @@
 <template>
   <div>
     <app_intro :value="data.body" />
-    <app_category_link :value="data.body.category_link" />
-    <app_casino_loop_downloads :value="data.body.casino" />
+    <app_blog_downloads :value="data.body.blog" />
     <app_content :value="data.body.content"  />
   </div>
 </template>
 
 <script>
     import DAL_Builder from '../DAL/builder'
-    import app_intro from '../components/intro/app-intro'
     import app_content from '../components/content/app-content'
-    import app_casino_loop_downloads from '../components/casino_loop_downloads/app_casino_loop_downloads'
-    import app_category_link from '../components/category_link/app-category_link'
+    import app_intro from '../components/intro/app-intro'
+    import app_blog_downloads from '../components/blog_loop_downloads/app_blog_loop_downloads'
+   
     export default {
-        name: "free-bonus-casino",
-        data: () => {
-            return {
-                data: null
-            }
-        },
-        components: {app_intro, app_content, app_casino_loop_downloads, app_category_link},
-        async asyncData({store, route}) {
+        name: "app-blog",
+        components: {app_content, app_intro, app_blog_downloads},
+        async asyncData({route, error}) {
             const request = new DAL_Builder()
-            const response = await request.postType('category')
-                                          .url('free-bonus-casino')
+            const response = await request.postType('pages')
+                                          .url('blog')
                                           .get()
             if(response.data.status === '404') {
                 error({ statusCode: 404, message: 'Post not found' })
@@ -53,6 +47,6 @@
     }
 </script>
 
-<style>
+<style scoped>
 
 </style>

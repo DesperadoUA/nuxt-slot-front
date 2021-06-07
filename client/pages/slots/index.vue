@@ -1,35 +1,43 @@
 <template>
-  <main>
-      
-  </main>
+  <div>
+    <app_intro :value="data.body" />
+    <app_category_link :value="data.body.category_link" />
+    <app_slot_card :value="data.body.slots" />
+    <app_content :value="data.body.content"  />
+  </div>
 </template>
 
 <script>
-    import DAL_Page from '../../DAL/static_pages'
+    import DAL_Builder from '../../DAL/builder'
+    import app_content from '../../components/content/app-content'
+    import app_intro from '../../components/intro/app-intro'
+    import app_category_link from '../../components/category_link/app-category_link'
+    import app_slot_card from '../../components/slot_loop_card/app_slot_loop_card'
+
 export default {
-    name: "free-bonus-casin",
+    name: "slots",
     data: () => {
         return {
             data: null
         }
     },
-    components: {},
-    async asyncData({store, route}) {
-        const request = {
-            url: 'slots'
+    components: {app_content, app_intro, app_category_link, app_slot_card},
+    async asyncData({route, error}) {
+        const request = new DAL_Builder()
+        const response = await request.postType('category')
+                                       .url('slots')
+                                       .get()
+        if(response.data.status === '404') {
+            error({ statusCode: 404, message: 'Post not found' })
         }
-        /*
-        const response = await DAL_Page.getData(request)
-        const body = response.data 
-        const data = body
-        data.body.currentUrl = process.env.BASE_URL + route.path 
-        */
-       const data = {}
-        return {data}
+        else {
+            const body = response.data.body
+            const data = {body}
+            return {data}
+        }
     },
     head() {
         return {
-            /*
             title: this.data.body.meta_title,
             meta: [
                 {
@@ -40,7 +48,7 @@ export default {
             ],
             link: [
                 { rel: 'canonical', href: this.data.body.currentUrl}
-            ] */
+            ]
         }
     }
 }

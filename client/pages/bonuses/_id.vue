@@ -1,9 +1,7 @@
 <template>
   <div>
     <app_intro :value="data.body" />
-    <app_casino_card :value="data.body" />
-    <app_casino_detail :value="data.body" />
-    <app_casino_slots :value="data.body.slots" :title="data.body.title" />
+    <app_bonus_card :value="data.body.card" />
     <app_content :value="data.body.content"  />
   </div>
 </template>
@@ -12,12 +10,10 @@
     import DAL_Builder from '../../DAL/builder'
     import app_content from '../../components/content/app-content'
     import app_intro from '../../components/intro/app-intro'
-    import app_casino_card from '../../components/casino_card/app-casino-card'
-    import app_casino_detail from '../../components/casino-detail/app-casino-detail'
-    import app_casino_slots from '../../components/casino-slots/app-casino-slots'
+    import app_bonus_card from '../../components/bonus-card/app_bonus_card'
     export default {
         name: "app_single_casino",
-        components: {app_content, app_intro, app_casino_card, app_casino_detail, app_casino_slots},
+        components: {app_content, app_intro, app_bonus_card},
         data: () => {
             return {
                data: {},
@@ -25,7 +21,7 @@
         },
         async asyncData({route, error}) {
             const request = new DAL_Builder()
-            const response = await request.postType('casino')
+            const response = await request.postType('bonuses')
                                           .url(route.params.id)
                                           .get()
              if(response.data.status === '404') {
