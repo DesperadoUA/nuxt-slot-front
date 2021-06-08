@@ -1,9 +1,9 @@
 <template>
     <div class="categories">
         <div class="categories__container">
-              <NuxtLink no-prefetch :to="item.permalink" 
-                        :class="item.class" 
-                        v-for="(item, index) in currentData" 
+              <NuxtLink no-prefetch :to="item.permalink"
+                        :class="item.class"
+                        v-for="(item, index) in currentData"
                         :key="index">{{item.title}}
               </NuxtLink>
         </div>
@@ -33,7 +33,7 @@
                   if(item.permalink === this.$route.path) item.class = 'categories__link is-active'
                   else item.class = 'categories__link'
               }
-              this.currentData.push(item)  
+              this.currentData.push(item)
             })
         },
         filters: {
@@ -65,11 +65,11 @@
 
 .categories__link {
     text-align: center;
-    flex: 1 1 0%;
+    flex: 1 1 auto;
     color: #fff;
     text-decoration: none;
-    font-weight: 700;
-    font-size: 12px;
+    font-weight: 600;
+    font-size: 14px;
     line-height: 27px;
     padding: 7px 5px;
     border-radius: 14px;
@@ -83,6 +83,7 @@
     &.active,
     &.is-active {
         background-color: var(--btn-primary);
+        font-weight: 700;
     }
 }
 </style>

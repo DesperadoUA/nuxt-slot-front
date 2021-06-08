@@ -1,6 +1,6 @@
 <template>
-    <div>
-        <nav class="main-nav mobile-menu">
+    <div class="main-nav mobile-menu">
+        <nav>
             <ul class="main-nav__list">
                 <li v-for="(item, index) in settings"
                   :key="index">
@@ -36,9 +36,18 @@
 </script>
 
 <style lang="scss">
+.is-menu-open {
+    .logo,
+    .search,
+    .main > * {
+        filter: blur(24px);
+    }
+}
+
 .main-nav {
     @media (min-width: 992px) {
-        margin-right: auto;
+        margin-left: auto;
+        margin-right: 81px;
     }
 }
 
@@ -54,17 +63,12 @@
 
     li {
         @media (max-width: 991px) {
-            text-align: center;
             margin-bottom: 26px;
         }
 
         &:not(:first-child) {
             @media (min-width: 992px) {
-                margin-left: 3.183vw;
-            }
-
-            @media (min-width: 1600px) {
-                margin-left: 2.0833vw;
+                margin-left: 1.783vw;
             }
         }
     }
@@ -73,15 +77,15 @@
 .main-nav__link {
     color: var(--theme-cr-txt-alt);
     opacity: .5;
-    font-size: 16px;
-    font-weight: 400;
+    font-size: 12px;
+    font-weight: 700;
     text-decoration: none;
     display: inline-flex;
     align-items: center;
+    text-transform: uppercase;
 
     @media (max-width: 991px) {
-        font-size: 24px;
-        font-weight: 500;
+        font-size: 16px;
     }
 
     .active > &,
@@ -99,8 +103,13 @@
 }
 
 .main-nav__icon {
-    margin-right: 5px;
-    max-width: 18px;
+    margin-right: 7px;
+    max-width: 25px;
+
+    @media (min-width: 992px) {
+        margin-right: 5px;
+        max-width: 18px;
+    }
 }
 
 .navbar__btn {
@@ -146,6 +155,7 @@
         &:before,
         &:after {
             position: absolute;
+            top: 50%;
             content: '';
             transform: rotate(0) translateY(-50%);
             background-clip: padding-box;
@@ -168,8 +178,8 @@
         left: 100%;
         height: 100vh;
         width: 100vw;
-        background-color: rgba(#fff, .62);
-        padding: 124px 26px 30px;
+        background: rgba(#281c4b, .8);
+        padding: 124px 53px 30px;
         display: flex;
         flex-direction: column;
 
@@ -182,5 +192,4 @@
         }
     }
 }
-
 </style>

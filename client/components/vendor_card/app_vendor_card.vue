@@ -1,12 +1,12 @@
 <template>
-  <div class="container">
-    <div class="casino-card" >
-      <div class="casino-card__logo">
-        <img :src="value.thumbnail" :alt="value.title">
-      </div>
-      <div class="casino-card__txt" v-html="value.content"></div>
+<div class="container">
+    <div class="casino-card">
+        <div class="casino-card__logo">
+            <img :src="value.thumbnail" :alt="value.title">
+        </div>
+        <div class="casino-card__txt" v-html="value.content"></div>
     </div>
-  </div>
+</div>
 </template>
 
 <script>
@@ -26,5 +26,5 @@
 </script>
 
 <style lang="scss" scoped>
- 
+
 </style>

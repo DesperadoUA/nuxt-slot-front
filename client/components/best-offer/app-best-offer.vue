@@ -1,30 +1,28 @@
 <template>
-    <section class="best-offer">
-        <div class="container">
-            <h2 class="best-offer__ttl">Лучшие предложения</h2>
+<section class="best-offer">
+    <div class="container">
+        <h2 class="best-offer__ttl">Лучшие предложения</h2>
 
-            <div class="best-offer__container-slider">
-                <div class="best-offer__list">
-                    <NuxtLink no-prefetch :to="item.permalink" class="offer-item" v-for="(item, index) in value" :key="index">
-                        <div class="circle-rating" :data-fill="item.rating">
-                            <!-- цвет рейтинга: переменная "--cr-rating" в атрибуте style -->
-                            <svg viewBox="0 0 36 36" class="circle-rating__chart" :style="item |classRating">
-                                <path class="circle-rating__circle-bg" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"/>
-                                <!-- значение рейтинга - 1ый параметр в атрибуте stroke-dasharray -->
-                                <path class="circle-rating__circle" :stroke-dasharray="item.rating + ', 100'" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"/>
-                            </svg>
-                            <img class="circle-rating__logo" :src="item.icon" :alt="item.title">
-                        </div>
+        <div class="best-offer__container-slider">
+            <div class="best-offer__list">
+                <NuxtLink no-prefetch :to="item.permalink" class="offer-item" v-for="(item, index) in value" :key="index">
+                    <div class="circle-rating" :data-fill="item.rating">
+                        <svg viewBox="0 0 36 36" class="circle-rating__chart" :style="item |classRating">
+                            <path class="circle-rating__circle-bg" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"/>
+                            <path class="circle-rating__circle" :stroke-dasharray="item.rating + ', 100'" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"/>
+                        </svg>
+                        <img class="circle-rating__logo" :src="item.icon" :alt="item.title">
+                    </div>
 
-                        <div class="offer-item__content">
-                            <h3 class="offer-item__ttl">{{item.title}}</h3>
-                            <p>{{item.short_desc}}</p>
-                        </div>
-                    </NuxtLink>
-                </div>
+                    <div class="offer-item__content">
+                        <h3 class="offer-item__ttl">{{item.title}}</h3>
+                        <p>{{item.short_desc}}</p>
+                    </div>
+                </NuxtLink>
             </div>
         </div>
-    </section>
+    </div>
+</section>
 </template>
 
 <script>
@@ -49,7 +47,7 @@
 .best-offer {
     --offer-gutter: 14px;
     --offer-width: 270px;
-    margin-bottom: 41px;
+    margin-bottom: 27px;
     color: var(--theme-cr-txt-alt);
 
     @media (min-width: 768px) {
@@ -58,7 +56,7 @@
 
     @media (min-width: 992px) {
         --offer-width: 25%;
-        margin-bottom: 70px;
+        margin-bottom: 50px;
     }
 }
 
@@ -81,6 +79,7 @@
         margin-left: calc(var(--offer-gutter) / 2);
         margin-right: calc(var(--offer-gutter) / 2);
         flex-shrink: 0;
+        margin-bottom: var(--offer-gutter);
     }
 }
 
@@ -104,17 +103,6 @@
     .circle-rating {
         margin-right: 10px;
     }
-}
-
-.circle-rating__logo {
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
-    z-index: 1;
-    border-radius: 50%;
-    width: 62px;
-    height: 62px;
 }
 
 .offer-item__content {

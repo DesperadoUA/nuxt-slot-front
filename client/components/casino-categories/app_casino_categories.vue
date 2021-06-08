@@ -1,93 +1,81 @@
 <template>
-  <div class="casino-categories">
+<div class="casino-categories">
     <div class="container">
-      <div class="casino-categories__container">
-        <div class="casino-group">
-          <h3 class="casino-group__ttl">Самый высокий рейтинг</h3>
-          <NuxtLink  :to="item.permalink"
-                     v-for="(item, index) in value.top_rating_casino"
-                     :key="index" class="casino-group-item">
-            <div class="circle-rating">
-              <svg viewBox="0 0 36 36" class="circle-rating__chart" :style="item | classRating">
-                <path class="circle-rating__circle-bg"
-                      d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"/>
-                <!-- значение рейтинга - 1ый параметр в атрибуте stroke-dasharray -->
-                <path class="circle-rating__circle" :stroke-dasharray="item.rating + ', 100'"
-                      d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"/>
-              </svg>
-              <picture>
-                <img class="circle-rating__logo" :src="item.icon" :alt="item.title">
-              </picture>
+        <div class="casino-categories__container">
+            <div class="casino-group">
+                <h3 class="casino-group__ttl">Самый высокий рейтинг</h3>
+                <NuxtLink :to="item.permalink"
+                          v-for="(item, index) in value.top_rating_casino"
+                          :key="index" class="casino-group-item">
+                    <div class="circle-rating">
+                        <svg viewBox="0 0 36 36" class="circle-rating__chart" :style="item | classRating">
+                            <path class="circle-rating__circle-bg" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"/>
+                            <path class="circle-rating__circle" :stroke-dasharray="item.rating + ', 100'" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"/>
+                        </svg>
+                        <picture>
+                            <img class="circle-rating__logo" :src="item.icon" :alt="item.title">
+                        </picture>
+                    </div>
+
+                    <div class="casino-group-item__content">
+                        <div class="casino-group-item__name">{{ item.title }}</div>
+                        <div class="casino-group-item__rating">Рейтинг: <b>{{ item.rating }}</b></div>
+                        <svg class="casino-group-item__arrow" width="9" height="14" viewBox="0 0 9 14" fill="none"
+                             xmlns="http://www.w3.org/2000/svg">
+                            <path d="M1 1L7 7L1 13" stroke="white" stroke-width="2" stroke-linecap="round"/>
+                        </svg>
+                    </div>
+                </NuxtLink>
             </div>
 
-            <div class="casino-group-item__content">
-              <div class="casino-group-item__name">{{item.title}}</div>
-              <div class="casino-group-item__rating">Рейтинг: <b>{{item.rating}}</b></div>
-              <svg class="casino-group-item__arrow" width="9" height="14" viewBox="0 0 9 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M1 1L7 7L1 13" stroke="white" stroke-width="2" stroke-linecap="round"/>
-              </svg>
+            <div class="casino-group">
+                <h3 class="casino-group__ttl">Новые казино</h3>
+                <NuxtLink :to="item.permalink"
+                          v-for="(item, index) in value.new_casino"
+                          :key="index" class="casino-group-item">
+                    <div class="circle-rating">
+                        <svg viewBox="0 0 36 36" class="circle-rating__chart" :style="item | classRating">
+                            <path class="circle-rating__circle-bg" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"/>
+                            <path class="circle-rating__circle" :stroke-dasharray="item.rating + ', 100'" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"/>
+                        </svg>
+                        <img class="circle-rating__logo" :src="item.icon" :alt="item.title">
+                    </div>
+
+                    <div class="casino-group-item__content">
+                        <div class="casino-group-item__name">{{ item.title }}</div>
+                        <div class="casino-group-item__rating">Рейтинг: <b>{{ item.rating }}</b></div>
+                        <svg class="casino-group-item__arrow" width="9" height="14" viewBox="0 0 9 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M1 1L7 7L1 13" stroke="white" stroke-width="2" stroke-linecap="round"/>
+                        </svg>
+                    </div>
+                </NuxtLink>
             </div>
-          </NuxtLink>
+
+            <div class="casino-group">
+                <h3 class="casino-group__ttl">Популярные казино</h3>
+                <NuxtLink :to="item.permalink"
+                          v-for="(item, index) in value.popular_casino"
+                          :key="index" class="casino-group-item">
+                    <div class="circle-rating">
+                        <svg viewBox="0 0 36 36" class="circle-rating__chart" :style="item | classRating">
+                            <path class="circle-rating__circle-bg" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"/>
+                            <path class="circle-rating__circle" :stroke-dasharray="item.rating + ', 100'" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"/>
+                        </svg>
+                        <img class="circle-rating__logo" :src="item.icon" :alt="item.title">
+                    </div>
+
+                    <div class="casino-group-item__content">
+                        <div class="casino-group-item__name">{{ item.title }}</div>
+                        <div class="casino-group-item__rating">Рейтинг: <b>{{ item.rating }}</b></div>
+                        <svg class="casino-group-item__arrow" width="9" height="14" viewBox="0 0 9 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M1 1L7 7L1 13" stroke="white" stroke-width="2" stroke-linecap="round"/>
+                        </svg>
+                    </div>
+                </NuxtLink>
+            </div>
         </div>
-
-        <div class="casino-group">
-          <h3 class="casino-group__ttl">Новые казино</h3>
-          <NuxtLink  :to="item.permalink"
-                     v-for="(item, index) in value.new_casino"
-                     :key="index" class="casino-group-item">
-            <div class="circle-rating">
-              <svg viewBox="0 0 36 36" class="circle-rating__chart" :style="item | classRating">
-                <path class="circle-rating__circle-bg"
-                      d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"/>
-                <!-- значение рейтинга - 1ый параметр в атрибуте stroke-dasharray -->
-                <path class="circle-rating__circle" :stroke-dasharray="item.rating + ', 100'"
-                      d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"/>
-              </svg>
-              <picture>
-                <img class="circle-rating__logo" :src="item.icon" :alt="item.title">
-              </picture>
-            </div>
-
-            <div class="casino-group-item__content">
-              <div class="casino-group-item__name">{{item.title}}</div>
-              <div class="casino-group-item__rating">Рейтинг: <b>{{item.rating}}</b></div>
-              <svg class="casino-group-item__arrow" width="9" height="14" viewBox="0 0 9 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M1 1L7 7L1 13" stroke="white" stroke-width="2" stroke-linecap="round"/>
-              </svg>
-            </div>
-          </NuxtLink>
-        </div>
-
-        <div class="casino-group">
-          <h3 class="casino-group__ttl">Популярные казино</h3>
-          <NuxtLink  :to="item.permalink"
-                     v-for="(item, index) in value.popular_casino"
-                     :key="index" class="casino-group-item">
-            <div class="circle-rating">
-              <svg viewBox="0 0 36 36" class="circle-rating__chart" :style="item | classRating">
-                <path  class="circle-rating__circle-bg"
-                      d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"/>
-                <!-- значение рейтинга - 1ый параметр в атрибуте stroke-dasharray -->
-                <path  class="circle-rating__circle" :stroke-dasharray="item.rating + ', 100'"
-                      d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"/>
-              </svg>
-              <picture>
-                <img class="circle-rating__logo" :src="item.icon" :alt="item.title">
-              </picture>
-            </div>
-
-            <div class="casino-group-item__content">
-              <div class="casino-group-item__name">{{item.title}}</div>
-              <div class="casino-group-item__rating">Рейтинг: <b>{{item.rating}}</b></div>
-              <svg class="casino-group-item__arrow" width="9" height="14" viewBox="0 0 9 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M1 1L7 7L1 13" stroke="white" stroke-width="2" stroke-linecap="round"/>
-              </svg>
-            </div>
-          </NuxtLink>
-        </div>
-      </div>
     </div>
-  </div>
+</div>
 </template>
 
 <script>
@@ -137,46 +125,46 @@
 </script>
 
 <style lang="scss" scoped>
-  .casino-categories {
+.casino-categories {
     --casino-categories-gutters: 45px;
     --casino-categories-width: 388px;
     margin-bottom: 25px;
-  }
+}
 
-  .casino-categories__container {
+.casino-categories__container {
     display: flex;
     flex-wrap: wrap;
     margin-left: calc(var(--casino-categories-gutters) / -2);
     margin-right: calc(var(--casino-categories-gutters) / -2);
 
     .casino-group {
-      width: calc(var(--casino-categories-width) - var(--casino-categories-gutters));
-      flex-basis: calc(var(--casino-categories-width) - var(--casino-categories-gutters));
-      margin-left: calc(var(--casino-categories-gutters) / 2);
-      margin-right: calc(var(--casino-categories-gutters) / 2);
-      flex-shrink: 0;
+        width: calc(var(--casino-categories-width) - var(--casino-categories-gutters));
+        flex-basis: calc(var(--casino-categories-width) - var(--casino-categories-gutters));
+        margin-left: calc(var(--casino-categories-gutters) / 2);
+        margin-right: calc(var(--casino-categories-gutters) / 2);
+        flex-shrink: 0;
     }
-  }
+}
 
-  .casino-group {
+.casino-group {
     color: #fff;
     background: rgba(#000, .2);
     border: 1px solid rgba(#fff, .1);
     border-radius: 14px;
-    padding: 24px 7px 8px;
+    padding: 24px 7px 0;
     margin-bottom: 30px;
-  }
+}
 
-  .casino-group__ttl {
+.casino-group__ttl {
     font-size: 18px;
     line-height: 1.833;
     font-weight: 700;
     text-transform: uppercase;
     text-align: center;
     margin-bottom: 27px;
-  }
+}
 
-  .casino-group-item {
+.casino-group-item {
     background-color: rgba(#fff, .1);
     border-radius: 10px;
     padding: 6px;
@@ -189,30 +177,30 @@
     text-decoration: none;
 
     &:not(:last-child) {
-      margin-bottom: 8px;
+        margin-bottom: 8px;
     }
 
     @media (min-width: 992px) {
-      &:hover {
-        background-color: rgba(#000, .1);
-      }
+        &:hover {
+            background-color: rgba(#000, .1);
+        }
     }
 
     .circle-rating {
-      margin-right: 16px;
-      margin-bottom: 0;
+        margin-right: 16px;
+        margin-bottom: 0;
     }
-  }
+}
 
-  .casino-group-item__arrow {
+.casino-group-item__arrow {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
     right: 16px;
-  }
+}
 
-  .casino-group-item__name {
+.casino-group-item__name {
     line-height: 1.643;
     font-weight: 700;
-  }
+}
 </style>

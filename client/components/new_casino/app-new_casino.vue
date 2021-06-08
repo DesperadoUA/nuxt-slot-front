@@ -1,41 +1,38 @@
 <template>
-  <div class="slots">
-    <div class="container">
-        <div class="slots__heading">
-            <h2 class="slots__ttl">Новые казино</h2>
-           <NuxtLink no-prefetch to="/reviews" class="link-primary">Все казино</NuxtLink>
-        </div>
+    <div class="slots">
+        <div class="container">
+            <div class="slots__heading">
+                <h2 class="slots__ttl">Новые казино</h2>
+                <NuxtLink no-prefetch to="/reviews" class="link-primary">Все казино</NuxtLink>
+            </div>
 
-        <div class="slots__container">
-            <NuxtLink no-prefetch :to="item.permalink"  
-            class="slot-item slot-item--gradient"
-                        v-for="(item, index) in value" 
-                        :key="index">
-                        <div class="slot-item__rating">
-                    <div class="circle-rating">
-                        <svg viewBox="0 0 36 36" class="circle-rating__chart" :style="item |classRating">
-                            <path class="circle-rating__circle-bg" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"/>
-                            <!-- значение рейтинга - 1ый параметр в атрибуте stroke-dasharray -->
-                            <path class="circle-rating__circle" :stroke-dasharray="item.rating + ', 100'" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"/>
-                        </svg>
-                        <picture>
+            <div class="slots__container">
+                <NuxtLink no-prefetch :to="item.permalink"
+                          class="slot-item slot-item--gradient"
+                          v-for="(item, index) in value"
+                          :key="index">
+                    <div class="slot-item__rating">
+                        <div class="circle-rating">
+                            <svg viewBox="0 0 36 36" class="circle-rating__chart" :style="item |classRating">
+                                <path class="circle-rating__circle-bg" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"/>
+                                <path class="circle-rating__circle" :stroke-dasharray="item.rating + ', 100'" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"/>
+                            </svg>
                             <img class="circle-rating__logo" :src="item.icon" alt="">
-                        </picture>
+                        </div>
+                        <span class="slot-item__casino-name">{{ item.title }}</span>
                     </div>
-                    <span class="slot-item__casino-name">{{item.title}}</span>
-                </div>
 
-                <div class="slot-item__content">
-                    Рейтинг <strong>{{item.rating}}</strong>
-                </div>
+                    <div class="slot-item__content">
+                        Рейтинг <strong>{{ item.rating }}</strong>
+                    </div>
 
-                <div class="slot-item__btns">
-                    <button class="slot-item__btn --blue">Перейти</button>
-                </div>
-              </NuxtLink>
+                    <div class="slot-item__btns">
+                        <button class="slot-item__btn --blue">Перейти</button>
+                    </div>
+                </NuxtLink>
+            </div>
         </div>
     </div>
-</div>
 </template>
 
 <script>

@@ -1,22 +1,22 @@
 <template>
-    <div class="container">
-        <div class="blog">
+<div class="container">
+    <div class="blog">
         <div class="blog__container">
-                <NuxtLink :to="item.permalink" class="blog-item" v-for="(item, index) in currentPosts" :key="index">
-                    <span class="blog-item__media">
-                            <img :src="item.thumbnail" alt="">
-                    </span>
-                    <span class="blog-item__caption">{{item.title}}</span>
-                </NuxtLink>
-        </div>
-        </div>
-        <div class="casinos__cta casino-card__more">
-                <button no-prefetch v-if="value.length > (numberPostOnQuery*postCurrentPage)"
-                        class="btn-primary"
-                        @click="postShowMore"
-                >Показать больше</button>
+            <NuxtLink :to="item.permalink" class="blog-item" v-for="(item, index) in currentPosts" :key="index">
+                <span class="blog-item__media">
+                    <img :src="item.thumbnail" alt="">
+                </span>
+                <span class="blog-item__caption">{{item.title}}</span>
+            </NuxtLink>
         </div>
     </div>
+    <div class="items-more casino-card__more">
+        <button no-prefetch v-if="value.length > (numberPostOnQuery*postCurrentPage)"
+                class="btn-primary"
+                @click="postShowMore"
+        >Показать больше</button>
+    </div>
+</div>
 </template>
 
 <script>
@@ -63,5 +63,4 @@
 </script>
 
 <style lang="scss" scoped>
-
 </style>

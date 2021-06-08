@@ -1,22 +1,22 @@
 <template>
-  <footer class="footer">
+<footer class="footer">
     <div class="partners-logos">
-      <div class="container" v-if="changeMenu !== null">
-        <ul class="partners-logos__list">
-          <li class="partners-logos__item" v-for="(item, index) in changeMenu" :key="index">
-            <NuxtLink no-prefetch :to="item.value_1"> 
-               <img :src="item.src" loading="lazy">
-            </NuxtLink>
-          </li>
-        </ul>
-      </div>
+        <div class="container" v-if="changeMenu !== null">
+            <ul class="partners-logos__list">
+                <li class="partners-logos__item" v-for="(item, index) in changeMenu" :key="index">
+                    <NuxtLink no-prefetch :to="item.value_1">
+                        <img :src="item.src" loading="lazy">
+                    </NuxtLink>
+                </li>
+            </ul>
+        </div>
     </div>
-    <div class="footer__copyrights"  v-if="changeText !== null">
-      <div class="container">
-        <p v-html="footer_text"></p>
-      </div>
+    <div class="footer__copyrights" v-if="changeText !== null">
+        <div class="container">
+            <p v-html="footer_text"></p>
+        </div>
     </div>
-  </footer>
+</footer>
 </template>
 
 <script>

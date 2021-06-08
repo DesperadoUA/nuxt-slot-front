@@ -1,36 +1,37 @@
 <template>
-    <div class="container">
+<div class="container">
     <div class="casino-card" v-for="(item, index) in currentPosts" :key="index">
-      <div class="casino-card__logo">
-        <img :src="item.thumbnail" :alt="item.title">
-      </div>
-      <div class="casino-card__rating">
-        <div class="circle-rating">
-          <svg viewBox="0 0 36 36" class="circle-rating__chart" :style="item | classRating">
-            <path class="circle-rating__circle-bg" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"/>
-            <!-- значение рейтинга - 1ый параметр в атрибуте stroke-dasharray -->
-            <path class="circle-rating__circle" :stroke-dasharray="item.rating + ', 100'" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"/>
-          </svg>
-          <div class="circle-rating__percentage">{{item.rating}}</div>
+        <div class="casino-card__logo">
+            <img :src="item.thumbnail" :alt="item.title">
         </div>
-        <span class="casinos-rating__txt">Рейтинг</span>
-      </div>
-       <div class="casino-card__txt" v-html="item.bonus_self"></div>
-      <div class="casino-card__cta">
-        <NuxtLink :to="item.permalink"
-                  no-prefetch
-                  type="button"
-                  class="casino-card__cta btn-tertiary --green" >Обзор</NuxtLink>
-        <button type="button" class="casino-card__cta btn-tertiary">Играть</button>
-      </div>
+        <div class="casino-card__rating">
+            <div class="circle-rating">
+                <svg viewBox="0 0 36 36" class="circle-rating__chart" :style="item | classRating">
+                    <path class="circle-rating__circle-bg" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"/>
+                    <path class="circle-rating__circle" :stroke-dasharray="item.rating + ', 100'" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"/>
+                </svg>
+                <div class="circle-rating__percentage">{{ item.rating }}</div>
+            </div>
+            <span class="casinos-rating__txt">Рейтинг</span>
+        </div>
+        <div class="casino-card__txt" v-html="item.bonus_self"></div>
+        <div class="casino-card__cta">
+            <NuxtLink :to="item.permalink"
+                      no-prefetch
+                      type="button"
+                      class="casino-card__cta btn-tertiary --green">Обзор
+            </NuxtLink>
+            <button type="button" class="casino-card__cta btn-tertiary">Играть</button>
+        </div>
     </div>
-    <div class="casinos__cta casino-card__more">
-            <button no-prefetch v-if="value.length > (numberPostOnQuery*postCurrentPage)"
-                    class="btn-primary"
-                    @click="postShowMore"
-            >Показать больше</button>
+    <div class="items-more casino-card__more">
+        <button no-prefetch v-if="value.length > (numberPostOnQuery*postCurrentPage)"
+                class="btn-primary"
+                @click="postShowMore"
+        >Показать больше
+        </button>
     </div>
-  </div>
+</div>
 </template>
 
 <script>

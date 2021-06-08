@@ -1,37 +1,37 @@
 <template>
-  <section class="reviews" v-if="value.length !== 0"  
-           itemprop="review" 
-           itemscope itemtype="http://schema.org/Review">
-           <div itemprop="itemReviewed" 
-                itemscope 
-                itemtype="https://schema.org/Organization">
-			    <meta itemprop="name" :content="title"/>
-		   </div>
-      <div class="container">
-          <div class="reviews_title" itemprop="name">Отзывы игроков о казино {{title}}</div>
-          <div class="review_item" v-for="(item, index) in currentReviews" :key="index">
-              <div class="review_item_title">
-                  <span itemprop = 'author'>{{item.review_name}}</span>
-                  <span itemprop = 'datePublished'>{{item.review_date}}</span>
-              </div>
-              <div class="review_item_rating">
+    <section class="reviews" v-if="value.length !== 0"
+             itemprop="review"
+             itemscope itemtype="http://schema.org/Review">
+        <div itemprop="itemReviewed"
+             itemscope
+             itemtype="https://schema.org/Organization">
+            <meta itemprop="name" :content="title"/>
+        </div>
+        <div class="container">
+            <div class="reviews_title" itemprop="name">Отзывы игроков о казино {{ title }}</div>
+            <div class="review_item" v-for="(item, index) in currentReviews" :key="index">
+                <div class="review_item_title">
+                    <span itemprop='author'>{{ item.review_name }}</span>
+                    <span itemprop='datePublished'>{{ item.review_date }}</span>
+                </div>
+                <div class="review_item_rating">
                     <div class="casino_item_rating_box">
                         <div class="casino_item_rating_empty"></div>
                         <div class="casino_item_rating_full" v-bind:style="{ width: item.review_rating+'%'}"></div>
                     </div>
                     <div class="revie_item_box_value">
-                        <span class="casino_item_ratin_value">{{item.review_rating|rating}}</span>/10
+                        <span class="casino_item_ratin_value">{{ item.review_rating|rating }}</span>/10
                     </div>
-              </div>
-              <div class="review_item_desc" itemprop='reviewBody'>
-                  {{item.review_text}}
-              </div>
-          </div>
-          <div class="reviews_show_more" v-if="value.length > (numberReviewOnQuery*reviewCurrentPage)">
-              <span class="review_btn_show" @click="reviewShowMore">Показать еще</span>
-          </div>
-      </div>
-  </section>
+                </div>
+                <div class="review_item_desc" itemprop='reviewBody'>
+                    {{ item.review_text }}
+                </div>
+            </div>
+            <div class="reviews_show_more" v-if="value.length > (numberReviewOnQuery*reviewCurrentPage)">
+                <span class="review_btn_show" @click="reviewShowMore">Показать еще</span>
+            </div>
+        </div>
+    </section>
 </template>
 
 <script>
@@ -61,7 +61,7 @@
         }
     }
 </script>
-<style> 
+<style>
 .casino_item_ratin_value {
     font-family: var(--font);
     font-style: normal;
@@ -72,8 +72,8 @@
 }
 .casino_item_rating_full {
     position: absolute;
-    top:0px;
-    left:0px;
+    top:0;
+    left:0;
     height: 100%;
     background: var(--star_full);
 }

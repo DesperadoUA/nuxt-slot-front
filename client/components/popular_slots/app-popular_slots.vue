@@ -7,9 +7,9 @@
         </div>
 
         <div class="slots__container">
-            <NuxtLink class="slot-item" no-prefetch 
-                      :to="item.permalink" 
-                      v-for="(item, index) in value" 
+            <NuxtLink class="slot-item" no-prefetch
+                      :to="item.permalink"
+                      v-for="(item, index) in value"
                       :key="index" >
                 <div class="slot-item__logo">
                     <img :src="item.thumbnail" alt="" />
@@ -48,6 +48,4 @@
     }
 </script>
 
-<style lang="scss">
-
-</style>
+<style lang="scss"></style>
