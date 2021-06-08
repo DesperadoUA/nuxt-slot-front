@@ -93,40 +93,15 @@
 }
 
 .casino-group-item {
-    background-color: rgba(#0B0038, .7);
+    background-color: rgba(#0b0038, .7);
     border: 1px solid rgba(#fff, .1);
-    border-radius: 10px;
-    padding: 6px;
-    position: relative;
-    display: flex;
-    align-items: center;
-    font-size: 14px;
-    line-height: 1.072;
     color: #fff;
-    text-decoration: none;
-    margin-bottom: 8px;
 
     @media (min-width: 992px) {
         &:hover {
             background-color: rgba(#0b0038, .8);
         }
     }
-
-    .circle-rating {
-        margin-right: 16px;
-        margin-bottom: 0;
-    }
 }
 
-.casino-group-item__arrow {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    right: 16px;
-}
-
-.casino-group-item__name {
-    line-height: 1.643;
-    font-weight: 700;
-}
 </style>

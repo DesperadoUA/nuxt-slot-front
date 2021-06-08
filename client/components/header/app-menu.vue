@@ -90,7 +90,7 @@
 
     .active > &,
     .is-active > &,
-    &.active,
+    &.nuxt-link-exact-active,
     &.is-active {
         opacity: 1;
     }

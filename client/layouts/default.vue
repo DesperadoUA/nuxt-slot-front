@@ -20,7 +20,7 @@
 <style lang="scss">
 :root {
     /* container width */
-    --container: 1150px;
+    --container-width: 1150px;
     --container--cms: 960px;
 
     /* Theme color */
@@ -41,6 +41,10 @@
     --base-line-height: 1.6;
     --base-font-family: 'Open Sans', Arial, sans-serif;
     --alt-font-family: 'Roboto', Arial, sans-serif;
+
+    @media (max-width: 767px) {
+        --base-font-size: 15px;
+    }
 
     /* Theme bg-color */
     --theme-bg-1: #f5f8ff;
@@ -162,7 +166,7 @@ Common styles*/
     width: 100%;
     padding-left: var(--side-gutters);
     padding-right: var(--side-gutters);
-    max-width: var(--container);
+    max-width: var(--container-width);
 
     &--cms {
         @extend .container;
@@ -586,6 +590,46 @@ Casino Card*/
 }
 
 /*
+ */
+
+.casino-group-item {
+    background-color: rgba(#fff, .1);
+    border-radius: 10px;
+    padding: 6px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+    line-height: 1.072;
+    color: currentColor;
+    text-decoration: none;
+    margin-bottom: 8px;
+
+    @media (min-width: 992px) {
+        &:hover {
+            background-color: rgba(#000, .1);
+        }
+    }
+
+    .circle-rating {
+        margin-right: 16px;
+        margin-bottom: 0;
+    }
+}
+
+.casino-group-item__arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 16px;
+}
+
+.casino-group-item__name {
+    line-height: 1.643;
+    font-weight: 700;
+}
+
+/*
 Blog */
 
 .blog {
@@ -689,6 +733,7 @@ Casino Detail*/
 
     padding-top: 59px;
     padding-bottom: 17px;
+    margin-top: 45px;
     background-color: #fff;
     display: flow-root;
 }
@@ -822,13 +867,16 @@ Casinos */
 
 .casinos {
     --casino-item-width: 100%;
+    --casino-item-gutter: 0;
 
     @media (min-width: 768px) {
         --casino-item-width: 50%;
+        --casino-item-gutter: 20px;
     }
 
     @media (min-width: 1280px) {
         --casino-item-width: 33.333%;
+        --casino-item-gutter: 46px;
     }
 
     .items-more {
@@ -840,9 +888,14 @@ Casinos */
     display: flex;
     flex-wrap: wrap;
     counter-reset: counter;
-    margin-left: -23px;
-    margin-right: -23px;
+    margin-left: calc(var(--casino-item-gutter) / -2);
+    margin-right: calc(var(--casino-item-gutter) / -2);
     margin-bottom: 16px;
+
+    @media (max-width: 767px) {
+        flex-direction: column;
+        align-items: center;
+    }
 
     &:after {
         content: '';
@@ -851,9 +904,9 @@ Casinos */
 
     .casino-item {
         flex-shrink: 0;
-        flex-basis: calc(var(--casino-item-width) - 46px);
-        margin-left: 23px;
-        margin-right: 23px;
+        flex-basis: calc(var(--casino-item-width) - var(--casino-item-gutter));
+        margin-left: calc(var(--casino-item-gutter) / 2);
+        margin-right: calc(var(--casino-item-gutter) / 2);
         position: relative;
         counter-increment: counter;
 
@@ -867,7 +920,7 @@ Casinos */
             height: 25px;
             background: rgba(#000, .35);
             font-size: 12px;
-            line-height: 24px;
+            line-height: 25px;
             font-weight: 700;
             color: #fff;
             top: 7px;
@@ -891,6 +944,7 @@ Casinos */
 }
 
 .casino-item__logo {
+    background-color: #1c0e27;
     overflow: hidden;
     border-radius: 14px 0 0 0;
     flex-shrink: 0;
@@ -954,6 +1008,7 @@ Casinos */
     margin-bottom: 28px;
 
     .casino-bonus {
+        max-width: calc(50% - 8px);
         flex-basis: calc(50% - 8px);
     }
 }

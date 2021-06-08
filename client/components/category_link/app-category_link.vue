@@ -54,7 +54,7 @@
 .categories__container {
     margin-left: auto;
     margin-right: auto;
-    max-width: calc(var(--container) - var(--side-gutters) * 2);
+    max-width: calc(var(--container-width) - var(--side-gutters) * 2);
     background-color: rgba(#000, .2);
     backdrop-filter: blur(20px);
     border-radius: 14px;

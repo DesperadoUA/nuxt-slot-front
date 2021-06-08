@@ -1,7 +1,7 @@
 <template>
 <section class="intro">
     <div class="container--cms text-center">
-        <h1 class="intro__heading">{{ value.h1 }}</h1>
+        <h1 class="intro__ttl">{{ value.h1 }}</h1>
         <div v-html="value.short_desc"></div>
     </div>
 </section>
@@ -32,7 +32,7 @@
     }
 }
 
-.intro__heading {
+.intro__ttl {
     font-size: 38px;
     line-height: 1.3618;
     margin-bottom: 15px;

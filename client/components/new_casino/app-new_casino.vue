@@ -60,6 +60,7 @@
 
 <style lang="scss">
 .slots {
+    --slots-width: 269px;
     --slots-gutter: 14px;
     background-color: var(--theme-bg-1);
     padding-bottom: 15px;
@@ -72,24 +73,42 @@
 .slots__heading {
     display: flex;
     align-items: flex-end;
-    justify-content: space-between;
+    justify-content: center;
     margin-bottom: 26px;
+
+    @media (min-width: 768px) {
+        justify-content: space-between;
+    }
+
+    .link-primary {
+        @media (max-width: 767px) {
+            display: none;
+        }
+    }
 }
 
 .slots__ttl {
-    font-size: 28px;
+    font-size: 20px;
     line-height: 1.358;
     font-weight: 700;
     margin-bottom: 0;
+
+    @media (min-width: 992px) {
+        font-size: 28px;
+    }
 }
 
 .slots__container {
+    overflow-x: auto;
     display: flex;
-    flex-wrap: wrap;
     justify-content: space-between;
     margin-left: calc(var(--slots-gutter) / -2);
     margin-right: calc(var(--slots-gutter) / -2);
     margin-bottom: 16px;
+
+    @media (max-width: 1150px) {
+        margin-right: calc(var(--side-gutters) * -1);
+    }
 
     &:after {
         content: '';
@@ -98,7 +117,7 @@
 
     .slot-item {
         flex-shrink: 0;
-        flex-basis: calc(25% - var(--slots-gutter));
+        flex-basis: var(--slots-width);
         margin-left: calc(var(--slots-gutter) / 2);
         margin-right: calc(var(--slots-gutter) / 2);
         position: relative;
@@ -107,8 +126,8 @@
 
 .slot-item {
     background-color: #fff;
+    width: var(--slots-width);
     min-height: 260px;
-    max-width: 270px;
     border-radius: 10px;
     margin-bottom: 30px;
     display: flex;
