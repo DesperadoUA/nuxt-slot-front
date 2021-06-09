@@ -956,7 +956,6 @@ Casinos */
     width: 112px;
     border-radius: 0 14px 14px 0;
     background-color: #1c0e27;
-    backdrop-filter: blur(10px);
     display: flex;
     flex-direction: column;
     align-items: center;

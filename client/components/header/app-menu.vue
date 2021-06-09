@@ -1,4 +1,5 @@
 <template>
+<!--    для работы мобильного меню нужно добавлять класс "is-menu-open" на div.main-nav при клике-->
     <div class="main-nav">
         <nav class="mobile-menu">
             <ul class="main-nav__list">
@@ -49,7 +50,8 @@
 .is-menu-open {
     .logo,
     .search,
-    .main > * {
+    & ~ .main,
+    & ~ .footer {
         filter: blur(24px);
     }
 }
@@ -78,10 +80,16 @@
             margin-bottom: 26px;
         }
 
-        &:hover {
-            .main-nav__drop {
-                opacity: 1;
-                visibility: visible;
+        @media (min-width: 992px) {
+            &:hover {
+                .main-nav__link {
+                    opacity: 1;
+                }
+
+                .main-nav__drop {
+                    opacity: 1;
+                    visibility: visible;
+                }
             }
         }
 
@@ -165,7 +173,7 @@
 }
 
 .navbar__btn {
-    position: absolute;
+    position: fixed;
     top: 0;
     right: 0;
     width: 92px;
@@ -251,17 +259,13 @@
         left: 100%;
         height: 100vh;
         width: 100vw;
-        background: rgba(#281c4b, .8);
-        padding: 124px 53px 30px;
-        transform: translateX(100%);
+        background: rgba(#281c4b, .98);
+        padding: 132px 53px 30px;
         display: none;
         flex-direction: column;
 
-        .is-modal-open & {
-            display: flex;
-        }
-
         .is-menu-open & {
+            display: flex;
             transform: translateX(-100%);
         }
     }
