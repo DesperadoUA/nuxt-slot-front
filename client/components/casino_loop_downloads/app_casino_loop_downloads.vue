@@ -69,7 +69,7 @@
                 </div>
             </div>
         </div>
-        <div class="casinos__cta">
+        <div class="items-more">
             <button no-prefetch v-if="value.length > (numberPostOnQuery*postCurrentPage)"
                     class="btn-primary"
                     @click="postShowMore"

@@ -1,6 +1,6 @@
 <template>
-    <div class="main-nav mobile-menu">
-        <nav>
+    <div class="main-nav">
+        <nav class="mobile-menu">
             <ul class="main-nav__list">
                 <li v-for="(item, index) in settings"
                   :key="index">
@@ -8,10 +8,20 @@
                         <img :src="item.src"  class="main-nav__icon"/>
                         {{item.value_2}}
                     </NuxtLink>
+
+                    <ul class="main-nav__drop">
+                        <li><a href="">Новости</a></li>
+                        <li><a href="">Блог</a></li>
+                        <li><a href="">Интервью</a></li>
+                    </ul>
                 </li>
             </ul>
         </nav>
-        <div class="navbar__btn js--menu-trigger" aria-expanded="false" aria-label="Menu Button" role="button">
+
+        <div class="navbar__btn"
+             aria-expanded="false"
+             aria-label="Menu Button"
+             role="button">
             <span class="bar"></span>
         </div>
     </div>
@@ -61,9 +71,18 @@
         flex-wrap: wrap;
     }
 
-    li {
+    > li {
+        position: relative;
+
         @media (max-width: 991px) {
             margin-bottom: 26px;
+        }
+
+        &:hover {
+            .main-nav__drop {
+                opacity: 1;
+                visibility: visible;
+            }
         }
 
         &:not(:first-child) {
@@ -112,59 +131,113 @@
     }
 }
 
+.main-nav__drop {
+    position: absolute;
+    min-width: 160px;
+    top: 100%;
+    left: 0;
+    background-color: rgba(#fff, .1);
+    border-radius: 8px;
+    padding: 27px 20px 13px 23px;
+    z-index: 999;
+    transition: var(--transition-default);
+    opacity: 0;
+    visibility: hidden;
+
+    > li {
+        text-transform: uppercase;
+        font-weight: 700;
+        font-size: 12px;
+        line-height: 1.333;
+        margin-bottom: 16px;
+    }
+
+    a {
+        color: rgba(#fff, .7);
+        text-decoration: none;
+
+        @media (min-width: 992px) {
+            &:hover {
+                color: #fff;
+            }
+        }
+    }
+}
+
 .navbar__btn {
-    position: relative;
-    width: 39px;
-    height: 39px;
-    border-radius: 50%;
-    background-color: var(--btn-primary);
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 92px;
+    height: 80px;
     border: 0;
     cursor: pointer;
     z-index: 1002;
     display: none;
-    align-items: center;
-    justify-content: center;
 
     @media (max-width: 991px) {
         display: flex;
     }
 
-    .bar {
-        transition: var(--transition-default);
-        position: relative;
+    .bar:before,
+    .bar:after,
+    &:after,
+    &:before {
+        content: '';
+        list-style: none;
+        position: absolute;
         background-color: #fff;
-        background-clip: padding-box;
-        border-radius: 50%;
-        width: 6px;
-        height: 6px;
+        margin-left: auto;
+        margin-right: auto;
+        width: 28px;
+        height: 2px;
+        transform: translateY(-50%);
+        transition: .9s;
+    }
 
-        .is-menu-open & {
-            transform: rotate(-90deg);
-        }
+    &:before {
+        top: 36.25%;
+    }
 
-        &:before {
-            left: 100%;
-            margin-left: 4px;
-        }
+    &:after {
+        top: 50%;
+    }
 
-        &:after {
-            right: 100%;
-            margin-right: 4px;
-        }
+    .bar:before,
+    .bar:after {
+        width: 14px;
+        top: 63.75%;
+    }
 
-        &:before,
-        &:after {
-            position: absolute;
-            top: 50%;
-            content: '';
-            transform: rotate(0) translateY(-50%);
-            background-clip: padding-box;
-            background-color: #fff;
-            transform-origin: 0 50%;
-            border-radius: 50%;
-            width: 6px;
-            height: 6px;
-        }
+    &:before,
+    &:after,
+    .bar:before {
+        left: 50%;
+        margin-left: -14px;
+    }
+
+    .bar:after {
+        right: 50%;
+        margin-right: -14px;
+    }
+
+    .is-menu-open &:before {
+        top: 50%;
+        transform: translateY(-50%) rotate(45deg);
+    }
+    .is-menu-open &:after {
+        top: 50%;
+        transform: translateY(-50%) rotate(-45deg);
+    }
+
+    .is-menu-open & .bar:before {
+        left: 0;
+        opacity: 0;
+    }
+
+    .is-menu-open & .bar:after {
+        right: 0;
+        opacity: 0;
     }
 }
 
@@ -180,11 +253,12 @@
         width: 100vw;
         background: rgba(#281c4b, .8);
         padding: 124px 53px 30px;
-        display: flex;
+        transform: translateX(100%);
+        display: none;
         flex-direction: column;
 
         .is-modal-open & {
-            display: none;
+            display: flex;
         }
 
         .is-menu-open & {

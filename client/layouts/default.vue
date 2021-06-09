@@ -105,8 +105,9 @@ a {
 
     &:not([class]) {
         @media (min-width: 992px) {
-            text-decoration: none;
-            color: var(--theme-cr-3);
+            &:hover {
+                text-decoration: none;
+            }
         }
     }
 }
