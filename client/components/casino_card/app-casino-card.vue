@@ -55,7 +55,7 @@
             <div class="casino-card-bonus__wager">{{value.freespins_wagering}}</div>
         </div>
 
-        <button type="button" class="casino-card__cta btn-tertiary">Перейти</button>
+        <button type="button" class="casino-card__cta btn-tertiary" @click="refActivate(value)">Перейти</button>
     </div>
 </div>
 </template>
@@ -74,6 +74,16 @@
                 if(item.rating > 33 && item.rating < 67) return '--cr-rating: #ffc700'
                 if(item.rating > 67) return '--cr-rating: #0f6'
             }
+        },
+        methods: {
+            refActivate(item) {
+                if(item.ref.length !== 0) {
+                    const min = 0
+                    const max = item.ref.length - 1
+                    const random = Math.floor(Math.random() * (max - min + 1)) + min
+                    window.open(item.ref[random], '_blank')
+                }
+            },
         }
     }
 </script>

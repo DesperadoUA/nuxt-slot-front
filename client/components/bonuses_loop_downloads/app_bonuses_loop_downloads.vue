@@ -21,7 +21,7 @@
                       type="button"
                       class="casino-card__cta btn-tertiary --green">Обзор
             </NuxtLink>
-            <button type="button" class="casino-card__cta btn-tertiary">Играть</button>
+            <button type="button" class="casino-card__cta btn-tertiary" @click="refActivate(item)">Играть</button>
         </div>
     </div>
     <div class="items-more casino-card__more">
@@ -43,9 +43,6 @@
                 default: []
             },
         },
-        mounted(){
-            console.log(this.value)
-        },
         data(){
             return {
                 numberPostOnQuery: 10,
@@ -58,9 +55,6 @@
             }
         },
         filters:{
-            rating(item){
-                return Math.trunc(item/10)
-            },
             classRating(item) {
                 if(item.rating < 33) return '--cr-rating: #f00'
                 if(item.rating > 33 && item.rating < 67) return '--cr-rating: #ffc700'
@@ -69,11 +63,12 @@
         },
         methods: {
             refActivate(item) {
+                console.log(item)
                 if(item.ref.length !== 0) {
                     const min = 0
                     const max = item.ref.length - 1
                     const random = Math.floor(Math.random() * (max - min + 1)) + min
-                    window.open(item.ref[random].casino_ref, '_blank')
+                    window.open(item.ref[random], '_blank')
                 }
             },
             postShowMore(){

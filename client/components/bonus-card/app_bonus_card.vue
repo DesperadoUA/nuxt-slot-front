@@ -19,7 +19,7 @@
         <div class="casino-card__txt" v-html="value.bonus_self"></div>
 
         <div class="casino-card__cta">
-            <button type="button" class="casino-card__cta btn-tertiary">Перейти</button>
+            <button type="button" class="casino-card__cta btn-tertiary" @click="refActivate(value)">Перейти</button>
         </div>
     </div>
 </div>
@@ -56,7 +56,7 @@
                     const min = 0
                     const max = item.ref.length - 1
                     const random = Math.floor(Math.random() * (max - min + 1)) + min
-                    window.open(item.ref[random].casino_ref, '_blank')
+                    window.open(item.ref[random], '_blank')
                 }
             },
         }
