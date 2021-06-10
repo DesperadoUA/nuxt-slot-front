@@ -69,9 +69,12 @@
 
 .best-offer__list {
     display: flex;
-    flex-wrap: wrap;
     margin-left: calc(var(--offer-gutter) / -2);
     margin-right: calc(var(--offer-gutter) / -2);
+
+    @media (min-width: 768px) and (max-width: 991px) {
+        flex-wrap: wrap;
+    }
 
     .offer-item {
         width: calc(var(--offer-width) - var(--offer-gutter));
@@ -102,6 +105,7 @@
 
     .circle-rating {
         margin-right: 10px;
+        margin-bottom: 0;
     }
 }
 

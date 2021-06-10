@@ -34,9 +34,6 @@
                 default: {}
             },
         },
-        mounted(){
-            console.log(this.value)
-        },
         data(){
             return {
                 numberPostOnQuery: 10,
