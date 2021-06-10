@@ -19,6 +19,12 @@
 </script>
 
 <style lang="scss">
+.search {
+    @media (max-width: 991px) {
+        display: none;
+    }
+}
+
 .search__cta {
     color: #fff;
     margin-right: 33px;

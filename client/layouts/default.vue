@@ -105,8 +105,9 @@ a {
 
     &:not([class]) {
         @media (min-width: 992px) {
-            text-decoration: none;
-            color: var(--theme-cr-3);
+            &:hover {
+                text-decoration: none;
+            }
         }
     }
 }
@@ -955,7 +956,6 @@ Casinos */
     width: 112px;
     border-radius: 0 14px 14px 0;
     background-color: #1c0e27;
-    backdrop-filter: blur(10px);
     display: flex;
     flex-direction: column;
     align-items: center;
