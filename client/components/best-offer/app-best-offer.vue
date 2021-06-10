@@ -72,6 +72,11 @@
     margin-left: calc(var(--offer-gutter) / -2);
     margin-right: calc(var(--offer-gutter) / -2);
 
+    @media (max-width: 767px) {
+        overflow-x: scroll;
+        -webkit-overflow-scrolling: touch;
+    }
+
     @media (min-width: 768px) and (max-width: 991px) {
         flex-wrap: wrap;
     }
