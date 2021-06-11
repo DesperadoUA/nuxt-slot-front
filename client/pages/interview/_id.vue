@@ -1,9 +1,9 @@
 <template>
   <div class="blog-single">
     <div class="container blog-single__container">
-      <app_blog_single :value="data.body" />
-      <app_last_article :title="'Останні новини'"
-                        :value="data.body.posts" />
+        <app_blog_single :value="data.body" />
+        <app_last_article :title="'останні інтерв\'ю'"
+                          :value="data.body.posts" />
     </div>
   </div>
 </template>
@@ -13,27 +13,27 @@
     import app_blog_single from '../../components/blog_single/app_blog_single'
     import app_last_article from '../../components/last_article/app_last_article'
     export default {
-        name: "app_news_single",
+        name: "app_interview_single",
         components: {app_blog_single, app_last_article},
         data: () => {
             return {
-                data: {},
+               data: {},
             }
         },
         async asyncData({route, error}) {
             const request = new DAL_Builder()
-            const response = await request.postType('news')
+            const response = await request.postType('interview')
                                           .url(route.params.id)
                                           .get()
-            if(response.data.confirm === 'error') {
-                error({ statusCode: 404, message: 'Post not found' })
-            }
-            else {
-                const body = response.data.body
-                const data = {body}
-                return {data}
-            }
-        },
+             if(response.data.confirm === 'error') {
+                 error({ statusCode: 404, message: 'Post not found' })
+             }
+             else {
+                 const body = response.data.body
+                 const data = {body}
+                 return {data}
+              }
+           },
         head() {
             return {
                 title: this.data.body.meta_title,
@@ -48,7 +48,7 @@
                     { rel: 'canonical', href: this.data.body.currentUrl}
                 ]
             }
-        }
+    }
     }
 </script>
 

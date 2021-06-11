@@ -21,12 +21,12 @@
             }
         },
         components: {app_intro, app_content, app_casino_loop_downloads, app_category_link},
-        async asyncData({store, route}) {
+        async asyncData({store, route, error}) {
             const request = new DAL_Builder()
             const response = await request.postType('category')
                                           .url('licensed-casino')
                                           .get()
-            if(response.data.status === '404') {
+            if(response.data.confirm === 'error') {
                 error({ statusCode: 404, message: 'Post not found' })
             }
             else {

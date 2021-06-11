@@ -42,11 +42,23 @@
             activate(item) {
                 item.status === 'close' ? item.status = 'open' : item.status = 'close'
             }
+        },
+        mounted() {
+            const faq = []
+            this.value = this.value.forEach(element => {
+                faq.push({
+                    status: 'close',
+                    answer: element.value_2,
+                    question: element.value_1
+                })
+            })
+            this.value = faq
         }
     }
 </script>
 <style>
 .faq {
+    background-color: var(--theme-bg-1);
     padding: 30px 0;
 }
 .faq_title {
@@ -56,7 +68,7 @@
     color: var(--middle-black);
 }
 .faq_question {
-    background: var(--blue-gradient);
+    background: red;
     border: 1px solid var(--blue);
     box-sizing: border-box;
     border-radius: 4px;

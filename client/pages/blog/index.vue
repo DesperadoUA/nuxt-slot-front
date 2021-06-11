@@ -20,7 +20,7 @@
             const response = await request.postType('pages')
                                           .url('blog')
                                           .get()
-            if(response.data.status === '404') {
+            if(response.data.confirm === 'error') {
                 error({ statusCode: 404, message: 'Post not found' })
             }
             else {

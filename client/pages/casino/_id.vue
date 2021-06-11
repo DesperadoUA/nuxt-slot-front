@@ -5,6 +5,8 @@
     <app_casino_detail :value="data.body" />
     <app_casino_slots :value="data.body.slots" :title="data.body.title" />
     <app_content :value="data.body.content"  />
+    <app_faq :title="data.body.faq_title"
+             :value="data.body.faq" />
   </div>
 </template>
 
@@ -15,9 +17,10 @@
     import app_casino_card from '../../components/casino_card/app-casino-card'
     import app_casino_detail from '../../components/casino-detail/app-casino-detail'
     import app_casino_slots from '../../components/casino-slots/app-casino-slots'
+    import app_faq from '../../components/faq/app_faq'
     export default {
         name: "app_single_casino",
-        components: {app_content, app_intro, app_casino_card, app_casino_detail, app_casino_slots},
+        components: {app_content, app_intro, app_casino_card, app_casino_detail, app_casino_slots, app_faq},
         data: () => {
             return {
                data: {},
@@ -28,7 +31,7 @@
             const response = await request.postType('casino')
                                           .url(route.params.id)
                                           .get()
-             if(response.data.status === '404') {
+             if(response.data.confirm === 'error') {
                  error({ statusCode: 404, message: 'Post not found' })
              }
              else {
