@@ -214,7 +214,7 @@ Common styles*/
     background-repeat: no-repeat;
 
     @media (min-width: 992px) {
-        padding-top: 146px;
+        padding-top: 134px;
     }
 }
 

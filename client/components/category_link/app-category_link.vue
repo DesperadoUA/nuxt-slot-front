@@ -49,18 +49,19 @@
     padding-left: var(--side-gutters);
     padding-right: var(--side-gutters);
     margin-bottom: 25px;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
 }
 
 .categories__container {
     margin-left: auto;
     margin-right: auto;
-    max-width: calc(var(--container-width) - var(--side-gutters) * 2);
+    width: calc(var(--container-width) - var(--side-gutters) * 2);
     background-color: rgba(#000, .2);
     backdrop-filter: blur(20px);
     border-radius: 14px;
     display: flex;
     justify-content: space-between;
-    flex-wrap: wrap;
 }
 
 .categories__link {
