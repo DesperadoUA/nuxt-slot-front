@@ -20,13 +20,14 @@
 <style lang="scss">
 :root {
     /* container width */
-    --container-width: 1150px;
+    --container-width: 1152px;
     --container--cms: 960px;
 
     /* Theme color */
     --theme-cr-1: #302552;
     --theme-cr-2: #281c4c;
     --theme-cr-3: #1f4fad;
+    --theme-cr-4: #281c4b;
     --theme-cr-txt: var(--theme-cr-2);
     --theme-cr-txt-alt: #fff;
     --cr-success: #00ff66;
@@ -42,8 +43,11 @@
     --base-font-family: 'Open Sans', Arial, sans-serif;
     --alt-font-family: 'Roboto', Arial, sans-serif;
 
+    --side-gutters: 15px;
+
     @media (max-width: 767px) {
         --base-font-size: 15px;
+        --side-gutters: 8px;
     }
 
     /* Theme bg-color */
@@ -54,9 +58,6 @@
     --bg-main-webp: url(/img/bg-main.webp);
 
     --transition-default: .27s cubic-bezier(0.215, 0.61, 0.355, 1);
-
-    --maxWidth: 1440; /* max screen size for adaptive font mixin */
-    --side-gutters: 15px;
 }
 
 * {
@@ -843,7 +844,7 @@ Casino Detail*/
     margin-bottom: 8px;
     margin-right: 8px;
     min-height: 40px;
-    background: rgba(#281c4b, .08);
+    background-color: rgba(#281c4b, .08);
     border-radius: 6px;
     box-shadow: inset 0 0 0 1px transparent;
     text-decoration: none;
