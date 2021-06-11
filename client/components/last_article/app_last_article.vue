@@ -16,7 +16,7 @@
     export default {
         name: "app_last_article",
         props: {
-            'value': Object,
+            'value': Array,
             'title': String
         },
     }
