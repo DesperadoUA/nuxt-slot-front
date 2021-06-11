@@ -1,7 +1,7 @@
 <template>
     <section class="faq" itemscope itemtype="https://schema.org/FAQPage" v-if="value.length !== 0">
         <div class="container">
-            <div class="faq_title">{{ title }}</div>
+            <h2 class="faq_title">{{ title }}</h2>
         </div>
         <div class="container faq_wrapper">
             <div class='faq_row'
@@ -56,32 +56,36 @@
         }
     }
 </script>
-<style>
+<style lang="scss">
 .faq {
-    background-color: var(--theme-bg-1);
     padding: 30px 0;
+    background-color: var(--theme-bg-1);
 }
 .faq_title {
-    font-family: var(--font);
-    font-size: 35px;
-    padding-bottom: 20px;
-    color: var(--middle-black);
+    font-size: 28px;
+    font-weight: 700;
+    margin-bottom: 11px;
+    color: var(--theme-cr-4);
 }
 .faq_question {
-    background: red;
-    border: 1px solid var(--blue);
-    box-sizing: border-box;
-    border-radius: 4px;
+    transition: var(--transition-default);
+    background-color: var(--faq-cr);
+    border-radius: 10px;
     padding: 5px 75px 5px 25px;
-    margin-top: 15px;
-    font-family: var(--font);
+    margin-top: 2px;
     font-style: normal;
     font-weight: bold;
     line-height: 36px;
-    color: var(--middle-black);
+    color: #fff;
     position: relative;
     cursor: pointer;
     font-size: 16px;
+
+    @media (min-width: 992px) {
+        &:hover {
+            opacity: .85;
+        }
+    }
 }
 .faq_answer {
     color: var(--black);
