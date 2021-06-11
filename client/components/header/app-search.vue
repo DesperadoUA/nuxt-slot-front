@@ -19,11 +19,10 @@
                        </svg>
                    </button>
 
-                   <ul class="search-suggest">
-                       <li><a href="">777 Original</a></li>
-                       <li>777 Original</li>
-                       <li>777 Original</li>
-                       <li>777 Original</li>
+                   <ul class="search-suggest" v-if="posts.length !== 0">
+                       <li v-for="(item, index) in posts" :key="index" @click="goToSearch">
+                         <NuxtLink :to="item.permalink">{{item.title}}</NuxtLink>
+                       </li>
                    </ul>
                </div>
 
@@ -64,8 +63,13 @@
                                               .searchWold(this.searchWord)
                                               .get()
                 if(response.data.confirm !== 'error') {
-                    console.log(response.data.body.posts)
+                   this.posts = response.data.body.posts
                 }
+            },
+            goToSearch(){
+                this.$store.dispatch('common/setShowSearch', !this.$store.getters['common/getShowSearch'])
+                this.posts = []
+                this.searchWord = ''
             }
         }
     }
@@ -122,6 +126,7 @@
     display: flex;
     border-bottom: 2px solid rgba(#fff, .2);
     padding-bottom: 7px;
+    position: relative;
 }
 
 .form-search__field {
@@ -167,6 +172,7 @@
         }
     }
 }
+
 .search-suggest {
     position: absolute;
     top: 100%;
@@ -179,6 +185,7 @@
     font-size: 14px;
     line-height: 1.286;
     font-weight: 600;
+
     li {
         transition: var(--transition-default);
         margin-bottom: 2px;
@@ -186,14 +193,17 @@
         border-radius: 8px;
         padding: 9px 30px 9px 12px;
         position: relative;
+
         @media (min-width: 992px) {
             &:hover {
                 background-color: rgba(#000, .1);
+
                 &:after {
                     opacity: 1;
                 }
             }
         }
+
         &:after {
             transition: var(--transition-default);
             content: '';
@@ -207,6 +217,7 @@
             height: 14px;
         }
     }
+
     a {
         color: currentColor;
         display: block;

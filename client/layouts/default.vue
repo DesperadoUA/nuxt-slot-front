@@ -28,6 +28,7 @@
     --theme-cr-2: #281c4c;
     --theme-cr-3: #1f4fad;
     --theme-cr-4: #281c4b;
+    --faq-cr: #0b0038b3;
     --theme-cr-txt: var(--theme-cr-2);
     --theme-cr-txt-alt: #fff;
     --cr-success: #00ff66;
@@ -213,7 +214,7 @@ Common styles*/
     background-repeat: no-repeat;
 
     @media (min-width: 992px) {
-        padding-top: 146px;
+        padding-top: 134px;
     }
 }
 

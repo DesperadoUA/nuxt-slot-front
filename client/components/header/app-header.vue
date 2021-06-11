@@ -82,8 +82,8 @@
 
     @media (min-width: 992px) {
         position: absolute;
-        padding-top: 39px;
-        padding-bottom: 25px;
+        padding-top: 23px;
+        padding-bottom: 23px;
     }
 }
 
