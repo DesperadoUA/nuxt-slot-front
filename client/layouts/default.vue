@@ -744,14 +744,21 @@ Casino Detail*/
 .detail-row {
     display: flex;
     flex-wrap: wrap;
-    margin-bottom: 9px;
+    margin-bottom: 20px;
+
+    @media (min-width: 768px) {
+        margin-bottom: 9px;
+    }
 }
 
 .detail-row__heading {
-    flex: 0 0 var(--heading-col-width);
-    max-width: var(--heading-col-width);
     margin-bottom: 20px;
     padding-top: 8px;
+
+    @media (min-width: 768px) {
+        flex: 0 0 var(--heading-col-width);
+        max-width: var(--heading-col-width);
+    }
 }
 
 .detail-row__ttl {
@@ -768,11 +775,15 @@ Casino Detail*/
 }
 
 .detail-row__content {
-    width: calc(100% - var(--heading-col-width));
-    margin-left: auto;
     margin-bottom: 12px;
-    display: flex;
-    flex-wrap: wrap;
+    width: 100%;
+
+    @media (min-width: 768px) {
+        display: flex;
+        flex-wrap: wrap;
+        margin-left: auto;
+        width: calc(100% - var(--heading-col-width));
+    }
 }
 
 .detail-list {
@@ -780,9 +791,12 @@ Casino Detail*/
     padding: 0;
     list-style: none;
     width: 100%;
-    display: flex;
-    flex-wrap: wrap;
     line-height: 1.375;
+
+    @media (min-width: 992px) {
+        display: flex;
+        flex-wrap: wrap;
+    }
 
     &.--stack {
         .detail-list__item {
@@ -793,11 +807,14 @@ Casino Detail*/
 }
 
 .detail-list__item {
-    flex: 0 0 43%;
-    max-width: 43%;
     padding-right: 10px;
     display: flex;
     margin-bottom: 12px;
+
+    @media (min-width: 992px) {
+        flex: 0 0 43%;
+        max-width: 43%;
+    }
 }
 
 .detail-list__ttl {

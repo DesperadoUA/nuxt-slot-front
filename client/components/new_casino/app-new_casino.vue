@@ -168,18 +168,25 @@
     flex-direction: column;
     align-items: center;
     margin-bottom: 10px;
+    padding-left: 30px;
+    padding-right: 30px;
 }
 
 .slot-item__logo {
     overflow: hidden;
     border-radius: 10px 10px 0 0;
     margin-bottom: 14px;
+
+    img {
+        width: 100%;
+    }
 }
 
 .slot-item__casino-name {
     font-size: 18px;
     line-height: 1.389;
     font-weight: 700;
+    text-align: center;
 }
 
 .slot-item__content {

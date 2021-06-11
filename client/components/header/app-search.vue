@@ -93,6 +93,14 @@
     fill: currentColor;
 }
 
+@keyframes expand {
+    from {
+        transform: scale(0);
+        opacity: 0;
+        background: #5470B0;
+    }
+}
+
 .search-box {
     top: 0;
     left: 0;
@@ -100,6 +108,7 @@
     position: fixed;
     background-color: #281c4bcc;
     backdrop-filter: blur(24px);
+    animation: expand .4s ease-in-out;
 
     @-moz-document url-prefix() {
         background-color: #281c4bfa;
@@ -185,6 +194,9 @@
     font-size: 14px;
     line-height: 1.286;
     font-weight: 600;
+    max-height: 210px;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
 
     li {
         transition: var(--transition-default);

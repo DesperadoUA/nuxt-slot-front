@@ -88,8 +88,6 @@
     }
 }
 .faq_answer {
-    color: var(--black);
-    box-sizing: border-box;
     font: inherit;
     line-height: 22px;
     vertical-align: baseline;

@@ -163,15 +163,14 @@ table {
     background-color: #fff;
     border-radius: 14px;
     border: 1px solid rgba(#000, .2);
-    min-width: 1000px;
+    display: block;
     width: 100%;
 
-    .icon-cross {
-        color: #ff5f5f;
-    }
-
-    .icon-check {
-        color: var(--btn-secondary);
+    thead,
+    tbody {
+        min-width: 800px;
+        display: table;
+        width: 100%;
     }
 
     thead td,
@@ -186,7 +185,7 @@ table {
 
         &:first-child {
             border-radius: 14px 0 0 0;
-            width:260px;
+            width: 260px;
         }
 
         &:last-child {
@@ -216,9 +215,21 @@ table {
         font-size: 18px;
         padding: 11px 10px 11px 24px;
 
+        &:first-child {
+            width: 260px;
+        }
+
         img {
             vertical-align: middle;
         }
+    }
+
+    .icon-cross {
+        color: #ff5f5f;
+    }
+
+    .icon-check {
+        color: var(--btn-secondary);
     }
 }
 
