@@ -246,7 +246,6 @@ Buttons */
 .btn-primary {
     @extend %btn-general;
     font-size: 16px;
-    border: 1px solid rgba(#fff, .2);
     background-color: rgba(#fff, .1);
     border-radius: 10px;
     font-weight: 700;
