@@ -22,9 +22,11 @@
 <style lang="scss">
 .logo {
     width: 177px;
+    margin-left: 10px;
 
-    @media (min-width: 992px) {
+    @media (min-width: 768px) {
         width: 200px;
+        margin-left: 2px;
     }
 }
 </style>

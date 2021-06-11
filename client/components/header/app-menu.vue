@@ -58,7 +58,7 @@
 .main-nav {
     @media (min-width: 992px) {
         margin-left: auto;
-        margin-right: 81px;
+        margin-right: 47px;
     }
 }
 
@@ -94,7 +94,7 @@
 
         &:not(:first-child) {
             @media (min-width: 992px) {
-                margin-left: 1.783vw;
+                margin-left: 32px;
             }
         }
     }
@@ -107,6 +107,7 @@
     font-weight: 700;
     text-decoration: none;
     display: inline-flex;
+    vertical-align: middle;
     align-items: center;
     text-transform: uppercase;
 
@@ -143,7 +144,7 @@
     min-width: 160px;
     top: 100%;
     left: 0;
-    background-color: rgba(#fff, .1);
+    background-color: #4e3986ea;
     border-radius: 8px;
     padding: 27px 20px 13px 23px;
     z-index: 999;
@@ -184,6 +185,11 @@
 
     @media (max-width: 991px) {
         display: flex;
+    }
+
+    @media (min-width: 768px) and (max-width: 991px) {
+        top: 16px;
+        right: 9px;
     }
 
     .bar:before,

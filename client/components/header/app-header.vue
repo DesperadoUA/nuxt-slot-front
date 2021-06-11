@@ -58,20 +58,31 @@
 .header {
     padding-top: 14px;
     padding-bottom: 14px;
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     max-width: calc(100vw - var(--scrollbar-width));
     z-index: 999;
+    background-color: var(--theme-cr-4);
 
     /*.scrolled & {
         background-color: rgba(#fff, .8);
     }*/
 
+    @media (max-width: 991px) {
+        display: flex;
+        align-items: center;
+        min-height: 80px;
+    }
+
+    @media (min-width: 768px) and (max-width: 991px) {
+        min-height: 112px;
+    }
+
     @media (min-width: 992px) {
         position: absolute;
-        padding-top: 25px;
+        padding-top: 39px;
         padding-bottom: 25px;
     }
 }
