@@ -67,6 +67,7 @@
 </template>
 
 <script>
+import Helper from '~/helpers/helpers.js'
     export default {
         name: "app_slot_loop_card",
         props: {
@@ -95,12 +96,7 @@
         },
          methods: {
             refActivate(item) {
-                if(item.ref.length !== 0) {
-                    const min = 0
-                    const max = item.ref.length - 1
-                    const random = Math.floor(Math.random() * (max - min + 1)) + min
-                    window.open(item.ref[random], '_blank')
-                }
+               Helper.refActivate(item)
             },
             postShowMore(){
                 this.postCurrentPage += 1
