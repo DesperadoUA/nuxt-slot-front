@@ -8,11 +8,11 @@
 </template>
 
 <script>
-    import DAL_Builder from '../../DAL/builder'
-    import app_content from '../../components/content/app-content'
-    import app_intro from '../../components/intro/app-intro'
-    import app_category_link from '../../components/category_link/app-category_link'
-    import app_slot_card from '../../components/slot_loop_card/app_slot_loop_card'
+    import DAL_Builder from '~/DAL/builder'
+    import app_content from '~/components/content/app-content'
+    import app_intro from '~/components/intro/app-intro'
+    import app_category_link from '~/components/category_link/app-category_link'
+    import app_slot_card from '~/components/slot_loop_card/app_slot_loop_card'
 
 export default {
     name: "slots",

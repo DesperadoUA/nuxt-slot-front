@@ -8,11 +8,11 @@
 </template>
 
 <script>
-   import DAL_Builder from '../../DAL/builder'
-   import app_intro from '../../components/intro/app-intro'
-   import app_best_offer from '../../components/best-offer/app-best-offer'
-   import app_bonuses_loop from '../../components/bonuses_loop_downloads/app_bonuses_loop_downloads'
-   import app_content from '../../components/content/app-content'
+   import DAL_Builder from '~/DAL/builder'
+   import app_intro from '~/components/intro/app-intro'
+   import app_best_offer from '~/components/best-offer/app-best-offer'
+   import app_bonuses_loop from '~/components/bonuses_loop_downloads/app_bonuses_loop_downloads'
+   import app_content from '~/components/content/app-content'
 export default {
     name: "app_bonuses",
     data: () => {

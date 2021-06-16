@@ -9,9 +9,10 @@
 </template>
 
 <script>
-    import DAL_Builder from '../../DAL/builder'
-    import app_blog_single from '../../components/blog_single/app_blog_single'
-    import app_last_article from '../../components/last_article/app_last_article'
+    import DAL_Builder from '~/DAL/builder'
+    import Helper from '~/helpers/helpers'
+    import app_blog_single from '~/components/blog_single/app_blog_single'
+    import app_last_article from '~/components/last_article/app_last_article'
     export default {
         name: "app_interview_single",
         components: {app_blog_single, app_last_article},
@@ -31,6 +32,15 @@
              else {
                  const body = response.data.body
                  const data = {body}
+                 let settings = {
+                     url: process.env.BASE_URL + route.path,
+                     title: body.title,
+                     short_desc: body.short_desc,
+                     thumbnail: body.thumbnail
+                 }
+                 body.sharedFB = Helper.sharedFB(settings)
+                 body.sharedTwitter = Helper.sharedTwitter(settings)
+                 body.sharedVK = Helper.sharedVK(settings)
                  return {data}
               }
            },

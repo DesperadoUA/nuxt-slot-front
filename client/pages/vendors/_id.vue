@@ -18,12 +18,12 @@
 </template>
 
 <script>
-    import DAL_Builder from '../../DAL/builder'
-    import app_intro from '../../components/intro/app-intro'
-    import app_vendor_card from '../../components/vendor_card/app_vendor_card'
-    import app_vendor_casino from '../../components/vendor_casino/app_vendor_casino'
-    import app_slot_loop_card from '../../components/slot_loop_card/app_slot_loop_card'
-    import app_heading from '../../components/section-heading/app-section-heading'
+    import DAL_Builder from '~/DAL/builder'
+    import app_intro from '~/components/intro/app-intro'
+    import app_vendor_card from '~/components/vendor_card/app_vendor_card'
+    import app_vendor_casino from '~/components/vendor_casino/app_vendor_casino'
+    import app_slot_loop_card from '~/components/slot_loop_card/app_slot_loop_card'
+    import app_heading from '~/components/section-heading/app-section-heading'
     export default {
         name: "app_single_vendor",
         components: {app_intro, app_vendor_card, app_vendor_casino, app_slot_loop_card, app_heading},
@@ -64,6 +64,6 @@
     }
 </script>
 
-<style scoped>
+<style>
 
 </style>

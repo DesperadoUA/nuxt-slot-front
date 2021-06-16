@@ -7,10 +7,10 @@
 </template>
 
 <script>
-    import DAL_Builder from '../../DAL/builder'
-    import app_content from '../../components/content/app-content'
-    import app_intro from '../../components/intro/app-intro'
-    import app_bonus_card from '../../components/bonus-card/app_bonus_card'
+    import DAL_Builder from '~/DAL/builder'
+    import app_content from '~/components/content/app-content'
+    import app_intro from '~/components/intro/app-intro'
+    import app_bonus_card from '~/components/bonus-card/app_bonus_card'
     export default {
         name: "app_single_casino",
         components: {app_content, app_intro, app_bonus_card},

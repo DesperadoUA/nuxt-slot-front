@@ -6,33 +6,6 @@
            <app_search />
         </div>
     </header>
-  <!--<header>
-    <div class="container header_container">
-      <NuxtLink no-prefetch to="/" >
-        <img :src="options.logo"
-             class="logo"
-             width="107"
-             height="34"
-             >
-      </NuxtLink>
-      <div class="menu">
-           <button class="btn header_btn">Казино Украины</button>
-           <div class="dropdown_menu">
-             <nav class="menu_box">
-               <ul>
-                 <li class="menu_box_item"
-                     v-for="(item, index) in options.menu_link"
-                     :key="index">
-                    <NuxtLink no-prefetch :to="item.permalink" >
-                        {{item.title}}
-                    </NuxtLink>
-                 </li>
-               </ul>
-             </nav>
-           </div>
-      </div>
-    </div>
-  </header>-->
 </template>
 <script>
     import app_logo from './app-logo'

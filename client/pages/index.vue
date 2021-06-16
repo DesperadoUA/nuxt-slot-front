@@ -12,15 +12,15 @@
 </template>
 
 <script>
-   import DAL_Page from '../DAL/static_pages'
-   import app_intro from '../components/intro/app-intro'
-   import app_best_offer from '../components/best-offer/app-best-offer'
-   import app_category_link from '../components/category_link/app-category_link'
-   import app_casino_loop from '../components/casino_loop/app_casino_loop'
-   import app_new_casino from '../components/new_casino/app-new_casino'
-   import app_popular_slots from '../components/popular_slots/app-popular_slots'
-   import app_popular_offers from '../components/popular_offers/app_popular_offers'
-   import app_content from '../components/content/app-content'
+   import DAL_Page from '~/DAL/static_pages'
+   import app_intro from '~/components/intro/app-intro'
+   import app_best_offer from '~/components/best-offer/app-best-offer'
+   import app_category_link from '~/components/category_link/app-category_link'
+   import app_casino_loop from '~/components/casino_loop/app_casino_loop'
+   import app_new_casino from '~/components/new_casino/app-new_casino'
+   import app_popular_slots from '~/components/popular_slots/app-popular_slots'
+   import app_popular_offers from '~/components/popular_offers/app_popular_offers'
+   import app_content from '~/components/content/app-content'
 export default {
     name: "main-page",
     data: () => {

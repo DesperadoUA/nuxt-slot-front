@@ -136,7 +136,6 @@
     flex-wrap: wrap;
     margin-left: calc(var(--casino-categories-gutters) / -2);
     margin-right: calc(var(--casino-categories-gutters) / -2);
-
     .casino-group {
         width: calc(var(--casino-categories-width) - var(--casino-categories-gutters));
         flex-basis: calc(var(--casino-categories-width) - var(--casino-categories-gutters));

@@ -8,11 +8,11 @@
 </template>
 
 <script>
-    import DAL_Builder from '../DAL/builder'
-    import app_intro from '../components/intro/app-intro'
-    import app_content from '../components/content/app-content'
-    import app_casino_loop_downloads from '../components/casino_loop_downloads/app_casino_loop_downloads'
-    import app_category_link from '../components/category_link/app-category_link'
+    import DAL_Builder from '~/DAL/builder'
+    import app_intro from '~/components/intro/app-intro'
+    import app_content from '~/components/content/app-content'
+    import app_casino_loop_downloads from '~/components/casino_loop_downloads/app_casino_loop_downloads'
+    import app_category_link from '~/components/category_link/app-category_link'
     export default {
         name: "free-bonus-casino",
         data: () => {

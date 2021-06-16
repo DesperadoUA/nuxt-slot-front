@@ -51,7 +51,6 @@
 
             <div class="detail-row__content">
                 <NuxtLink no-prefetch
-                          no-prefetch
                           :to="item.permalink"
                           v-for="(item, index) in value.payments" :key="index"
                           class="detail-item">{{ item.title }}

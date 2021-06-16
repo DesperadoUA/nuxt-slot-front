@@ -1,5 +1,5 @@
 <template>
-<div class="container">
+<div class="container single_template">
     <div class="casino-card">
         <div class="casino-card__logo">
             <img :src="value.thumbnail" :alt="value.title">
