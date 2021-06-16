@@ -31,4 +31,9 @@ export default class Helper {
             window.open(item.ref[random], '_blank')
         }
     }
+    static classRating(item){
+        if(item.rating < 33) return '--cr-rating: #f00'
+        if(item.rating > 33 && item.rating < 67) return '--cr-rating: #ffc700'
+        if(item.rating > 67) return '--cr-rating: #0f6'
+    }
 }
