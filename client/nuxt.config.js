@@ -1,4 +1,4 @@
-import DAL_Pages from '../client/DAL/static_pages'
+import DAL_Builder from '../client/DAL/builder'
 export default {
   mode: 'universal',
   // Global page headers: https://go.nuxtjs.dev/config-head
@@ -42,22 +42,25 @@ export default {
   build: {},
   sitemap: {
     exclude: [
-      '/blog',
-      '/bonuses',
-      '/igrovue-avtomatu'
+      '/useful',
+      '/best-for-payout',
+      '/bonus-pay',
+      '/free-bonus-casino',
+      '/licensed-casino',
+      '/max-payout-casino',
+      '/megaways',
+      '/min-deposit-casino',
+      '/new-slots',
+      '/popular-casino',
+      '/progressive',
+      '/slots'
     ],
     routes: async () => {
-      const sitemapData = {
-        type: 'sitemap',
-        url: ''
-      }
-      const {data} = await DAL_Pages.getData(sitemapData)
-      const staticPages = data.static_page
-      const casinoPosts = data.casino
-      const blogPosts = data.blog
-      const vendorsPosts = data.vendors
-      const paymentsPosts = data.payments
-      return staticPages.concat(casinoPosts, blogPosts, paymentsPosts, vendorsPosts)
+      const request = new DAL_Builder()
+      const {data} = await request.postType('pages')
+                                          .url('sitemap')
+                                          .get()
+      return data.body.posts
     }
   }  
 }
