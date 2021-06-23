@@ -1,5 +1,5 @@
 <template>
-    <div class="container">
+    <div class="container casino-cards-container">
         <div class="casino-card" v-for="(item, index) in currentPosts" :key="index">
             <div class="casino-card__logo">
                 <img :src="item.thumbnail" :alt="item.title">

@@ -88,13 +88,14 @@ import Helper from '~/helpers/helpers.js'
         margin-left: calc(var(--slots-gutters) / 2);
         margin-right: calc(var(--slots-gutters) / 2);
         flex-shrink: 0;
-        @media (max-width: 768px) {
+
+        @media (max-width: 767px) {
             width: 100%;
             margin: 0px 0px 6px 0px;
             flex-basis: 100%;
         }
     }
-    @media (max-width: 768px) {
+    @media (max-width: 767px) {
         margin: 0px;
     }
 }

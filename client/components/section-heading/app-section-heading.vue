@@ -37,7 +37,7 @@
     color: #fff;
     margin-top: 25px;
     margin-bottom: 24px;
-    @media (max-width: 768px) {
+    @media (max-width: 767px) {
        flex-wrap: wrap;
     }
 }
@@ -46,7 +46,7 @@
     font-size: 28px;
     line-height: 1.358;
     margin-bottom: 0;
-    @media (max-width: 768px) {
+    @media (max-width: 767px) {
         display: block;
         width: 100%;
         text-align: center;
@@ -64,7 +64,7 @@
             text-decoration: none;
         }
     }
-    @media (max-width: 768px) {
+    @media (max-width: 767px) {
        display: block;
         margin-top: 20px;
         width: 100%;
