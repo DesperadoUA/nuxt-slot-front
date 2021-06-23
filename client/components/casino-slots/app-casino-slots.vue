@@ -35,6 +35,7 @@
 </template>
 
 <script>
+import Helper from '~/helpers/helpers.js'
     export default {
         name: "app-casino-slots",
         props: {
@@ -52,9 +53,7 @@
                 return Math.trunc(item/10)
             },
             classRating(item) {
-                if(item.rating < 33) return '--cr-rating: #f00'
-                if(item.rating > 33 && item.rating < 67) return '--cr-rating: #ffc700'
-                if(item.rating > 67) return '--cr-rating: #0f6'
+               return Helper.classRating(item)
             }
         },
     }
@@ -89,6 +88,14 @@
         margin-left: calc(var(--slots-gutters) / 2);
         margin-right: calc(var(--slots-gutters) / 2);
         flex-shrink: 0;
+        @media (max-width: 768px) {
+            width: 100%;
+            margin: 0px 0px 6px 0px;
+            flex-basis: 100%;
+        }
+    }
+    @media (max-width: 768px) {
+        margin: 0px;
     }
 }
 

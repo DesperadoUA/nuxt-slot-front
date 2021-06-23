@@ -37,12 +37,20 @@
     color: #fff;
     margin-top: 25px;
     margin-bottom: 24px;
+    @media (max-width: 768px) {
+       flex-wrap: wrap;
+    }
 }
 
 .section-heading__ttl {
     font-size: 28px;
     line-height: 1.358;
     margin-bottom: 0;
+    @media (max-width: 768px) {
+        display: block;
+        width: 100%;
+        text-align: center;
+    }
 }
 
 .section-heading__link {
@@ -55,6 +63,12 @@
         &:hover {
             text-decoration: none;
         }
+    }
+    @media (max-width: 768px) {
+       display: block;
+        margin-top: 20px;
+        width: 100%;
+        text-align: center;
     }
 }
 </style>

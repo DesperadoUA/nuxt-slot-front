@@ -1,5 +1,5 @@
 <template>
-    <section class="faq" itemscope itemtype="https://schema.org/FAQPage" v-if="value.length !== 0">
+    <section class="faq" itemscope itemtype="https://schema.org/FAQPage" v-if="currentValue.length !== 0">
         <div class="container">
             <h2 class="faq_title">{{ title }}</h2>
         </div>
@@ -8,7 +8,7 @@
                  itemscope
                  itemprop='mainEntity'
                  itemtype='https://schema.org/Question'
-                 v-for="(item, index) in value"
+                 v-for="(item, index) in currentValue"
                  :key="index"
             >
                 <div class='faq_question'
@@ -33,9 +33,13 @@
 <script>
     export default {
         name: "app_faq",
-        props: ['value', 'title'],
+        props: {
+            'value': Array,
+            'title': String
+        },
         data(){
             return {
+                currentValue: []
             }
         },
         methods: {
@@ -45,14 +49,14 @@
         },
         mounted() {
             const faq = []
-            this.value = this.value.forEach(element => {
+            this.value.forEach(element => {
                 faq.push({
                     status: 'close',
                     answer: element.value_2,
                     question: element.value_1
                 })
             })
-            this.value = faq
+            this.currentValue = faq
         }
     }
 </script>

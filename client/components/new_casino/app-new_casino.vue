@@ -36,6 +36,7 @@
 </template>
 
 <script>
+import Helper from '~/helpers/helpers.js'
     export default {
         name: "app_new_casino",
         props: {
@@ -50,9 +51,7 @@
         },
         filters: {
             classRating(item) {
-                if(item.rating < 33) return '--cr-rating: #f00'
-                if(item.rating > 33 && item.rating < 67) return '--cr-rating: #ffc700'
-                if(item.rating > 67) return '--cr-rating: #0f6'
+                return Helper.classRating(item)
             }
         }
     }

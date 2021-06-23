@@ -79,6 +79,7 @@
 </template>
 
 <script>
+import Helper from '~/helpers/helpers.js'
     export default {
         name: "app_casino_categories",
         props: {
@@ -103,20 +104,10 @@
                 return Math.trunc(item/10)
             },
             classRating(item) {
-                if(item.rating < 33) return '--cr-rating: #f00'
-                if(item.rating > 33 && item.rating < 67) return '--cr-rating: #ffc700'
-                if(item.rating > 67) return '--cr-rating: #0f6'
+                return Helper.classRating(item)
             }
         },
         methods: {
-            refActivate(item) {
-                if(item.ref.length !== 0) {
-                    const min = 0
-                    const max = item.ref.length - 1
-                    const random = Math.floor(Math.random() * (max - min + 1)) + min
-                    window.open(item.ref[random].casino_ref, '_blank')
-                }
-            },
             postShowMore(){
                 this.postCurrentPage += 1
             }
@@ -136,7 +127,6 @@
     flex-wrap: wrap;
     margin-left: calc(var(--casino-categories-gutters) / -2);
     margin-right: calc(var(--casino-categories-gutters) / -2);
-
     .casino-group {
         width: calc(var(--casino-categories-width) - var(--casino-categories-gutters));
         flex-basis: calc(var(--casino-categories-width) - var(--casino-categories-gutters));

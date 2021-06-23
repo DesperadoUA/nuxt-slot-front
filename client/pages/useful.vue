@@ -7,10 +7,10 @@
 </template>
 
 <script>
-    import DAL_Builder from '../DAL/builder'
-    import app_content from '../components/content/app-content'
-    import app_useful from '../components/useful/app_useful'
-    import app_intro from '../components/intro/app-intro'
+    import DAL_Builder from '~/DAL/builder'
+    import app_content from '~/components/content/app-content'
+    import app_useful from '~/components/useful/app_useful'
+    import app_intro from '~/components/intro/app-intro'
     export default {
         name: "app-useful",
         components: {app_content, app_intro, app_useful},

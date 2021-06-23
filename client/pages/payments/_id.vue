@@ -13,12 +13,12 @@
 </template>
 
 <script>
-    import DAL_Builder from '../../DAL/builder'
-    import app_intro from '../../components/intro/app-intro'
-    import app_casino_loop from '../../components/casino_loop_downloads/app_casino_loop_downloads'
-    import app_heading from '../../components/section-heading/app-section-heading'
-    import app_content from '../../components/content/app-content'
-    import app_payment_card from '../../components/payment_card/app_payment_card'
+    import DAL_Builder from '~/DAL/builder'
+    import app_intro from '~/components/intro/app-intro'
+    import app_casino_loop from '~/components/casino_loop_downloads/app_casino_loop_downloads'
+    import app_heading from '~/components/section-heading/app-section-heading'
+    import app_content from '~/components/content/app-content'
+    import app_payment_card from '~/components/payment_card/app_payment_card'
     export default {
         name: "app_single_payment",
         components: {app_intro, app_heading, app_casino_loop, app_content, app_payment_card},

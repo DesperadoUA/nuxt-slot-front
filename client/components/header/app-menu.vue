@@ -1,9 +1,9 @@
 <template>
 <!--    для работы мобильного меню нужно добавлять класс "is-menu-open" на div.main-nav при клике-->
-    <div class="main-nav">
+    <div :class="stateMenu">
         <nav class="mobile-menu">
             <ul class="main-nav__list">
-                <li v-for="(item, index) in settings"
+                <li v-for="(item, index) in settings" @click="closeMenu"
                   :key="index">
                     <NuxtLink no-prefetch :to="item.value_1" class="main-nav__link">
                         <img :src="item.src"  class="main-nav__icon"/>
@@ -21,6 +21,7 @@
         <div class="navbar__btn"
              aria-expanded="false"
              aria-label="Menu Button"
+             @click="menuActivate"
              role="button">
             <span class="bar"></span>
         </div>
@@ -41,6 +42,22 @@
           if(settings.length !== 0) {
              this.settings = settings.filter(item => item.key === 'header_menu' )[0].value
           }
+        },
+        methods: {
+            menuActivate(){
+                this.$store.dispatch('common/setMobileMenu', !this.$store.getters['common/getMobileMenu'])
+            },
+            closeMenu(){
+                console.log('close menu')
+                this.$store.dispatch('common/setMobileMenu', false)
+            }
+        },
+        computed: {
+            stateMenu(){
+                return this.$store.getters['common/getMobileMenu']
+                           ? 'main-nav is-menu-open'
+                           : 'main-nav'
+            }
         }
     }
 </script>

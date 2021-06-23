@@ -37,7 +37,7 @@
     </div>
 </template>
 <script>
-    import DAL_Builder from '../../DAL/builder'
+    import DAL_Builder from '~/DAL/builder'
     export default {
         name: "app-search",
         data(){

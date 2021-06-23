@@ -9,9 +9,10 @@
 </template>
 
 <script>
-    import DAL_Builder from '../../DAL/builder'
-    import app_blog_single from '../../components/blog_single/app_blog_single'
-    import app_last_article from '../../components/last_article/app_last_article'
+    import DAL_Builder from '~/DAL/builder'
+    import Helper from '~/helpers/helpers'
+    import app_blog_single from '~/components/blog_single/app_blog_single'
+    import app_last_article from '~/components/last_article/app_last_article'
     export default {
         name: "app_blog_casino",
         components: {app_blog_single, app_last_article},
@@ -30,10 +31,24 @@
              }
              else {
                  const body = response.data.body
+                 let settings = {
+                     url: process.env.BASE_URL + route.path,
+                     title: body.title,
+                     short_desc: body.short_desc,
+                     thumbnail: body.thumbnail
+                 }
+                 body.sharedFB = Helper.sharedFB(settings)
+                 body.sharedTwitter = Helper.sharedTwitter(settings)
+                 body.sharedVK = Helper.sharedVK(settings)
                  const data = {body}
                  return {data}
               }
            },
+        methods: {
+            sharedFB(){
+                return 'Shared fb'
+            }
+        },
         head() {
             return {
                 title: this.data.body.meta_title,

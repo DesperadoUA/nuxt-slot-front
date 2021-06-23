@@ -7,10 +7,10 @@
 </template>
 
 <script>
-    import DAL_Page from '../DAL/static_pages'
-    import app_intro from '../components/intro/app-intro'
-    import app_content from '../components/content/app-content'
-    import app_casino_category from '../components/casino-categories/app_casino_categories'
+    import DAL_Page from '~/DAL/static_pages'
+    import app_intro from '~/components/intro/app-intro'
+    import app_content from '~/components/content/app-content'
+    import app_casino_category from '~/components/casino-categories/app_casino_categories'
 export default {
     name: "review-page",
     data: () => {
