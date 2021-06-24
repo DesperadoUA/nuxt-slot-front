@@ -63,12 +63,11 @@
 </script>
 
 <style lang="scss">
-.is-menu-open {
-    .logo,
-    .search,
-    & ~ .main,
-    & ~ .footer {
-        filter: blur(24px);
+@keyframes expand {
+    from {
+        transform: scale(0);
+        opacity: 0;
+        background: #5470B0;
     }
 }
 
@@ -222,7 +221,7 @@
         width: 28px;
         height: 2px;
         transform: translateY(-50%);
-        transition: .9s;
+        transition: var(--transition-default);
     }
 
     &:before {
@@ -273,22 +272,26 @@
 
 .mobile-menu {
     @media (max-width: 991px) {
-        transition: var(--transition-default);
         overflow: hidden;
         position: fixed;
         z-index: 999;
         top: 0;
-        left: 100%;
+        left: 0;
         height: 100vh;
         width: 100vw;
-        background: rgba(#281c4b, .98);
+        background-color: #281c4bcc;
+        backdrop-filter: blur(24px);
         padding: 132px 53px 30px;
         display: none;
         flex-direction: column;
 
+        @-moz-document url-prefix() {
+            background-color: #281c4bfa;
+        }
+
         .is-menu-open & {
             display: flex;
-            transform: translateX(-100%);
+            animation: expand .4s ease-in-out;
         }
     }
 }
