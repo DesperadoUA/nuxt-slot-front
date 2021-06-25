@@ -1,7 +1,7 @@
 <template>
 <section class="casino-slots" v-if="value.length !== 0">
     <div class="container">
-        <h2 class="casino-slots__ttl">Популярные слоты в {{ title }}</h2>
+        <h2 class="casino-slots__ttl">{{popularSlots}} в {{ title }}</h2>
 
         <div class="casino-slots__list">
             <NuxtLink v-for="(item, index) in value"
@@ -22,7 +22,7 @@
 
                 <div class="casino-group-item__content">
                     <div class="casino-group-item__name">{{ item.title }}</div>
-                    <div class="casino-group-item__rating">Рейтинг: <b>{{ item.rating }}</b></div>
+                    <div class="casino-group-item__rating">{{rating}}: <b>{{ item.rating }}</b></div>
                     <svg class="casino-group-item__arrow" width="9" height="14" viewBox="0 0 9 14" fill="none"
                          xmlns="http://www.w3.org/2000/svg">
                         <path d="M1 1L7 7L1 13" stroke="white" stroke-width="2" stroke-linecap="round"/>
@@ -36,6 +36,7 @@
 
 <script>
 import Helper from '~/helpers/helpers.js'
+import TRANSLATE from '~/helpers/translate.json'
     export default {
         name: "app-casino-slots",
         props: {
@@ -48,6 +49,12 @@ import Helper from '~/helpers/helpers.js'
               default: ''
             }
         },
+        data(){
+            return {
+                popularSlots: '',
+                rating: ''
+            }
+        },
         filters:{
             rating(item){
                 return Math.trunc(item/10)
@@ -56,6 +63,10 @@ import Helper from '~/helpers/helpers.js'
                return Helper.classRating(item)
             }
         },
+        mounted() {
+            this.popularSlots = TRANSLATE.POPULAR_SLOTS.uk
+            this.rating = TRANSLATE.RATING.uk
+        }
     }
 </script>
 

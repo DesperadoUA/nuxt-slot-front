@@ -3,7 +3,7 @@
     <div class="container">
         <div class="casino-categories__container">
             <div class="casino-group">
-                <h3 class="casino-group__ttl">Самый высокий рейтинг</h3>
+                <h3 class="casino-group__ttl">{{highestRating}}</h3>
                 <NuxtLink :to="item.permalink"
                           v-for="(item, index) in value.top_rating_casino"
                           :key="index" class="casino-group-item">
@@ -19,7 +19,7 @@
 
                     <div class="casino-group-item__content">
                         <div class="casino-group-item__name">{{ item.title }}</div>
-                        <div class="casino-group-item__rating">Рейтинг: <b>{{ item.rating }}</b></div>
+                        <div class="casino-group-item__rating">{{rating}}: <b>{{ item.rating }}</b></div>
                         <svg class="casino-group-item__arrow" width="9" height="14" viewBox="0 0 9 14" fill="none"
                              xmlns="http://www.w3.org/2000/svg">
                             <path d="M1 1L7 7L1 13" stroke="white" stroke-width="2" stroke-linecap="round"/>
@@ -29,7 +29,7 @@
             </div>
 
             <div class="casino-group">
-                <h3 class="casino-group__ttl">Новые казино</h3>
+                <h3 class="casino-group__ttl">{{newCasino}}</h3>
                 <NuxtLink :to="item.permalink"
                           v-for="(item, index) in value.new_casino"
                           :key="index" class="casino-group-item">
@@ -43,7 +43,7 @@
 
                     <div class="casino-group-item__content">
                         <div class="casino-group-item__name">{{ item.title }}</div>
-                        <div class="casino-group-item__rating">Рейтинг: <b>{{ item.rating }}</b></div>
+                        <div class="casino-group-item__rating">{{rating}}: <b>{{ item.rating }}</b></div>
                         <svg class="casino-group-item__arrow" width="9" height="14" viewBox="0 0 9 14" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M1 1L7 7L1 13" stroke="white" stroke-width="2" stroke-linecap="round"/>
                         </svg>
@@ -52,7 +52,7 @@
             </div>
 
             <div class="casino-group">
-                <h3 class="casino-group__ttl">Популярные казино</h3>
+                <h3 class="casino-group__ttl">{{popularCasino}}</h3>
                 <NuxtLink :to="item.permalink"
                           v-for="(item, index) in value.popular_casino"
                           :key="index" class="casino-group-item">
@@ -66,7 +66,7 @@
 
                     <div class="casino-group-item__content">
                         <div class="casino-group-item__name">{{ item.title }}</div>
-                        <div class="casino-group-item__rating">Рейтинг: <b>{{ item.rating }}</b></div>
+                        <div class="casino-group-item__rating">{{rating}}: <b>{{ item.rating }}</b></div>
                         <svg class="casino-group-item__arrow" width="9" height="14" viewBox="0 0 9 14" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M1 1L7 7L1 13" stroke="white" stroke-width="2" stroke-linecap="round"/>
                         </svg>
@@ -80,6 +80,7 @@
 
 <script>
 import Helper from '~/helpers/helpers.js'
+import TRANSLATE from '~/helpers/translate.json'
     export default {
         name: "app_casino_categories",
         props: {
@@ -91,7 +92,11 @@ import Helper from '~/helpers/helpers.js'
         data(){
             return {
                 numberPostOnQuery: 12,
-                postCurrentPage: 1
+                postCurrentPage: 1,
+                rating: '',
+                popularCasino: '',
+                newCasino: '',
+                highestRating: ''
             }
         },
         computed: {
@@ -111,6 +116,12 @@ import Helper from '~/helpers/helpers.js'
             postShowMore(){
                 this.postCurrentPage += 1
             }
+        },
+        mounted() {
+            this.rating = TRANSLATE.RATING.uk
+            this.popularCasino = TRANSLATE.POPULAR_CASINO.uk
+            this.newCasino = TRANSLATE.NEW_CASINO.uk
+            this.highestRating = TRANSLATE.HIGHEST_RATING.uk
         }
     }
 </script>

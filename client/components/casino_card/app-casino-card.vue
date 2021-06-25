@@ -13,7 +13,7 @@
                 </svg>
                 <div class="circle-rating__percentage">{{value.rating}}</div>
             </div>
-            <span class="casinos-rating__txt">Рейтинг</span>
+            <span class="casinos-rating__txt">{{rating}}</span>
         </div>
 
         <div class="casino-card-param">
@@ -45,28 +45,33 @@
 
         <div class="casino-card-bonus">
             <span class="casino-card-bonus__value" style="color: #ffe600;">{{value.bonus}}</span>
-            <span class="casino-card-bonus__ttl">Приветственный бонус</span>
+            <span class="casino-card-bonus__ttl">{{welcomeBonus}}</span>
             <div class="casino-card-bonus__wager">{{value.bonus_wagering}}</div>
         </div>
 
         <div class="casino-card-bonus">
             <span class="casino-card-bonus__value" style="color: #12d4ff;">{{value.freespins}}</span>
-            <span class="casino-card-bonus__ttl">Фри спины</span>
+            <span class="casino-card-bonus__ttl">{{freeSpins}}</span>
             <div class="casino-card-bonus__wager">{{value.freespins_wagering}}</div>
         </div>
 
-        <button type="button" class="casino-card__cta btn-tertiary" @click="refActivate(value)">Перейти</button>
+        <button type="button" class="casino-card__cta btn-tertiary" @click="refActivate(value)">{{goTo}}</button>
     </div>
 </div>
 </template>
 
 <script>
 import Helper from '~/helpers/helpers.js'
+import TRANSLATE from '~/helpers/translate.json'
     export default {
         name: "app-casino-card",
         props: ['value'],
         data(){
             return {
+                goTo: '',
+                freeSpins: '',
+                welcomeBonus: '',
+                rating: ''
             }
         },
         filters: {
@@ -78,6 +83,12 @@ import Helper from '~/helpers/helpers.js'
             refActivate(item) {
                Helper.refActivate(item)
             },
+        },
+        mounted() {
+            this.goTo = TRANSLATE.GO_TO.uk
+            this.freeSpins = TRANSLATE.FREE_SPINS.uk
+            this.welcomeBonus = TRANSLATE.WELCOME_BONUS.uk
+            this.rating = TRANSLATE.RATING.uk
         }
     }
 </script>

@@ -1,7 +1,7 @@
 <template>
 <section class="best-offer">
     <div class="container">
-        <h2 class="best-offer__ttl">Лучшие предложения</h2>
+        <h2 class="best-offer__ttl">{{title}}</h2>
 
         <div class="best-offer__container-slider">
             <div class="best-offer__list">
@@ -27,17 +27,22 @@
 
 <script>
 import Helper from '~/helpers/helpers.js'
+import TRANSLATE from '~/helpers/translate.json'
     export default {
         name: "app_intro",
         props: ['value'],
         data(){
             return {
+                title: ''
             }
         },
         filters: {
             classRating(item) {
                 return Helper.classRating(item)
             }
+        },
+        mounted() {
+            this.title = TRANSLATE.BEST_OFFER.uk
         }
     }
 </script>

@@ -2,7 +2,7 @@
   <div class="blog-single">
     <div class="container blog-single__container">
       <app_blog_single :value="data.body" />
-      <app_last_article :title="'Останні новини'"
+      <app_last_article :title="title"
                         :value="data.body.posts" />
     </div>
   </div>
@@ -11,6 +11,7 @@
 <script>
     import DAL_Builder from '~/DAL/builder'
     import Helper from '~/helpers/helpers'
+    import TRANSLATE from '~/helpers/translate'
     import app_blog_single from '~/components/blog_single/app_blog_single'
     import app_last_article from '~/components/last_article/app_last_article'
     export default {
@@ -19,6 +20,7 @@
         data: () => {
             return {
                 data: {},
+                title: TRANSLATE.LAST_NEWS.uk
             }
         },
         async asyncData({route, error}) {

@@ -3,15 +3,14 @@
     <div class="container">
       <div class="useful-categories__container">
         <div class="useful-group">
-          <h3 class="useful-group__ttl">Новости</h3>
+          <h3 class="useful-group__ttl">{{news}}</h3>
           <NuxtLink no-prefetch :to="item.permalink" class="news-item" v-for="(item, index) in value.news" :key="index">
             <span class="news-item__date">{{item.create_at}}</span>
             <strong class="news-item__ttl">{{item.title}}</strong>
           </NuxtLink>
         </div>
-
         <div class="useful-group">
-          <h3 class="useful-group__ttl">Блог</h3>
+          <h3 class="useful-group__ttl">{{blog}}</h3>
 
           <NuxtLink no-prefetch :to="item.permalink" class="blog-item" v-for="(item, index) in value.blog" :key="index">
                     <span class="blog-item__media">
@@ -20,9 +19,8 @@
             <span class="blog-item__caption">{{item.title}}</span>
           </NuxtLink>
         </div>
-
         <div class="useful-group">
-          <h3 class="useful-group__ttl">Интервью</h3>
+          <h3 class="useful-group__ttl">{{interview}}</h3>
 
           <NuxtLink no-prefetch :to="item.permalink" class="blog-item" v-for="(item, index) in value.interview" :key="index">
                     <span class="blog-item__media">
@@ -43,6 +41,7 @@
 </template>
 
 <script>
+    import TRANSLATE from '~/helpers/translate.json'
     export default {
         name: "app_useful",
         props: {
@@ -51,8 +50,16 @@
         },
         data(){
             return {
+                news: '',
+                blog: '',
+                interview: ''
             }
         },
+        mounted() {
+            this.news = TRANSLATE.NEWS.uk
+            this.blog = TRANSLATE.BLOG.uk
+            this.interview = TRANSLATE.INTERVIEW.uk
+        }
     }
 </script>
 

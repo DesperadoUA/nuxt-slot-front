@@ -2,7 +2,7 @@
 <div class="casino-detail">
     <div class="container">
         <div class="detail-row" v-if="value.details.length !== 0">
-            <h3 class="detail-row__ttl">Детали</h3>
+            <h3 class="detail-row__ttl">{{details}}</h3>
             <div class="detail-row__content">
                 <ul class="detail-list">
                     <li class="detail-list__item" v-for="(item, index) in value.details" :key="index">
@@ -14,10 +14,10 @@
         </div>
 
         <div class="detail-row">
-            <h3 class="detail-row__ttl">Предложения игр</h3>
+            <h3 class="detail-row__ttl">{{gameOffers}}</h3>
 
             <div class="detail-row__heading" v-if="value.type_games.length !== 0">
-                <h4 class="detail-row__sub-ttl">Типы игр</h4>
+                <h4 class="detail-row__sub-ttl">{{typeGames}}</h4>
             </div>
 
             <div class="detail-row__content" v-if="value.type_games.length !== 0">
@@ -28,7 +28,7 @@
             </div>
 
             <div class="detail-row__heading" v-if="value.vendors.length !== 0">
-                <h4 class="detail-row__sub-ttl">Провайдеры</h4>
+                <h4 class="detail-row__sub-ttl">{{vendors}}</h4>
             </div>
 
             <div class="detail-row__content" v-if="value.vendors.length !== 0">
@@ -43,10 +43,10 @@
         </div>
 
         <div class="detail-row" v-if="value.payments.length !== 0">
-            <h3 class="detail-row__ttl">Оплата</h3>
+            <h3 class="detail-row__ttl">{{payments}}</h3>
 
             <div class="detail-row__heading">
-                <h4 class="detail-row__sub-ttl">Варианты оплаты</h4>
+                <h4 class="detail-row__sub-ttl">{{paymentOptions}}</h4>
             </div>
 
             <div class="detail-row__content">
@@ -60,17 +60,17 @@
 
         <div class="detail-row">
             <div class="detail-row__heading">
-                <h4 class="detail-row__sub-ttl">Депозит</h4>
+                <h4 class="detail-row__sub-ttl">{{deposit}}</h4>
             </div>
 
             <div class="detail-row__content">
                 <ul class="detail-list">
                     <li class="detail-list__item full-width">
-                        <span class="detail-list__ttl">Мин. депозит:</span>
+                        <span class="detail-list__ttl">{{minDeposit}}:</span>
                         <span class="detail-list__value">{{ value.min_deposit }}</span>
                     </li>
                     <li class="detail-list__item full-width">
-                        <span class="detail-list__ttl">Мин. вывод:</span>
+                        <span class="detail-list__ttl">{{minPayout}}:</span>
                         <span class="detail-list__value">{{ value.min_payout }}</span>
                     </li>
                 </ul>
@@ -81,6 +81,7 @@
 </template>
 
 <script>
+    import TRANSLATE from '~/helpers/translate'
     export default {
         name: "app-casino-detail",
         props: {
@@ -97,8 +98,28 @@
                     'Slots': '/img/game_types/slots.png',
                     'Poker': '/img/game_types/poker.png',
                     'Roulette': '/img/game_types/roulette.png'
-                }
+                },
+                details: '',
+                gameOffers: '',
+                typeGames: '',
+                vendors: '',
+                payments: '',
+                paymentOptions: '',
+                deposit: '',
+                minDeposit: '',
+                minPayout: ''
             }
+        },
+        mounted() {
+            this.details = TRANSLATE.DETAILS.uk
+            this.gameOffers = TRANSLATE.GAME_OFFERS.uk
+            this.typeGames = TRANSLATE.TYPE_GAMES.uk
+            this.vendors = TRANSLATE.VENDORS.uk
+            this.payments = TRANSLATE.PAYMENTS.uk
+            this.paymentOptions = TRANSLATE.PAYMENTS_OPTIONS.uk
+            this.deposit = TRANSLATE.DEPOSIT.uk
+            this.minDeposit = TRANSLATE.MIN_DEPOSIT.uk
+            this.minPayout = TRANSLATE.MIN_PAYOUT.uk
         }
     }
 </script>

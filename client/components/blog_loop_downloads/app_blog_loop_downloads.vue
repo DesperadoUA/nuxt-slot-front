@@ -14,12 +14,13 @@
         <button no-prefetch v-if="value.length > (numberPostOnQuery*postCurrentPage)"
                 class="btn-primary"
                 @click="postShowMore"
-        >Показать больше</button>
+        >{{showMore}}</button>
     </div>
 </div>
 </template>
 
 <script>
+    import TRANSLATE from '~/helpers/translate.json'
     export default {
         name: "app_blog_downloads",
         props: {
@@ -31,7 +32,8 @@
         data(){
             return {
                 numberPostOnQuery: 12,
-                postCurrentPage: 1
+                postCurrentPage: 1,
+                showMore: ''
             }
         },
         computed: {
@@ -43,6 +45,9 @@
             postShowMore(){
                 this.postCurrentPage += 1
             }
+        },
+        mounted() {
+            this.showMore = TRANSLATE.SHOW_MORE.uk
         }
     }
 </script>

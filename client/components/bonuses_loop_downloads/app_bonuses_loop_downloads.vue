@@ -12,23 +12,23 @@
                 </svg>
                 <div class="circle-rating__percentage">{{ item.rating }}</div>
             </div>
-            <span class="casinos-rating__txt">Рейтинг</span>
+            <span class="casinos-rating__txt">{{rating}}</span>
         </div>
         <div class="casino-card__txt" v-html="item.bonus_self"></div>
         <div class="casino-card__cta">
             <NuxtLink :to="item.permalink"
                       no-prefetch
                       type="button"
-                      class="casino-card__cta btn-tertiary --green">Обзор
+                      class="casino-card__cta btn-tertiary --green">{{review}}
             </NuxtLink>
-            <button type="button" class="casino-card__cta btn-tertiary" @click="refActivate(item)">Играть</button>
+            <button type="button" class="casino-card__cta btn-tertiary" @click="refActivate(item)">{{play}}</button>
         </div>
     </div>
     <div class="items-more casino-card__more">
         <button no-prefetch v-if="value.length > (numberPostOnQuery*postCurrentPage)"
                 class="btn-primary"
                 @click="postShowMore"
-        >Показать больше
+        >{{showMore}}
         </button>
     </div>
 </div>
@@ -36,6 +36,7 @@
 
 <script>
 import Helper from '~/helpers/helpers.js'
+import TRANSLATE from '~/helpers/translate.json'
     export default {
         name: "app_bonuses",
         props: {
@@ -47,7 +48,11 @@ import Helper from '~/helpers/helpers.js'
         data(){
             return {
                 numberPostOnQuery: 10,
-                postCurrentPage: 1
+                postCurrentPage: 1,
+                showMore: '',
+                rating: '',
+                play: '',
+                review: ''
             }
         },
         computed: {
@@ -67,6 +72,12 @@ import Helper from '~/helpers/helpers.js'
             postShowMore(){
                 this.postCurrentPage += 1
             }
+        },
+        mounted() {
+            this.showMore = TRANSLATE.SHOW_MORE.uk
+            this.rating = TRANSLATE.RATING.uk
+            this.play = TRANSLATE.PLAY.uk
+            this.review = TRANSLATE.REVIEW.uk
         }
     }
 </script>

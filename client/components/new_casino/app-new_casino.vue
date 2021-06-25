@@ -2,8 +2,8 @@
     <div class="slots">
         <div class="container">
             <div class="slots__heading">
-                <h2 class="slots__ttl">Новые казино</h2>
-                <NuxtLink no-prefetch to="/reviews" class="link-primary">Все казино</NuxtLink>
+                <h2 class="slots__ttl">{{newCasino}}</h2>
+                <NuxtLink no-prefetch to="/reviews" class="link-primary">{{allCasino}}</NuxtLink>
             </div>
 
             <div class="slots__container">
@@ -23,11 +23,11 @@
                     </div>
 
                     <div class="slot-item__content">
-                        Рейтинг <strong>{{ item.rating }}</strong>
+                        {{rating}} <strong>{{ item.rating }}</strong>
                     </div>
 
                     <div class="slot-item__btns">
-                        <button class="slot-item__btn --blue">Перейти</button>
+                        <button class="slot-item__btn --blue">{{goTo}}</button>
                     </div>
                 </NuxtLink>
             </div>
@@ -37,6 +37,7 @@
 
 <script>
 import Helper from '~/helpers/helpers.js'
+import TRANSLATE from '~/helpers/translate.json'
     export default {
         name: "app_new_casino",
         props: {
@@ -47,12 +48,22 @@ import Helper from '~/helpers/helpers.js'
         },
         data() {
             return {
+                goTo: '',
+                rating: '',
+                newCasino: '',
+                allCasino: ''
             }
         },
         filters: {
             classRating(item) {
                 return Helper.classRating(item)
             }
+        },
+        mounted() {
+            this.goTo = TRANSLATE.GO_TO.uk
+            this.rating = TRANSLATE.RATING.uk
+            this.newCasino = TRANSLATE.NEW_CASINO.uk
+            this.allCasino = TRANSLATE.ALL_CASINO.uk
         }
     }
 </script>

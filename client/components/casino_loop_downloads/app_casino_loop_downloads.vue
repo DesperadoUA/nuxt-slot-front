@@ -18,7 +18,7 @@
                             </svg>
                             <div class="circle-rating__percentage">{{item.rating}}</div>
                         </div>
-                        <span class="casinos-rating__txt">Рейтинг</span>
+                        <span class="casinos-rating__txt">{{rating}}</span>
                     </div>
                 </div>
                 <div class="casino-item__content">
@@ -47,14 +47,14 @@
                     <div class="casino-bonuses">
                         <div class="casino-bonus">
                             <span class="casino-bonus__value" style="color: #ffe600;">{{item.bonus}}</span>
-                            <span class="casino-bonus__ttl">Приветственный бонус</span>
+                            <span class="casino-bonus__ttl">{{welcomeBonus}}</span>
 
                             <div class="casino-bonus__wager">{{item.bonus_wagering}}</div>
                         </div>
 
                         <div class="casino-bonus">
                             <span class="casino-bonus__value" style="color: #12d4ff;">{{item.freespins}}</span>
-                            <span class="casino-bonus__ttl">Фри спины</span>
+                            <span class="casino-bonus__ttl">{{freeSpins}}</span>
 
                             <div class="casino-bonus__wager">{{item.freespins_wagering}}</div>
                         </div>
@@ -63,8 +63,8 @@
                     <div class="casino-item__btns">
                          <NuxtLink no-prefetch
                                   :to="item.permalink"
-                                  class="casino-item__btn --green">Обзор казино</NuxtLink>
-                        <button class="casino-item__btn --blue" @click="refActivate(item)">Перейти</button>
+                                  class="casino-item__btn --green">{{casinoReview}}</NuxtLink>
+                        <button class="casino-item__btn --blue" @click="refActivate(item)">{{goTo}}</button>
                     </div>
                 </div>
             </div>
@@ -73,7 +73,7 @@
             <button no-prefetch v-if="value.length > (numberPostOnQuery*postCurrentPage)"
                     class="btn-primary"
                     @click="postShowMore"
-            >Показать больше</button>
+            >{{showMore}}</button>
         </div>
     </div>
 </div>
@@ -81,6 +81,7 @@
 
 <script>
 import Helper from '~/helpers/helpers.js'
+import TRANSLATE from '~/helpers/translate.json'
     export default {
         name: "app_casino_loop_downloads",
         props: {
@@ -92,7 +93,13 @@ import Helper from '~/helpers/helpers.js'
         data(){
             return {
                 numberPostOnQuery: 12,
-                postCurrentPage: 1
+                postCurrentPage: 1,
+                showMore: '',
+                rating: '',
+                welcomeBonus: '',
+                freeSpins: '',
+                casinoReview: '',
+                goTo: ''
             }
         },
         computed: {
@@ -115,6 +122,14 @@ import Helper from '~/helpers/helpers.js'
             postShowMore(){
                 this.postCurrentPage += 1
             }
+        },
+        mounted() {
+            this.showMore = TRANSLATE.SHOW_MORE.uk
+            this.rating = TRANSLATE.RATING.uk
+            this.welcomeBonus = TRANSLATE.WELCOME_BONUS.uk
+            this.freeSpins = TRANSLATE.FREE_SPINS.uk
+            this.casinoReview = TRANSLATE.CASINO_REVIEW.uk
+            this.goTo = TRANSLATE.GO_TO.uk
         }
     }
 </script>

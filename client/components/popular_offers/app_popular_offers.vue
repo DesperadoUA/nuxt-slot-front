@@ -2,8 +2,8 @@
     <div class="slots">
         <div class="container">
             <div class="slots__heading">
-                <h2 class="slots__ttl">Не пропустите предложения</h2>
-                <NuxtLink no-prefetch to="/bonuses" class="link-primary">Все предложения</NuxtLink>
+                <h2 class="slots__ttl">{{dontMissOffer}}</h2>
+                <NuxtLink no-prefetch to="/bonuses" class="link-primary">{{allOffers}}</NuxtLink>
             </div>
 
             <div class="slots__container">
@@ -24,13 +24,13 @@
                     </div>
 
                     <div class="slot-item__content">
-                        <div class="slot-item__txt">Приветственный пакет: <br>
+                        <div class="slot-item__txt">{{welcomePackage}}: <br>
                             <strong>{{item.bonus}}</strong>
                         </div>
                     </div>
 
                     <div class="slot-item__btns">
-                        <button class="slot-item__btn --blue">Перейти</button>
+                        <button class="slot-item__btn --blue">{{goTo}}</button>
                     </div>
                 </NuxtLink>
             </div>
@@ -40,6 +40,7 @@
 
 <script>
 import Helper from '~/helpers/helpers.js'
+import TRANSLATE from '~/helpers/translate.json'
     export default {
         name: "app_popular_offers",
         props: {
@@ -50,6 +51,10 @@ import Helper from '~/helpers/helpers.js'
         },
         data() {
             return {
+                goTo: '',
+                welcomePackage: '',
+                allOffers: '',
+                dontMissOffer: ''
             }
         },
         filters:{
@@ -57,6 +62,12 @@ import Helper from '~/helpers/helpers.js'
                 return Helper.classRating(item)
             }
         },
+        mounted() {
+            this.goTo = TRANSLATE.GO_TO.uk
+            this.welcomePackage = TRANSLATE.WELCOME_PACKAGE.uk
+            this.allOffers = TRANSLATE.ALL_OFFERS.uk
+            this.dontMissOffer = TRANSLATE.DONT_MISS_OFFERS.uk
+        }
     }
 </script>
 
