@@ -3,13 +3,13 @@
     <app_intro :value="data.body" />
     <app_vendor_card :value="data.body"/>
     <app_heading v-if="data.body.casino.length !== 0" :value="{
-                          title: 'Казино имеющие ' + data.body.title, 
+                          title: data.translate.casinosWith + data.body.title,
                           permalink:'/reviews', 
-                          title_permalink: 'Все казино'
+                          title_permalink: data.translate.allCasino
                         }" />
     <app_vendor_casino :value="data.body.casino" />
     <app_heading v-if="data.body.slots.length !== 0" :value="{
-                          title: 'Игры ' + data.body.title, 
+                          title: data.translate.games + data.body.title,
                           permalink:'', 
                           title_permalink: ''
                         }" />
@@ -19,6 +19,7 @@
 
 <script>
     import DAL_Builder from '~/DAL/builder'
+    import TRANSLATE from '~/helpers/translate'
     import app_intro from '~/components/intro/app-intro'
     import app_vendor_card from '~/components/vendor_card/app_vendor_card'
     import app_vendor_casino from '~/components/vendor_casino/app_vendor_casino'
@@ -29,7 +30,9 @@
         components: {app_intro, app_vendor_card, app_vendor_casino, app_slot_loop_card, app_heading},
         data: () => {
             return {
-                data: {},
+                data: {
+
+                },
             }
         },
         async asyncData({route, error}) {
@@ -43,6 +46,11 @@
             else {
                 const body = response.data.body
                 const data = {body}
+                data.translate = {
+                    casinosWith: `${TRANSLATE.CASINOS_WITH.uk} `,
+                    allCasino: TRANSLATE.ALL_CASINO.uk,
+                    games: `${TRANSLATE.GAMES.uk} `
+                }
                 return {data}
             }
         },

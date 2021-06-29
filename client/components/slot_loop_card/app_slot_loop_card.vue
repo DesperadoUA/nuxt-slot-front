@@ -13,7 +13,7 @@
                     </svg>
                     <div class="circle-rating__percentage">{{ item.rating }}</div>
                 </div>
-                <span class="casinos-rating__txt">Рейтинг</span>
+                <span class="casinos-rating__txt">{{rating}}</span>
             </div>
 
             <div class="casino-card-param">
@@ -88,7 +88,8 @@ import TRANSLATE from '~/helpers/translate.json'
                 wheels: '',
                 payLines: '',
                 minBet: '',
-                numberRows: ''
+                numberRows: '',
+                rating: ''
             }
         },
         computed: {
@@ -118,6 +119,7 @@ import TRANSLATE from '~/helpers/translate.json'
             this.payLines = TRANSLATE.PAY_LINES.uk
             this.minBet = TRANSLATE.MIN_BET.uk
             this.numberRows = TRANSLATE.NUMBER_ROWS.uk
+            this.rating = TRANSLATE.RATING.uk
         }
     }
 </script>

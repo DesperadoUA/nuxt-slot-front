@@ -3,7 +3,7 @@
     <app_intro :value="data.body" />
     <app_payment_card :value="data.body" />
     <app_heading :value="{
-                          title: 'Казино имеющие ' + data.body.title, 
+                          title: data.translate.casinosWith + data.body.title,
                           permalink:'', 
                           title_permalink: ''
                         }" />
@@ -14,6 +14,7 @@
 
 <script>
     import DAL_Builder from '~/DAL/builder'
+    import TRANSLATE from '~/helpers/translate'
     import app_intro from '~/components/intro/app-intro'
     import app_casino_loop from '~/components/casino_loop_downloads/app_casino_loop_downloads'
     import app_heading from '~/components/section-heading/app-section-heading'
@@ -38,6 +39,9 @@
             else {
                 const body = response.data.body
                 const data = {body}
+                data.translate = {
+                    casinosWith: `${TRANSLATE.CASINOS_WITH.uk} `,
+                }
                 return {data}
             }
         },

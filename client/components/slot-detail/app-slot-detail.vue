@@ -2,7 +2,7 @@
 <div class="casino-detail">
     <div class="container">
         <div class="detail-row">
-            <h3 class="detail-row__ttl">Детали</h3>
+            <h3 class="detail-row__ttl">{{details}}</h3>
             <div class="detail-row__content">
                 <ul class="detail-list">
                     <li class="detail-list__item">
@@ -10,11 +10,11 @@
                         <span class="detail-list__value">{{ value.title }}</span>
                     </li>
                     <li class="detail-list__item">
-                        <span class="detail-list__ttl">Фри спины</span>
+                        <span class="detail-list__ttl">{{freeSpins}}</span>
                         <span class="detail-list__value">{{ value.free_spins | detailsFilters }}</span>
                     </li>
                     <li class="detail-list__item">
-                        <span class="detail-list__ttl">Кол-во линий</span>
+                        <span class="detail-list__ttl">{{payLines}}</span>
                         <span class="detail-list__value">{{ value.number_rows }}</span>
                     </li>
                     <li class="detail-list__item">
@@ -22,11 +22,11 @@
                         <span class="detail-list__value">{{ value.scatters | detailsFilters }}</span>
                     </li>
                     <li class="detail-list__item">
-                        <span class="detail-list__ttl">Бонус раунд</span>
+                        <span class="detail-list__ttl">{{bonusRound}}</span>
                         <span class="detail-list__value">{{ value.bonus_rounds | detailsFilters }}</span>
                     </li>
                     <li class="detail-list__item">
-                        <span class="detail-list__ttl">Дикий символ</span>
+                        <span class="detail-list__ttl">{{wildSymbol}}</span>
                         <span class="detail-list__value">{{ value.wild_symbol | detailsFilters }}</span>
                     </li>
                 </ul>
@@ -34,7 +34,7 @@
         </div>
         <div class="detail-row">
             <div class="detail-row__heading" v-if="value.vendors.length !== 0">
-                <h4 class="detail-row__ttl">Провайдер</h4>
+                <h4 class="detail-row__ttl">{{vendors}}</h4>
             </div>
             <div class="detail-row__content" v-if="value.vendors.length !== 0">
                 <NuxtLink no-prefetch
@@ -48,7 +48,7 @@
         </div>
         <div class="detail-row">
             <div class="detail-row__heading" v-if="value.casino.length !== 0">
-                <h4 class="detail-row__ttl">Казино</h4>
+                <h4 class="detail-row__ttl">{{casino}}</h4>
             </div>
             <div class="detail-row__content" v-if="value.casino.length !== 0">
                 <NuxtLink no-prefetch
@@ -62,7 +62,7 @@
         </div>
         <div class="detail-row">
             <div class="detail-row__heading" v-if="value.type_game.length !== 0">
-                <h4 class="detail-row__ttl">Тип игры</h4>
+                <h4 class="detail-row__ttl">{{typeGame}}</h4>
             </div>
             <div class="detail-row__content" v-if="value.type_game.length !== 0">
                 <div class="game-type" v-for="(item, index) in value.type_game" :key="index">
@@ -73,7 +73,7 @@
         </div>
         <div class="detail-row">
             <div class="detail-row__heading">
-                <h4 class="detail-row__ttl">Информация о прибыли</h4>
+                <h4 class="detail-row__ttl">{{profitInformation}}</h4>
             </div>
             <div class="detail-row__content">
                 <ul class="detail-list">
@@ -82,7 +82,7 @@
                         <span class="detail-list__value">{{ value.rtp }}</span>
                     </li>
                     <li class="detail-list__item full-width">
-                        <span class="detail-list__ttl">Волатильность</span>
+                        <span class="detail-list__ttl">{{volatility}}</span>
                         <span class="detail-list__value">{{ value.volatility }}</span>
                     </li>
                 </ul>
@@ -90,16 +90,16 @@
         </div>
         <div class="detail-row">
             <div class="detail-row__heading">
-                <h4 class="detail-row__ttl">Ставка</h4>
+                <h4 class="detail-row__ttl">{{rate}}</h4>
             </div>
             <div class="detail-row__content">
                 <ul class="detail-list">
                     <li class="detail-list__item full-width">
-                        <span class="detail-list__ttl">Макс. ставка</span>
+                        <span class="detail-list__ttl">{{maxRate}}</span>
                         <span class="detail-list__value">{{ value.max_bet }}</span>
                     </li>
                     <li class="detail-list__item full-width">
-                        <span class="detail-list__ttl">Мин. ставка</span>
+                        <span class="detail-list__ttl">{{minRate}}</span>
                         <span class="detail-list__value">{{ value.min_bet }}</span>
                     </li>
                 </ul>
@@ -110,6 +110,7 @@
 </template>
 
 <script>
+    import TRANSLATE from '~/helpers/translate'
     export default {
         name: "app-casino-detail",
         props: {
@@ -126,13 +127,41 @@
                     'Slots': '/img/game_types/slots.png',
                     'Poker': '/img/game_types/poker.png',
                     'Roulette': '/img/game_types/roulette.png'
-                }
+                },
+                details: '',
+                freeSpins: '',
+                payLines: '',
+                bonusRound: '',
+                wildSymbol: '',
+                vendors: '',
+                casino: '',
+                typeGame: '',
+                profitInformation: '',
+                volatility: '',
+                rate: '',
+                maxRate: '',
+                minRate: ''
             }
         },
         filters: {
             detailsFilters(item){
-                return item == 1 ? 'Да' : 'Нет'
+                return item == 1 ? TRANSLATE.YES.uk : TRANSLATE.NO.uk
             }
+        },
+        mounted() {
+            this.details = TRANSLATE.DETAILS.uk
+            this.freeSpins = TRANSLATE.FREE_SPINS.uk
+            this.payLines = TRANSLATE.PAY_LINES.uk
+            this.bonusRound = TRANSLATE.BONUS_ROUND.uk
+            this.wildSymbol = TRANSLATE.WILD_SYMBOL.uk
+            this.vendors = TRANSLATE.VENDORS.uk
+            this.casino = TRANSLATE.CASINO.uk
+            this.typeGame = TRANSLATE.TYPE_GAME.uk
+            this.profitInformation = TRANSLATE.PROFIT_INFORMATION.uk
+            this.volatility = TRANSLATE.VOLATILITY.uk,
+                    this.rate = TRANSLATE.RATE.uk,
+                    this.maxRate = TRANSLATE.MAX_RATE.uk,
+                    this.minRate = TRANSLATE.MIN_RATE.uk
         }
     }
 </script>

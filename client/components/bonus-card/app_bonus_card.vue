@@ -13,13 +13,13 @@
                 </svg>
                 <div class="circle-rating__percentage">{{value.rating}}</div>
             </div>
-            <span class="casinos-rating__txt">Рейтинг</span>
+            <span class="casinos-rating__txt">{{rating}}</span>
         </div>
 
         <div class="casino-card__txt" v-html="value.bonus_self"></div>
 
         <div class="casino-card__cta">
-            <button type="button" class="casino-card__cta btn-tertiary" @click="refActivate(value)">Перейти</button>
+            <button type="button" class="casino-card__cta btn-tertiary" @click="refActivate(value)">{{goTo}}</button>
         </div>
     </div>
 </div>
@@ -27,6 +27,7 @@
 
 <script>
 import Helper from '~/helpers/helpers.js'
+import TRANSLATE from '~/helpers/translate.json'
     export default {
         name: "app_bonus_card",
         props: {
@@ -34,6 +35,8 @@ import Helper from '~/helpers/helpers.js'
                 type: Object,
                 default: {}
             },
+            goTo: '',
+            rating: ''
         },
         data(){
             return {
@@ -50,6 +53,10 @@ import Helper from '~/helpers/helpers.js'
             refActivate(item) {
                 Helper.refActivate(item)
             },
+        },
+        mounted() {
+            this.rating = TRANSLATE.RATING.uk
+            this.goTo = TRANSLATE.GO_TO.uk
         }
     }
 </script>

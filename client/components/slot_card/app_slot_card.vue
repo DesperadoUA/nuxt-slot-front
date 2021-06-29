@@ -13,34 +13,34 @@
                 </svg>
                 <div class="circle-rating__percentage">{{ value.rating }}</div>
             </div>
-            <span class="casinos-rating__txt">Рейтинг</span>
+            <span class="casinos-rating__txt">{{rating}}</span>
         </div>
 
         <div class="casino-card-param">
             <div class="casino-card-param__item">
                 <span class="casino-card-param__value">{{ value.number_rows }}</span>
-                <span class="casino-card-param__txt">Кол-во рядов</span>
+                <span class="casino-card-param__txt">{{numberRows}}</span>
             </div>
 
             <div class="casino-card-param__item">
                 <span class="casino-card-param__value">{{ value.min_bet }}</span>
-                <span class="casino-card-param__txt">Мин ставка</span>
+                <span class="casino-card-param__txt">{{minBet}}</span>
             </div>
 
             <div class="casino-card-param__item">
                 <span class="casino-card-param__value">{{ value.pay_lines }}</span>
-                <span class="casino-card-param__txt">Линии выплат</span>
+                <span class="casino-card-param__txt">{{payLines}}</span>
             </div>
 
             <div class="casino-card-param__item">
                 <span class="casino-card-param__value">{{ value.reels }}</span>
-                <span class="casino-card-param__txt">Колеса</span>
+                <span class="casino-card-param__txt">{{wheels}}</span>
             </div>
         </div>
 
         <div class="casino-card-bonus">
             <span class="casino-card-bonus__value" style="color: #ffe600;">{{ value.volatility }}</span>
-            <div class="casino-card-bonus__wager">Волатильность</div>
+            <div class="casino-card-bonus__wager">{{volatility}}</div>
         </div>
 
         <div class="casino-card-bonus">
@@ -48,7 +48,7 @@
             <div class="casino-card-bonus__wager">RTP</div>
         </div>
         <div class="casino-card__cta">
-            <button type="button" class="casino-card__cta btn-tertiary" @click="refActivate(value)">Играть</button>
+            <button type="button" class="casino-card__cta btn-tertiary" @click="refActivate(value)">{{play}}</button>
         </div>
     </div>
 </div>
@@ -56,6 +56,7 @@
 
 <script>
 import Helper from '~/helpers/helpers.js'
+import TRANSLATE from '~/helpers/translate.json'
     export default {
         name: "app_slot_card",
         props: {
@@ -66,6 +67,14 @@ import Helper from '~/helpers/helpers.js'
         },
         data(){
             return {
+                play: '',
+                review: '',
+                volatility: '',
+                wheels: '',
+                payLines: '',
+                minBet: '',
+                numberRows: '',
+                rating: ''
             }
         },
         filters: {
@@ -77,6 +86,16 @@ import Helper from '~/helpers/helpers.js'
             refActivate(item) {
                 Helper.refActivate(item)
             }
+        },
+        mounted() {
+            this.play = TRANSLATE.PLAY.uk
+            this.review = TRANSLATE.REVIEW.uk
+            this.volatility = TRANSLATE.VOLATILITY.uk
+            this.wheels = TRANSLATE.WHEELS.uk
+            this.payLines = TRANSLATE.PAY_LINES.uk
+            this.minBet = TRANSLATE.MIN_BET.uk
+            this.numberRows = TRANSLATE.NUMBER_ROWS.uk
+            this.rating = TRANSLATE.RATING.uk
         }
     }
 </script>

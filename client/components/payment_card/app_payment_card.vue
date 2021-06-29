@@ -13,7 +13,7 @@
                 </svg>
                 <div class="circle-rating__percentage">{{value.rating}}</div>
             </div>
-            <span class="casinos-rating__txt">Рейтинг</span>
+            <span class="casinos-rating__txt">{{rating}}</span>
         </div>
 
        <div class="casino-card__txt" v-html="value.short_text"></div>
@@ -23,17 +23,22 @@
 
 <script>
 import Helper from '~/helpers/helpers.js'
+import TRANSLATE from '~/helpers/translate.json'
     export default {
         name: "app-casino-card",
         props: ['value'],
         data(){
             return {
+                rating: ''
             }
         },
         filters: {
             classRating(item) {
                 return Helper.classRating(item)
             }
+        },
+        mounted() {
+            this.rating = TRANSLATE.RATING.uk
         }
     }
 </script>
