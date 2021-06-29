@@ -457,24 +457,22 @@ Circle rating */
 Casino Card*/
 
 .casino-cards-container {
-    @media (max-width: 599px) {
-        --casino-card-width: 100%;
-        --casino-card-gutter: 0px;
+    @media (max-width: 1279px) {
+        --casino-card-width: 33.333%;
+        --casino-card-gutter: 20px;
+
+        max-width: calc(var(--container-width) + var(--casino-card-gutter));
+        display: flex;
+        flex-wrap: wrap;
     }
 
     @media (max-width: 991px) {
         --casino-card-width: 50%;
     }
 
-    @media (max-width: 1279px) {
-        --casino-card-width: 33.333%;
-        --casino-card-gutter: 20px;
-
-        width: calc(var(--container-width) + var(--casino-card-gutter));
-        margin-left: calc(var(--casino-card-gutter) / -2);
-        margin-right: calc(var(--casino-card-gutter) / -2);
-        display: flex;
-        flex-wrap: wrap;
+    @media (max-width: 599px) {
+        --casino-card-width: 100%;
+        --casino-card-gutter: 0px;
     }
 
     .casino-card {
@@ -510,23 +508,30 @@ Casino Card*/
     margin-right: 8px;
 
     @media (max-width: 1279px) {
-        border-radius: 14px 0 0 0;
         flex-shrink: 0;
         flex-basis: calc(100% - 112px);
+        border-radius: 14px 0 0 0;
         margin-right: 0;
+        padding-bottom: 38.13%;
+        position: relative;
     }
 
     img {
-        width: 100%;
-        max-height: 140px;
-        max-width: none;
-        object-fit: cover;
+        @media (max-width: 1279px) {
+            width: 100%;
+            height: auto;
+            max-width: none;
+            object-fit: cover;
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
     }
 }
 
 .casino-card__rating {
-    flex: 0 0 119px;
-    max-width: 119px;
+    flex: 0 0 112px;
+    max-width: 112px;
     align-self: stretch;
     display: flex;
     flex-direction: column;
@@ -1087,6 +1092,8 @@ Casinos */
         top: 0;
         width: 100%;
         height: auto;
+        max-width: none;
+        object-fit: cover;
     }
 }
 
