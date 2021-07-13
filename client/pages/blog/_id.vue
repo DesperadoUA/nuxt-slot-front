@@ -12,6 +12,7 @@
     import DAL_Builder from '~/DAL/builder'
     import Helper from '~/helpers/helpers'
     import TRANSLATE from '~/helpers/translate'
+    import config from '~/config/index'
     import app_blog_single from '~/components/blog_single/app_blog_single'
     import app_last_article from '~/components/last_article/app_last_article'
     export default {
@@ -43,6 +44,7 @@
                  body.sharedTwitter = Helper.sharedTwitter(settings)
                  body.sharedVK = Helper.sharedVK(settings)
                  const data = {body}
+                 data.body.currentUrl = config.BASE_URL + route.path
                  return {data}
               }
            },

@@ -10,6 +10,7 @@
 
 <script>
     import DAL_Builder from '~/DAL/builder'
+    import config from '~/config/index'
     import Helper from '~/helpers/helpers'
     import TRANSLATE from '~/helpers/translate.json'
     import app_blog_single from '~/components/blog_single/app_blog_single'
@@ -35,7 +36,7 @@
                  const body = response.data.body
                  const data = {body}
                  let settings = {
-                     url: process.env.BASE_URL + route.path,
+                     url: config.BASE_URL + route.path,
                      title: body.title,
                      short_desc: body.short_desc,
                      thumbnail: body.thumbnail
@@ -43,6 +44,7 @@
                  body.sharedFB = Helper.sharedFB(settings)
                  body.sharedTwitter = Helper.sharedTwitter(settings)
                  body.sharedVK = Helper.sharedVK(settings)
+                 data.body.currentUrl = config.BASE_URL + route.path
                  return {data}
               }
            },

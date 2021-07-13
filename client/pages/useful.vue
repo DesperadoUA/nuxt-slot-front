@@ -8,6 +8,7 @@
 
 <script>
     import DAL_Builder from '~/DAL/builder'
+    import config from '~/config/index'
     import app_content from '~/components/content/app-content'
     import app_useful from '~/components/useful/app_useful'
     import app_intro from '~/components/intro/app-intro'
@@ -25,6 +26,7 @@
             else {
                 const body = response.data.body
                 const data = {body}
+                data.body.currentUrl = config.BASE_URL + route.path
                 return {data}
             }
         },

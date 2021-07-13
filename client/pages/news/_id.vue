@@ -10,6 +10,7 @@
 
 <script>
     import DAL_Builder from '~/DAL/builder'
+    import config from '~/config/index'
     import Helper from '~/helpers/helpers'
     import TRANSLATE from '~/helpers/translate'
     import app_blog_single from '~/components/blog_single/app_blog_single'
@@ -43,6 +44,7 @@
                 body.sharedFB = Helper.sharedFB(settings)
                 body.sharedTwitter = Helper.sharedTwitter(settings)
                 body.sharedVK = Helper.sharedVK(settings)
+                data.body.currentUrl = config.BASE_URL + route.path
                 return {data}
             }
         },

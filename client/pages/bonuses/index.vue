@@ -9,6 +9,7 @@
 
 <script>
    import DAL_Builder from '~/DAL/builder'
+   import config from '~/config/index'
    import app_intro from '~/components/intro/app-intro'
    import app_best_offer from '~/components/best-offer/app-best-offer'
    import app_bonuses_loop from '~/components/bonuses_loop_downloads/app_bonuses_loop_downloads'
@@ -32,6 +33,7 @@ export default {
         else {
             const body = response.data.body
             const data = {body}
+            data.body.currentUrl = config.BASE_URL + route.path
             return {data}
         }
     },

@@ -14,6 +14,7 @@
 
 <script>
     import DAL_Builder from '~/DAL/builder'
+    import config from '~/config/index'
     import TRANSLATE from '~/helpers/translate'
     import app_intro from '~/components/intro/app-intro'
     import app_casino_loop from '~/components/casino_loop_downloads/app_casino_loop_downloads'
@@ -42,6 +43,7 @@
                 data.translate = {
                     casinosWith: `${TRANSLATE.CASINOS_WITH.uk} `,
                 }
+                data.body.currentUrl = config.BASE_URL + route.path
                 return {data}
             }
         },

@@ -19,6 +19,7 @@
 
 <script>
     import DAL_Builder from '~/DAL/builder'
+    import config from '~/config/index'
     import TRANSLATE from '~/helpers/translate'
     import app_intro from '~/components/intro/app-intro'
     import app_vendor_card from '~/components/vendor_card/app_vendor_card'
@@ -51,6 +52,7 @@
                     allCasino: TRANSLATE.ALL_CASINO.uk,
                     games: `${TRANSLATE.GAMES.uk} `
                 }
+                data.body.currentUrl = config.BASE_URL + route.path
                 return {data}
             }
         },

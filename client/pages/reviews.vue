@@ -8,6 +8,7 @@
 
 <script>
     import DAL_Page from '~/DAL/static_pages'
+    import config from '~/config/index'
     import app_intro from '~/components/intro/app-intro'
     import app_content from '~/components/content/app-content'
     import app_casino_category from '~/components/casino-categories/app_casino_categories'
@@ -26,7 +27,7 @@ export default {
         const response = await DAL_Page.getData(request)
         const body = response.data 
         const data = body
-        data.body.currentUrl = process.env.BASE_URL + route.path 
+        data.body.currentUrl = config.BASE_URL + route.path
         return {data}
     },
     head() {
