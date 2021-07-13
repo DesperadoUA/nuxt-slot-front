@@ -17,7 +17,9 @@ export default {
       { rel: 'script', src: 'https://images.dmca.com/Badges/DMCABadgeHelper.min.js' }
     ]
   },
-
+  serverMiddleware: [
+    '~/serverMiddleware/redirects',
+  ],
   // Global CSS: https://go.nuxtjs.dev/config-css
   css: [
   ],
