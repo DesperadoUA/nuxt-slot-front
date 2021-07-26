@@ -490,6 +490,7 @@ Casino Card*/
     border-radius: 14px;
     padding: 8px 18px 8px 8px;
     display: flex;
+    align-items: center;
     color: #fff;
     margin-bottom: 11px;
 
@@ -500,6 +501,7 @@ Casino Card*/
 }
 
 .casino-card__logo {
+    align-self: flex-start;
     flex: 0 0 244px;
     max-width: 244px;
     overflow: hidden;
