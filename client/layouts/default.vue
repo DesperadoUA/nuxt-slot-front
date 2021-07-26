@@ -490,7 +490,6 @@ Casino Card*/
     border-radius: 14px;
     padding: 8px 18px 8px 8px;
     display: flex;
-    align-items: center;
     color: #fff;
     margin-bottom: 11px;
 
@@ -517,6 +516,8 @@ Casino Card*/
     }
 
     img {
+        border-radius: 10px;
+
         @media (max-width: 1279px) {
             width: 100%;
             height: auto;
@@ -663,6 +664,7 @@ Casino Card*/
     padding-left: 15px;
     display: flex;
     flex-direction: column;
+    justify-content: center;
 
     @media (max-width: 1279px) {
         max-width: none;
@@ -685,14 +687,55 @@ Casino Card*/
     }
 }
 
-
 .casino-card__txt {
     line-height: 1.8125;
     margin-left: 16px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    flex-grow: 1;
 
     @media (max-width: 1279px) {
         margin: 16px;
-   }
+    }
+
+    ul {
+        margin-bottom: 10px;
+
+        li {
+            padding-left: 25px;
+            position: relative;
+
+            &:before {
+                position: absolute;
+                top: 14px;
+                left: 5px;
+                content: '';
+                width: 3px;
+                height: 3px;
+                border-radius: 50%;
+                background-color: currentColor;
+            }
+        }
+    }
+
+    ol {
+        counter-reset: counter;
+        margin-bottom: 10px;
+
+        li {
+            counter-increment: counter;
+
+            &:before {
+                content: counter(counter) '.';
+                margin-right: 7px;
+            }
+        }
+    }
+
+    a {
+        color: currentColor;
+    }
 }
 
 .casino-card__more {
