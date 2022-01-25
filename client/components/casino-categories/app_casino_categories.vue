@@ -144,6 +144,22 @@ import TRANSLATE from '~/helpers/translate.json'
         margin-left: calc(var(--casino-categories-gutters) / 2);
         margin-right: calc(var(--casino-categories-gutters) / 2);
         flex-shrink: 0;
+        @media (min-width: 320px) and (max-width: 767px) {
+         margin-left:0px;
+         margin-right: 0px;
+         width: 100%;
+         flex-basis: 100%; 
+        }
+         @media (min-width: 768px) and (max-width: 1000px) {
+         margin-left:0px;
+         margin-right: 0px;
+         width: 50%;
+         flex-basis: 50%; 
+        }
+    }
+    @media (max-width: 992px) {
+        margin-left:0px;
+        margin-right: 0px;
     }
 }
 

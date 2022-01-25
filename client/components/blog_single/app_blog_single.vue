@@ -77,6 +77,9 @@
     font-size: 36px;
     line-height: 120%;
     margin-bottom: 24px;
+    @media (min-width: 768px) and (max-width: 991px) {
+      margin-top: 25px;
+    }
   }
 
   .article-media {

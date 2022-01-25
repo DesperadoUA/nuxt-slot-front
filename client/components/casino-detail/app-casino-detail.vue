@@ -2,7 +2,7 @@
 <div class="casino-detail">
     <div class="container">
         <div class="detail-row" v-if="value.details.length !== 0">
-            <h3 class="detail-row__ttl">{{details}}</h3>
+            <div class="detail-row__ttl">{{details}}</div>
             <div class="detail-row__content">
                 <ul class="detail-list">
                     <li class="detail-list__item" v-for="(item, index) in value.details" :key="index">
@@ -14,10 +14,10 @@
         </div>
 
         <div class="detail-row">
-            <h3 class="detail-row__ttl">{{gameOffers}}</h3>
+            <div class="detail-row__ttl">{{gameOffers}}</div>
 
             <div class="detail-row__heading" v-if="value.type_games.length !== 0">
-                <h4 class="detail-row__sub-ttl">{{typeGames}}</h4>
+                <div class="detail-row__sub-ttl">{{typeGames}}</div>
             </div>
 
             <div class="detail-row__content" v-if="value.type_games.length !== 0">
@@ -28,7 +28,7 @@
             </div>
 
             <div class="detail-row__heading" v-if="value.vendors.length !== 0">
-                <h4 class="detail-row__sub-ttl">{{vendors}}</h4>
+                <div class="detail-row__sub-ttl">{{vendors}}</div>
             </div>
 
             <div class="detail-row__content" v-if="value.vendors.length !== 0">
@@ -43,10 +43,10 @@
         </div>
 
         <div class="detail-row" v-if="value.payments.length !== 0">
-            <h3 class="detail-row__ttl">{{payments}}</h3>
+            <div class="detail-row__ttl">{{payments}}</div>
 
             <div class="detail-row__heading">
-                <h4 class="detail-row__sub-ttl">{{paymentOptions}}</h4>
+                <div class="detail-row__sub-ttl">{{paymentOptions}}</div>
             </div>
 
             <div class="detail-row__content">
@@ -60,7 +60,7 @@
 
         <div class="detail-row">
             <div class="detail-row__heading">
-                <h4 class="detail-row__sub-ttl">{{deposit}}</h4>
+                <div class="detail-row__sub-ttl">{{deposit}}</div>
             </div>
 
             <div class="detail-row__content">

@@ -92,7 +92,7 @@ import TRANSLATE from '~/helpers/translate.json'
     flex-wrap: wrap;
     margin-left: calc(var(--slots-gutters) / -2);
     margin-right: calc(var(--slots-gutters) / -2);
-
+    
     .casino-group-item {
         width: calc(var(--slots-width) - var(--slots-gutters));
         flex-basis: calc(var(--slots-width) - var(--slots-gutters));
@@ -106,6 +106,10 @@ import TRANSLATE from '~/helpers/translate.json'
             flex-basis: 100%;
         }
     }
+
+    @media (min-width: 767px) and (max-width: 1200px) {
+         justify-content: center;  
+    }
     @media (max-width: 767px) {
         margin: 0px;
     }
@@ -115,7 +119,11 @@ import TRANSLATE from '~/helpers/translate.json'
     background-color: rgba(#0b0038, .7);
     border: 1px solid rgba(#fff, .1);
     color: #fff;
-
+    
+    @media (min-width: 767px) and (max-width: 1200px) {
+         flex-basis: 40%!important;     
+    }
+    
     @media (min-width: 992px) {
         &:hover {
             background-color: rgba(#0b0038, .8);

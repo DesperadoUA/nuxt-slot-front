@@ -3,7 +3,7 @@
         <app_intro :value="data.body" />
         <app_best_offer :value="data.body.bonuses" />
         <app_category_link :value="data.body.category_link" />
-        <app_casino_loop :value="data.body.casino" />
+        <app_casino_loop_downloads :value="data.body.casino" />
         <app_new_casino :value="data.body.new_casino" />
         <app_popular_slots :value="data.body.popular_slots" />
         <app_popular_offers :value="data.body.popular_bonus" />
@@ -17,7 +17,7 @@
    import app_intro from '~/components/intro/app-intro'
    import app_best_offer from '~/components/best-offer/app-best-offer'
    import app_category_link from '~/components/category_link/app-category_link'
-   import app_casino_loop from '~/components/casino_loop/app_casino_loop'
+   import app_casino_loop_downloads from '~/components/casino_loop_downloads/app_casino_loop_downloads'
    import app_new_casino from '~/components/new_casino/app-new_casino'
    import app_popular_slots from '~/components/popular_slots/app-popular_slots'
    import app_popular_offers from '~/components/popular_offers/app_popular_offers'
@@ -29,7 +29,7 @@ export default {
             data: {}
         }
     },
-    components: {app_intro, app_best_offer, app_category_link, app_casino_loop, 
+    components: {app_intro, app_best_offer, app_category_link, app_casino_loop_downloads, 
     app_content, app_new_casino, app_popular_slots, app_popular_offers},
     async asyncData({store, route}) {
         const request = {

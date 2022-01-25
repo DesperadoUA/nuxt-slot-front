@@ -3,6 +3,12 @@
     <app_intro :value="data.body" />
     <app_slot_card :value="data.body" />
     <app_slot_detail :value="data.body" />
+    <app_heading :value="{
+                          title: data.translate.casinosWithGame,
+                          permalink:'',
+                          title_permalink: ''
+                        }" />
+    <app_casino_loop :value="data.body.popular_casino" />
     <app_content :value="data.body.content" />
   </div>
 </template>
@@ -10,13 +16,16 @@
 <script>
     import DAL_Builder from '~/DAL/builder'
     import config from '~/config/index'
+    import TRANSLATE from '~/helpers/translate'
     import app_content from '~/components/content/app-content'
     import app_intro from '~/components/intro/app-intro'
     import app_slot_card from '~/components/slot_card/app_slot_card'
     import app_slot_detail from '~/components/slot-detail/app-slot-detail'
+    import app_casino_loop from '~/components/casino_loop_downloads/app_casino_loop_downloads'
+    import app_heading from '~/components/section-heading/app-section-heading'
     export default {
         name: "app_single_slot",
-        components: {app_slot_card, app_content, app_intro, app_slot_detail},
+        components: {app_slot_card, app_content, app_intro, app_slot_detail, app_casino_loop, app_heading},
         data: () => {
             return {
                 data: {},
@@ -33,6 +42,9 @@
             else {
                 const body = response.data.body
                 const data = {body}
+                data.translate = {
+                    casinosWithGame: `${TRANSLATE.CASINO_WITH_GAME.uk} `,
+                }
                 data.body.currentUrl = config.BASE_URL + route.path
                 return {data}
             }

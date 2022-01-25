@@ -4,9 +4,9 @@
         <div class="container" v-if="changeMenu !== null">
             <ul class="partners-logos__list">
                 <li class="partners-logos__item" v-for="(item, index) in changeMenu" :key="index">
-                    <NuxtLink no-prefetch :to="item.value_1">
+                    <a no-prefetch :href="item.value_1">
                         <img :src="item.src" loading="lazy">
-                    </NuxtLink>
+                    </a>
                 </li>
             </ul>
         </div>

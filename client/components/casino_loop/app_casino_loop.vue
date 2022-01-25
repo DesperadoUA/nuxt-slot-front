@@ -5,7 +5,10 @@
                 <div class="casino-item" v-for="(item, index) in value" :key="index" >
                     <div class="casino-item__top">
                         <div class="casino-item__logo">
-                            <img :src="item.thumbnail" alt="">
+                            <NuxtLink no-prefetch
+                                      :to="item.permalink">
+                                <img :src="item.thumbnail" alt="" loading="lazy">
+                            </NuxtLink>
                         </div>
 
                         <div class="casino-item__rating">
@@ -25,22 +28,22 @@
                     <div class="casino-item__content">
                         <div class="casino-param">
                             <div :class="item.regular_offers == 1 ? 'casino-param__item': 'casino-param__item disabled'">
-                                <img class="casino-param__img" src="/img/fire.svg" width="17" alt="">
+                                <img class="casino-param__img" src="/img/fire.svg" loading="lazy" width="17" alt="">
                                 <span class="casino-param__txt">Regular Offers</span>
                             </div>
 
                             <div :class="item.live_chat == 1 ? 'casino-param__item': 'casino-param__item disabled'">
-                                <img class="casino-param__img" src="/img/chat.svg" width="19" alt="">
+                                <img class="casino-param__img" src="/img/chat.svg" loading="lazy" width="19" alt="">
                                 <span class="casino-param__txt">Live Chat</span>
                             </div>
 
                             <div :class="item.live_casino == 1 ? 'casino-param__item': 'casino-param__item disabled'">
-                                <img class="casino-param__img" src="/img/casino.svg" width="19" alt="">
+                                <img class="casino-param__img" src="/img/casino.svg" loading="lazy" width="19" alt="">
                                 <span class="casino-param__txt">Live Casino</span>
                             </div>
 
                             <div :class="item.vip_program == 1 ? 'casino-param__item': 'casino-param__item disabled'">
-                                <img class="casino-param__img" src="/img/star.svg" width="17" alt="">
+                                <img class="casino-param__img" src="/img/star.svg" loading="lazy" width="17" alt="">
                                 <span class="casino-param__txt">Vip Program</span>
                             </div>
                         </div>

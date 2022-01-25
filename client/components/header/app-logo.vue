@@ -1,6 +1,6 @@
 <template>
     <NuxtLink no-prefetch to="/" v-if="options !== null" >
-        <img class="logo" :src="options.value" alt="Casino Online">
+        <img class="logo" :src="options.value" alt="Casino Online" width="200" height="35">
     </NuxtLink>
 </template>
 <script>

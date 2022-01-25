@@ -6,12 +6,11 @@
           <h3 class="useful-group__ttl">{{news}}</h3>
           <NuxtLink no-prefetch :to="item.permalink" class="news-item" v-for="(item, index) in value.news" :key="index">
             <span class="news-item__date">{{item.create_at}}</span>
-            <strong class="news-item__ttl">{{item.title}}</strong>
+            <strong class="news-item__ttl" v-html="item.title"></strong>
           </NuxtLink>
         </div>
         <div class="useful-group">
           <h3 class="useful-group__ttl">{{blog}}</h3>
-
           <NuxtLink no-prefetch :to="item.permalink" class="blog-item" v-for="(item, index) in value.blog" :key="index">
                     <span class="blog-item__media">
                         <img :src="item.thumbnail" :alt="item.title">

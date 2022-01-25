@@ -5,7 +5,7 @@ export default {
   head: {
     title: 'nuxt-slot',
     htmlAttrs: {
-      lang: 'ru'
+      lang: 'uk'
     },
     meta: [
       { charset: 'utf-8' },

@@ -3,11 +3,31 @@
   <component name="ChangeListManager">
     <list default="true" id="26b0153b-85f5-446b-baff-2cd02c04332d" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/components/category_link/app-category_link.vue" beforeDir="false" afterPath="$PROJECT_DIR$/client/components/category_link/app-category_link.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/components/faq/app_faq.vue" beforeDir="false" afterPath="$PROJECT_DIR$/client/components/faq/app_faq.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/components/header/app-header.vue" beforeDir="false" afterPath="$PROJECT_DIR$/client/components/header/app-header.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/components/best-offer/app-best-offer.vue" beforeDir="false" afterPath="$PROJECT_DIR$/client/components/best-offer/app-best-offer.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/components/blog_single/app_blog_single.vue" beforeDir="false" afterPath="$PROJECT_DIR$/client/components/blog_single/app_blog_single.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/components/bonus-card/app_bonus_card.vue" beforeDir="false" afterPath="$PROJECT_DIR$/client/components/bonus-card/app_bonus_card.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/components/casino-categories/app_casino_categories.vue" beforeDir="false" afterPath="$PROJECT_DIR$/client/components/casino-categories/app_casino_categories.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/components/casino-detail/app-casino-detail.vue" beforeDir="false" afterPath="$PROJECT_DIR$/client/components/casino-detail/app-casino-detail.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/components/casino-slots/app-casino-slots.vue" beforeDir="false" afterPath="$PROJECT_DIR$/client/components/casino-slots/app-casino-slots.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/components/casino_loop/app_casino_loop.vue" beforeDir="false" afterPath="$PROJECT_DIR$/client/components/casino_loop/app_casino_loop.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/components/casino_loop_downloads/app_casino_loop_downloads.vue" beforeDir="false" afterPath="$PROJECT_DIR$/client/components/casino_loop_downloads/app_casino_loop_downloads.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/components/content/app-content.vue" beforeDir="false" afterPath="$PROJECT_DIR$/client/components/content/app-content.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/components/footer/app-footer.vue" beforeDir="false" afterPath="$PROJECT_DIR$/client/components/footer/app-footer.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/components/header/app-logo.vue" beforeDir="false" afterPath="$PROJECT_DIR$/client/components/header/app-logo.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/components/header/app-menu.vue" beforeDir="false" afterPath="$PROJECT_DIR$/client/components/header/app-menu.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/components/header/app-search.vue" beforeDir="false" afterPath="$PROJECT_DIR$/client/components/header/app-search.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/components/new_casino/app-new_casino.vue" beforeDir="false" afterPath="$PROJECT_DIR$/client/components/new_casino/app-new_casino.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/components/news_loop/app_news_loop.vue" beforeDir="false" afterPath="$PROJECT_DIR$/client/components/news_loop/app_news_loop.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/components/popular_slots/app-popular_slots.vue" beforeDir="false" afterPath="$PROJECT_DIR$/client/components/popular_slots/app-popular_slots.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/components/useful/app_useful.vue" beforeDir="false" afterPath="$PROJECT_DIR$/client/components/useful/app_useful.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/components/vendor_casino/app_vendor_casino.vue" beforeDir="false" afterPath="$PROJECT_DIR$/client/components/vendor_casino/app_vendor_casino.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/ecosystem.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/ecosystem.config.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/helpers/translate.json" beforeDir="false" afterPath="$PROJECT_DIR$/client/helpers/translate.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/layouts/default.vue" beforeDir="false" afterPath="$PROJECT_DIR$/client/layouts/default.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/layouts/error.vue" beforeDir="false" afterPath="$PROJECT_DIR$/client/layouts/error.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/nuxt.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/nuxt.config.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/pages/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/client/pages/index.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/pages/slots/_id.vue" beforeDir="false" afterPath="$PROJECT_DIR$/client/pages/slots/_id.vue" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -17,23 +37,60 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/client/components/header/app-search.vue">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/client/components/news_loop/app_news_loop.vue">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="270">
-              <caret line="71" column="36" selection-start-line="71" selection-start-column="36" selection-end-line="71" selection-end-column="36" />
+            <state relative-caret-position="170">
+              <caret line="10" column="62" selection-start-line="10" selection-start-column="62" selection-end-line="10" selection-end-column="62" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/client/pages/vendors/_id.vue">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="425">
+              <caret line="25" column="80" selection-start-line="25" selection-start-column="4" selection-end-line="25" selection-end-column="80" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/client/pages/reviews.vue">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="187">
+              <caret line="15" column="24" selection-start-line="15" selection-start-column="24" selection-end-line="15" selection-end-column="24" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/client/components/content/app-content.vue">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="368">
+              <caret line="392" column="1" selection-start-line="392" selection-start-column="1" selection-end-line="392" selection-end-column="1" />
               <folding>
-                <element signature="n#button#0;n#div#0;n#div#0;n#div#0;n#template#0;n#!!top" />
+                <element signature="e#320#2056#0" />
+                <element signature="e#2104#4064#0" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/client/components/casino_loop/app_casino_loop.vue">
+        <entry file="file://$PROJECT_DIR$/client/components/vendor_casino/app_vendor_casino.vue">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="68">
-              <caret line="4" column="84" selection-start-line="4" selection-start-column="41" selection-end-line="4" selection-end-column="84" />
+            <state relative-caret-position="102">
+              <caret line="6" column="51" selection-start-line="6" selection-start-column="51" selection-end-line="6" selection-end-column="51" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/client/layouts/default.vue">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="19227">
+              <caret line="1132" column="24" selection-start-line="1132" selection-start-column="24" selection-end-line="1132" selection-end-column="24" />
             </state>
           </provider>
         </entry>
@@ -50,11 +107,36 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>slot-item</find>
+      <find>slot</find>
+      <find>news-ite</find>
+      <find>Популярные казино</find>
+      <find>НОВЫЕ КАЗИНО</find>
+      <find>Новости</find>
+      <find>interview</find>
+      <find>fre</find>
+      <find>мин</find>
+      <find>популярные</find>
+      <find>all</find>
+      <find>games</find>
+      <find>лини</find>
+      <find>Бонус раунд</find>
+      <find>Дикий символ</find>
+      <find>Провайдер</find>
+      <find>Каз</find>
+      <find>Тип игры</find>
+      <find>вола</find>
+      <find>Rate</find>
+      <find>Макс. ставка</find>
+      <find>SH</find>
+      <find>fr</find>
+      <find>iframe, img, video</find>
+      <find>vertical-align: top;</find>
+      <find>casino-card__logo</find>
+      <find>blog-article__ttl</find>
+      <find>.cms</find>
+      <find>Казино з</find>
       <find>casino-item__top</find>
-      <find>offer-item__logo</find>
-      <find>(min-width: 992px)</find>
-      <find>main-nav__drop</find>
+      <find>payments</find>
     </findStrings>
     <replaceStrings>
       <replace>circle-rating__logo</replace>
@@ -66,57 +148,57 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/client/pages/max-payout-casino_1.vue" />
-        <option value="$PROJECT_DIR$/client/components/popular-slots/popular-slots.vue" />
         <option value="$PROJECT_DIR$/client/components/casino-slots/app-casino-slots.vue" />
-        <option value="$PROJECT_DIR$/client/components/casino-detail/app-casino-detail.vue" />
-        <option value="$PROJECT_DIR$/client/components/casino-categories/app_casino_categories.vue" />
-        <option value="$PROJECT_DIR$/client/components/slot-detail/app-slot-detail.vue" />
-        <option value="$PROJECT_DIR$/client/components/vendor_card/app_slot_card.vue" />
-        <option value="$PROJECT_DIR$/client/components/vendor_card/app_vendor_card.vue" />
-        <option value="$PROJECT_DIR$/client/components/casino_loop/app_casino_loop.vue" />
-        <option value="$PROJECT_DIR$/client/components/casino_loop_downloads/app_casino_loop_downloads.vue" />
-        <option value="$PROJECT_DIR$/client/components/slot_loop_card/app_slot_loop_card.vue" />
-        <option value="$PROJECT_DIR$/client/components/bonuses_loop_downloads/app_bonuses_loop_downloads.vue" />
-        <option value="$PROJECT_DIR$/client/components/casino_card/app-casino-card.vue" />
-        <option value="$PROJECT_DIR$/client/components/vendor_casino/app_vendor_casino.vue" />
         <option value="$PROJECT_DIR$/client/components/slot_card/app_slot_card.vue" />
-        <option value="$PROJECT_DIR$/client/components/content/app-content.vue" />
-        <option value="$PROJECT_DIR$/client/layouts/default.vue" />
+        <option value="$PROJECT_DIR$/client/components/slot_loop_card/app_slot_loop_card.vue" />
+        <option value="$PROJECT_DIR$/client/components/slot-detail/app-slot-detail.vue" />
         <option value="$PROJECT_DIR$/client/components/bonus-card/app_bonus_card.vue" />
-        <option value="$PROJECT_DIR$/client/components/news_loop/app_news_loop.vue" />
-        <option value="$PROJECT_DIR$/client/components/header/app-menu.vue" />
-        <option value="$PROJECT_DIR$/client/components/useful/app_useful.vue" />
-        <option value="$PROJECT_DIR$/client/components/blog_single/app_blog_single.vue" />
-        <option value="$PROJECT_DIR$/client/pages/news/_id.vue" />
-        <option value="$PROJECT_DIR$/client/pages/news/index.vue" />
+        <option value="$PROJECT_DIR$/client/components/payment_card/app_payment_card.vue" />
+        <option value="$PROJECT_DIR$/client/config/index.js" />
+        <option value="$PROJECT_DIR$/client/pages/reviews.vue" />
+        <option value="$PROJECT_DIR$/client/pages/progressive.vue" />
+        <option value="$PROJECT_DIR$/client/pages/popular-casino.vue" />
+        <option value="$PROJECT_DIR$/client/pages/new-slots.vue" />
+        <option value="$PROJECT_DIR$/client/pages/min-deposit-casino.vue" />
+        <option value="$PROJECT_DIR$/client/pages/megaways.vue" />
+        <option value="$PROJECT_DIR$/client/pages/max-payout-casino.vue" />
+        <option value="$PROJECT_DIR$/client/pages/licensed-casino.vue" />
+        <option value="$PROJECT_DIR$/client/pages/index.vue" />
+        <option value="$PROJECT_DIR$/client/pages/free-bonus-casino.vue" />
+        <option value="$PROJECT_DIR$/client/pages/bonus-pay.vue" />
+        <option value="$PROJECT_DIR$/client/pages/best-for-payout.vue" />
+        <option value="$PROJECT_DIR$/client/pages/useful.vue" />
         <option value="$PROJECT_DIR$/client/pages/blog/_id.vue" />
         <option value="$PROJECT_DIR$/client/pages/blog/index.vue" />
         <option value="$PROJECT_DIR$/client/pages/bonuses/_id.vue" />
         <option value="$PROJECT_DIR$/client/pages/bonuses/index.vue" />
+        <option value="$PROJECT_DIR$/client/pages/casino/_id.vue" />
+        <option value="$PROJECT_DIR$/client/pages/interview/_id.vue" />
         <option value="$PROJECT_DIR$/client/pages/interview/index.vue" />
+        <option value="$PROJECT_DIR$/client/pages/news/_id.vue" />
+        <option value="$PROJECT_DIR$/client/pages/news/index.vue" />
         <option value="$PROJECT_DIR$/client/pages/payments/_id.vue" />
-        <option value="$PROJECT_DIR$/client/pages/slots/_id.vue" />
         <option value="$PROJECT_DIR$/client/pages/slots/index.vue" />
         <option value="$PROJECT_DIR$/client/pages/vendors/_id.vue" />
-        <option value="$PROJECT_DIR$/client/pages/best-for-payout.vue" />
-        <option value="$PROJECT_DIR$/client/pages/bonus-pay.vue" />
-        <option value="$PROJECT_DIR$/client/pages/free-bonus-casino.vue" />
-        <option value="$PROJECT_DIR$/client/pages/licensed-casino.vue" />
-        <option value="$PROJECT_DIR$/client/pages/max-payout-casino.vue" />
-        <option value="$PROJECT_DIR$/client/pages/megaways.vue" />
-        <option value="$PROJECT_DIR$/client/pages/min-deposit-casino.vue" />
-        <option value="$PROJECT_DIR$/client/pages/new-slots.vue" />
-        <option value="$PROJECT_DIR$/client/pages/popular-casino.vue" />
-        <option value="$PROJECT_DIR$/client/pages/progressive.vue" />
-        <option value="$PROJECT_DIR$/client/pages/useful.vue" />
-        <option value="$PROJECT_DIR$/client/pages/interview/_id.vue" />
-        <option value="$PROJECT_DIR$/client/pages/casino/_id.vue" />
-        <option value="$PROJECT_DIR$/client/components/faq/app_faq.vue" />
-        <option value="$PROJECT_DIR$/client/store/common.js" />
-        <option value="$PROJECT_DIR$/client/DAL/builder.js" />
-        <option value="$PROJECT_DIR$/client/components/last_article/app_last_article.vue" />
+        <option value="$PROJECT_DIR$/client/serverMiddleware/redirects.js" />
+        <option value="$PROJECT_DIR$/client/nuxt.config.js" />
+        <option value="$PROJECT_DIR$/client/helpers/helpers.js" />
+        <option value="$PROJECT_DIR$/client/layouts/error.vue" />
+        <option value="$PROJECT_DIR$/client/components/header/app-logo.vue" />
+        <option value="$PROJECT_DIR$/client/components/header/app-menu.vue" />
+        <option value="$PROJECT_DIR$/client/components/blog_single/app_blog_single.vue" />
+        <option value="$PROJECT_DIR$/client/components/best-offer/app-best-offer.vue" />
+        <option value="$PROJECT_DIR$/client/pages/slots/_id.vue" />
         <option value="$PROJECT_DIR$/client/components/header/app-search.vue" />
+        <option value="$PROJECT_DIR$/client/components/useful/app_useful.vue" />
+        <option value="$PROJECT_DIR$/client/components/news_loop/app_news_loop.vue" />
+        <option value="$PROJECT_DIR$/client/components/casino_loop/app_casino_loop.vue" />
+        <option value="$PROJECT_DIR$/client/components/casino_loop_downloads/app_casino_loop_downloads.vue" />
+        <option value="$PROJECT_DIR$/client/layouts/default.vue" />
+        <option value="$PROJECT_DIR$/client/components/vendor_casino/app_vendor_casino.vue" />
+        <option value="$PROJECT_DIR$/client/helpers/translate.json" />
+        <option value="$PROJECT_DIR$/client/components/casino-detail/app-casino-detail.vue" />
+        <option value="$PROJECT_DIR$/client/components/content/app-content.vue" />
       </list>
     </option>
   </component>
@@ -127,9 +209,8 @@
     <auto-save>true</auto-save>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="10" />
-    <option name="y" value="45" />
-    <option name="width" value="1940" />
+    <option name="x" value="415" />
+    <option name="width" value="1160" />
     <option name="height" value="1050" />
   </component>
   <component name="ProjectView">
@@ -149,19 +230,6 @@
               <item name="nuxt-slot-front" type="462c0819:PsiDirectoryNode" />
               <item name="client" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="nuxt-slot-front" type="b2602c69:ProjectViewProjectNode" />
-              <item name="nuxt-slot-front" type="462c0819:PsiDirectoryNode" />
-              <item name="client" type="462c0819:PsiDirectoryNode" />
-              <item name="components" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="nuxt-slot-front" type="b2602c69:ProjectViewProjectNode" />
-              <item name="nuxt-slot-front" type="462c0819:PsiDirectoryNode" />
-              <item name="client" type="462c0819:PsiDirectoryNode" />
-              <item name="components" type="462c0819:PsiDirectoryNode" />
-              <item name="casino_loop" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
@@ -172,7 +240,7 @@
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/client/static/img" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../slototop-front" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -185,14 +253,14 @@
     <property name="settings.editor.selected.configurable" value="Settings.JavaScript" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\OpenServer\OSPanel\domains\nuxt-slot-front\client\pages\blog" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\OpenServer\OSPanel\domains\nuxt-slot-front\client" />
+      <recent name="D:\OpenServer\OSPanel\domains\nuxt-slot-front\client\store" />
       <recent name="D:\OpenServer\OSPanel\domains\nuxt-slot-front\client\static\img" />
       <recent name="D:\OpenServer\OSPanel\domains\nuxt-slot-front\client\pages\interview" />
-      <recent name="D:\OpenServer\OSPanel\domains\nuxt-slot-front\client\pages\blog" />
-      <recent name="D:\OpenServer\OSPanel\domains\nuxt-slot-front\client\pages" />
-      <recent name="D:\OpenServer\OSPanel\domains\nuxt-slot-front\client\components\vendor_card" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
       <recent name="D:\OpenServer\OSPanel\domains\nuxt-slot-front\client\pages\blog" />
     </key>
   </component>
@@ -227,18 +295,81 @@
       <workItem from="1623224275521" duration="7866000" />
       <workItem from="1623307923786" duration="5907000" />
       <workItem from="1623332594607" duration="1802000" />
-      <workItem from="1623394285481" duration="16217000" />
+      <workItem from="1623394285481" duration="18797000" />
+      <workItem from="1623653780282" duration="16215000" />
+      <workItem from="1623679640208" duration="603000" />
+      <workItem from="1623684444479" duration="949000" />
+      <workItem from="1623739724713" duration="93000" />
+      <workItem from="1623750159968" duration="1218000" />
+      <workItem from="1623936209934" duration="1217000" />
+      <workItem from="1624003943673" duration="624000" />
+      <workItem from="1624370326736" duration="1225000" />
+      <workItem from="1624458484085" duration="2302000" />
+      <workItem from="1624518444796" duration="16617000" />
+      <workItem from="1624604968711" duration="1960000" />
+      <workItem from="1624951211620" duration="7663000" />
+      <workItem from="1626166867142" duration="277000" />
+      <workItem from="1626167970028" duration="2739000" />
+      <workItem from="1626772182811" duration="810000" />
+      <workItem from="1626854745870" duration="510000" />
+      <workItem from="1626937262849" duration="16000" />
+      <workItem from="1627051904670" duration="406000" />
+      <workItem from="1627282310549" duration="107000" />
+      <workItem from="1627284121866" duration="624000" />
+      <workItem from="1627303063685" duration="3747000" />
+      <workItem from="1627313400415" duration="755000" />
+      <workItem from="1627400529869" duration="628000" />
+      <workItem from="1627455784496" duration="520000" />
+      <workItem from="1627650932354" duration="622000" />
+      <workItem from="1628500256787" duration="1686000" />
+      <workItem from="1628520203264" duration="289000" />
+      <workItem from="1628751187820" duration="1224000" />
+      <workItem from="1628864401691" duration="623000" />
+      <workItem from="1629098734250" duration="708000" />
+      <workItem from="1629184654712" duration="1200000" />
+      <workItem from="1629291083997" duration="11000" />
+      <workItem from="1629462506792" duration="573000" />
+      <workItem from="1629466216065" duration="651000" />
+      <workItem from="1629874366253" duration="28000" />
+      <workItem from="1630067825479" duration="605000" />
+      <workItem from="1630133382677" duration="30000" />
+      <workItem from="1630409153986" duration="727000" />
+      <workItem from="1630413207190" duration="420000" />
+      <workItem from="1630417272534" duration="1621000" />
+      <workItem from="1630478823617" duration="7694000" />
+      <workItem from="1630565038956" duration="2677000" />
+      <workItem from="1630662057824" duration="626000" />
+      <workItem from="1630912073519" duration="685000" />
+      <workItem from="1630998552411" duration="1810000" />
+      <workItem from="1631084895595" duration="2515000" />
+      <workItem from="1631257004340" duration="625000" />
+      <workItem from="1631516712665" duration="426000" />
+      <workItem from="1631518068930" duration="632000" />
+      <workItem from="1632303189752" duration="679000" />
+      <workItem from="1632385722130" duration="33000" />
+      <workItem from="1632467386169" duration="3550000" />
+      <workItem from="1634656822126" duration="911000" />
+      <workItem from="1634711149072" duration="4606000" />
+      <workItem from="1634799850472" duration="55000" />
+      <workItem from="1635854596410" duration="2958000" />
+      <workItem from="1636384278054" duration="698000" />
+      <workItem from="1639123213468" duration="776000" />
+      <workItem from="1640079355666" duration="4249000" />
+      <workItem from="1640094803681" duration="1972000" />
+      <workItem from="1640162297928" duration="62000" />
+      <workItem from="1641286547624" duration="1805000" />
+      <workItem from="1641578202065" duration="388000" />
+      <workItem from="1641758903438" duration="30000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="88366000" />
+    <option name="totallyTimeSpent" value="204251000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
-    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.21648793" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.19906166" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -251,8 +382,9 @@
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Database Changes" order="8" />
       <window_info anchor="bottom" id="Version Control" order="9" />
-      <window_info anchor="bottom" id="Terminal" order="10" visible="true" weight="0.32673267" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="10" visible="true" weight="0.21923621" />
       <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" />
+      <window_info anchor="bottom" id="GraphQL" order="12" weight="0.32956153" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -264,413 +396,396 @@
     <option name="version" value="1" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/client/components/slot-detail/app-slot-detail.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="1" column="27" selection-start-line="1" selection-start-column="27" selection-end-line="1" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/components/casino_card/app-casino-card.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="57" column="94" selection-start-line="57" selection-start-column="94" selection-end-line="57" selection-end-column="94" />
-          <folding>
-            <element signature="n#div#1;n#div#0;n#div#0;n#template#0;n#!!top" />
-            <element signature="n#div#2;n#div#0;n#div#0;n#template#0;n#!!top" />
-            <element signature="n#div#0;n#div#2;n#div#0;n#div#0;n#template#0;n#!!top" />
-            <element signature="n#img#0;n#div#0;n#div#2;n#div#0;n#div#0;n#template#0;n#!!top" />
-            <element signature="n#div#1;n#div#2;n#div#0;n#div#0;n#template#0;n#!!top" />
-            <element signature="n#img#0;n#div#1;n#div#2;n#div#0;n#div#0;n#template#0;n#!!top" />
-            <element signature="n#div#2;n#div#2;n#div#0;n#div#0;n#template#0;n#!!top" />
-            <element signature="n#img#0;n#div#2;n#div#2;n#div#0;n#div#0;n#template#0;n#!!top" />
-            <element signature="n#div#3;n#div#2;n#div#0;n#div#0;n#template#0;n#!!top" />
-            <element signature="n#div#3;n#div#0;n#div#0;n#template#0;n#!!top" />
-            <element signature="n#style#0;n#span#0;n#div#3;n#div#0;n#div#0;n#template#0;n#!!top" expanded="true" />
-            <element signature="n#div#4;n#div#0;n#div#0;n#template#0;n#!!top" />
-            <element signature="n#style#0;n#span#0;n#div#4;n#div#0;n#div#0;n#template#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/components/vendor_casino/app_vendor_casino.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1751">
-          <caret line="103" column="13" selection-start-line="96" selection-start-column="12" selection-end-line="103" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/DAL/options.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="7" column="26" selection-start-line="7" selection-start-column="26" selection-end-line="7" selection-end-column="26" />
-          <folding>
-            <element signature="e#0#25#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/components/casino_loop_downloads/app_casino_loop_downloads.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1802">
-          <caret line="106" column="63" selection-start-line="106" selection-start-column="63" selection-end-line="106" selection-end-column="63" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/components/bonus-card/app_bonus_card.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="41" column="10" lean-forward="true" selection-start-line="30" selection-start-column="8" selection-end-line="41" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/components/slot_card/app_slot_card.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="171">
-          <caret line="50" column="98" selection-start-line="50" selection-start-column="98" selection-end-line="50" selection-end-column="98" />
-          <folding>
-            <element signature="n#style#0;n#span#0;n#div#3;n#div#0;n#div#0;n#template#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#span#0;n#div#4;n#div#0;n#div#0;n#template#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/layouts/default.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="18496">
-          <caret line="1089" column="20" selection-start-line="1089" selection-start-column="20" selection-end-line="1089" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/components/bonuses_loop_downloads/app_bonuses_loop_downloads.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="79" selection-start-line="2" selection-start-column="29" selection-end-line="2" selection-end-column="79" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/components/news_loop/app_news_loop.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="48" column="27" selection-start-line="48" selection-start-column="27" selection-end-line="48" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/components/header/app-menu.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="12" column="107" selection-start-line="12" selection-start-column="107" selection-end-line="12" selection-end-column="107" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/DAL/config.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="1" column="4" selection-start-line="1" selection-start-column="4" selection-end-line="1" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/components/best-offer/app-best-offer.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="561">
-          <caret line="45" column="18" selection-start-line="45" selection-start-column="7" selection-end-line="45" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/components/useful/app_useful.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="49" column="23" selection-start-line="49" selection-start-column="11" selection-end-line="49" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/components/blog_loop_downloads/app_blog_loop_downloads.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="112" lean-forward="true" selection-start-line="4" selection-start-column="12" selection-end-line="4" selection-end-column="112" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/components/blog_single/app_blog_single.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="48" column="14" lean-forward="true" selection-start-line="48" selection-start-column="14" selection-end-line="48" selection-end-column="14" />
-          <folding>
-            <element signature="n#div#1;n#article#0;n#div#0;n#div#0;n#template#0;n#!!top" />
-            <element signature="e#8345#8580#0" />
-            <element signature="e#8603#8677#0" />
-            <element signature="e#8696#8835#0" />
-            <element signature="e#8850#8995#0" />
-            <element signature="e#9016#9117#0" />
-            <element signature="e#10408#10550#0" />
-            <element signature="e#10574#10990#0" />
-            <element signature="e#11011#11242#0" />
-            <element signature="e#11254#11382#0" />
-            <element signature="e#11413#11601#0" />
-            <element signature="e#11626#11951#0" />
-            <element signature="e#8035#8045#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/client/pages/blog/index.vue">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="22" column="36" selection-start-line="22" selection-start-column="36" selection-end-line="22" selection-end-column="36" />
+        <state relative-caret-position="187">
+          <caret line="29" column="67" selection-start-line="29" selection-start-column="67" selection-end-line="29" selection-end-column="67" />
           <folding>
-            <element signature="e#190#233#0" expanded="true" />
+            <element signature="e#190#229#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/client/pages/blog/_id.vue">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="188">
-          <caret line="27" column="37" selection-start-line="27" selection-start-column="37" selection-end-line="27" selection-end-column="37" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/pages/bonuses/_id.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="26" column="37" selection-start-line="26" selection-start-column="37" selection-end-line="26" selection-end-column="37" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/pages/bonuses/index.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="23" column="41" selection-start-line="23" selection-start-column="41" selection-end-line="23" selection-end-column="41" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/pages/news/_id.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="27" column="29" lean-forward="true" selection-start-line="27" selection-start-column="29" selection-end-line="27" selection-end-column="36" />
+        <state relative-caret-position="-33">
+          <caret line="46" column="68" selection-start-line="46" selection-start-column="68" selection-end-line="46" selection-end-column="68" />
           <folding>
-            <element signature="e#289#332#0" expanded="true" />
+            <element signature="e#278#317#0" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/pages/news/index.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="21" column="36" selection-start-line="21" selection-start-column="36" selection-end-line="21" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/pages/payments/_id.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="34" column="36" selection-start-line="34" selection-start-column="36" selection-end-line="34" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/pages/slots/_id.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="28" column="36" selection-start-line="28" selection-start-column="36" selection-end-line="28" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/pages/slots/index.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="228">
-          <caret line="29" column="32" selection-start-line="29" selection-start-column="32" selection-end-line="29" selection-end-column="32" />
-          <folding>
-            <element signature="e#245#288#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/pages/vendors/_id.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="223">
-          <caret line="39" column="36" selection-start-line="39" selection-start-column="36" selection-end-line="39" selection-end-column="36" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/client/pages/bonus-pay.vue">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="23" column="48" selection-start-line="23" selection-start-column="48" selection-end-line="23" selection-end-column="48" />
+        <state relative-caret-position="138">
+          <caret line="11" column="38" lean-forward="true" selection-start-line="11" selection-start-column="38" selection-end-line="11" selection-end-column="38" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/client/pages/free-bonus-casino.vue">
+    <entry file="file://$PROJECT_DIR$/client/pages/bonuses/_id.vue">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="306">
-          <caret line="28" column="47" selection-start-line="28" selection-start-column="47" selection-end-line="28" selection-end-column="47" />
+          <caret line="33" column="68" selection-start-line="33" selection-start-column="68" selection-end-line="33" selection-end-column="68" />
           <folding>
-            <element signature="e#258#298#0" expanded="true" />
+            <element signature="e#186#225#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/client/pages/index.vue">
+    <entry file="file://$PROJECT_DIR$/client/pages/bonuses/index.vue">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-255" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/pages/licensed-casino.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="28" column="47" selection-start-line="28" selection-start-column="47" selection-end-line="28" selection-end-column="47" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/pages/max-payout-casino.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="28" column="36" selection-start-line="28" selection-start-column="36" selection-end-line="28" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/pages/megaways.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="23" column="48" selection-start-line="23" selection-start-column="48" selection-end-line="23" selection-end-column="48" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/pages/min-deposit-casino.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="28" column="48" selection-start-line="28" selection-start-column="48" selection-end-line="28" selection-end-column="48" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/pages/new-slots.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="23" column="47" selection-start-line="23" selection-start-column="47" selection-end-line="23" selection-end-column="47" />
-          <folding>
-            <element signature="e#245#285#0" expanded="true" />
-            <element signature="e#1269#1717#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/pages/popular-casino.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="28" column="48" selection-start-line="28" selection-start-column="48" selection-end-line="28" selection-end-column="48" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/pages/progressive.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="23" column="47" selection-start-line="23" selection-start-column="47" selection-end-line="23" selection-end-column="47" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/pages/reviews.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-153" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/pages/interview/index.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="22" column="36" selection-start-line="22" selection-start-column="36" selection-end-line="22" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/pages/useful.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="18" column="60" selection-start-line="18" selection-start-column="60" selection-end-line="18" selection-end-column="60" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/pages/interview/_id.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="24" column="62" selection-start-line="24" selection-start-column="62" selection-end-line="24" selection-end-column="62" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/components/faq/app_faq.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="17" column="58" selection-start-line="17" selection-start-column="58" selection-end-line="17" selection-end-column="58" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/store/settings.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="2" selection-end-line="22" selection-end-column="1" />
+        <state relative-caret-position="82">
+          <caret line="11" column="38" selection-start-line="11" selection-start-column="38" selection-end-line="11" selection-end-column="38" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/client/pages/casino/_id.vue">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-136">
-          <caret line="7" column="41" selection-start-line="7" selection-start-column="41" selection-end-line="7" selection-end-column="41" />
+        <state relative-caret-position="321">
+          <caret line="40" column="68" selection-start-line="40" selection-start-column="68" selection-end-line="40" selection-end-column="68" />
           <folding>
-            <element signature="e#302#345#0" expanded="true" />
+            <element signature="e#383#422#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/client/DAL/builder.js">
+    <entry file="file://$PROJECT_DIR$/client/pages/interview/_id.vue">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="273">
-          <caret line="19" column="14" selection-start-line="19" selection-start-column="4" selection-end-line="19" selection-end-column="14" />
+        <state relative-caret-position="697">
+          <caret line="46" column="68" selection-start-line="46" selection-start-column="17" selection-end-line="46" selection-end-column="68" />
+          <folding>
+            <element signature="e#278#317#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/pages/interview/index.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="425">
+          <caret line="29" column="67" selection-start-line="29" selection-start-column="67" selection-end-line="29" selection-end-column="67" />
+          <folding>
+            <element signature="e#190#229#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/pages/news/_id.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="12" column="39" selection-start-line="12" selection-start-column="39" selection-end-line="12" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/DAL/review.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
           <folding>
             <element signature="e#0#25#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/client/components/content/app-content.vue">
+    <entry file="file://$PROJECT_DIR$/client/helpers/helpers.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="19" column="40" selection-start-line="19" selection-start-column="3" selection-end-line="19" selection-end-column="40" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/store/common.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="11" column="35" selection-start-line="11" selection-start-column="35" selection-end-line="11" selection-end-column="35" />
+        <state relative-caret-position="34">
+          <caret line="15" column="5" lean-forward="true" selection-start-line="15" selection-start-column="5" selection-end-line="15" selection-end-column="5" />
+          <folding>
+            <element signature="n#!!block;n#sharedFB#0;n#Helper#0;n#!!top" />
+            <element signature="n#!!block;n#sharedTwitter#0;n#Helper#0;n#!!top" />
+            <element signature="n#!!block;n#sharedVK#0;n#Helper#0;n#!!top" />
+            <element signature="n#!!block;n#refActivate#0;n#Helper#0;n#!!top" />
+            <element signature="n#!!block;n#classRating#0;n#Helper#0;n#!!top" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/client/pages/best-for-payout.vue">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="30" column="13" selection-start-line="23" selection-start-column="12" selection-end-line="30" selection-end-column="13" />
+        <state relative-caret-position="221">
+          <caret line="24" column="51" selection-start-line="24" selection-start-column="51" selection-end-line="24" selection-end-column="51" />
+          <folding>
+            <element signature="e#245#284#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/client/static/img/arrow.svg">
-      <provider selected="true" editor-type-id="images" />
+    <entry file="file://$PROJECT_DIR$/client/.env">
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/client/components/last_article/app_last_article.vue">
+    <entry file="file://$PROJECT_DIR$/client/.gitignore">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/package.json">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/nuxt.config.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="18" column="27" selection-start-line="18" selection-start-column="27" selection-end-line="18" selection-end-column="27" />
+        <state relative-caret-position="595">
+          <caret line="53" column="5" lean-forward="true" selection-start-line="53" selection-start-column="5" selection-end-line="53" selection-end-column="5" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/client/components/casino_loop/app_casino_loop.vue">
+    <entry file="file://$PROJECT_DIR$/client/pages/slots/index.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="11" column="39" selection-start-line="11" selection-start-column="39" selection-end-line="11" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/layouts/error.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="13" column="21" selection-start-line="13" selection-start-column="21" selection-end-line="13" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/DAL/settings.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="7" column="27" selection-start-line="7" selection-start-column="27" selection-end-line="7" selection-end-column="27" />
+          <folding>
+            <element signature="e#0#25#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/DAL/static_pages.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <folding>
+            <element signature="e#0#25#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/pages/free-bonus-casino.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="19" column="20" selection-start-line="19" selection-start-column="20" selection-end-line="19" selection-end-column="20" />
+          <folding>
+            <element signature="e#258#297#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/serverMiddleware/redirects.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="10" column="25" selection-start-line="10" selection-start-column="25" selection-end-line="10" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/components/header/app-logo.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="8" column="15" lean-forward="true" selection-start-line="8" selection-start-column="15" selection-end-line="8" selection-end-column="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/DAL/builder.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="15" column="20" selection-start-line="15" selection-start-column="20" selection-end-line="15" selection-end-column="20" />
+          <folding>
+            <element signature="e#0#25#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/pages/index.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="374">
+          <caret line="31" column="63" selection-start-line="31" selection-start-column="63" selection-end-line="31" selection-end-column="63" />
+          <folding>
+            <element signature="e#519#560#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/components/blog_single/app_blog_single.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="278">
+          <caret line="80" column="23" selection-start-line="80" selection-start-column="23" selection-end-line="80" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/components/header/app-menu.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="8" column="90" selection-start-line="8" selection-start-column="90" selection-end-line="8" selection-end-column="90" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/components/header/app-header.vue">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="68">
-          <caret line="4" column="84" selection-start-line="4" selection-start-column="41" selection-end-line="4" selection-end-column="84" />
+          <caret line="4" column="18" selection-start-line="4" selection-start-column="18" selection-end-line="4" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/ecosystem.config.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/components/best-offer/app-best-offer.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="1" column="28" lean-forward="true" selection-start-line="1" selection-start-column="28" selection-end-line="1" selection-end-column="28" />
+          <folding>
+            <element signature="n#style#0;n#!!top" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/pages/slots/_id.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="18" column="47" selection-start-line="18" selection-start-column="47" selection-end-line="18" selection-end-column="47" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/pages/news/index.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="408">
+          <caret line="28" column="67" selection-start-line="28" selection-start-column="67" selection-end-line="28" selection-end-column="67" />
+          <folding>
+            <element signature="e#185#224#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/pages/useful.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="10" column="39" selection-start-line="10" selection-start-column="39" selection-end-line="10" selection-end-column="39" />
+          <folding>
+            <element signature="e#456#1630#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/components/useful/app_useful.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="8" column="63" selection-start-line="8" selection-start-column="63" selection-end-line="8" selection-end-column="63" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/client/components/header/app-search.vue">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="71" column="36" selection-start-line="71" selection-start-column="36" selection-end-line="71" selection-end-column="36" />
+        <state relative-caret-position="238">
+          <caret line="14" column="51" selection-start-line="14" selection-start-column="51" selection-end-line="14" selection-end-column="51" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/pages/payments/_id.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="17" column="4" selection-start-line="17" selection-start-column="4" selection-end-line="17" selection-end-column="47" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/components/casino_loop/app_casino_loop.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="10" column="39" selection-start-line="7" selection-start-column="28" selection-end-line="10" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/components/casino_loop_downloads/app_casino_loop_downloads.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="8" column="55" lean-forward="true" selection-start-line="8" selection-start-column="55" selection-end-line="8" selection-end-column="55" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/components/section-heading/app-section-heading.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="58" lean-forward="true" selection-start-line="2" selection-start-column="58" selection-end-line="2" selection-end-column="58" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/helpers/translate.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="374">
+          <caret line="211" column="21" selection-start-line="211" selection-start-column="21" selection-end-line="211" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/config/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="1" column="39" selection-start-line="1" selection-start-column="39" selection-end-line="1" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/components/bonus-card/app_bonus_card.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="236">
+          <caret line="32" selection-start-line="32" selection-end-line="32" selection-end-column="48" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Downloads/env">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/components/casino-detail/app-casino-detail.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="113">
+          <caret line="111" column="10" lean-forward="true" selection-start-line="111" selection-start-column="10" selection-end-line="111" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/DAL/config.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="16" selection-start-column="16" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/components/news_loop/app_news_loop.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="10" column="62" selection-start-line="10" selection-start-column="62" selection-end-line="10" selection-end-column="62" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/pages/vendors/_id.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="425">
+          <caret line="25" column="80" selection-start-line="25" selection-start-column="4" selection-end-line="25" selection-end-column="80" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/pages/reviews.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="15" column="24" selection-start-line="15" selection-start-column="24" selection-end-line="15" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/components/vendor_casino/app_vendor_casino.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="6" column="51" selection-start-line="6" selection-start-column="51" selection-end-line="6" selection-end-column="51" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/layouts/default.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="19227">
+          <caret line="1132" column="24" selection-start-line="1132" selection-start-column="24" selection-end-line="1132" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/components/content/app-content.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="368">
+          <caret line="392" column="1" selection-start-line="392" selection-start-column="1" selection-end-line="392" selection-end-column="1" />
           <folding>
-            <element signature="n#button#0;n#div#0;n#div#0;n#div#0;n#template#0;n#!!top" />
+            <element signature="e#320#2056#0" />
+            <element signature="e#2104#4064#0" />
           </folding>
         </state>
       </provider>

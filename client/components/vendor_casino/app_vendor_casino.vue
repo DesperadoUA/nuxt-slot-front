@@ -5,9 +5,11 @@
             <div class="casino-item" v-for="(item, index) in value" :key="index" >
                 <div class="casino-item__top">
                     <div class="casino-item__logo">
-                        <img :src="item.thumbnail" alt="">
+                        <NuxtLink no-prefetch
+                                  :to="item.permalink">
+                            <img :src="item.thumbnail" alt="" loading="lazy">
+                        </NuxtLink>
                     </div>
-
                     <div class="casino-item__rating">
                         <div class="circle-rating">
                             <svg viewBox="0 0 36 36" class="circle-rating__chart" :style="item | classRating">

@@ -2,6 +2,7 @@
   <div>
     <section>
         <div class="container blog_section home_link">
+            <h1>{{data.body.h1}}</h1>
             <NuxtLink to="/">Home page</NuxtLink>
         </div>
     </section>
@@ -31,11 +32,12 @@
     margin-bottom: 30px;
     text-transform: uppercase;
     min-height: 30vh;
+  color: #fff;
 }
 .home_link a {
     text-decoration: none;
     font-family: var(--font-bold);
-    color: var(--black);
+    color: #fff;
     font-size: 35px;
 }
 </style>

@@ -20,6 +20,9 @@
 
         <div class="casino-card__cta">
             <button type="button" class="casino-card__cta btn-tertiary" @click="refActivate(value)">{{goTo}}</button>
+            <NuxtLink no-prefetch :to="value.casino_permalink" class="casino_card_link">
+                      {{this.casino_review}}
+            </NuxtLink>
         </div>
     </div>
 </div>
@@ -36,7 +39,8 @@ import TRANSLATE from '~/helpers/translate.json'
                 default: {}
             },
             goTo: '',
-            rating: ''
+            rating: '',
+            casino_review: ''
         },
         data(){
             return {
@@ -57,6 +61,7 @@ import TRANSLATE from '~/helpers/translate.json'
         mounted() {
             this.rating = TRANSLATE.RATING.uk
             this.goTo = TRANSLATE.GO_TO.uk
+            this.casino_review = TRANSLATE.CASINO_REVIEW.uk
         }
     }
 </script>

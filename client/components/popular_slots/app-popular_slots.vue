@@ -12,7 +12,7 @@
                       v-for="(item, index) in value"
                       :key="index" >
                 <div class="slot-item__logo">
-                    <img :src="item.thumbnail" alt="" />
+                    <img :src="item.thumbnail" loading="lazy" alt="" />
                 </div>
                 <div class="slot-item__content">
                     <div class="slot-item__name">{{item.title}}</div>

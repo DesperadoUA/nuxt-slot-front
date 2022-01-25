@@ -6,7 +6,7 @@
                 <li v-for="(item, index) in settings" @click="closeMenu"
                   :key="index">
                     <NuxtLink no-prefetch :to="item.value_1" class="main-nav__link">
-                        <img :src="item.src"  class="main-nav__icon"/>
+                        <img :src="item.src"  class="main-nav__icon" width="17" height="17"/>
                         {{item.value_2}}
                     </NuxtLink>
                     <ul v-if="item.child.length !== 0" class="main-nav__drop">

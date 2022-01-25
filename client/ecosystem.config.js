@@ -1,9 +1,12 @@
 module.exports = {
   apps: [
     {
-      name: 'myapp3',
+      name: 'myapp4',
       script: './node_modules/nuxt/bin/nuxt.js',
-      args: 'start'
+      args: 'start',
+      "env": {
+        "PORT": "3001",
+      }
     }
   ]
 }

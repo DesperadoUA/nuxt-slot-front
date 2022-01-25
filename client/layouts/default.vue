@@ -69,24 +69,28 @@
     font-family: "Open Sans";
     src: url("/fonts/opensans.woff2") format("woff2");
     font-weight: 400;
+    font-display: swap;
 }
 
 @font-face {
     font-family: "Open Sans";
     src: url("/fonts/opensansbold.woff2") format("woff2");
     font-weight: 700;
+    font-display: swap;
 }
 
 @font-face {
     font-family: "Roboto";
     src: url("/fonts/roboto.woff2") format("woff2");
     font-weight: 400;
+    font-display: swap;
 }
 
 @font-face {
     font-family: "Roboto";
     src: url("/fonts/robotobold.woff2") format("woff2");
     font-weight: 700;
+    font-display: swap;
 }
 
 body {
@@ -124,7 +128,6 @@ img {
     height: auto;
 }
 
-img,
 video,
 iframe {
     vertical-align: top;
@@ -158,7 +161,6 @@ ul, ol {
 img {
     max-width: 100%;
     height: auto;
-    vertical-align: top
 }
 
 /*
@@ -209,12 +211,12 @@ Common styles*/
     position: relative;
     padding-top: 111px;
     background-color: var(--theme-cr-2);
-    background-image: var(--bg-main);
     background-position: 50% 0;
     background-repeat: no-repeat;
 
     @media (min-width: 992px) {
         padding-top: 134px;
+        background-image: var(--bg-main);
     }
 }
 
@@ -513,21 +515,25 @@ Casino Card*/
         flex-basis: calc(100% - 112px);
         border-radius: 14px 0 0 0;
         margin-right: 0;
-        padding-bottom: 38.13%;
         position: relative;
     }
 
+    @media (max-width: 768px) {
+       max-width: none;
+    }
+    
     img {
         border-radius: 10px;
+      display: block;
 
         @media (max-width: 1279px) {
             width: 100%;
             height: auto;
             max-width: none;
             object-fit: cover;
-            position: absolute;
-            left: 0;
-            top: 0;
+        }
+        @media (max-width: 768px) {
+           border-radius: 0px;
         }
     }
 }
@@ -566,7 +572,12 @@ Casino Card*/
         flex: 0 0 100%;
     }
 }
-
+.casino_card_link {
+    text-align: center;
+    margin-top: 20px;
+    color: #fff;
+    font-weight: bold;
+}
 .casino-card-param__item {
     flex: 0 0 50%;
     display: flex;
@@ -1144,7 +1155,7 @@ Casinos */
 
 .casino-item__rating {
     width: 112px;
-    border-radius: 0 14px 14px 0;
+    border-radius: 0 14px 0px 0;
     background-color: #1c0e27;
     display: flex;
     flex-direction: column;
@@ -1330,12 +1341,17 @@ Casinos */
     @media (max-width: 767px) {
       flex-basis: 100%;
     }
+    @media (min-width: 768px) and (max-width: 1000px) {
+      flex-basis: 100%;
+      max-width: 100%;
+    }
   }
 }
 
 .useful-group {
   padding-top: 24px;
   margin-bottom: 30px;
+  box-sizing: border-box;
 }
 
 .useful-group__ttl {
@@ -1374,8 +1390,29 @@ Casinos */
       display: block;
     }
   }
+  @media (min-width: 768px) and (max-width: 1000px) {
+      flex-basis: 100%;
+      max-width: 100%;
+      display: flex;
+    }
 }
-
+.useful-categories__container .news-item__date {
+    @media (min-width: 768px) and (max-width: 1000px) {
+      width: auto;
+      padding: 0px 15px;
+    }
+}
+.useful-categories__container .useful-group {
+    @media (min-width: 768px) and (max-width: 1000px) {
+     margin-left: 25px;
+     margin-right: 25px;
+    }
+}
+.useful-categories .useful-categories__container {
+     @media (min-width: 768px) and (max-width: 1000px) {
+     max-width: 100%;
+    }
+}
 .news-item__img {
   flex-shrink: 0;
   flex-basis: var(--news-img-width);
@@ -1438,11 +1475,20 @@ Casinos */
       max-width: 100%;
       overflow: hidden;
       width: 100%;
+      padding-bottom: 0px;
     }
     & .casino-card__logo img  {
       max-height: none;
       border-radius: 15px 15px 0px 0px;
+      position: relative;
     }
   }
+  & .casino-card__logo {
+        @media (min-width: 767px) and (max-width: 1200px) {
+                    flex-basis: 100%;
+                    border-radius: 14px 14px 0 0;
+                    padding-bottom: 0px;
+            }
+    }
 }
 </style>

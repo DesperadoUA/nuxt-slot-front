@@ -11,12 +11,11 @@
                             <path class="circle-rating__circle-bg" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"/>
                             <path class="circle-rating__circle" :stroke-dasharray="item.rating + ', 100'" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"/>
                         </svg>
-                        <img class="circle-rating__logo" :src="item.icon" :alt="item.title">
+                        <img class="circle-rating__logo" loading="lazy" :src="item.icon" :alt="item.title">
                     </div>
 
                     <div class="offer-item__content">
-                        <h3 class="offer-item__ttl">{{item.title}}</h3>
-                        <p>{{item.short_desc}}</p>
+                        <h3 class="offer-item__ttl">{{subTitle}}<br>{{item.title}}</h3>
                     </div>
                 </NuxtLink>
             </div>
@@ -33,7 +32,8 @@ import TRANSLATE from '~/helpers/translate.json'
         props: ['value'],
         data(){
             return {
-                title: ''
+                title: '',
+                subTitle: ''
             }
         },
         filters: {
@@ -43,6 +43,7 @@ import TRANSLATE from '~/helpers/translate.json'
         },
         mounted() {
             this.title = TRANSLATE.BEST_OFFER.uk
+            this.subTitle = TRANSLATE.BONUSES_FROM.uk
         }
     }
 </script>

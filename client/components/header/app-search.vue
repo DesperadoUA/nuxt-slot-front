@@ -12,6 +12,7 @@
                    <input class="form-search__field"
                           type="search"
                           v-model="searchWord"
+                          v-on:keyup.enter="search"
                           placeholder="Search">
                    <button type="submit" class="btn-default form-search__cta" @click="search">
                        <svg class="search__icon" width="19" height="19" viewBox="0 0 345 344.6" xmlns="http://www.w3.org/2000/svg">
