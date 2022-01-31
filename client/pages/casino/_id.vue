@@ -2,6 +2,8 @@
   <div>
     <app_intro :value="data.body" />
     <app_casino_card :value="data.body" />
+    <app_close_disclaimer v-if="data.body.close === 1" :value="data.body.title" />
+    <app_casino_loop :value="data.body.popular_casino" v-if="data.body.close === 1" />
     <app_casino_detail :value="data.body" />
     <app_casino_slots :value="data.body.slots" :title="data.body.title" />
     <app_content :value="data.body.content"  />
@@ -16,12 +18,14 @@
     import app_content from '~/components/content/app-content'
     import app_intro from '~/components/intro/app-intro'
     import app_casino_card from '~/components/casino_card/app-casino-card'
+    import app_close_disclaimer from '~/components/close-disclaimer/close-disclaimer'
     import app_casino_detail from '~/components/casino-detail/app-casino-detail'
     import app_casino_slots from '~/components/casino-slots/app-casino-slots'
+    import app_casino_loop from '~/components/casino_loop_downloads/app_casino_loop_downloads'
     import app_faq from '~/components/faq/app_faq'
     export default {
         name: "app_single_casino",
-        components: {app_content, app_intro, app_casino_card, app_casino_detail, app_casino_slots, app_faq},
+        components: {app_content, app_intro, app_casino_card, app_casino_detail, app_casino_slots, app_faq, app_close_disclaimer, app_casino_loop},
         data: () => {
             return {
                data: {},
