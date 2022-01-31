@@ -14,14 +14,20 @@
             </div>
             <span class="casinos-rating__txt">{{rating}}</span>
         </div>
-        <div class="casino-card__txt" v-html="item.bonus_self"></div>
+        <div class="casino-card__txt">
+            <span class="casino-card__txt__close" v-if="item.close !== 0">{{bonusInactive}}</span>
+            <div v-html="item.bonus_self"></div>
+        </div>
         <div class="casino-card__cta">
             <NuxtLink :to="item.permalink"
                       no-prefetch
                       type="button"
                       class="casino-card__cta btn-tertiary --green">{{review}}
             </NuxtLink>
-            <button type="button" class="casino-card__cta btn-tertiary" @click="refActivate(item)">{{play}}</button>
+            <button type="button" 
+                    v-if="item.close !== 1"
+                    class="casino-card__cta btn-tertiary" 
+                    @click="refActivate(item)">{{play}}</button>
         </div>
     </div>
     <div class="items-more casino-card__more">
@@ -52,6 +58,7 @@ import TRANSLATE from '~/helpers/translate.json'
                 showMore: '',
                 rating: '',
                 play: '',
+                bonusInactive: '',
                 review: ''
             }
         },
@@ -78,6 +85,7 @@ import TRANSLATE from '~/helpers/translate.json'
             this.rating = TRANSLATE.RATING.uk
             this.play = TRANSLATE.PLAY.uk
             this.review = TRANSLATE.REVIEW.uk
+            this.bonusInactive = TRANSLATE.BONUS_INACTIVE.uk
         }
     }
 </script>

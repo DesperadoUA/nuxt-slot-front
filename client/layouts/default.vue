@@ -750,7 +750,15 @@ Casino Card*/
         color: currentColor;
     }
 }
-
+.casino-card__txt__close {
+    background: #EA3838;
+    border-radius: 6px;
+    text-transform: uppercase;
+    font-size: 10px;
+    width: 185px;
+    text-align: center;
+    margin-bottom: 15px;
+}
 .casino-card__more {
     margin-top: 45px;
     margin-bottom: 80px;
