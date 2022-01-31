@@ -24,7 +24,7 @@
                     </div>
                 </div>
                 <div class="casino-item__content">
-                    <div class="casino-param">
+                    <div class="casino-param" v-if="item.close !== 1">
                         <div :class="item.regular_offers == 1 ? 'casino-param__item': 'casino-param__item disabled'">
                             <img class="casino-param__img" src="/img/fire.svg" loading="lazy" width="17" height="17" alt="">
                             <span class="casino-param__txt">Regular Offers</span>
@@ -43,6 +43,11 @@
                         <div :class="item.vip_program == 1 ? 'casino-param__item': 'casino-param__item disabled'">
                             <img class="casino-param__img" src="/img/star.svg" loading="lazy" width="17" height="17" alt="">
                             <span class="casino-param__txt">Vip Program</span>
+                        </div>
+                    </div>
+                    <div class="casino-param" v-else>
+                        <div class="casino-close">
+                            {{close}}
                         </div>
                     </div>
 
@@ -101,6 +106,7 @@ import TRANSLATE from '~/helpers/translate.json'
                 welcomeBonus: '',
                 freeSpins: '',
                 casinoReview: '',
+                close: '',
                 goTo: ''
             }
         },
@@ -131,6 +137,7 @@ import TRANSLATE from '~/helpers/translate.json'
             this.welcomeBonus = TRANSLATE.WELCOME_BONUS.uk
             this.freeSpins = TRANSLATE.FREE_SPINS.uk
             this.casinoReview = TRANSLATE.CASINO_REVIEW.uk
+            this.close = TRANSLATE.CLOSED.uk
             this.goTo = TRANSLATE.GO_TO.uk
         }
     }

@@ -18,6 +18,7 @@
                     </div>
 
                     <div class="casino-group-item__content">
+                        <div class="casino-group-item__close" v-if="item.close !== 0">{{close}}</div>
                         <div class="casino-group-item__name">{{ item.title }}</div>
                         <div class="casino-group-item__rating">{{rating}}: <b>{{ item.rating }}</b></div>
                         <svg class="casino-group-item__arrow" width="9" height="14" viewBox="0 0 9 14" fill="none"
@@ -42,6 +43,7 @@
                     </div>
 
                     <div class="casino-group-item__content">
+                        <div class="casino-group-item__close" v-if="item.close !== 0">{{close}}</div>
                         <div class="casino-group-item__name">{{ item.title }}</div>
                         <div class="casino-group-item__rating">{{rating}}: <b>{{ item.rating }}</b></div>
                         <svg class="casino-group-item__arrow" width="9" height="14" viewBox="0 0 9 14" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -65,6 +67,7 @@
                     </div>
 
                     <div class="casino-group-item__content">
+                        <div class="casino-group-item__close" v-if="item.close !== 0">{{close}}</div>
                         <div class="casino-group-item__name">{{ item.title }}</div>
                         <div class="casino-group-item__rating">{{rating}}: <b>{{ item.rating }}</b></div>
                         <svg class="casino-group-item__arrow" width="9" height="14" viewBox="0 0 9 14" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -96,6 +99,7 @@ import TRANSLATE from '~/helpers/translate.json'
                 rating: '',
                 popularCasino: '',
                 newCasino: '',
+                close: '',
                 highestRating: ''
             }
         },
@@ -122,6 +126,7 @@ import TRANSLATE from '~/helpers/translate.json'
             this.popularCasino = TRANSLATE.POPULAR_CASINO.uk
             this.newCasino = TRANSLATE.NEW_CASINO.uk
             this.highestRating = TRANSLATE.HIGHEST_RATING.uk
+            this.close = TRANSLATE.CLOSED.uk
         }
     }
 </script>
@@ -180,6 +185,12 @@ import TRANSLATE from '~/helpers/translate.json'
     text-align: center;
     margin-bottom: 27px;
 }
-
-
+.casino-group-item__close {
+    background: #EA3838;
+    border-radius: 10px;
+    font-weight: bold;
+    font-size: 10px;
+    text-transform: uppercase;
+    padding: 4px 15px;
+}
 </style>

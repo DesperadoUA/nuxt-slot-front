@@ -755,7 +755,19 @@ Casino Card*/
     margin-top: 45px;
     margin-bottom: 80px;
 }
-
+.casino-close {
+    background: #EA3838;
+    border-radius: 6px;
+    width: 100%;
+    text-align: center;
+    font-family: var(--base-font-family);
+    font-style: normal;
+    font-weight: bold;
+    font-size: 18px;
+    text-transform: uppercase;
+    height: 43px;
+    line-height: 43px;
+}
 /*
  */
 
