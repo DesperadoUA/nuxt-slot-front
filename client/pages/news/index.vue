@@ -8,13 +8,15 @@
 
 <script>
     import DAL_Builder from '~/DAL/builder'
-    import config from '~/config/index'
     import app_content from '~/components/content/app-content'
     import app_intro from '~/components/intro/app-intro'
     import app_news_loop from '~/components/news_loop/app_news_loop'
+    import head from '~/mixins/head'
+    import Helper from '~/helpers/helpers'
     export default {
         name: "index_news",
         components: {app_content, app_intro, app_news_loop},
+        mixins: [head],
         async asyncData({route, error}) {
             const request = new DAL_Builder()
             const response = await request.postType('pages')
@@ -24,25 +26,8 @@
                 error({ statusCode: 404, message: 'Post not found' })
             }
             else {
-                const body = response.data.body
-                const data = {body}
-                data.body.currentUrl = config.BASE_URL + route.path
+                const data = Helper.headDataMixin(response.data, route)
                 return {data}
-            }
-        },
-        head() {
-            return {
-                title: this.data.body.meta_title,
-                meta: [
-                    {
-                        hid: 'description',
-                        name: 'description',
-                        content: this.data.body.description
-                    },
-                ],
-                link: [
-                    { rel: 'canonical', href: this.data.body.currentUrl}
-                ]
             }
         }
     }

@@ -35,6 +35,14 @@ export const actions = {
     async checkUser({commit}, payload){
         const result = await DAL_Forum.checkUser(payload)
         return result.data.confirm
+    },
+    async changePassword({commit}, payload){
+        const result = await DAL_Forum.changePassword(payload)
+        return result.data.confirm
+    },
+    async deleteAccount({commit}, payload){
+        const result = await DAL_Forum.deleteAccount(payload)
+        return result.data.confirm
     }
 }
 export const getters = {

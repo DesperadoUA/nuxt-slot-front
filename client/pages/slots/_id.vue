@@ -9,13 +9,18 @@
                           title_permalink: ''
                         }" />
     <app_casino_loop :value="data.body.popular_casino" />
+    <AuthorLinkContainer 
+        :link="$options.authorPageLink"
+        :text="$options.reviewAuthor"
+        :dataTime="data.body.create_at.slice(0, 10)"
+        :name="data.body.author_name"
+    />
     <app_content :value="data.body.content" />
   </div>
 </template>
 
 <script>
     import DAL_Builder from '~/DAL/builder'
-    import config from '~/config/index'
     import TRANSLATE from '~/helpers/translate'
     import app_content from '~/components/content/app-content'
     import app_intro from '~/components/intro/app-intro'
@@ -23,9 +28,14 @@
     import app_slot_detail from '~/components/slot-detail/app-slot-detail'
     import app_casino_loop from '~/components/casino_loop_downloads/app_casino_loop_downloads'
     import app_heading from '~/components/section-heading/app-section-heading'
+    import AuthorLinkContainer from '~/components/author/app-author-link-container'
+    import author from '~/mixins/author'
+    import head from '~/mixins/head'
+    import Helper from '~/helpers/helpers'
     export default {
         name: "app_single_slot",
-        components: {app_slot_card, app_content, app_intro, app_slot_detail, app_casino_loop, app_heading},
+        components: {app_slot_card, app_content, app_intro, app_slot_detail, app_casino_loop, app_heading, AuthorLinkContainer},
+        mixins: [head, author],
         data: () => {
             return {
                 data: {},
@@ -40,28 +50,11 @@
                 error({ statusCode: 404, message: 'Post not found' })
             }
             else {
-                const body = response.data.body
-                const data = {body}
+                const data = Helper.headDataMixin(response.data, route)
                 data.translate = {
                     casinosWithGame: `${TRANSLATE.CASINO_WITH_GAME.uk} `,
                 }
-                data.body.currentUrl = config.BASE_URL + route.path
                 return {data}
-            }
-        },
-        head() {
-            return {
-                title: this.data.body.meta_title,
-                meta: [
-                    {
-                        hid: 'description',
-                        name: 'description',
-                        content: this.data.body.description
-                    },
-                ],
-                link: [
-                    { rel: 'canonical', href: this.data.body.currentUrl}
-                ]
             }
         }
     }

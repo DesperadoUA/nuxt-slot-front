@@ -1,13 +1,13 @@
 <template>
   <div v-if="status">
     <div class="admin_layout">
-      <h1>Root User</h1>
       <nuxt />
     </div>
   </div>
 </template>
 
 <script>
+    import TRANSLATE from '~/helpers/translate.json'
     export default {
         name: "user",
         data() {
@@ -34,12 +34,12 @@
        },
         head() {
             return {
-                title: 'Личный кабинет',
+                title: TRANSLATE.PERSONAL_ACCOUNT.uk,
                 meta: [
                     {
                         hid: 'description',
                         name: 'description',
-                        content: 'Личный кабинет'
+                        content: TRANSLATE.PERSONAL_ACCOUNT.uk
                     },
                 ],
             }

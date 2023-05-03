@@ -38,6 +38,7 @@
 
           <span class="blog-meta__date">{{value.create_at | sliceData}}</span>
         </div>
+        <slot></slot>
         <app_content :value="value.content" />
       </article>
 </template>

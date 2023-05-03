@@ -1,3 +1,4 @@
+import config from '~/config'
 export default class Helper {
     static sharedFB(settings){
         let link = 'https://www.facebook.com/sharer.php?s=100'
@@ -35,5 +36,11 @@ export default class Helper {
         if(item.rating <= 33) return '--cr-rating: #f00'
         if(item.rating > 33 && item.rating <= 67) return '--cr-rating: #ffc700'
         if(item.rating > 67) return '--cr-rating: #0f6'
+    }
+    static headDataMixin(data, route) {
+        data.body.currentUrl = config.BASE_URL + route.path
+        data.body.index_seo = Number(data.body.index_seo) ? 'index' : 'noindex'
+        data.body.follow = Number(data.body.follow) ? 'follow' : 'nofollow'
+        return data;
     }
 }

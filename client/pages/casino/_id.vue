@@ -6,15 +6,22 @@
     <app_casino_loop :value="data.body.popular_casino" v-if="data.body.close === 1" />
     <app_casino_detail :value="data.body" />
     <app_casino_slots :value="data.body.slots" :title="data.body.title" />
+    <AuthorLinkContainer 
+        :link="$options.authorPageLink"
+        :text="$options.reviewAuthor"
+        :dataTime="data.body.create_at.slice(0, 10)"
+        :name="data.body.author_name"
+    />
     <app_content :value="data.body.content"  />
     <app_faq :title="data.body.faq_title"
              :value="data.body.faq" />
+    <app_slick_button :referal="data.body.ref"></app_slick_button>
   </div>
 </template>
 
 <script>
     import DAL_Builder from '~/DAL/builder'
-    import config from '~/config/index'
+    import config from '~/config'
     import app_content from '~/components/content/app-content'
     import app_intro from '~/components/intro/app-intro'
     import app_casino_card from '~/components/casino_card/app-casino-card'
@@ -23,14 +30,21 @@
     import app_casino_slots from '~/components/casino-slots/app-casino-slots'
     import app_casino_loop from '~/components/casino_loop_downloads/app_casino_loop_downloads'
     import app_faq from '~/components/faq/app_faq'
+    import app_slick_button from '~/components/slick_button/app_slick_button'
+    import AuthorLinkContainer from '~/components/author/app-author-link-container'
+    import author from '~/mixins/author'
+    import head from '~/mixins/head'
+    import Helper from '~/helpers/helpers'
     export default {
         name: "app_single_casino",
-        components: {app_content, app_intro, app_casino_card, app_casino_detail, app_casino_slots, app_faq, app_close_disclaimer, app_casino_loop},
+        components: {app_content, app_intro, app_casino_card, app_casino_detail, app_casino_slots, app_faq, 
+        app_close_disclaimer, app_casino_loop, app_slick_button, AuthorLinkContainer},
         data: () => {
             return {
                data: {},
             }
         },
+        mixins: [head, author],
         async asyncData({route, error}) {
             const request = new DAL_Builder()
             const response = await request.postType('casino')
@@ -40,27 +54,10 @@
                  error({ statusCode: 404, message: 'Post not found' })
              }
              else {
-                 const body = response.data.body
-                 const data = {body}
-                 data.body.currentUrl = config.BASE_URL + route.path
+                 const data = Helper.headDataMixin(response.data, route)
                  return {data}
               }
-           },
-        head() {
-            return {
-                title: this.data.body.meta_title,
-                meta: [
-                    {
-                        hid: 'description',
-                        name: 'description',
-                        content: this.data.body.description
-                    },
-                ],
-                link: [
-                    { rel: 'canonical', href: this.data.body.currentUrl}
-                ]
-            }
-    }
+           }
     }
 </script>
 

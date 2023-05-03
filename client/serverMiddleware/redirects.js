@@ -12,7 +12,13 @@ module.exports = function (req, res, next) {
     if (req.url.includes("?")) {
         urlParams = '?' + req.url.split('?')[1]
     }
-
+    if(host.startsWith('www.')) {
+        const to = 'https://' +  host.replace( 'www.', '') + req.url
+        res.writeHead(301, {
+            Location: to
+        });
+        res.end()
+    }
     const redirect = redirects.find(r => r.from === url)
     if (redirect) {
         let newLocation;
@@ -28,4 +34,5 @@ module.exports = function (req, res, next) {
     } else {
         next()
     }
+
 }

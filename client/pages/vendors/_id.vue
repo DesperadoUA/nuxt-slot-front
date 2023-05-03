@@ -1,6 +1,14 @@
 <template>
   <div>
     <app_intro :value="data.body" />
+    <AuthorLinkContainer 
+        :link="$options.authorPageLink"
+        :text="$options.reviewAuthor"
+        :dataTime="data.body.create_at.slice(0, 10)"
+        :name="data.body.author_name"
+        variant="transparent"
+        align="contentEnd"
+    />
     <app_vendor_card :value="data.body"/>
     <app_heading v-if="data.body.casino.length !== 0" :value="{
                           title: data.translate.casinosWith + data.body.title,
@@ -19,16 +27,20 @@
 
 <script>
     import DAL_Builder from '~/DAL/builder'
-    import config from '~/config/index'
     import TRANSLATE from '~/helpers/translate'
     import app_intro from '~/components/intro/app-intro'
     import app_vendor_card from '~/components/vendor_card/app_vendor_card'
     import app_vendor_casino from '~/components/vendor_casino/app_vendor_casino'
     import app_slot_loop_card from '~/components/slot_loop_card/app_slot_loop_card'
     import app_heading from '~/components/section-heading/app-section-heading'
+    import AuthorLinkContainer from '~/components/author/app-author-link-container'
+    import author from '~/mixins/author'
+    import head from '~/mixins/head'
+    import Helper from '~/helpers/helpers'
     export default {
         name: "app_single_vendor",
-        components: {app_intro, app_vendor_card, app_vendor_casino, app_slot_loop_card, app_heading},
+        components: {app_intro, app_vendor_card, app_vendor_casino, app_slot_loop_card, app_heading, AuthorLinkContainer},
+        mixins: [head, author],
         data: () => {
             return {
                 data: {
@@ -45,30 +57,13 @@
                 error({ statusCode: 404, message: 'Post not found' })
             }
             else {
-                const body = response.data.body
-                const data = {body}
+                const data = Helper.headDataMixin(response.data, route)
                 data.translate = {
                     casinosWith: `${TRANSLATE.CASINOS_WITH.uk} `,
                     allCasino: TRANSLATE.ALL_CASINO.uk,
                     games: `${TRANSLATE.GAMES.uk} `
                 }
-                data.body.currentUrl = config.BASE_URL + route.path
                 return {data}
-            }
-        },
-        head() {
-            return {
-                title: this.data.body.meta_title,
-                meta: [
-                    {
-                        hid: 'description',
-                        name: 'description',
-                        content: this.data.body.description
-                    },
-                ],
-                link: [
-                    { rel: 'canonical', href: this.data.body.currentUrl}
-                ]
             }
         }
     }

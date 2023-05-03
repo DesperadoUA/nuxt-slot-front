@@ -2,19 +2,29 @@
   <div>
     <app_intro :value="data.body" />
     <app_bonus_card :value="data.body.card" />
+    <AuthorLinkContainer 
+      :link="$options.authorPageLink"
+      :text="$options.reviewAuthor"
+      :dataTime="data.body.create_at.slice(0, 10)"
+      :name="data.body.author_name"
+    />
     <app_content :value="data.body.content"  />
   </div>
 </template>
 
 <script>
     import DAL_Builder from '~/DAL/builder'
-    import config from '~/config/index'
     import app_content from '~/components/content/app-content'
     import app_intro from '~/components/intro/app-intro'
     import app_bonus_card from '~/components/bonus-card/app_bonus_card'
+    import AuthorLinkContainer from '~/components/author/app-author-link-container'
+    import author from '~/mixins/author'
+    import head from '~/mixins/head'
+    import Helper from '~/helpers/helpers'
     export default {
         name: "app_single_casino",
-        components: {app_content, app_intro, app_bonus_card},
+        components: {app_content, app_intro, app_bonus_card, AuthorLinkContainer},
+        mixins: [head, author],
         data: () => {
             return {
                data: {},
@@ -29,27 +39,10 @@
                  error({ statusCode: 404, message: 'Post not found' })
              }
              else {
-                 const body = response.data.body
-                 const data = {body}
-                 data.body.currentUrl = config.BASE_URL + route.path
+                 const data = Helper.headDataMixin(response.data, route)
                  return {data}
               }
-           },
-        head() {
-            return {
-                title: this.data.body.meta_title,
-                meta: [
-                    {
-                        hid: 'description',
-                        name: 'description',
-                        content: this.data.body.description
-                    },
-                ],
-                link: [
-                    { rel: 'canonical', href: this.data.body.currentUrl}
-                ]
-            }
-    }
+           }
     }
 </script>
 

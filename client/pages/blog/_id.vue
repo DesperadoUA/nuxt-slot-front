@@ -1,7 +1,16 @@
 <template>
   <div class="blog-single">
     <div class="container blog-single__container">
-        <app_blog_single :value="data.body" />
+        <app_blog_single :value="data.body">
+          <template v-slot>
+            <app_author_link 
+                  :link="$options.authorPageLink"
+                  :text="$options.reviewAuthor"
+                  :dataTime="data.body.create_at.slice(0, 10)"
+                  :name="data.body.author_name"
+            />
+          </template>
+        </app_blog_single>
         <app_last_article :title="title"
                           :value="data.body.posts" />
     </div>
@@ -12,12 +21,15 @@
     import DAL_Builder from '~/DAL/builder'
     import Helper from '~/helpers/helpers'
     import TRANSLATE from '~/helpers/translate'
-    import config from '~/config/index'
     import app_blog_single from '~/components/blog_single/app_blog_single'
     import app_last_article from '~/components/last_article/app_last_article'
+    import app_author_link from '~/components/author/app-author-link'
+    import head from '~/mixins/head'
+    import author from '~/mixins/author'
     export default {
         name: "app_blog_casino",
-        components: {app_blog_single, app_last_article},
+        components: {app_blog_single, app_last_article, app_author_link},
+        mixins: [head, author],
         data: () => {
             return {
                 data: {},
@@ -40,11 +52,10 @@
                      short_desc: body.short_desc,
                      thumbnail: body.thumbnail
                  }
-                 body.sharedFB = Helper.sharedFB(settings)
-                 body.sharedTwitter = Helper.sharedTwitter(settings)
-                 body.sharedVK = Helper.sharedVK(settings)
-                 const data = {body}
-                 data.body.currentUrl = config.BASE_URL + route.path
+                 const data = Helper.headDataMixin(response.data, route)
+                 data.body.sharedFB = Helper.sharedFB(settings)
+                 data.body.sharedTwitter =  Helper.sharedTwitter(settings)
+                 data.body.sharedVK = Helper.sharedVK(settings)
                  return {data}
               }
            },
@@ -52,22 +63,7 @@
             sharedFB(){
                 return 'Shared fb'
             }
-        },
-        head() {
-            return {
-                title: this.data.body.meta_title,
-                meta: [
-                    {
-                        hid: 'description',
-                        name: 'description',
-                        content: this.data.body.description
-                    },
-                ],
-                link: [
-                    { rel: 'canonical', href: this.data.body.currentUrl}
-                ]
-            }
-    }
+        }
     }
 </script>
 

@@ -15,6 +15,7 @@
     import TRANSLATE from '~/helpers/translate.json'
     import app_blog_single from '~/components/blog_single/app_blog_single'
     import app_last_article from '~/components/last_article/app_last_article'
+    import head from '~/mixins/head'
     export default {
         name: "app_interview_single",
         components: {app_blog_single, app_last_article},
@@ -24,6 +25,7 @@
                 title: TRANSLATE.LAST_INTERVIEW.uk
             }
         },
+        mixins: [head],
         async asyncData({route, error}) {
             const request = new DAL_Builder()
             const response = await request.postType('interview')
@@ -34,35 +36,19 @@
              }
              else {
                  const body = response.data.body
-                 const data = {body}
                  let settings = {
                      url: config.BASE_URL + route.path,
                      title: body.title,
                      short_desc: body.short_desc,
                      thumbnail: body.thumbnail
                  }
-                 body.sharedFB = Helper.sharedFB(settings)
-                 body.sharedTwitter = Helper.sharedTwitter(settings)
-                 body.sharedVK = Helper.sharedVK(settings)
-                 data.body.currentUrl = config.BASE_URL + route.path
+                 const data = Helper.headDataMixin(response.data, route)
+                 data.body.sharedFB = Helper.sharedFB(settings)
+                 data.body.sharedTwitter = Helper.sharedTwitter(settings)
+                 data.body.sharedVK = Helper.sharedVK(settings)
                  return {data}
               }
-           },
-        head() {
-            return {
-                title: this.data.body.meta_title,
-                meta: [
-                    {
-                        hid: 'description',
-                        name: 'description',
-                        content: this.data.body.description
-                    },
-                ],
-                link: [
-                    { rel: 'canonical', href: this.data.body.currentUrl}
-                ]
-            }
-    }
+           }
     }
 </script>
 

@@ -34,8 +34,9 @@
             close(){
                 this.$store.dispatch('user-activity/changeStatePassword')
             },
-            send(){
+            async send(){
                 this.passwordError = null
+                this.formValid = true
                 const password = this.password
 
                 if(Validate.minLength(password, 6)) {
@@ -45,6 +46,19 @@
                 if(Validate.maxLength(password, 12)) {
                     this.passwordError = "Довгий пароль, максимальна довжина 12 символів"
                     this.formValid = false
+                }
+                if(this.formValid) {
+                  const user = this.$store.getters['user/getUser']
+                  const data = {
+                    id: user.id,
+                    session: user.session,
+                    password: password
+                  }
+                  await this.$store.dispatch('user/changePassword', data)
+                  await this.$store.dispatch('user/logout', data)
+                  this.$store.dispatch('user-activity/changeStatePassword')
+                  const statusUser = this.$store.getters['user/getUser']
+                  if(!statusUser.login) this.$router.push('/login')
                 }
             }
         }
