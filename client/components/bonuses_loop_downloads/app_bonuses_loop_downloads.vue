@@ -12,29 +12,29 @@
                 </svg>
                 <div class="circle-rating__percentage">{{ item.rating }}</div>
             </div>
-            <span class="casinos-rating__txt">{{rating}}</span>
+            <span class="casinos-rating__txt">{{translates.RATING[config.LANG]}}</span>
         </div>
         <div class="casino-card__txt">
-            <span class="casino-card__txt__close" v-if="item.close !== 0">{{bonusInactive}}</span>
+            <span class="casino-card__txt__close" v-if="item.close !== 0">{{translates.BONUS_INACTIVE[config.LANG]}}</span>
             <div v-html="item.bonus_self"></div>
         </div>
         <div class="casino-card__cta">
             <NuxtLink :to="item.permalink"
                       no-prefetch
                       type="button"
-                      class="casino-card__cta btn-tertiary --green">{{review}}
+                      class="casino-card__cta btn-tertiary --green">{{translates.REVIEW[config.LANG]}}
             </NuxtLink>
             <button type="button" 
                     v-if="item.close !== 1"
                     class="casino-card__cta btn-tertiary" 
-                    @click="refActivate(item)">{{play}}</button>
+                    @click="refActivate(item)">{{translates.PLAY[config.LANG]}}</button>
         </div>
     </div>
     <div class="items-more casino-card__more">
         <button no-prefetch v-if="value.length > (numberPostOnQuery*postCurrentPage)"
                 class="btn-primary"
                 @click="postShowMore"
-        >{{showMore}}
+        >{{translates.SHOW_MORE[config.LANG]}}
         </button>
     </div>
 </div>
@@ -42,7 +42,7 @@
 
 <script>
 import Helper from '~/helpers/helpers.js'
-import TRANSLATE from '~/helpers/translate.json'
+import translateMixin from '~/mixins/translate'
     export default {
         name: "app_bonuses",
         props: {
@@ -51,15 +51,11 @@ import TRANSLATE from '~/helpers/translate.json'
                 default: []
             },
         },
+        mixins: [translateMixin],
         data(){
             return {
                 numberPostOnQuery: 10,
                 postCurrentPage: 1,
-                showMore: '',
-                rating: '',
-                play: '',
-                bonusInactive: '',
-                review: ''
             }
         },
         computed: {
@@ -79,17 +75,6 @@ import TRANSLATE from '~/helpers/translate.json'
             postShowMore(){
                 this.postCurrentPage += 1
             }
-        },
-        mounted() {
-            this.showMore = TRANSLATE.SHOW_MORE.uk
-            this.rating = TRANSLATE.RATING.uk
-            this.play = TRANSLATE.PLAY.uk
-            this.review = TRANSLATE.REVIEW.uk
-            this.bonusInactive = TRANSLATE.BONUS_INACTIVE.uk
         }
     }
 </script>
-
-<style lang="scss" scoped>
-
-</style>

@@ -3,14 +3,14 @@
     <div class="container">
       <div class="useful-categories__container">
         <div class="useful-group">
-          <h3 class="useful-group__ttl">{{news}}</h3>
+          <h3 class="useful-group__ttl">{{translates.NEWS[config.LANG]}}</h3>
           <NuxtLink no-prefetch :to="item.permalink" class="news-item" v-for="(item, index) in value.news" :key="index">
             <span class="news-item__date">{{item.create_at}}</span>
             <strong class="news-item__ttl" v-html="item.title"></strong>
           </NuxtLink>
         </div>
         <div class="useful-group">
-          <h3 class="useful-group__ttl">{{blog}}</h3>
+          <h3 class="useful-group__ttl">{{translates.BLOG[config.LANG]}}</h3>
           <NuxtLink no-prefetch :to="item.permalink" class="blog-item" v-for="(item, index) in value.blog" :key="index">
                     <span class="blog-item__media">
                         <img :src="item.thumbnail" :alt="item.title">
@@ -19,7 +19,7 @@
           </NuxtLink>
         </div>
         <div class="useful-group">
-          <h3 class="useful-group__ttl">{{interview}}</h3>
+          <h3 class="useful-group__ttl">{{translates.INTERVIEW[config.LANG]}}</h3>
 
           <NuxtLink no-prefetch :to="item.permalink" class="blog-item" v-for="(item, index) in value.interview" :key="index">
                     <span class="blog-item__media">
@@ -40,28 +40,16 @@
 </template>
 
 <script>
-    import TRANSLATE from '~/helpers/translate.json'
+    import translateMixin from '~/mixins/translate'
     export default {
         name: "app_useful",
         props: {
             'value': Object,
             default: {}
         },
+        mixins: [translateMixin],
         data(){
-            return {
-                news: '',
-                blog: '',
-                interview: ''
-            }
-        },
-        mounted() {
-            this.news = TRANSLATE.NEWS.uk
-            this.blog = TRANSLATE.BLOG.uk
-            this.interview = TRANSLATE.INTERVIEW.uk
+            return {}
         }
     }
 </script>
-
-<style scoped>
-
-</style>

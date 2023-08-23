@@ -1,7 +1,7 @@
 <template>
   <div class="main register_container">
             <div class="form_container">
-                <div class="form_title">{{login}}</div>
+                <div class="form_title">{{translates.LOGIN[config.LANG]}}</div>
                 <form @submit.prevent="send">
                         <input type="email" class="form_input"
                             v-model="email"
@@ -15,8 +15,12 @@
                             maxlength="12"
                             minlength="6"
                         />
-                        <button class="form_btn">{{enter}}</button>
-                        <p class="form_link"><NuxtLink to="/registration">{{registration}}</NuxtLink></p>
+                        <button class="form_btn">{{translates.SEND[config.LANG]}}</button>
+                        <p class="form_link">
+                            <NuxtLink to="/registration">
+                                {{translates.REGISTRATION[config.LANG]}}
+                            </NuxtLink>
+                        </p>
                         <div class="form_error" v-if="error !== ''">{{error}}</div>
                 </form>
             </div>
@@ -24,19 +28,17 @@
 </template>
 
 <script>
-    import TRANSLATE from '~/helpers/translate.json'
     import DAL_Forum from '~/DAL/forum'
+    import translateMixin from '~/mixins/translate'
     export default {
         name: "login",
         layout: 'login',
+        mixins: [translateMixin],
         data() {
             return {
                 email: '',
                 password: '',
                 error: '',
-                login: TRANSLATE.LOGIN.uk,
-                enter: TRANSLATE.SEND.uk,
-                registration: TRANSLATE.REGISTRATION.uk
             }
         },
         methods: {
@@ -59,12 +61,12 @@
         },
         head() {
             return {
-                title: TRANSLATE.LOGIN_PERSONAL_ACCOUNT.uk,
+                title: this.translates.LOGIN_PERSONAL_ACCOUNT[this.config.LANG],
                 meta: [
                     {
                         hid: 'description',
                         name: 'description',
-                        content: TRANSLATE.LOGIN_PERSONAL_ACCOUNT.uk,
+                        content: this.translates.LOGIN_PERSONAL_ACCOUNT[this.config.LANG],
                     },
                 ]
             }

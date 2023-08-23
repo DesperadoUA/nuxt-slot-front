@@ -2,7 +2,7 @@
   <div class="blog-single">
     <div class="container blog-single__container">
         <app_blog_single :value="data.body" />
-        <app_last_article :title="title"
+        <app_last_article :title="translates.LAST_INTERVIEW[config.LANG]"
                           :value="data.body.posts" />
     </div>
   </div>
@@ -12,9 +12,9 @@
     import DAL_Builder from '~/DAL/builder'
     import config from '~/config/index'
     import Helper from '~/helpers/helpers'
-    import TRANSLATE from '~/helpers/translate.json'
     import app_blog_single from '~/components/blog_single/app_blog_single'
     import app_last_article from '~/components/last_article/app_last_article'
+    import translateMixin from '~/mixins/translate'
     import head from '~/mixins/head'
     export default {
         name: "app_interview_single",
@@ -22,10 +22,9 @@
         data: () => {
             return {
                 data: {},
-                title: TRANSLATE.LAST_INTERVIEW.uk
             }
         },
-        mixins: [head],
+        mixins: [head, translateMixin],
         async asyncData({route, error}) {
             const request = new DAL_Builder()
             const response = await request.postType('interview')

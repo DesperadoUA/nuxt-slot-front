@@ -13,17 +13,21 @@
                 </svg>
                 <div class="circle-rating__percentage">{{value.rating}}</div>
             </div>
-            <span class="casinos-rating__txt">{{rating}}</span>
+            <span class="casinos-rating__txt">{{translates.RATING[config.LANG]}}</span>
         </div>
 
         <div class="casino-card__txt">
-            <span class="casino-card__txt__close" v-if="value.close !== 0">{{bonusInactive}}</span>
+            <span class="casino-card__txt__close" v-if="value.close !== 0">
+                {{translates.BONUS_INACTIVE[config.LANG]}}
+            </span>
             <div v-html="value.bonus_self"></div>
         </div>
         <div class="casino-card__cta">
-            <button type="button" class="casino-card__cta btn-tertiary"  v-if="value.close !== 1" @click="refActivate(value)">{{goTo}}</button>
+            <button type="button" class="casino-card__cta btn-tertiary"  v-if="value.close !== 1" @click="refActivate(value)">
+                {{translates.GO_TO[config.LANG]}}
+            </button>
             <NuxtLink no-prefetch :to="value.casino_permalink" class="casino_card_link">
-                      {{this.casino_review}}
+                {{translates.CASINO_REVIEW[config.LANG]}}
             </NuxtLink>
         </div>
     </div>
@@ -32,7 +36,7 @@
 
 <script>
 import Helper from '~/helpers/helpers.js'
-import TRANSLATE from '~/helpers/translate.json'
+import translateMixin from '~/mixins/translate'
     export default {
         name: "app_bonus_card",
         props: {
@@ -40,11 +44,9 @@ import TRANSLATE from '~/helpers/translate.json'
                 type: Object,
                 default: {}
             },
-            goTo: '',
-            rating: '',
-            casino_review: '',
             bonusInactive: ''
         },
+        mixins: [translateMixin],
         data(){
             return {
                 numberPostOnQuery: 10,
@@ -60,12 +62,6 @@ import TRANSLATE from '~/helpers/translate.json'
             refActivate(item) {
                 Helper.refActivate(item)
             },
-        },
-        mounted() {
-            this.rating = TRANSLATE.RATING.uk
-            this.goTo = TRANSLATE.GO_TO.uk
-            this.casino_review = TRANSLATE.CASINO_REVIEW.uk
-            this.bonusInactive = TRANSLATE.BONUS_INACTIVE.uk
         }
     }
 </script>

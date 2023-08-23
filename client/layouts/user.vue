@@ -7,7 +7,7 @@
 </template>
 
 <script>
-    import TRANSLATE from '~/helpers/translate.json'
+    import translateMixin from '~/mixins/translate'
     export default {
         name: "user",
         data() {
@@ -15,6 +15,7 @@
                 status: false,
             }
         },
+        mixins: [translateMixin],
         async mounted() {
            const user = this.$store.getters['user/getUser']
            if(!user.login) {
@@ -34,12 +35,12 @@
        },
         head() {
             return {
-                title: TRANSLATE.PERSONAL_ACCOUNT.uk,
+                title: this.translates.PERSONAL_ACCOUNT[this.config.LANG],
                 meta: [
                     {
                         hid: 'description',
                         name: 'description',
-                        content: TRANSLATE.PERSONAL_ACCOUNT.uk
+                        content: this.translates.PERSONAL_ACCOUNT[this.config.LANG]
                     },
                 ],
             }

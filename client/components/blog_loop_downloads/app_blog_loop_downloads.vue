@@ -14,15 +14,16 @@
         <button no-prefetch v-if="value.length > (numberPostOnQuery*postCurrentPage)"
                 class="btn-primary"
                 @click="postShowMore"
-        >{{showMore}}</button>
+        >{{translates.SHOW_MORE[config.LANG]}}</button>
     </div>
 </div>
 </template>
 
 <script>
-    import TRANSLATE from '~/helpers/translate.json'
+    import translateMixin from '~/mixins/translate'
     export default {
         name: "app_blog_downloads",
+        mixins: [translateMixin],
         props: {
             value: {
                 type: Array,
@@ -33,7 +34,6 @@
             return {
                 numberPostOnQuery: 12,
                 postCurrentPage: 1,
-                showMore: ''
             }
         },
         computed: {
@@ -45,12 +45,6 @@
             postShowMore(){
                 this.postCurrentPage += 1
             }
-        },
-        mounted() {
-            this.showMore = TRANSLATE.SHOW_MORE.uk
         }
     }
 </script>
-
-<style lang="scss" scoped>
-</style>

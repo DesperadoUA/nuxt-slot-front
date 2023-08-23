@@ -20,7 +20,7 @@
                             </svg>
                             <div class="circle-rating__percentage">{{item.rating}}</div>
                         </div>
-                        <span class="casinos-rating__txt">{{rating}}</span>
+                        <span class="casinos-rating__txt">{{translates.RATING[config.LANG]}}</span>
                     </div>
                 </div>
                 <div class="casino-item__content">
@@ -47,21 +47,21 @@
                     </div>
                     <div class="casino-param" v-else>
                         <div class="casino-close">
-                            {{close}}
+                            {{translates.CLOSED[config.LANG]}}
                         </div>
                     </div>
 
                     <div class="casino-bonuses">
                         <div class="casino-bonus">
                             <span class="casino-bonus__value" style="color: #ffe600;">{{item.bonus}}</span>
-                            <span class="casino-bonus__ttl">{{welcomeBonus}}</span>
+                            <span class="casino-bonus__ttl">{{translates.WELCOME_BONUS[config.LANG]}}</span>
 
                             <div class="casino-bonus__wager">{{item.bonus_wagering}}</div>
                         </div>
 
                         <div class="casino-bonus">
                             <span class="casino-bonus__value" style="color: #12d4ff;">{{item.freespins}}</span>
-                            <span class="casino-bonus__ttl">{{freeSpins}}</span>
+                            <span class="casino-bonus__ttl">{{translates.FREE_SPINS[config.LANG]}}</span>
 
                             <div class="casino-bonus__wager">{{item.freespins_wagering}}</div>
                         </div>
@@ -70,8 +70,10 @@
                     <div class="casino-item__btns">
                          <NuxtLink no-prefetch
                                   :to="item.permalink"
-                                  class="casino-item__btn --green">{{casinoReview}}</NuxtLink>
-                        <button class="casino-item__btn --blue" @click="refActivate(item)">{{goTo}}</button>
+                                  class="casino-item__btn --green">{{translates.CASINO_REVIEW[config.LANG]}}</NuxtLink>
+                        <button class="casino-item__btn --blue" @click="refActivate(item)">
+                            {{translates.GO_TO[config.LANG]}}
+                        </button>
                     </div>
                 </div>
             </div>
@@ -80,7 +82,7 @@
             <button no-prefetch v-if="value.length > (numberPostOnQuery*postCurrentPage)"
                     class="btn-primary"
                     @click="postShowMore"
-            >{{showMore}}</button>
+            >{{translates.SHOW_MORE[config.LANG]}}</button>
         </div>
     </div>
 </div>
@@ -88,7 +90,7 @@
 
 <script>
 import Helper from '~/helpers/helpers.js'
-import TRANSLATE from '~/helpers/translate.json'
+import translateMixin from '~/mixins/translate'
     export default {
         name: "app_casino_loop_downloads",
         props: {
@@ -97,17 +99,11 @@ import TRANSLATE from '~/helpers/translate.json'
                 default: []
             },
         },
+        mixins: [translateMixin],
         data(){
             return {
                 numberPostOnQuery: 12,
                 postCurrentPage: 1,
-                showMore: '',
-                rating: '',
-                welcomeBonus: '',
-                freeSpins: '',
-                casinoReview: '',
-                close: '',
-                goTo: ''
             }
         },
         computed: {
@@ -130,18 +126,6 @@ import TRANSLATE from '~/helpers/translate.json'
             postShowMore(){
                 this.postCurrentPage += 1
             }
-        },
-        mounted() {
-            this.showMore = TRANSLATE.SHOW_MORE.uk
-            this.rating = TRANSLATE.RATING.uk
-            this.welcomeBonus = TRANSLATE.WELCOME_BONUS.uk
-            this.freeSpins = TRANSLATE.FREE_SPINS.uk
-            this.casinoReview = TRANSLATE.CASINO_REVIEW.uk
-            this.close = TRANSLATE.CLOSED.uk
-            this.goTo = TRANSLATE.GO_TO.uk
         }
     }
 </script>
-
-<style lang="scss" scoped>
-</style>

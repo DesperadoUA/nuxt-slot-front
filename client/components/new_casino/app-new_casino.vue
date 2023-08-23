@@ -2,8 +2,8 @@
     <div class="slots">
         <div class="container">
             <div class="slots__heading">
-                <h2 class="slots__ttl">{{newCasino}}</h2>
-                <NuxtLink no-prefetch to="/reviews" class="link-primary">{{allCasino}}</NuxtLink>
+                <h2 class="slots__ttl">{{translates.NEW_CASINO[config.LANG]}}</h2>
+                <NuxtLink no-prefetch to="/reviews" class="link-primary">{{translates.ALL_CASINO[config.LANG]}}</NuxtLink>
             </div>
 
             <div class="slots__container">
@@ -23,11 +23,11 @@
                     </div>
 
                     <div class="slot-item__content">
-                        {{rating}} <strong>{{ item.rating }}</strong>
+                        {{translates.RATING[config.LANG]}} <strong>{{ item.rating }}</strong>
                     </div>
 
                     <div class="slot-item__btns">
-                        <button class="slot-item__btn --blue">{{goTo}}</button>
+                        <button class="slot-item__btn --blue">{{translates.GO_TO[config.LANG]}}</button>
                     </div>
                 </NuxtLink>
             </div>
@@ -37,7 +37,7 @@
 
 <script>
 import Helper from '~/helpers/helpers.js'
-import TRANSLATE from '~/helpers/translate.json'
+import translateMixin from '~/mixins/translate'
     export default {
         name: "app_new_casino",
         props: {
@@ -46,24 +46,14 @@ import TRANSLATE from '~/helpers/translate.json'
                 default: []
             }
         },
+        mixins: [translateMixin],
         data() {
-            return {
-                goTo: '',
-                rating: '',
-                newCasino: '',
-                allCasino: ''
-            }
+            return {}
         },
         filters: {
             classRating(item) {
                 return Helper.classRating(item)
             }
-        },
-        mounted() {
-            this.goTo = TRANSLATE.GO_TO.uk
-            this.rating = TRANSLATE.RATING.uk
-            this.newCasino = TRANSLATE.NEW_CASINO.uk
-            this.allCasino = TRANSLATE.ALL_CASINO.uk
         }
     }
 </script>

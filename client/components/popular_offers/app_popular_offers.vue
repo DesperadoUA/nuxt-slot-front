@@ -2,8 +2,10 @@
     <div class="slots">
         <div class="container">
             <div class="slots__heading">
-                <h2 class="slots__ttl">{{dontMissOffer}}</h2>
-                <NuxtLink no-prefetch to="/bonuses" class="link-primary">{{allOffers}}</NuxtLink>
+                <h2 class="slots__ttl">{{translates.DONT_MISS_OFFERS[config.LANG]}}</h2>
+                <NuxtLink no-prefetch to="/bonuses" class="link-primary">
+                    {{translates.ALL_OFFERS[config.LANG]}}
+                </NuxtLink>
             </div>
 
             <div class="slots__container">
@@ -24,13 +26,13 @@
                     </div>
 
                     <div class="slot-item__content">
-                        <div class="slot-item__txt">{{welcomePackage}}: <br>
+                        <div class="slot-item__txt">{{translates.WELCOME_PACKAGE[config.LANG]}}: <br>
                             <strong>{{item.bonus}}</strong>
                         </div>
                     </div>
 
                     <div class="slot-item__btns">
-                        <button class="slot-item__btn --blue">{{goTo}}</button>
+                        <button class="slot-item__btn --blue">{{translates.GO_TO[config.LANG]}}</button>
                     </div>
                 </NuxtLink>
             </div>
@@ -40,7 +42,7 @@
 
 <script>
 import Helper from '~/helpers/helpers.js'
-import TRANSLATE from '~/helpers/translate.json'
+import translateMixin from '~/mixins/translate'
     export default {
         name: "app_popular_offers",
         props: {
@@ -49,26 +51,14 @@ import TRANSLATE from '~/helpers/translate.json'
                 default: []
             }
         },
+        mixins: [translateMixin],
         data() {
-            return {
-                goTo: '',
-                welcomePackage: '',
-                allOffers: '',
-                dontMissOffer: ''
-            }
+            return {}
         },
         filters:{
             classRating(item) {
                 return Helper.classRating(item)
             }
-        },
-        mounted() {
-            this.goTo = TRANSLATE.GO_TO.uk
-            this.welcomePackage = TRANSLATE.WELCOME_PACKAGE.uk
-            this.allOffers = TRANSLATE.ALL_OFFERS.uk
-            this.dontMissOffer = TRANSLATE.DONT_MISS_OFFERS.uk
         }
     }
 </script>
-
-<style lang="scss"></style>

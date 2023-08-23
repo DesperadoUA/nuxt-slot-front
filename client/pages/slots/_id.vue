@@ -4,7 +4,7 @@
     <app_slot_card :value="data.body" />
     <app_slot_detail :value="data.body" />
     <app_heading :value="{
-                          title: data.translate.casinosWithGame,
+                          title: translates.CASINO_WITH_GAME[config.LANG],
                           permalink:'',
                           title_permalink: ''
                         }" />
@@ -21,7 +21,6 @@
 
 <script>
     import DAL_Builder from '~/DAL/builder'
-    import TRANSLATE from '~/helpers/translate'
     import app_content from '~/components/content/app-content'
     import app_intro from '~/components/intro/app-intro'
     import app_slot_card from '~/components/slot_card/app_slot_card'
@@ -51,9 +50,6 @@
             }
             else {
                 const data = Helper.headDataMixin(response.data, route)
-                data.translate = {
-                    casinosWithGame: `${TRANSLATE.CASINO_WITH_GAME.uk} `,
-                }
                 return {data}
             }
         }

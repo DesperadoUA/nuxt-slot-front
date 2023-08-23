@@ -13,7 +13,7 @@
                 </svg>
                 <div class="circle-rating__percentage">{{value.rating}}</div>
             </div>
-            <span class="casinos-rating__txt">{{$options.rating}}</span>
+            <span class="casinos-rating__txt">{{translates.RATING[config.LANG]}}</span>
         </div>
 
         <div class="casino-card-param">
@@ -45,21 +45,21 @@
 
         <div class="casino-card-bonus">
             <span class="casino-card-bonus__value" style="color: #ffe600;">{{value.bonus}}</span>
-            <span class="casino-card-bonus__ttl">{{$options.welcomeBonus}}</span>
+            <span class="casino-card-bonus__ttl">{{translates.WELCOME_BONUS[config.LANG]}}</span>
             <div class="casino-card-bonus__wager">{{value.bonus_wagering}}</div>
         </div>
 
         <div class="casino-card-bonus">
             <span class="casino-card-bonus__value" style="color: #12d4ff;">{{value.freespins}}</span>
-            <span class="casino-card-bonus__ttl">{{$options.freeSpins}}</span>
+            <span class="casino-card-bonus__ttl">{{translates.FREE_SPINS[config.LANG]}}</span>
             <div class="casino-card-bonus__wager">{{value.freespins_wagering}}</div>
         </div>
         <div class="casino-card-button_wrapper">
-            <button type="button" class="casino-card__cta btn-tertiary" @click="refActivate(value)">{{$options.goTo}}</button>
+            <button type="button" class="casino-card__cta btn-tertiary" @click="refActivate(value)">{{translates.GO_TO[config.LANG]}}</button>
             <PromoBtn 
                 v-if="value.promocod"
                 :text="value.promocod"
-                :subTitle="$options.promoTitle"
+                :subTitle="translates.PROMO_TITLE[config.LANG]"
             />
         </div>
     </div>
@@ -68,13 +68,13 @@
 
 <script>
 import Helper from '~/helpers/helpers.js'
-import TRANSLATE from '~/helpers/translate.json'
-import config from '~/config'
 import PromoBtn from '~/components/casino_card/parts/PromoBtn'
+import translateMixin from '~/mixins/translate'
     export default {
         name: "app-casino-card",
         props: ['value'],
         components: {PromoBtn},
+        mixins: [translateMixin],
         data(){
             return {}
         },
@@ -87,13 +87,6 @@ import PromoBtn from '~/components/casino_card/parts/PromoBtn'
             refActivate(item) {
                Helper.refActivate(item)
             },
-        },
-        created() {
-            this.$options.goTo = TRANSLATE.GO_TO[config.LANG]
-            this.$options.freeSpins = TRANSLATE.FREE_SPINS[config.LANG]
-            this.$options.welcomeBonus = TRANSLATE.WELCOME_BONUS[config.LANG]
-            this.$options.rating = TRANSLATE.RATING[config.LANG]
-            this.$options.promoTitle = TRANSLATE.PROMO_TITLE[config.LANG]
         }
     }
 </script>

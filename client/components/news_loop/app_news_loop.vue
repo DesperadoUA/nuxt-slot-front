@@ -18,7 +18,7 @@
         <button v-if="value.length > (numberPostOnQuery*postCurrentPage)"
                 class="btn-primary"
                 @click="postShowMore"
-        >{{showMore}}
+        >{{translates.SHOW_MORE[config.LANG]}}
         </button>
       </div>
     </div>
@@ -26,7 +26,7 @@
 </template>
 
 <script>
-  import TRANSLATE from '~/helpers/translate.json'
+  import translateMixin from '~/mixins/translate'
     export default {
         name: "app_news_loop",
         props: {
@@ -35,11 +35,11 @@
                 default: {}
             },
         },
+        mixins: [translateMixin],
         data(){
             return {
                 numberPostOnQuery: 8,
                 postCurrentPage: 1,
-                showMore: ''
             }
         },
         computed: {
@@ -51,9 +51,6 @@
             postShowMore(){
                 this.postCurrentPage += 1
             }
-        },
-        mounted() {
-            this.showMore = TRANSLATE.SHOW_MORE.uk
         }
     }
 </script>

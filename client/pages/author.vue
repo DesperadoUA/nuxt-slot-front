@@ -3,8 +3,8 @@
     <app_author_top v-if="data.body.h1 !== ''"
         :img="data.body.thumbnail"
         :name="data.body.h1"
-        :specialty="$options.specialty"
-        :link="$options.fbLink"
+        :specialty="translates.AUTHOR_SPECIALIZATION[config.LANG]"
+        :link="config.AUTHOR_FB_URL"
         :shortDesc="data.body.short_desc"
         :socialLinks="authorSocialLinks"
     />
@@ -18,13 +18,12 @@
     import app_author_top from '~/components/author/app-author-top'
     import head from '~/mixins/head'
     import Helper from '~/helpers/helpers'
-    import TRANSLATE from '~/helpers/translate.json'
-    import config from '~/config'
+    import translateMixin from '~/mixins/translate'
 
     export default {
         name: "app-author",
         components: {app_content, app_author_top},
-        mixins: [head],
+        mixins: [head, translateMixin],
         async asyncData({route, error}) {
             const request = new DAL_Builder()
             const response = await request.postType('pages')
@@ -47,14 +46,6 @@
                 } 
                 return []
             }
-        },
-        created() {
-            this.$options.specialty = TRANSLATE.AUTHOR_SPECIALIZATION[config.LANG]
-            this.$options.fbLink = config.AUTHOR_FB_URL
         }
     }
 </script>
-
-<style scoped>
-
-</style>

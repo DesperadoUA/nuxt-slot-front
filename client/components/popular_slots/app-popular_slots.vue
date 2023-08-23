@@ -2,8 +2,10 @@
 <div class="slots">
     <div class="container">
         <div class="slots__heading">
-            <h2 class="slots__ttl">{{popularSlots}}</h2>
-            <NuxtLink no-prefetch to="/slots" class="link-primary">{{allSlots}}</NuxtLink>
+            <h2 class="slots__ttl">{{translates.POPULAR_SLOTS[config.LANG]}}</h2>
+            <NuxtLink no-prefetch to="/slots" class="link-primary">
+               {{translates.ALL_SLOTS[config.LANG]}}
+            </NuxtLink>
         </div>
 
         <div class="slots__container">
@@ -17,14 +19,14 @@
                 <div class="slot-item__content">
                     <div class="slot-item__name">{{item.title}}</div>
                     <div class="slot-item__stats">
-                        {{rating}} <strong class="slot-item__stats-val">{{item.rating}}</strong>
+                        {{translates.RATING[config.LANG]}} <strong class="slot-item__stats-val">{{item.rating}}</strong>
                         <span class="slot-item__divider"></span>
                         RTP <strong class="slot-item__stats-val">{{item.rtp}}</strong>
                     </div>
                 </div>
 
                 <div class="slot-item__btns">
-                    <button class="slot-item__btn --blue">{{play}}</button>
+                    <button class="slot-item__btn --blue">{{translates.PLAY[config.LANG]}}</button>
                 </div>
             </NuxtLink>
         </div>
@@ -33,7 +35,7 @@
 </template>
 
 <script>
-    import TRANSLATE from '~/helpers/translate.json'
+    import translateMixin from '~/mixins/translate'
     export default {
         name: "app_popular_slots",
         props: {
@@ -42,21 +44,9 @@
                 default: []
             }
         },
+        mixins: [translateMixin],
         data() {
-            return {
-                play: '',
-                allSlots: '',
-                popularSlots: '',
-                rating: ''
-            }
-        },
-        mounted() {
-            this.play = TRANSLATE.PLAY.uk
-            this.allSlots = TRANSLATE.ALL_SLOTS.uk
-            this.popularSlots = TRANSLATE.POPULAR_SLOTS.uk
-            this.rating = TRANSLATE.RATING.uk
+            return {}
         }
     }
 </script>
-
-<style lang="scss"></style>

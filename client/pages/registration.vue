@@ -1,7 +1,7 @@
 <template>
   <div class="main register_container">
        <div class="form_container">
-           <div class="form_title">{{title}}</div>
+           <div class="form_title">{{translates.REGISTRATION[config.LANG]}}</div>
            <form @submit.prevent="send">
                 <input type="text" class="form_input" 
                        v-model="name" 
@@ -32,9 +32,9 @@
 </template>
 
 <script>
-    import TRANSLATE from '~/helpers/translate.json'
     import Validate from '~/helpers/validate'
     import DAL_Forum from '~/DAL/forum'
+    import translateMixin from '~/mixins/translate'
     export default {
         name: "registration",
         layout: 'registration',
@@ -44,9 +44,6 @@
                 password: '',
                 name: '',
                 error: '',
-                login: TRANSLATE.LOGIN.uk,
-                enter: TRANSLATE.SEND.uk,
-                title: TRANSLATE.REGISTRATION.uk,
                 backEndError: [],
                 successfulMessage: '',
                 formValid: true,
@@ -55,6 +52,7 @@
                 passwordError: null
             }
         },
+        mixins: [translateMixin],
         methods: {
           async  send() {
                 this.formValid = true
@@ -105,7 +103,7 @@
                 if(this.formValid) {
                   const result = await DAL_Forum.addCandidate(data)
                   if(result.data.confirm === 'ok') {
-                      this.successfulMessage = TRANSLATE.SUCCESS_MESSAGE.uk
+                      this.successfulMessage = this.translates.SUCCESS_MESSAGE[this.config.LANG]
                   } else {
                       this.backEndError = result.data.error
                   }
@@ -114,12 +112,12 @@
         },
         head() {
             return {
-                title: TRANSLATE.REGISTRATION.uk,
+                title: this.translates.REGISTRATION[this.config.LANG],
                 meta: [
                     {
                         hid: 'description',
                         name: 'description',
-                        content: TRANSLATE.REGISTRATION.uk,
+                        content: this.translates.REGISTRATION[this.config.LANG],
                     },
                 ]
             }

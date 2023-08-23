@@ -1,7 +1,7 @@
 <template>
     <div class="ticket_form">
         <div class="container">
-            <div class="ticket_ttl">{{title}}</div>
+            <div class="ticket_ttl">{{translates.LEAVE_COMPLAINT[config.LANG]}}</div>
             <div class="ticket_container">
                 <app_list_casino :value="listCasino" />
                 <textarea class="form_textarea" v-model="content" @change="changeText"></textarea>
@@ -15,8 +15,8 @@
 
 <script>
     import Validate from '~/helpers/validate'
-    import TRANSLATE from '~/helpers/translate.json'
     import app_list_casino from '~/components/list_casino/list_casino'
+    import translateMixin from '~/mixins/translate'
     export default {
         name: "app_ticket_content",
         data: () => {
@@ -25,9 +25,9 @@
                 successfulMessage: '',
                 formValid: true,
                 error: '',
-                title: TRANSLATE.LEAVE_COMPLAINT.uk
             }
         },
+        mixins: [translateMixin],
         components: {
             app_list_casino
         },

@@ -11,7 +11,7 @@
     />
     <app_payment_card :value="data.body" />
     <app_heading :value="{
-                          title: data.translate.casinosWith + data.body.title,
+                          title: translates.CASINOS_WITH[config.LANG] + ' ' + data.body.title,
                           permalink:'', 
                           title_permalink: ''
                         }" />
@@ -21,8 +21,7 @@
 </template>
 
 <script>
-    import DAL_Builder from '~/DAL/builder'
-    import TRANSLATE from '~/helpers/translate'
+    import DAL_Builder from '~/DAL/builder' 
     import app_intro from '~/components/intro/app-intro'
     import app_casino_loop from '~/components/casino_loop_downloads/app_casino_loop_downloads'
     import app_heading from '~/components/section-heading/app-section-heading'
@@ -51,9 +50,6 @@
             }
             else {
                 const data = Helper.headDataMixin(response.data, route)
-                data.translate = {
-                    casinosWith: `${TRANSLATE.CASINOS_WITH.uk} `,
-                }
                 return {data}
             }
         }

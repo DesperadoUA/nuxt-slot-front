@@ -11,7 +11,7 @@
             />
           </template>
         </app_blog_single>
-        <app_last_article :title="title"
+        <app_last_article :title="translates.LAST_ARTICLE[config.LANG]"
                           :value="data.body.posts" />
     </div>
   </div>
@@ -20,7 +20,6 @@
 <script>
     import DAL_Builder from '~/DAL/builder'
     import Helper from '~/helpers/helpers'
-    import TRANSLATE from '~/helpers/translate'
     import app_blog_single from '~/components/blog_single/app_blog_single'
     import app_last_article from '~/components/last_article/app_last_article'
     import app_author_link from '~/components/author/app-author-link'
@@ -33,7 +32,6 @@
         data: () => {
             return {
                 data: {},
-                title: TRANSLATE.LAST_ARTICLE.uk
             }
         },
         async asyncData({route, error}) {

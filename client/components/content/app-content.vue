@@ -5,10 +5,11 @@
 </template>
 
 <script>
-    import TRANSLATE from '~/helpers/translate.json'
+    import translateMixin from '~/mixins/translate'
     export default {
         name: "app-content",
         props: ['value'],
+        mixins: [translateMixin],
         data(){
             return {}
         },
@@ -38,7 +39,7 @@
                 h6.forEach(item => {
                     arrH.push(item)
                 })
-                let str = `<div class="article_menu_heading">${TRANSLATE.CONTENT.uk}</div>` +
+                let str = `<div class="article_menu_heading">${this.translates.CONTENT[this.config.LANG]}</div>` +
                         '<ol class="article_menu">'
                 if(arrH.length === 0) {
                     menu.remove()

@@ -13,34 +13,34 @@
                     </svg>
                     <div class="circle-rating__percentage">{{ item.rating }}</div>
                 </div>
-                <span class="casinos-rating__txt">{{rating}}</span>
+                <span class="casinos-rating__txt">{{translates.RATING[config.LANG]}}</span>
             </div>
 
             <div class="casino-card-param">
                 <div class="casino-card-param__item">
                     <span class="casino-card-param__value">{{ item.number_rows }}</span>
-                    <span class="casino-card-param__txt">{{numberRows}}</span>
+                    <span class="casino-card-param__txt">{{translates.NUMBER_ROWS[config.LANG]}}</span>
                 </div>
 
                 <div class="casino-card-param__item">
                     <span class="casino-card-param__value">{{ item.min_bet }}</span>
-                    <span class="casino-card-param__txt">{{minBet}}</span>
+                    <span class="casino-card-param__txt">{{translates.MIN_BET[config.LANG]}}</span>
                 </div>
 
                 <div class="casino-card-param__item">
                     <span class="casino-card-param__value">{{ item.pay_lines }}</span>
-                    <span class="casino-card-param__txt">{{payLines}}</span>
+                    <span class="casino-card-param__txt">{{translates.PAY_LINES[config.LANG]}}</span>
                 </div>
 
                 <div class="casino-card-param__item">
                     <span class="casino-card-param__value">{{ item.reels }}</span>
-                    <span class="casino-card-param__txt">{{wheels}}</span>
+                    <span class="casino-card-param__txt">{{translates.WHEELS[config.LANG]}}</span>
                 </div>
             </div>
 
             <div class="casino-card-bonus">
                 <span class="casino-card-bonus__value" style="color: #ffe600;">{{ item.volatility }}</span>
-                <div class="casino-card-bonus__wager">{{volatility}}</div>
+                <div class="casino-card-bonus__wager">{{translates.VOLATILITY[config.LANG]}}</div>
             </div>
 
             <div class="casino-card-bonus">
@@ -51,16 +51,18 @@
                 <NuxtLink :to="item.permalink"
                           no-prefetch
                           type="button"
-                          class="casino-card__cta btn-tertiary --green">{{review}}
+                          class="casino-card__cta btn-tertiary --green">{{translates.REVIEW[config.LANG]}}
                 </NuxtLink>
-                <button type="button" class="casino-card__cta btn-tertiary" @click="refActivate(item)">{{play}}</button>
+                <button type="button" class="casino-card__cta btn-tertiary" @click="refActivate(item)">
+                    {{translates.PLAY[config.LANG]}}
+                </button>
             </div>
         </div>
         <div class="items-more casino-card__more">
             <button no-prefetch v-if="value.length > (numberPostOnQuery*postCurrentPage)"
                     class="btn-primary"
                     @click="postShowMore"
-            >{{showMore}}
+            >{{translates.SHOW_MORE[config.LANG]}}
             </button>
         </div>
     </div>
@@ -68,7 +70,7 @@
 
 <script>
 import Helper from '~/helpers/helpers.js'
-import TRANSLATE from '~/helpers/translate.json'
+import translateMixin from '~/mixins/translate'
     export default {
         name: "app_slot_loop_card",
         props: {
@@ -77,19 +79,11 @@ import TRANSLATE from '~/helpers/translate.json'
                 default: []
             }
         },
+        mixins: [translateMixin],
         data(){
             return {
                 numberPostOnQuery: 10,
                 postCurrentPage: 1,
-                showMore: '',
-                play: '',
-                review: '',
-                volatility: '',
-                wheels: '',
-                payLines: '',
-                minBet: '',
-                numberRows: '',
-                rating: ''
             }
         },
         computed: {
@@ -109,20 +103,6 @@ import TRANSLATE from '~/helpers/translate.json'
             postShowMore(){
                 this.postCurrentPage += 1
             }
-        },
-        mounted() {
-            this.showMore = TRANSLATE.SHOW_MORE.uk
-            this.play = TRANSLATE.PLAY.uk
-            this.review = TRANSLATE.REVIEW.uk
-            this.volatility = TRANSLATE.VOLATILITY.uk
-            this.wheels = TRANSLATE.WHEELS.uk
-            this.payLines = TRANSLATE.PAY_LINES.uk
-            this.minBet = TRANSLATE.MIN_BET.uk
-            this.numberRows = TRANSLATE.NUMBER_ROWS.uk
-            this.rating = TRANSLATE.RATING.uk
         }
     }
 </script>
-
-<style lang="scss" scoped>
-</style>

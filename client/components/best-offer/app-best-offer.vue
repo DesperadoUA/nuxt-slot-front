@@ -1,7 +1,7 @@
 <template>
 <section class="best-offer">
     <div class="container">
-        <h2 class="best-offer__ttl">{{title}}</h2>
+        <h2 class="best-offer__ttl">{{translates.BEST_OFFER[config.LANG]}}</h2>
 
         <div class="best-offer__container-slider">
             <div class="best-offer__list">
@@ -15,7 +15,7 @@
                     </div>
 
                     <div class="offer-item__content">
-                        <h3 class="offer-item__ttl">{{subTitle}}<br>{{item.title}}</h3>
+                        <h3 class="offer-item__ttl">{{translates.BONUSES_FROM[config.LANG]}}<br>{{item.title}}</h3>
                     </div>
                 </NuxtLink>
             </div>
@@ -26,24 +26,18 @@
 
 <script>
 import Helper from '~/helpers/helpers.js'
-import TRANSLATE from '~/helpers/translate.json'
+import translateMixin from '~/mixins/translate'
     export default {
         name: "app_intro",
         props: ['value'],
+        mixins: [translateMixin],
         data(){
-            return {
-                title: '',
-                subTitle: ''
-            }
+            return {}
         },
         filters: {
             classRating(item) {
                 return Helper.classRating(item)
             }
-        },
-        mounted() {
-            this.title = TRANSLATE.BEST_OFFER.uk
-            this.subTitle = TRANSLATE.BONUSES_FROM.uk
         }
     }
 </script>
