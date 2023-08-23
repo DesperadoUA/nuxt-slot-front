@@ -13,7 +13,7 @@
                 </svg>
                 <div class="circle-rating__percentage">{{value.rating}}</div>
             </div>
-            <span class="casinos-rating__txt">{{rating}}</span>
+            <span class="casinos-rating__txt">{{$options.rating}}</span>
         </div>
 
         <div class="casino-card-param">
@@ -45,17 +45,23 @@
 
         <div class="casino-card-bonus">
             <span class="casino-card-bonus__value" style="color: #ffe600;">{{value.bonus}}</span>
-            <span class="casino-card-bonus__ttl">{{welcomeBonus}}</span>
+            <span class="casino-card-bonus__ttl">{{$options.welcomeBonus}}</span>
             <div class="casino-card-bonus__wager">{{value.bonus_wagering}}</div>
         </div>
 
         <div class="casino-card-bonus">
             <span class="casino-card-bonus__value" style="color: #12d4ff;">{{value.freespins}}</span>
-            <span class="casino-card-bonus__ttl">{{freeSpins}}</span>
+            <span class="casino-card-bonus__ttl">{{$options.freeSpins}}</span>
             <div class="casino-card-bonus__wager">{{value.freespins_wagering}}</div>
         </div>
-
-        <button type="button" class="casino-card__cta btn-tertiary" @click="refActivate(value)">{{goTo}}</button>
+        <div class="casino-card-button_wrapper">
+            <button type="button" class="casino-card__cta btn-tertiary" @click="refActivate(value)">{{$options.goTo}}</button>
+            <PromoBtn 
+                v-if="value.promocod"
+                :text="value.promocod"
+                :subTitle="$options.promoTitle"
+            />
+        </div>
     </div>
 </div>
 </template>
@@ -63,16 +69,14 @@
 <script>
 import Helper from '~/helpers/helpers.js'
 import TRANSLATE from '~/helpers/translate.json'
+import config from '~/config'
+import PromoBtn from '~/components/casino_card/parts/PromoBtn'
     export default {
         name: "app-casino-card",
         props: ['value'],
+        components: {PromoBtn},
         data(){
-            return {
-                goTo: '',
-                freeSpins: '',
-                welcomeBonus: '',
-                rating: ''
-            }
+            return {}
         },
         filters: {
             classRating(item) {
@@ -84,15 +88,18 @@ import TRANSLATE from '~/helpers/translate.json'
                Helper.refActivate(item)
             },
         },
-        mounted() {
-            this.goTo = TRANSLATE.GO_TO.uk
-            this.freeSpins = TRANSLATE.FREE_SPINS.uk
-            this.welcomeBonus = TRANSLATE.WELCOME_BONUS.uk
-            this.rating = TRANSLATE.RATING.uk
+        created() {
+            this.$options.goTo = TRANSLATE.GO_TO[config.LANG]
+            this.$options.freeSpins = TRANSLATE.FREE_SPINS[config.LANG]
+            this.$options.welcomeBonus = TRANSLATE.WELCOME_BONUS[config.LANG]
+            this.$options.rating = TRANSLATE.RATING[config.LANG]
+            this.$options.promoTitle = TRANSLATE.PROMO_TITLE[config.LANG]
         }
     }
 </script>
 
 <style lang="scss">
-
+.casino-card-button_wrapper {
+    flex-grow: 1;
+}
 </style>
