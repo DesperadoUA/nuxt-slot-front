@@ -2,8 +2,8 @@
   <div>
     <app_intro :value="data.body" />
     <AuthorLinkContainer 
-        :link="$options.authorPageLink"
-        :text="$options.reviewAuthor"
+        :link="config.AUTHOR_PAGE_LINK"
+        :text="translates.REVIEW_AUTHOR[config.LANG]"
         :dataTime="data.body.create_at.slice(0, 10)"
         :name="data.body.author_name"
         variant="transparent"
@@ -29,13 +29,13 @@
     import app_content from '~/components/content/app-content'
     import app_payment_card from '~/components/payment_card/app_payment_card'
     import AuthorLinkContainer from '~/components/author/app-author-link-container'
-    import author from '~/mixins/author'
+    import translateMixin from '~/mixins/translate'
     import head from '~/mixins/head'
     import Helper from '~/helpers/helpers'
     export default {
         name: "app_single_payment",
         components: {app_intro, app_heading, app_casino_loop, app_content, app_payment_card, AuthorLinkContainer},
-        mixins: [head, author],
+        mixins: [head, translateMixin],
         data: () => {
             return {
                 data: {},

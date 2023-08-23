@@ -10,8 +10,8 @@
                         }" />
     <app_casino_loop :value="data.body.popular_casino" />
     <AuthorLinkContainer 
-        :link="$options.authorPageLink"
-        :text="$options.reviewAuthor"
+        :link="config.AUTHOR_PAGE_LINK"
+        :text="translates.REVIEW_AUTHOR[config.LANG]"
         :dataTime="data.body.create_at.slice(0, 10)"
         :name="data.body.author_name"
     />
@@ -29,13 +29,13 @@
     import app_casino_loop from '~/components/casino_loop_downloads/app_casino_loop_downloads'
     import app_heading from '~/components/section-heading/app-section-heading'
     import AuthorLinkContainer from '~/components/author/app-author-link-container'
-    import author from '~/mixins/author'
+    import translateMixin from '~/mixins/translate'
     import head from '~/mixins/head'
     import Helper from '~/helpers/helpers'
     export default {
         name: "app_single_slot",
         components: {app_slot_card, app_content, app_intro, app_slot_detail, app_casino_loop, app_heading, AuthorLinkContainer},
-        mixins: [head, author],
+        mixins: [head, translateMixin],
         data: () => {
             return {
                 data: {},
@@ -59,7 +59,3 @@
         }
     }
 </script>
-
-<style scoped>
-
-</style>

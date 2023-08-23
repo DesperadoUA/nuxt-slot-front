@@ -7,8 +7,8 @@
     <app_casino_detail :value="data.body" />
     <app_casino_slots :value="data.body.slots" :title="data.body.title" />
     <AuthorLinkContainer 
-        :link="$options.authorPageLink"
-        :text="$options.reviewAuthor"
+        :link="config.AUTHOR_PAGE_LINK"
+        :text="translates.REVIEW_AUTHOR[config.LANG]"
         :dataTime="data.body.create_at.slice(0, 10)"
         :name="data.body.author_name"
     />
@@ -21,7 +21,6 @@
 
 <script>
     import DAL_Builder from '~/DAL/builder'
-    import config from '~/config'
     import app_content from '~/components/content/app-content'
     import app_intro from '~/components/intro/app-intro'
     import app_casino_card from '~/components/casino_card/app-casino-card'
@@ -32,7 +31,7 @@
     import app_faq from '~/components/faq/app_faq'
     import app_slick_button from '~/components/slick_button/app_slick_button'
     import AuthorLinkContainer from '~/components/author/app-author-link-container'
-    import author from '~/mixins/author'
+    import translateMixin from '~/mixins/translate'
     import head from '~/mixins/head'
     import Helper from '~/helpers/helpers'
     export default {
@@ -44,7 +43,7 @@
                data: {},
             }
         },
-        mixins: [head, author],
+        mixins: [head, translateMixin],
         async asyncData({route, error}) {
             const request = new DAL_Builder()
             const response = await request.postType('casino')

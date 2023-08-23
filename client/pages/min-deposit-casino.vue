@@ -4,8 +4,8 @@
     <app_category_link :value="data.body.category_link" />
     <app_casino_loop_downloads :value="data.body.casino" />
     <AuthorLinkContainer 
-        :link="$options.authorPageLink"
-        :text="$options.reviewAuthor"
+        :link="config.AUTHOR_PAGE_LINK"
+        :text="translates.REVIEW_AUTHOR[config.LANG]"
         :dataTime="data.body.create_at.slice(0, 10)"
         :name="data.body.author_name"
     />
@@ -20,17 +20,15 @@
     import app_casino_loop_downloads from '~/components/casino_loop_downloads/app_casino_loop_downloads'
     import app_category_link from '~/components/category_link/app-category_link'
     import AuthorLinkContainer from '~/components/author/app-author-link-container'
-    import author from '~/mixins/author'
+    import translateMixin from '~/mixins/translate'
     import head from '~/mixins/head'
     import Helper from '~/helpers/helpers'
     export default {
         name: "min-deposit-casino",
         data: () => {
-            return {
-                data: null
-            }
+            return {}
         },
-        mixins: [head, author],
+        mixins: [head, translateMixin],
         components: {app_intro, app_content, app_casino_loop_downloads, app_category_link, AuthorLinkContainer},
         async asyncData({store, route, error}) {
             const request = new DAL_Builder()

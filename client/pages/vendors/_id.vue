@@ -2,8 +2,8 @@
   <div>
     <app_intro :value="data.body" />
     <AuthorLinkContainer 
-        :link="$options.authorPageLink"
-        :text="$options.reviewAuthor"
+        :link="config.AUTHOR_PAGE_LINK"
+        :text="translates.REVIEW_AUTHOR[config.LANG]"
         :dataTime="data.body.create_at.slice(0, 10)"
         :name="data.body.author_name"
         variant="transparent"
@@ -34,13 +34,13 @@
     import app_slot_loop_card from '~/components/slot_loop_card/app_slot_loop_card'
     import app_heading from '~/components/section-heading/app-section-heading'
     import AuthorLinkContainer from '~/components/author/app-author-link-container'
-    import author from '~/mixins/author'
+    import translateMixin from '~/mixins/translate'
     import head from '~/mixins/head'
     import Helper from '~/helpers/helpers'
     export default {
         name: "app_single_vendor",
         components: {app_intro, app_vendor_card, app_vendor_casino, app_slot_loop_card, app_heading, AuthorLinkContainer},
-        mixins: [head, author],
+        mixins: [head, translateMixin],
         data: () => {
             return {
                 data: {

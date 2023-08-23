@@ -4,8 +4,8 @@
         <app_best_offer :value="data.body.bonuses" />
         <app_bonuses_loop :value="data.body.list" />
         <AuthorLinkContainer 
-            :link="$options.authorPageLink"
-            :text="$options.reviewAuthor"
+            :link="config.AUTHOR_PAGE_LINK"
+            :text="translates.REVIEW_AUTHOR[config.LANG]"
             :dataTime="data.body.create_at.slice(0, 10)"
             :name="data.body.author_name"
         />
@@ -20,17 +20,15 @@
    import app_bonuses_loop from '~/components/bonuses_loop_downloads/app_bonuses_loop_downloads'
    import app_content from '~/components/content/app-content'
    import AuthorLinkContainer from '~/components/author/app-author-link-container'
-   import author from '~/mixins/author'
+   import translateMixin from '~/mixins/translate'
    import head from '~/mixins/head'
    import Helper from '~/helpers/helpers'
 export default {
     name: "app_bonuses",
     data: () => {
-        return {
-            
-        }
+        return {}
     },
-    mixins: [head, author],
+    mixins: [head, translateMixin],
     components: {app_intro, app_best_offer, app_content, app_bonuses_loop, AuthorLinkContainer},
     async asyncData({store, route, error}) {
         const request = new DAL_Builder()

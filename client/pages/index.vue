@@ -8,8 +8,8 @@
         <app_popular_slots :value="data.body.popular_slots" />
         <app_popular_offers :value="data.body.popular_bonus" />
         <AuthorLinkContainer 
-            :link="$options.authorPageLink"
-            :text="$options.reviewAuthor"
+            :link="config.AUTHOR_PAGE_LINK"
+            :text="translates.REVIEW_AUTHOR[config.LANG]"
             :dataTime="data.body.create_at.slice(0, 10)"
             :name="data.body.author_name"
         />
@@ -28,7 +28,7 @@
    import app_popular_offers from '~/components/popular_offers/app_popular_offers'
    import app_content from '~/components/content/app-content'
    import head from '~/mixins/head'
-   import author from '~/mixins/author'
+   import translateMixin from '~/mixins/translate'
    import Helper from '~/helpers/helpers'
    import AuthorLinkContainer from '~/components/author/app-author-link-container'
 export default {
@@ -38,7 +38,7 @@ export default {
             data: {}
         }
     },
-    mixins: [head, author],
+    mixins: [head, translateMixin],
     components: {app_intro, app_best_offer, app_category_link, app_casino_loop_downloads, 
     app_content, app_new_casino, app_popular_slots, app_popular_offers, AuthorLinkContainer},
     async asyncData({store, route}) {
@@ -51,7 +51,3 @@ export default {
     }
 }
 </script>
-
-<style>
-
-</style>

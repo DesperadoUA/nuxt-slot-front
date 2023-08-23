@@ -4,10 +4,10 @@
       <app_blog_single :value="data.body">
         <template v-slot>
           <app_author_link 
-                :link="$options.authorPageLink"
-                :text="$options.reviewAuthor"
-                :dataTime="data.body.create_at.slice(0, 10)"
-                :name="data.body.author_name"
+            :link="config.AUTHOR_PAGE_LINK"
+            :text="translates.REVIEW_AUTHOR[config.LANG]"
+            :dataTime="data.body.create_at.slice(0, 10)"
+            :name="data.body.author_name"
           />
         </template>
       </app_blog_single>
@@ -25,11 +25,11 @@
     import app_last_article from '~/components/last_article/app_last_article'
     import app_author_link from '~/components/author/app-author-link'
     import head from '~/mixins/head'
-    import author from '~/mixins/author'
+    import translateMixin from '~/mixins/translate'
     export default {
         name: "app_news_single",
         components: {app_blog_single, app_last_article, app_author_link},
-        mixins: [head, author],
+        mixins: [head, translateMixin],
         data: () => {
             return {
                 data: {},
