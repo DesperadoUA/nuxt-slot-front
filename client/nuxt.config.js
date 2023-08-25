@@ -1,11 +1,12 @@
 import DAL_Builder from '../client/DAL/builder'
+import config from './config'
 export default {
   mode: 'universal',
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
     title: 'nuxt-slot',
     htmlAttrs: {
-      lang: 'uk'
+      lang: config.HTML_ATTRS[config.LANG]
     },
     meta: [
       { charset: 'utf-8' },
@@ -14,7 +15,6 @@ export default {
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
-      { rel: 'script', src: 'https://images.dmca.com/Badges/DMCABadgeHelper.min.js' }
     ]
   },
   serverMiddleware: [
@@ -37,7 +37,8 @@ export default {
 
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [
-    '@nuxtjs/sitemap'
+    '@nuxtjs/sitemap',
+    '@nuxtjs/amp'
   ],
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
@@ -75,5 +76,8 @@ export default {
                                           .get()
       return data.body.posts
     }
-  }  
+  },
+  amp: {
+    css: '~/assets/amp-custom.css',
+  }
 }
