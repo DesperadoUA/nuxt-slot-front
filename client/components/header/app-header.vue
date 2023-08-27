@@ -1,7 +1,7 @@
 <template>
     <header class="header">
         <div class="header__container container">
-           <app-logo />
+           <app_logo />
            <app_menu />
            <app_search />
         </div>

@@ -6,11 +6,11 @@
       <div class="slick_button_left">
         <img src='/img/arrow.png' class="slick_button_arrow left_arrow" loading="lazy" width="8" height='12'>
         <NuxtLink no-prefetch :to="'/casino'" >
-          {{title_1}}
+          {{translates.CASINO_REVIEWS[config.LANG]}}
         </NuxtLink>
       </div>
       <div class="slick_button_right">
-        {{title_2}}
+        {{translates.GO_CASINO_SITE[config.LANG]}}
         <img src='/img/arrow.png' class="slick_button_arrow right_arrow" loading="lazy" width="8" height='12'>
       </div>
     </div>
@@ -18,14 +18,13 @@
 </template>
 
 <script>
+import translate from '~/mixins/translate'
     export default {
         name: "app_slick_button",
         props:['referal'],
+        mixins: [translate],
         data() {
-            return {
-                title_1: 'Огляди казино',
-                title_2: 'Перейти на сайт казино'
-            }
+            return {}
         },
         filters: {
             refValidate(value) {

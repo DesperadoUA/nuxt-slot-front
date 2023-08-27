@@ -1,50 +1,47 @@
 <template>
   <div>
     <app_header_amp :logo="data.body.options.logo" :menu_links="data.body.settings.header_menu" />
-        <h1>Bonuses</h1>
+    <main class="main">
+        <app_intro_amp :value="data.body" />
+        <app_casino_card_amp :value="data.body" />
+        <app_close_disclaimer_amp v-if="data.body.close === 1" :value="data.body.title" />
+        <app_casino_loop_amp :value="data.body.popular_casino" v-if="data.body.close === 1" />
+        <app_casino_detail_amp :value="data.body" />
+        <app_casino_slots_amp :value="data.body.slots" :title="data.body.title" />
+        <AuthorLinkContainerAmp 
+            :link="config.AUTHOR_PAGE_LINK"
+            :text="translates.REVIEW_AUTHOR[config.LANG]"
+            :dataTime="data.body.create_at.slice(0, 10)"
+            :name="data.body.author_name"
+        />
+        <app_faq_amp :title="data.body.faq_title"
+             :value="data.body.faq" />
+        <app_slick_button_amp :referal="data.body.ref" />
+    </main>
     <app_footer_amp 
         :footer_menu="data.body.settings.footer_menu"
         :footer_text="data.body.settings.footer_text"
     />
-    <!--
-    <app_intro :value="data.body" />
-    <app_casino_card :value="data.body" />
-    <app_close_disclaimer v-if="data.body.close === 1" :value="data.body.title" />
-    <app_casino_loop :value="data.body.popular_casino" v-if="data.body.close === 1" />
-    <app_casino_detail :value="data.body" />
-    <app_casino_slots :value="data.body.slots" :title="data.body.title" />
-    <AuthorLinkContainer 
-        :link="config.AUTHOR_PAGE_LINK"
-        :text="translates.REVIEW_AUTHOR[config.LANG]"
-        :dataTime="data.body.create_at.slice(0, 10)"
-        :name="data.body.author_name"
-    />
-    <app_content :value="data.body.content"  />
-    <app_faq :title="data.body.faq_title"
-             :value="data.body.faq" />
-    <app_slick_button :referal="data.body.ref"></app_slick_button>
-    -->
   </div>
 </template>
 
 <script>
     import DAL_Builder from '~/DAL/builder'
-    //import app_content from '~/components/content/app-content'
-    //import app_intro from '~/components/intro/app-intro'
-    //import app_casino_card from '~/components/casino_card/app-casino-card'
-    //import app_close_disclaimer from '~/components/close-disclaimer/close-disclaimer'
-    //import app_casino_detail from '~/components/casino-detail/app-casino-detail'
-    //import app_casino_slots from '~/components/casino-slots/app-casino-slots'
-    //import app_casino_loop from '~/components/casino_loop_downloads/app_casino_loop_downloads'
-    //import app_faq from '~/components/faq/app_faq'
-    //import app_slick_button from '~/components/slick_button/app_slick_button'
-    //import AuthorLinkContainer from '~/components/author/app-author-link-container'
+    import app_intro_amp from '~/components/intro/app-intro_amp'
+    import app_casino_card_amp from '~/components/casino_card/app-casino-card_amp'
+    import app_close_disclaimer_amp from '~/components/close-disclaimer/close-disclaimer_amp'
+    import app_casino_detail_amp from '~/components/casino-detail/app-casino-detail_amp'
+    import app_casino_slots_amp from '~/components/casino-slots/app-casino-slots_amp'
+    import app_casino_loop_amp from '~/components/casino_loop_downloads/app_casino_loop_downloads_amp'
+    import app_faq_amp from '~/components/faq/app_faq_amp'
+    import app_slick_button_amp from '~/components/slick_button/app_slick_button_amp'
+    import AuthorLinkContainerAmp from '~/components/author/app-author-link-container_amp'
     import pageTemplateAmp from '~/mixins/pageTemplateAmp'
     import helper from '~/helpers/helpers'
     export default {
         name: "app_single_casino_amp",
-       // components: {app_content, app_intro, app_casino_card, app_casino_detail, app_casino_slots, app_faq, 
-       // app_close_disclaimer, app_casino_loop, app_slick_button, AuthorLinkContainer},
+        components: {app_intro_amp, app_casino_card_amp, app_close_disclaimer_amp, app_casino_detail_amp, 
+        app_casino_loop_amp, app_casino_slots_amp, AuthorLinkContainerAmp, app_faq_amp, app_slick_button_amp},
         data: () => {
             return {
                data: {},

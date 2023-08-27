@@ -1,31 +1,30 @@
 <template>
   <div>
     <app_header_amp :logo="data.body.options.logo" :menu_links="data.body.settings.header_menu" />
-        <h1>Interview</h1>
+        <div class="blog-single">
+          <div class="container blog-single__container">
+              <app_blog_single_amp :value="data.body" />
+              <app_last_article_amp :title="translates.LAST_INTERVIEW[config.LANG]"
+                                :value="data.body.posts" />
+          </div>
+        </div>
     <app_footer_amp 
         :footer_menu="data.body.settings.footer_menu"
         :footer_text="data.body.settings.footer_text"
     />
   </div>
-  <!--<div class="blog-single">
-    <div class="container blog-single__container">
-        <app_blog_single :value="data.body" />
-        <app_last_article :title="translates.LAST_INTERVIEW[config.LANG]"
-                          :value="data.body.posts" />
-    </div>
-  </div>-->
 </template>
 
 <script>
     import DAL_Builder from '~/DAL/builder'
     import helper from '~/helpers/helpers'
     import config from '~/config'
-    //import app_blog_single from '~/components/blog_single/app_blog_single'
-    //import app_last_article from '~/components/last_article/app_last_article'
+    import app_blog_single_amp from '~/components/blog_single/app_blog_single_amp'
+    import app_last_article_amp from '~/components/last_article/app_last_article_amp'
     import pageTemplateAmp from '~/mixins/pageTemplateAmp'
     export default {
         name: "app_interview_single_amp",
-        //components: {app_blog_single, app_last_article},
+        components: {app_blog_single_amp, app_last_article_amp},
         data: () => {
             return {
                 data: {},
@@ -57,37 +56,3 @@
            }
     }
 </script>
-
-<style scoped lang="scss">
-  .blog-single {
-    --last-article-width: 26.4%;
-    background-color: var(--theme-bg-1);
-    overflow: hidden;
-
-    .main > &:first-child {
-      margin-top: -53px;
-    }
-
-    .cms {
-      padding-top: 0;
-    }
-  }
-
-  .blog-single__container {
-    @media (min-width: 992px) {
-      display: flex;
-      position: relative;
-
-      &:after {
-        content: '';
-        position: absolute;
-        top: 0;
-        bottom: 0;
-        pointer-events: none;
-        left: calc(100% - var(--side-gutters) - 2px);
-        width: 9999px;
-        background-color: #fff;
-      }
-    }
-  }
-</style>

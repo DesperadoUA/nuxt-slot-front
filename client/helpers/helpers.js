@@ -39,6 +39,14 @@ export default class Helper {
         if(item.rating > 33 && item.rating <= 67) return '--cr-rating: #ffc700'
         if(item.rating > 67) return '--cr-rating: #0f6'
     }
+    static getRef(item){
+        if(item.ref.length !== 0) {
+            const min = 0
+            const max = item.ref.length - 1
+            const random = Math.floor(Math.random() * (max - min + 1)) + min
+            return item.ref[random]
+        }
+    }
     static headDataMixin(data, route) {
         data.body.currentUrl = route.path.startsWith(config.AMP_PREFIX) 
            ? config.BASE_URL[config.LANG] + route.path.replace(`${config.AMP_PREFIX}`, '') 

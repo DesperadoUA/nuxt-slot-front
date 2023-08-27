@@ -1,46 +1,43 @@
 <template>
   <div>
     <app_header_amp :logo="data.body.options.logo" :menu_links="data.body.settings.header_menu" />
-        <h1>Slots id</h1>
+    <main class="main">
+        <app_intro_amp :value="data.body" />
+        <app_slot_card_amp :value="data.body" />
+        <app_slot_detail_amp :value="data.body" />
+        <app_heading_amp :value="{
+            title: translates.CASINO_WITH_GAME[config.LANG],
+            permalink:'',
+            title_permalink: ''
+        }" />
+        <app_casino_loop_amp :value="data.body.popular_casino" />
+        <AuthorLinkContainerAmp 
+            :link="config.AUTHOR_PAGE_LINK"
+            :text="translates.REVIEW_AUTHOR[config.LANG]"
+            :dataTime="data.body.create_at.slice(0, 10)"
+            :name="data.body.author_name"
+        />
+    </main>
     <app_footer_amp 
         :footer_menu="data.body.settings.footer_menu"
         :footer_text="data.body.settings.footer_text"
     />
-    <!--
-    <app_intro :value="data.body" />
-    <app_slot_card :value="data.body" />
-    <app_slot_detail :value="data.body" />
-    <app_heading :value="{
-                          title: translates.CASINO_WITH_GAME[config.LANG],
-                          permalink:'',
-                          title_permalink: ''
-                        }" />
-    <app_casino_loop :value="data.body.popular_casino" />
-    <AuthorLinkContainer 
-        :link="config.AUTHOR_PAGE_LINK"
-        :text="translates.REVIEW_AUTHOR[config.LANG]"
-        :dataTime="data.body.create_at.slice(0, 10)"
-        :name="data.body.author_name"
-    />
-    <app_content :value="data.body.content" />
-    -->
   </div>
 </template>
 
 <script>
     import DAL_Builder from '~/DAL/builder'
-    //import app_content from '~/components/content/app-content'
-    //import app_intro from '~/components/intro/app-intro'
-    //import app_slot_card from '~/components/slot_card/app_slot_card'
-    //import app_slot_detail from '~/components/slot-detail/app-slot-detail'
-    //import app_casino_loop from '~/components/casino_loop_downloads/app_casino_loop_downloads'
-    //import app_heading from '~/components/section-heading/app-section-heading'
-    //import AuthorLinkContainer from '~/components/author/app-author-link-container'
+    import app_intro_amp from '~/components/intro/app-intro_amp'
+    import app_slot_card_amp from '~/components/slot_card/app_slot_card_amp'
+    import app_slot_detail_amp from '~/components/slot-detail/app-slot-detail_amp'
+    import app_casino_loop_amp from '~/components/casino_loop_downloads/app_casino_loop_downloads_amp'
+    import app_heading_amp from '~/components/section-heading/app-section-heading_amp'
+    import AuthorLinkContainerAmp from '~/components/author/app-author-link-container_amp'
     import pageTemplateAmp from '~/mixins/pageTemplateAmp'
     import helper from '~/helpers/helpers'
     export default {
         name: "app_single_slot_amp",
-        //components: {app_slot_card, app_content, app_intro, app_slot_detail, app_casino_loop, app_heading, AuthorLinkContainer},
+        components: {app_intro_amp, app_slot_card_amp, app_slot_detail_amp, app_heading_amp, app_casino_loop_amp, AuthorLinkContainerAmp},
         mixins: [pageTemplateAmp],
         data: () => {
             return {

@@ -1,12 +1,10 @@
 <template>
   <div>
     <app_header_amp :logo="data.body.options.logo" :menu_links="data.body.settings.header_menu" />
-        <h1>useful</h1>
-    <!--
-    <app_intro :value="data.body" />
-    <app_useful :value="data.body" />
-    <app_content :value="data.body.content"  />
-    -->
+    <main class="main">
+        <app_intro_amp :value="data.body" />
+        <app_useful_amp :value="data.body" />
+    </main>
      <app_footer_amp 
         :footer_menu="data.body.settings.footer_menu"
         :footer_text="data.body.settings.footer_text"
@@ -16,14 +14,13 @@
 
 <script>
     import DAL_Builder from '~/DAL/builder'
-    //import app_content from '~/components/content/app-content'
-    //import app_useful from '~/components/useful/app_useful'
-    //import app_intro from '~/components/intro/app-intro'
+    import app_useful_amp from '~/components/useful/app_useful_amp'
+    import app_intro_amp from '~/components/intro/app-intro_amp'
     import pageTemplateAmp from '~/mixins/pageTemplateAmp'
     import helper from '~/helpers/helpers'
     export default {
         name: "app-useful_amp",
-        // components: {app_content, app_intro, app_useful},
+        components: {app_intro_amp, app_useful_amp},
         mixins: [pageTemplateAmp],
         async asyncData({route, error}) {
             const request = new DAL_Builder()

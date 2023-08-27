@@ -1,5 +1,5 @@
 <template>
-  <div class="author_link">
+  <div class="root author_link">
     <div class="leftPart">
         {{text}}: <NuxtLink no-prefetch :to="`${config.AMP_PREFIX}${link}`">{{ name }}</NuxtLink>
     </div>

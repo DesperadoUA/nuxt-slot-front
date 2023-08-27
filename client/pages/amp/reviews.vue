@@ -1,12 +1,10 @@
 <template>
   <div>
     <app_header_amp :logo="data.body.options.logo" :menu_links="data.body.settings.header_menu" />
-        <h1>reviews</h1>
-    <!--
-      <app_intro :value="data.body" />
-      <app_casino_category :value="data.body" />
-      <app_content :value="data.body.content"  />
-    -->
+    <main class="main">
+        <app_intro_amp :value="data.body" />
+        <app_casino_category_amp :value="data.body" />
+    </main>
     <app_footer_amp 
         :footer_menu="data.body.settings.footer_menu"
         :footer_text="data.body.settings.footer_text"
@@ -16,9 +14,8 @@
 
 <script>
     import DAL_Page from '~/DAL/static_pages'
-    //import app_intro from '~/components/intro/app-intro'
-    //import app_content from '~/components/content/app-content'
-    //import app_casino_category from '~/components/casino-categories/app_casino_categories'
+    import app_intro_amp from '~/components/intro/app-intro_amp'
+    import app_casino_category_amp from '~/components/casino-categories/app_casino_categories_amp'
     import pageTemplateAmp from '~/mixins/pageTemplateAmp'
     import helper from '~/helpers/helpers'
 export default {
@@ -28,7 +25,7 @@ export default {
             data: null
         }
     },
-    //components: {app_intro, app_content, app_casino_category},
+    components: {app_intro_amp, app_casino_category_amp},
     mixins: [pageTemplateAmp],
     async asyncData({store, route}) {
         const request = {
