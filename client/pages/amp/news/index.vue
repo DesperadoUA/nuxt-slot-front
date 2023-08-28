@@ -4,6 +4,7 @@
     <main class="main">
         <app_intro_amp :value="data.body" />
         <app_news_loop_amp :value="data.body.news" />
+        <app_content_amp :value="data.body.amp_content" />
     </main>
     <app_footer_amp 
         :footer_menu="data.body.settings.footer_menu"

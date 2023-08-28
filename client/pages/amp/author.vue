@@ -10,6 +10,7 @@
             :shortDesc="data.body.short_desc"
             :socialLinks="data.body.settings.social_links_author"
         />
+        <app_content_amp :value="data.body.amp_content"  />
     </main>
     <app_footer_amp 
            :footer_menu="data.body.settings.footer_menu"

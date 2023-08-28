@@ -5,9 +5,9 @@ export default {
         UA: 'https://api.onlinecasino.ua/api/'
     },
     BASE_URL: {
-        UA: 'http://127.0.0.1:3000',
-        //RU: '#',
-        UA: 'https://onlinecasino.ua' 
+        UA: 'http://localhost:3000/',
+        RU: '#',
+        //UA: 'https://onlinecasino.ua' 
     },
     AMP_PREFIX: '/amp',
     AUTHOR_PAGE_LINK: '/author',

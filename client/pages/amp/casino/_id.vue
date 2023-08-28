@@ -14,6 +14,7 @@
             :dataTime="data.body.create_at.slice(0, 10)"
             :name="data.body.author_name"
         />
+        <app_content_amp :value="data.body.amp_content" />
         <app_faq_amp :title="data.body.faq_title"
              :value="data.body.faq" />
         <app_slick_button_amp :referal="data.body.ref" />

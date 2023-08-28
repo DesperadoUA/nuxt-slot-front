@@ -11,10 +11,8 @@
             :dataTime="data.body.create_at.slice(0, 10)"
             :name="data.body.author_name"
         />
+        <app_content_amp :value="data.body.amp_content"  />
     </main>
-    <!--
-    <app_content :value="data.body.content"  />
-    -->
     <app_footer_amp 
            :footer_menu="data.body.settings.footer_menu"
            :footer_text="data.body.settings.footer_text"
@@ -24,7 +22,6 @@
 
 <script>
     import DAL_Builder from '~/DAL/builder'
-   // import app_content from '~/components/content/app-content'
     import app_intro_amp from '~/components/intro/app-intro_amp'
     import app_category_link_amp from '~/components/category_link/app-category_link_amp'
     import app_slot_card_amp from '~/components/slot_loop_card/app_slot_loop_card_amp'

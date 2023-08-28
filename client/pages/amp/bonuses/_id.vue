@@ -10,6 +10,7 @@
             :dataTime="data.body.create_at.slice(0, 10)"
             :name="data.body.author_name"
         />
+        <app_content_amp :value="data.body.amp_content" />
     </main>
     <app_footer_amp 
         :footer_menu="data.body.settings.footer_menu"

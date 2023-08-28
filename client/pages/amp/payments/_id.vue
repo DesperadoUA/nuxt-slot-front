@@ -18,6 +18,7 @@
             title_permalink: ''
         }" />
         <app_casino_loop_amp :value="data.body.casino" />
+        <app_content_amp :value="data.body.amp_content" />
     </main>
     <app_footer_amp 
         :footer_menu="data.body.settings.footer_menu"
