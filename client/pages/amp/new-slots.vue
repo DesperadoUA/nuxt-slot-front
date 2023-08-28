@@ -4,7 +4,11 @@
     <main class="main">
         <app_intro_amp :value="data.body" />
         <app_category_link_amp :value="data.body.category_link" />
-        <app_slot_card_amp :value="data.body.slots" />
+        <app_slot_card_amp 
+            :value="data.body.slots"
+            post_type="category" 
+            post_url="new-slots"  
+        />
         <AuthorLinkContainerAmp 
             :link="config.AUTHOR_PAGE_LINK"
             :text="translates.REVIEW_AUTHOR[config.LANG]"

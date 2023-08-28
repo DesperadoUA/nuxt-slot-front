@@ -5,7 +5,7 @@ export default {
         UA: 'https://api.onlinecasino.ua/api/'
     },
     BASE_URL: {
-        UA: 'http://localhost:3000/',
+        UA: 'http://localhost:3000',
         RU: '#',
         //UA: 'https://onlinecasino.ua' 
     },

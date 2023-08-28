@@ -1,4 +1,5 @@
 <template>
+<amp-script layout="container" :src="`${config.BASE_URL[config.LANG]}/js/amp-game.js`" class="sample">
     <div class="container casino-cards-container">
         <div class="casino-card" v-for="(item, index) in currentPosts" :key="index">
             <div class="casino-card__logo">
@@ -57,13 +58,28 @@
                 </a>
             </div>
         </div>
+        <div class="loadContainer"></div>
         <div class="items-more casino-card__more">
             <button v-if="value.length > (numberPostOnQuery*postCurrentPage)"
-                    class="btn-primary"
+                class="btn-primary loadMoreBtn"
+                :data-apiUrl="`${config.API_URL[config.LANG]}slots/search`" 
+                :data-postsOnQuery="numberPostOnQuery"
+                :data-ampPrefix="config.AMP_PREFIX"
+                :data-post-type="post_type"
+                :data-post-url="post_url"
+                :data-translate-play="translates.PLAY[config.LANG]"
+                :data-translate-rating="translates.RATING[config.LANG]"
+                :data-translate-number-rows="translates.NUMBER_ROWS[config.LANG]"
+                :data-translate-min-bet="translates.MIN_BET[config.LANG]"
+                :data-translate-pay-lines="translates.PAY_LINES[config.LANG]"
+                :data-translate-wheels="translates.WHEELS[config.LANG]"
+                :data-translate-volatility="translates.VOLATILITY[config.LANG]"
+                :data-translate-review="translates.REVIEW[config.LANG]"
             >{{translates.SHOW_MORE[config.LANG]}}
             </button>
         </div>
     </div>
+</amp-script>
 </template>
 
 <script>
@@ -75,6 +91,14 @@ import translateMixin from '~/mixins/translate'
             value: {
                 type: Array,
                 default: []
+            },
+            post_type: {
+               default: 'page',
+               type: String
+            },
+            post_url: {
+                default: 'slots',
+                type: String
             }
         },
         mixins: [translateMixin],

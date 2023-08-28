@@ -23,7 +23,11 @@
                 permalink:'', 
                 title_permalink: ''
             }" />
-            <app_slot_loop_card_amp :value="data.body.slots" />
+            <app_slot_loop_card_amp 
+                :value="data.body.slots"
+                post_type="vendor" 
+                :post_url="$route.params.id"  
+            />
         </main>
     <app_footer_amp 
         :footer_menu="data.body.settings.footer_menu"
