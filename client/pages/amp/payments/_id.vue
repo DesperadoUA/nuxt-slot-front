@@ -17,7 +17,11 @@
             permalink:'', 
             title_permalink: ''
         }" />
-        <app_casino_loop_amp :value="data.body.casino" />
+        <app_casino_loop_amp 
+            :value="data.body.casino"
+            post_type="payment" 
+            :post_url="$route.params.id" 
+        />
         <app_content_amp :value="data.body.amp_content" />
     </main>
     <app_footer_amp 

@@ -152,7 +152,12 @@
   .container--cms {
     max-width: var(--container--cms);
   }
-  
+  .colorffe600 {
+    color: #ffe600;
+  }
+  .color12d4ff {
+    color: #12d4ff;
+  }
   .icon {
     display: inline-block;
     vertical-align: middle;
@@ -362,6 +367,15 @@
   
   /*
   Circle rating */
+  .rating0f6 {
+    --cr-rating:#0f6;
+  }
+  .ratingf00 {
+    --cr-rating: #f00;
+  }
+  .ratingffc700 {
+    --cr-rating:#ffc700;
+  }
   .circle-rating {
     position: relative;
     flex-shrink: 0;
@@ -1073,6 +1087,7 @@
     position: relative;
     counter-increment: counter;
   }
+  /*
   .casinos__container .casino-item:before {
     content: counter(counter);
     position: absolute;
@@ -1088,7 +1103,7 @@
     color: #fff;
     top: 7px;
     left: 7px;
-  }
+  }*/
   
   .casino-item {
     color: #fff;
@@ -1686,6 +1701,9 @@
   .offer-item .circle-rating {
     margin-right: 10px;
     margin-bottom: 0;
+ }
+ .amp_rating_circle {
+    transform: scale(2) translateX(25%) translateY(26%);
  }
   .offer-item__content {
     font-size: 12px;

@@ -4,7 +4,11 @@
     <main class="main">
         <app_intro_amp :value="data.body" />
         <app_category_link_amp :value="data.body.category_link" />
-        <app_casino_loop_downloads_amp :value="data.body.casino" />
+        <app_casino_loop_downloads_amp 
+            :value="data.body.casino"
+            post_type="category" 
+            post_url="min-deposit-casino"  
+        />
          <AuthorLinkContainerAmp 
             :link="config.AUTHOR_PAGE_LINK"
             :text="translates.REVIEW_AUTHOR[config.LANG]"
@@ -50,7 +54,3 @@
         }
     }
 </script>
-
-<style>
-
-</style>

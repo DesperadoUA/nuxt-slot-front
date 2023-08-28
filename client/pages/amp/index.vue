@@ -5,7 +5,11 @@
             <app_intro_amp :value="data.body" />
             <app_best_offer_amp :value="data.body.bonuses" />
             <app_category_link_amp :value="data.body.category_link" />
-            <app_casino_loop_downloads_amp :value="data.body.casino" />
+            <app_casino_loop_downloads_amp 
+                :value="data.body.casino" 
+                post_type="page" 
+                post_url="/" 
+            />
             <app_new_casino_amp :value="data.body.new_casino" />
             <app_popular_slots_amp :value="data.body.popular_slots" />
             <app_popular_offers_amp :value="data.body.popular_bonus" />
