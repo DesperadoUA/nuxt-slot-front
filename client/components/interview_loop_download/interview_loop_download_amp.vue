@@ -1,5 +1,5 @@
 <template>
-<amp-script layout="container" :src="`${config.BASE_URL[config.LANG]}/js/amp-blog.js`" class="sample">
+<amp-script layout="container" :src="`${config.BASE_URL[config.LANG]}/js/amp-interview.js`" class="sample">
     <div class="container">
         <div class="blog">
             <div class="blog__container">
@@ -14,7 +14,7 @@
         </div>
         <div class="items-more casino-card__more">
             <button v-if="value.length > (numberPostOnQuery*postCurrentPage)"
-                :data-apiUrl="`${config.API_URL[config.LANG]}blog/search`" 
+                :data-apiUrl="`${config.API_URL[config.LANG]}interview/search`" 
                 :data-postsOnQuery="numberPostOnQuery"
                 :data-ampPrefix="config.AMP_PREFIX"
                 :data-post-type="post_type"
@@ -29,7 +29,7 @@
 <script>
     import translateMixin from '~/mixins/translate'
     export default {
-        name: "app_blog_downloads",
+        name: "app_interview_downloads",
         mixins: [translateMixin],
         props: {
             value: {
@@ -41,7 +41,7 @@
                type: String
             },
             post_url: {
-                default: 'blog',
+                default: 'interview',
                 type: String
             }
         },

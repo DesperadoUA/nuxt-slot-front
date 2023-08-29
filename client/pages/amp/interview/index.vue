@@ -3,7 +3,7 @@
     <app_header_amp :logo="data.body.options.logo" :menu_links="data.body.settings.header_menu" />
     <main class="main">
         <app_intro_amp :value="data.body" />
-        <app_blog_downloads_amp :value="data.body.news" />
+        <app_interview_downloads_amp :value="data.body.news" />
     </main>
     <app_footer_amp 
         :footer_menu="data.body.settings.footer_menu"
@@ -15,12 +15,12 @@
 <script>
     import DAL_Builder from '~/DAL/builder'
     import app_intro_amp from '~/components/intro/app-intro_amp'
-    import app_blog_downloads_amp from '~/components/blog_loop_downloads/app_blog_loop_downloads_amp'
+    import app_interview_downloads_amp from '~/components/interview_loop_download/interview_loop_download_amp'
     import pageTemplateAmp from '~/mixins/pageTemplateAmp'
     import helper from '~/helpers/helpers'
     export default {
         name: "app-interview_amp",
-        components: {app_intro_amp, app_blog_downloads_amp},
+        components: {app_intro_amp, app_interview_downloads_amp},
         mixins: [pageTemplateAmp],
         async asyncData({route, error}) {
             const request = new DAL_Builder()

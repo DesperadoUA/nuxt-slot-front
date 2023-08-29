@@ -1,6 +1,6 @@
 <template>
   <section class="slick_button">
-    <a class="slick_button_part_left" :href="`${config.AMP_PREFIX}/casino`"></a>
+    <a class="slick_button_part_left" :href="`${config.AMP_PREFIX}`"></a>
     <a class="slick_button_part_right" :href="getRef({ref: referal})"></a>
     <div class="container slick_button_container">
       <div class="slick_button_left">
