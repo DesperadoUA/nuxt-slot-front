@@ -198,6 +198,7 @@
 </template>
 
 <script>
+import { CASINO as NumberPostOnQuery } from '~/config/postLoader'
 import Helper from '~/helpers/helpers.js'
 import translateMixin from '~/mixins/translate'
 export default {
@@ -219,7 +220,7 @@ export default {
 	mixins: [translateMixin],
 	data() {
 		return {
-			numberPostOnQuery: 12,
+			numberPostOnQuery: NumberPostOnQuery,
 			postCurrentPage: 1
 		}
 	},

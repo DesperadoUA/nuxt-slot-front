@@ -177,6 +177,7 @@
 <script>
 import Helper from '~/helpers/helpers.js'
 import translateMixin from '~/mixins/translate'
+import { CASINO as NumberPostOnQuery } from '~/config/postLoader'
 export default {
 	name: 'app_casino_loop_downloads',
 	props: {
@@ -188,7 +189,7 @@ export default {
 	mixins: [translateMixin],
 	data() {
 		return {
-			numberPostOnQuery: 12,
+			numberPostOnQuery: NumberPostOnQuery,
 			postCurrentPage: 1
 		}
 	},

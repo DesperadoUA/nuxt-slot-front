@@ -1,4 +1,4 @@
-[] Внедрение prettier
+[x] Внедрение prettier
 [] Создать amp-script
 [] Внедрить getTranslate
 [] Изменить нейминг файлов

@@ -18,6 +18,7 @@
 								:src="item.thumbnail"
 								:alt="item.title"
 								class="news_thumbnail"
+								layout="responsive"
 								width="200"
 								height="113"
 							/>
@@ -50,6 +51,7 @@
 </template>
 
 <script>
+import { NEWS as NumberPostOnQuery } from '~/config/postLoader'
 import translateMixin from '~/mixins/translate'
 export default {
 	name: 'app_news_loop',
@@ -70,7 +72,7 @@ export default {
 	mixins: [translateMixin],
 	data() {
 		return {
-			numberPostOnQuery: 8,
+			numberPostOnQuery: NumberPostOnQuery,
 			postCurrentPage: 1
 		}
 	},

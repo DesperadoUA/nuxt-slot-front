@@ -29,6 +29,7 @@
 </template>
 
 <script>
+import { BLOG as NumberPostOnQuery } from '~/config/postLoader'
 import translateMixin from '~/mixins/translate'
 export default {
 	name: 'app_blog_downloads',
@@ -41,7 +42,7 @@ export default {
 	},
 	data() {
 		return {
-			numberPostOnQuery: 12,
+			numberPostOnQuery: NumberPostOnQuery,
 			postCurrentPage: 1
 		}
 	},

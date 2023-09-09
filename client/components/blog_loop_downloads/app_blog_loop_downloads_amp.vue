@@ -14,7 +14,13 @@
 						:key="index"
 					>
 						<span class="blog-item__media">
-							<amp-img :src="item.thumbnail" alt="" width="345" height="200" />
+							<amp-img
+								:src="item.thumbnail"
+								alt=""
+								width="345"
+								height="200"
+								layout="responsive"
+							/>
 						</span>
 						<span class="blog-item__caption">{{ item.title }}</span>
 					</NuxtLink>
@@ -39,6 +45,7 @@
 </template>
 
 <script>
+import { BLOG as NumberPostOnQuery } from '~/config/postLoader'
 import translateMixin from '~/mixins/translate'
 export default {
 	name: 'app_blog_downloads',
@@ -59,7 +66,7 @@ export default {
 	},
 	data() {
 		return {
-			numberPostOnQuery: 12,
+			numberPostOnQuery: NumberPostOnQuery,
 			postCurrentPage: 1
 		}
 	},
