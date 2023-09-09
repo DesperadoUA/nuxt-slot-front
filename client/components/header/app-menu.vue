@@ -1,298 +1,306 @@
 <template>
-<!--    для работы мобильного меню нужно добавлять класс "is-menu-open" на div.main-nav при клике-->
-    <div :class="stateMenu">
-        <nav class="mobile-menu">
-            <ul class="main-nav__list">
-                <li v-for="(item, index) in settings" @click="closeMenu"
-                  :key="index">
-                    <NuxtLink no-prefetch :to="item.value_1" class="main-nav__link">
-                        <img :src="item.src"  class="main-nav__icon" width="17" height="17"/>
-                        {{item.value_2}}
-                    </NuxtLink>
-                    <ul v-if="item.child.length !== 0" class="main-nav__drop">
-                        <li v-for="(itemDrop, indexDrop) in item.child" :key="indexDrop">
-                            <NuxtLink :to="itemDrop.value_1" class="main-nav__drop_link">{{itemDrop.value_2}}</NuxtLink>
-                        </li>
-                    </ul>
-                </li>
-            </ul>
-        </nav>
+	<!--    для работы мобильного меню нужно добавлять класс "is-menu-open" на div.main-nav при клике-->
+	<div :class="stateMenu">
+		<nav class="mobile-menu">
+			<ul class="main-nav__list">
+				<li v-for="(item, index) in settings" @click="closeMenu" :key="index">
+					<NuxtLink no-prefetch :to="item.value_1" class="main-nav__link">
+						<img
+							:src="item.src"
+							class="main-nav__icon"
+							width="17"
+							height="17"
+						/>
+						{{ item.value_2 }}
+					</NuxtLink>
+					<ul v-if="item.child.length !== 0" class="main-nav__drop">
+						<li v-for="(itemDrop, indexDrop) in item.child" :key="indexDrop">
+							<NuxtLink :to="itemDrop.value_1" class="main-nav__drop_link">{{
+								itemDrop.value_2
+							}}</NuxtLink>
+						</li>
+					</ul>
+				</li>
+			</ul>
+		</nav>
 
-        <div class="navbar__btn"
-             aria-expanded="false"
-             aria-label="Menu Button"
-             @click="menuActivate"
-             role="button">
-            <span class="bar"></span>
-        </div>
-    </div>
+		<div
+			class="navbar__btn"
+			aria-expanded="false"
+			aria-label="Menu Button"
+			@click="menuActivate"
+			role="button"
+		>
+			<span class="bar"></span>
+		</div>
+	</div>
 </template>
 <script>
-    export default {
-        name: "app-menu",
-        data(){
-            return {
-                settings: []
-            }
-        },
-        async mounted(){
-          const data = {lang: 1}
-          await this.$store.dispatch('settings/setSettings', data)
-          const settings = this.$store.getters['settings/getSettings']
-          if(settings.length !== 0) {
-             this.settings = settings.filter(item => item.key === 'header_menu' )[0].value
-          }
-        },
-        methods: {
-            menuActivate(){
-                this.$store.dispatch('common/setMobileMenu', !this.$store.getters['common/getMobileMenu'])
-            },
-            closeMenu(){
-                console.log('close menu')
-                this.$store.dispatch('common/setMobileMenu', false)
-            }
-        },
-        computed: {
-            stateMenu(){
-                return this.$store.getters['common/getMobileMenu']
-                           ? 'main-nav is-menu-open'
-                           : 'main-nav'
-            }
-        }
-    }
+export default {
+	name: 'app-menu',
+	data() {
+		return {
+			settings: []
+		}
+	},
+	async mounted() {
+		const data = { lang: 1 }
+		await this.$store.dispatch('settings/setSettings', data)
+		const settings = this.$store.getters['settings/getSettings']
+		if (settings.length !== 0) {
+			this.settings = settings.filter(
+				item => item.key === 'header_menu'
+			)[0].value
+		}
+	},
+	methods: {
+		menuActivate() {
+			this.$store.dispatch(
+				'common/setMobileMenu',
+				!this.$store.getters['common/getMobileMenu']
+			)
+		},
+		closeMenu() {
+			console.log('close menu')
+			this.$store.dispatch('common/setMobileMenu', false)
+		}
+	},
+	computed: {
+		stateMenu() {
+			return this.$store.getters['common/getMobileMenu']
+				? 'main-nav is-menu-open'
+				: 'main-nav'
+		}
+	}
+}
 </script>
 
 <style lang="scss">
 @keyframes expand {
-    from {
-        transform: scale(0);
-        opacity: 0;
-        background: #5470B0;
-    }
+	from {
+		transform: scale(0);
+		opacity: 0;
+		background: #5470b0;
+	}
 }
 
 .main-nav {
-    @media (min-width: 992px) {
-        margin-left: auto;
-        margin-right: 47px;
-    }
+	@media (min-width: 992px) {
+		margin-left: auto;
+		margin-right: 47px;
+	}
 }
 
 .main-nav__list {
-    margin: 0;
-    padding: 0;
-    list-style: none;
+	margin: 0;
+	padding: 0;
+	list-style: none;
 
-    @media (min-width: 992px) {
-        display: flex;
-        flex-wrap: wrap;
-    }
+	@media (min-width: 992px) {
+		display: flex;
+		flex-wrap: wrap;
+	}
 
-    > li {
-        position: relative;
+	> li {
+		position: relative;
 
-        @media (max-width: 991px) {
-            margin-bottom: 26px;
-        }
+		@media (max-width: 991px) {
+			margin-bottom: 26px;
+		}
 
-        @media (min-width: 992px) {
-            &:hover {
-                .main-nav__link {
-                    opacity: 1;
-                }
+		@media (min-width: 992px) {
+			&:hover {
+				.main-nav__link {
+					opacity: 1;
+				}
 
-                .main-nav__drop {
-                    opacity: 1;
-                    visibility: visible;
-                }
-            }
-        }
+				.main-nav__drop {
+					opacity: 1;
+					visibility: visible;
+				}
+			}
+		}
 
-        &:not(:first-child) {
-            @media (min-width: 992px) {
-                margin-left: 32px;
-            }
-        }
-    }
+		&:not(:first-child) {
+			@media (min-width: 992px) {
+				margin-left: 32px;
+			}
+		}
+	}
 }
 
 .main-nav__link {
-    color: var(--theme-cr-txt-alt);
-    opacity: .5;
-    font-size: 12px;
-    font-weight: 700;
-    text-decoration: none;
-    display: inline-flex;
-    vertical-align: middle;
-    align-items: center;
-    text-transform: uppercase;
+	color: var(--theme-cr-txt-alt);
+	opacity: 0.5;
+	font-size: 12px;
+	font-weight: 700;
+	text-decoration: none;
+	display: inline-flex;
+	vertical-align: middle;
+	align-items: center;
+	text-transform: uppercase;
 
-    @media (max-width: 991px) {
-        font-size: 16px;
-    }
+	@media (max-width: 991px) {
+		font-size: 16px;
+	}
 
-    .active > &,
-    .is-active > &,
-    &.nuxt-link-exact-active,
-    &.is-active {
-        opacity: 1;
-    }
+	.active > &,
+	.is-active > &,
+	&.nuxt-link-exact-active,
+	&.is-active {
+		opacity: 1;
+	}
 
-    @media (min-width: 992px) {
-        &:hover {
-            opacity: 1;
-        }
-    }
+	@media (min-width: 992px) {
+		&:hover {
+			opacity: 1;
+		}
+	}
 }
 
 .main-nav__icon {
-    margin-right: 7px;
-    max-width: 25px;
+	margin-right: 7px;
+	max-width: 25px;
 
-    @media (min-width: 992px) {
-        margin-right: 5px;
-        max-width: 18px;
-    }
+	@media (min-width: 992px) {
+		margin-right: 5px;
+		max-width: 18px;
+	}
 }
 
 .main-nav__drop {
-    position: absolute;
-    min-width: 160px;
-    top: 100%;
-    left: 0;
-    background-color: #4e3986ea;
-    border-radius: 8px;
-    padding: 27px 20px 13px 23px;
-    z-index: 999;
-    transition: var(--transition-default);
-    opacity: 0;
-    visibility: hidden;
+	position: absolute;
+	min-width: 160px;
+	top: 100%;
+	left: 0;
+	background-color: #4e3986ea;
+	border-radius: 8px;
+	padding: 27px 20px 13px 23px;
+	z-index: 999;
+	transition: var(--transition-default);
+	opacity: 0;
+	visibility: hidden;
 
-    > li {
-        text-transform: uppercase;
-        font-weight: 700;
-        font-size: 12px;
-        line-height: 1.333;
-        margin-bottom: 16px;
-    }
+	> li {
+		text-transform: uppercase;
+		font-weight: 700;
+		font-size: 12px;
+		line-height: 1.333;
+		margin-bottom: 16px;
+	}
 
-    a {
-        color: rgba(#fff, .7);
-        text-decoration: none;
+	a {
+		color: rgba(#fff, 0.7);
+		text-decoration: none;
 
-        @media (min-width: 992px) {
-            &:hover {
-                color: #fff;
-            }
-        }
-    }
+		@media (min-width: 992px) {
+			&:hover {
+				color: #fff;
+			}
+		}
+	}
 }
 
 .navbar__btn {
-    position: fixed;
-    top: 0;
-    right: 0;
-    width: 92px;
-    height: 80px;
-    border: 0;
-    cursor: pointer;
-    z-index: 1002;
-    display: none;
+	position: fixed;
+	top: 0;
+	right: 0;
+	width: 92px;
+	height: 80px;
+	border: 0;
+	cursor: pointer;
+	z-index: 1002;
+	display: none;
 
-    @media (max-width: 991px) {
-        display: flex;
-    }
+	@media (max-width: 991px) {
+		display: flex;
+	}
 
-    @media (min-width: 768px) and (max-width: 991px) {
-        top: 16px;
-        right: 9px;
-    }
+	@media (min-width: 768px) and (max-width: 991px) {
+		top: 16px;
+		right: 9px;
+	}
 
-    .bar:before,
-    .bar:after,
-    &:after,
-    &:before {
-        content: '';
-        list-style: none;
-        position: absolute;
-        background-color: #fff;
-        margin-left: auto;
-        margin-right: auto;
-        width: 28px;
-        height: 2px;
-        transform: translateY(-50%);
-        transition: var(--transition-default);
-    }
+	.bar:before,
+	.bar:after,
+	&:after,
+	&:before {
+		content: '';
+		list-style: none;
+		position: absolute;
+		background-color: #fff;
+		margin-left: auto;
+		margin-right: auto;
+		width: 28px;
+		height: 2px;
+		transform: translateY(-50%);
+		transition: var(--transition-default);
+	}
 
-    &:before {
-        top: 36.25%;
-    }
+	&:before {
+		top: 36.25%;
+	}
 
-    &:after {
-        top: 50%;
-    }
+	&:after {
+		top: 50%;
+	}
 
-    .bar:before,
-    .bar:after {
-        width: 14px;
-        top: 63.75%;
-    }
+	.bar:before,
+	.bar:after {
+		width: 14px;
+		top: 63.75%;
+	}
 
-    &:before,
-    &:after,
-    .bar:before {
-        left: 50%;
-        margin-left: -14px;
-    }
+	&:before,
+	&:after,
+	.bar:before {
+		left: 50%;
+		margin-left: -14px;
+	}
 
-    .bar:after {
-        right: 50%;
-        margin-right: -14px;
-    }
+	.bar:after {
+		right: 50%;
+		margin-right: -14px;
+	}
 
-    .is-menu-open &:before {
-        top: 50%;
-        transform: translateY(-50%) rotate(45deg);
-    }
-    .is-menu-open &:after {
-        top: 50%;
-        transform: translateY(-50%) rotate(-45deg);
-    }
+	.is-menu-open &:before {
+		top: 50%;
+		transform: translateY(-50%) rotate(45deg);
+	}
+	.is-menu-open &:after {
+		top: 50%;
+		transform: translateY(-50%) rotate(-45deg);
+	}
 
-    .is-menu-open & .bar:before {
-        left: 0;
-        opacity: 0;
-    }
+	.is-menu-open & .bar:before {
+		left: 0;
+		opacity: 0;
+	}
 
-    .is-menu-open & .bar:after {
-        right: 0;
-        opacity: 0;
-    }
+	.is-menu-open & .bar:after {
+		right: 0;
+		opacity: 0;
+	}
 }
 
 .mobile-menu {
-    @media (max-width: 991px) {
-        overflow: hidden;
-        position: fixed;
-        z-index: 999;
-        top: 0;
-        left: 0;
-        height: 100vh;
-        width: 100vw;
-        background-color: #281c4bcc;
-        backdrop-filter: blur(24px);
-        padding: 132px 53px 30px;
-        display: none;
-        flex-direction: column;
-
-        @-moz-document url-prefix() {
-            background-color: #281c4bfa;
-        }
-
-        .is-menu-open & {
-            display: flex;
-            animation: expand .4s ease-in-out;
-        }
-    }
+	@media (max-width: 991px) {
+		overflow: hidden;
+		position: fixed;
+		z-index: 999;
+		top: 0;
+		left: 0;
+		height: 100vh;
+		width: 100vw;
+		background-color: #281c4bcc;
+		backdrop-filter: blur(24px);
+		padding: 132px 53px 30px;
+		display: none;
+		flex-direction: column;
+		.is-menu-open & {
+			display: flex;
+			animation: expand 0.4s ease-in-out;
+		}
+	}
 }
 </style>
