@@ -22,10 +22,24 @@
 					title_permalink: ''
 				}"
 			/>
+			<script_amp
+				:src="CasinoPathScript"
+				v-if="CasinoNumberPostOnQuery < data.body.casino.length"
+			>
+				<app_casino_loop_amp
+					:value="data.body.casino"
+					post_type="payment"
+					:post_url="$route.params.id"
+				/>
+			</script_amp>
 			<app_casino_loop_amp
 				:value="data.body.casino"
 				post_type="payment"
 				:post_url="$route.params.id"
+				v-if="
+					data.body.casino.length !== 0 &&
+						CasinoNumberPostOnQuery > data.body.casino.length
+				"
 			/>
 			<app_content_amp :value="data.body.amp_content" />
 		</main>
@@ -45,6 +59,9 @@ import app_payment_card_amp from '~/components/payment_card/app_payment_card_amp
 import AuthorLinkContainerAmp from '~/components/author/app-author-link-container_amp'
 import pageTemplateAmp from '~/mixins/pageTemplateAmp'
 import helper from '~/helpers/helpers'
+import script_amp from '~/components/script_amp'
+import { CASINO as CasinoNumberPostOnQuery } from '~/config/postLoader'
+import { CASINO as CasinoPathScript } from '~/config/ampPathScript'
 export default {
 	name: 'app_single_payment_amp',
 	components: {
@@ -52,11 +69,15 @@ export default {
 		AuthorLinkContainerAmp,
 		app_payment_card_amp,
 		app_heading_amp,
-		app_casino_loop_amp
+		app_casino_loop_amp,
+		script_amp
 	},
 	mixins: [pageTemplateAmp],
 	data: () => {
-		return {}
+		return {
+			CasinoNumberPostOnQuery,
+			CasinoPathScript
+		}
 	},
 	async asyncData({ route, error }) {
 		const request = new DAL_Builder()

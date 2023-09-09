@@ -8,10 +8,24 @@
 			<app_intro_amp :value="data.body" />
 			<app_best_offer_amp :value="data.body.bonuses" />
 			<app_category_link_amp :value="data.body.category_link" />
+			<script_amp
+				:src="CasinoPathScript"
+				v-if="CasinoNumberPostOnQuery < data.body.casino.length"
+			>
+				<app_casino_loop_downloads_amp
+					:value="data.body.casino"
+					post_type="page"
+					post_url="/"
+				/>
+			</script_amp>
 			<app_casino_loop_downloads_amp
 				:value="data.body.casino"
 				post_type="page"
 				post_url="/"
+				v-if="
+					data.body.casino.length !== 0 &&
+						CasinoNumberPostOnQuery > data.body.casino.length
+				"
 			/>
 			<app_new_casino_amp :value="data.body.new_casino" />
 			<app_popular_slots_amp :value="data.body.popular_slots" />
@@ -43,11 +57,16 @@ import app_popular_offers_amp from '~/components/popular_offers/app_popular_offe
 import AuthorLinkContainerAmp from '~/components/author/app-author-link-container_amp'
 import pageTemplateAmp from '~/mixins/pageTemplateAmp'
 import helper from '~/helpers/helpers'
+import script_amp from '~/components/script_amp'
+import { CASINO as CasinoNumberPostOnQuery } from '~/config/postLoader'
+import { CASINO as CasinoPathScript } from '~/config/ampPathScript'
 export default {
 	name: 'main-page_amp',
 	data: () => {
 		return {
-			data: {}
+			data: {},
+			CasinoNumberPostOnQuery,
+			CasinoPathScript
 		}
 	},
 	mixins: [pageTemplateAmp],
@@ -59,7 +78,8 @@ export default {
 		app_new_casino_amp,
 		app_popular_slots_amp,
 		app_popular_offers_amp,
-		AuthorLinkContainerAmp
+		AuthorLinkContainerAmp,
+		script_amp
 	},
 	async asyncData({ store, route }) {
 		const request = {
