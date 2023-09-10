@@ -5,45 +5,28 @@
 		let counter = 0
 		const loadContainer = document.querySelector('.loadContainer')
 
-		const dataSetApiUrl = btn.attributes.filter(
-			item => item.name === 'data-apiurl'
-		)
+		const dataSetApiUrl = btn.attributes.filter(item => item.name === 'data-apiurl')
 		const apiUrl = dataSetApiUrl.length ? dataSetApiUrl[0].value : ''
 
-		const dataSetPostsOnQuery = btn.attributes.filter(
-			item => item.name === 'data-postsonquery'
-		)
-		const postsOnQuery = dataSetPostsOnQuery.length
-			? dataSetPostsOnQuery[0].value
-			: 20
+		const dataSetPostsOnQuery = btn.attributes.filter(item => item.name === 'data-postsonquery')
+		const postsOnQuery = dataSetPostsOnQuery.length ? dataSetPostsOnQuery[0].value : 20
 
-		const dataSetAmpPrefix = btn.attributes.filter(
-			item => item.name === 'data-ampprefix'
-		)
-		const ampPrefix = dataSetAmpPrefix.length
-			? dataSetAmpPrefix[0].value
-			: '/amp'
+		const dataSetAmpPrefix = btn.attributes.filter(item => item.name === 'data-ampprefix')
+		const ampPrefix = dataSetAmpPrefix.length ? dataSetAmpPrefix[0].value : '/amp'
 
-		const dataSetPostType = btn.attributes.filter(
-			item => item.name === 'data-post-type'
-		)
+		const dataSetPostType = btn.attributes.filter(item => item.name === 'data-post-type')
 		const postType = dataSetPostType.length ? dataSetPostType[0].value : 'page'
 
-		const dataSetPostUrl = btn.attributes.filter(
-			item => item.name === 'data-post-url'
-		)
+		const dataSetPostUrl = btn.attributes.filter(item => item.name === 'data-post-url')
 		const postUrl = dataSetPostUrl.length ? dataSetPostUrl[0].value : '/'
 
 		function renderTemplate(posts, counter) {
-			const length =
-				(counter + 1) * postsOnQuery > posts.length
-					? posts.length
-					: (counter + 1) * postsOnQuery
+			const length = (counter + 1) * postsOnQuery > posts.length ? posts.length : (counter + 1) * postsOnQuery
 			let html = ''
 			for (let i = counter * postsOnQuery; i < length; i++) {
 				html += `<a href"${ampPrefix}${posts[i].permalink}" class="blog-item">
                             <span class="blog-item__media">
-                                <amp-img src="${posts[i].thumbnail}" alt="" width="345" height="200" />
+                                <amp-img src="${posts[i].thumbnail}" alt="" width="345" height="200" layout="responsive"/>
                             </span>
                             <span class="blog-item__caption">${posts[i].title}</span>
                         </a>`

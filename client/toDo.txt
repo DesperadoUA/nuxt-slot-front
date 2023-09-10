@@ -1,10 +1,10 @@
 [x] Внедрение prettier
-[] Создать amp-script
+[x] Создать amp-script
     [x] Casino
     [x] Game
     [x] Bonus
     [x] Blog
-    [] News
-    [] Interview
+    [x] News
+    [x] Interview
 [] Внедрить getTranslate
 [] Изменить нейминг файлов
