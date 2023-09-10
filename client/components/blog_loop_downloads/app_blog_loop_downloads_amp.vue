@@ -1,47 +1,35 @@
 <template>
-	<amp-script
-		layout="container"
-		:src="`${config.BASE_URL[config.LANG]}/js/amp-blog.js`"
-		class="sample"
-	>
-		<div class="container">
-			<div class="blog">
-				<div class="blog__container">
-					<NuxtLink
-						:to="`${config.AMP_PREFIX}${item.permalink}`"
-						class="blog-item"
-						v-for="(item, index) in currentPosts"
-						:key="index"
-					>
-						<span class="blog-item__media">
-							<amp-img
-								:src="item.thumbnail"
-								alt=""
-								width="345"
-								height="200"
-								layout="responsive"
-							/>
-						</span>
-						<span class="blog-item__caption">{{ item.title }}</span>
-					</NuxtLink>
-				</div>
-				<div class="loadContainer blog__container"></div>
-			</div>
-			<div class="items-more casino-card__more">
-				<button
-					v-if="value.length > numberPostOnQuery * postCurrentPage"
-					:data-apiUrl="`${config.API_URL[config.LANG]}blog/search`"
-					:data-postsOnQuery="numberPostOnQuery"
-					:data-ampPrefix="config.AMP_PREFIX"
-					:data-post-type="post_type"
-					:data-post-url="post_url"
-					class="btn-primary loadMoreBtn"
+	<div class="container">
+		<div class="blog">
+			<div class="blog__container">
+				<NuxtLink
+					:to="`${config.AMP_PREFIX}${item.permalink}`"
+					class="blog-item"
+					v-for="(item, index) in currentPosts"
+					:key="index"
 				>
-					{{ translates.SHOW_MORE[config.LANG] }}
-				</button>
+					<span class="blog-item__media">
+						<amp-img :src="item.thumbnail" alt="" width="345" height="200" layout="responsive" />
+					</span>
+					<span class="blog-item__caption">{{ item.title }}</span>
+				</NuxtLink>
 			</div>
+			<div class="loadContainer blog__container"></div>
 		</div>
-	</amp-script>
+		<div class="items-more casino-card__more">
+			<button
+				v-if="value.length > numberPostOnQuery * postCurrentPage"
+				:data-apiUrl="`${config.API_URL[config.LANG]}blog/search`"
+				:data-postsOnQuery="numberPostOnQuery"
+				:data-ampPrefix="config.AMP_PREFIX"
+				:data-post-type="post_type"
+				:data-post-url="post_url"
+				class="btn-primary loadMoreBtn"
+			>
+				{{ translates.SHOW_MORE[config.LANG] }}
+			</button>
+		</div>
+	</div>
 </template>
 
 <script>
