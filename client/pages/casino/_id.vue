@@ -2,14 +2,8 @@
 	<div>
 		<app_intro :value="data.body" />
 		<app_casino_card :value="data.body" />
-		<app_close_disclaimer
-			v-if="data.body.close === 1"
-			:value="data.body.title"
-		/>
-		<app_casino_loop
-			:value="data.body.popular_casino"
-			v-if="data.body.close === 1"
-		/>
+		<app_close_disclaimer v-if="data.body.close === 1" :value="data.body.title" />
+		<app_casino_loop :value="data.body.popular_casino" v-if="data.body.close === 1" />
 		<app_casino_detail :value="data.body" />
 		<app_casino_slots :value="data.body.slots" :title="data.body.title" />
 		<AuthorLinkContainer

@@ -2,10 +2,7 @@
 	<div class="blog-single">
 		<div class="container blog-single__container">
 			<app_blog_single :value="data.body" />
-			<app_last_article
-				:title="translates.LAST_INTERVIEW[config.LANG]"
-				:value="data.body.posts"
-			/>
+			<app_last_article :title="translates.LAST_INTERVIEW[config.LANG]" :value="data.body.posts" />
 		</div>
 	</div>
 </template>

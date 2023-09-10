@@ -1,16 +1,17 @@
 <template>
 	<div>
-		<app_header_amp
-			:logo="data.body.options.logo"
-			:menu_links="data.body.settings.header_menu"
-		/>
+		<app_header_amp :logo="data.body.options.logo" :menu_links="data.body.settings.header_menu" />
 		<main class="main">
 			<app_intro_amp :value="data.body" />
 			<app_category_link_amp :value="data.body.category_link" />
+			<script_amp :src="GamePathScript" v-if="GameNumberPostOnQuery < data.body.slots.length">
+				<app_slot_card_amp :value="data.body.slots" post_type="category" post_url="best-for-payout" />
+			</script_amp>
 			<app_slot_card_amp
 				:value="data.body.slots"
 				post_type="category"
 				post_url="best-for-payout"
+				v-if="data.body.slots.length !== 0 && GameNumberPostOnQuery > data.body.slots.length"
 			/>
 			<AuthorLinkContainerAmp
 				:link="config.AUTHOR_PAGE_LINK"
@@ -20,10 +21,7 @@
 			/>
 			<app_content_amp :value="data.body.amp_content" />
 		</main>
-		<app_footer_amp
-			:footer_menu="data.body.settings.footer_menu"
-			:footer_text="data.body.settings.footer_text"
-		/>
+		<app_footer_amp :footer_menu="data.body.settings.footer_menu" :footer_text="data.body.settings.footer_text" />
 	</div>
 </template>
 
@@ -35,13 +33,23 @@ import app_slot_card_amp from '~/components/slot_loop_card/app_slot_loop_card_am
 import AuthorLinkContainerAmp from '~/components/author/app-author-link-container_amp'
 import pageTemplateAmp from '~/mixins/pageTemplateAmp'
 import helper from '~/helpers/helpers'
+import script_amp from '~/components/script_amp'
+import { GAME as GameNumberPostOnQuery } from '~/config/postLoader'
+import { GAME as GamePathScript } from '~/config/ampPathScript'
 export default {
 	name: 'app-best-for-payout_amp',
 	components: {
 		app_intro_amp,
 		app_category_link_amp,
 		app_slot_card_amp,
-		AuthorLinkContainerAmp
+		AuthorLinkContainerAmp,
+		script_amp
+	},
+	data: () => {
+		return {
+			GameNumberPostOnQuery,
+			GamePathScript
+		}
 	},
 	mixins: [pageTemplateAmp],
 	async asyncData({ route, error }) {
@@ -59,5 +67,3 @@ export default {
 	}
 }
 </script>
-
-<style scoped></style>

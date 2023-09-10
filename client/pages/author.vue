@@ -42,9 +42,9 @@ export default {
 		authorSocialLinks() {
 			const settings = this.$store.getters['settings/getSettings']
 			if (settings) {
-				return (this.socialLinks = this.$store.getters[
-					'settings/getSettings'
-				].filter(item => item.key === 'social_links_author')[0].value)
+				return (this.socialLinks = this.$store.getters['settings/getSettings'].filter(
+					item => item.key === 'social_links_author'
+				)[0].value)
 			}
 			return []
 		}

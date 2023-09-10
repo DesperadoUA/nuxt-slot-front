@@ -3,14 +3,7 @@
 		<div class="form_container">
 			<div class="form_title">{{ translates.LOGIN[config.LANG] }}</div>
 			<form @submit.prevent="send">
-				<input
-					type="email"
-					class="form_input"
-					v-model="email"
-					placeholder="Email"
-					maxlength="50"
-					minlength="3"
-				/>
+				<input type="email" class="form_input" v-model="email" placeholder="Email" maxlength="50" minlength="3" />
 				<input
 					type="password"
 					class="form_input"

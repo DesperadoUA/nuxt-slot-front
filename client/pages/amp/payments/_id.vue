@@ -1,9 +1,6 @@
 <template>
 	<div>
-		<app_header_amp
-			:logo="data.body.options.logo"
-			:menu_links="data.body.settings.header_menu"
-		/>
+		<app_header_amp :logo="data.body.options.logo" :menu_links="data.body.settings.header_menu" />
 		<main class="main">
 			<app_intro_amp :value="data.body" />
 			<AuthorLinkContainerAmp
@@ -22,31 +19,18 @@
 					title_permalink: ''
 				}"
 			/>
-			<script_amp
-				:src="CasinoPathScript"
-				v-if="CasinoNumberPostOnQuery < data.body.casino.length"
-			>
-				<app_casino_loop_amp
-					:value="data.body.casino"
-					post_type="payment"
-					:post_url="$route.params.id"
-				/>
+			<script_amp :src="CasinoPathScript" v-if="CasinoNumberPostOnQuery < data.body.casino.length">
+				<app_casino_loop_amp :value="data.body.casino" post_type="payment" :post_url="$route.params.id" />
 			</script_amp>
 			<app_casino_loop_amp
 				:value="data.body.casino"
 				post_type="payment"
 				:post_url="$route.params.id"
-				v-if="
-					data.body.casino.length !== 0 &&
-						CasinoNumberPostOnQuery > data.body.casino.length
-				"
+				v-if="data.body.casino.length !== 0 && CasinoNumberPostOnQuery > data.body.casino.length"
 			/>
 			<app_content_amp :value="data.body.amp_content" />
 		</main>
-		<app_footer_amp
-			:footer_menu="data.body.settings.footer_menu"
-			:footer_text="data.body.settings.footer_text"
-		/>
+		<app_footer_amp :footer_menu="data.body.settings.footer_menu" :footer_text="data.body.settings.footer_text" />
 	</div>
 </template>
 

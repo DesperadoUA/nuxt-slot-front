@@ -3,21 +3,9 @@
 		<div class="form_container">
 			<div class="form_title">{{ translates.REGISTRATION[config.LANG] }}</div>
 			<form @submit.prevent="send">
-				<input
-					type="text"
-					class="form_input"
-					v-model="name"
-					placeholder="name"
-					maxlength="50"
-					minlength="3"
-				/>
+				<input type="text" class="form_input" v-model="name" placeholder="name" maxlength="50" minlength="3" />
 				<div class="form_error" v-if="nameError">{{ nameError }}</div>
-				<input
-					type="email"
-					class="form_input"
-					v-model="email"
-					placeholder="Email"
-				/>
+				<input type="email" class="form_input" v-model="email" placeholder="Email" />
 				<div class="form_error" v-if="mailError">{{ mailError }}</div>
 				<input
 					type="password"
@@ -30,11 +18,7 @@
 				<div class="form_error" v-if="passwordError">{{ passwordError }}</div>
 				<button class="form_btn">Send</button>
 				<div class="back_error" v-if="backEndError.length !== 0">
-					<div
-						class="form_error"
-						v-for="(item, index) in backEndError"
-						:key="index"
-					>
+					<div class="form_error" v-for="(item, index) in backEndError" :key="index">
 						{{ item }}
 					</div>
 				</div>
@@ -116,9 +100,7 @@ export default {
 			if (this.formValid) {
 				const result = await DAL_Forum.addCandidate(data)
 				if (result.data.confirm === 'ok') {
-					this.successfulMessage = this.translates.SUCCESS_MESSAGE[
-						this.config.LANG
-					]
+					this.successfulMessage = this.translates.SUCCESS_MESSAGE[this.config.LANG]
 				} else {
 					this.backEndError = result.data.error
 				}

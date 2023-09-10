@@ -1,20 +1,11 @@
 <template>
 	<div>
-		<app_header_amp
-			:logo="data.body.options.logo"
-			:menu_links="data.body.settings.header_menu"
-		/>
+		<app_header_amp :logo="data.body.options.logo" :menu_links="data.body.settings.header_menu" />
 		<main class="main">
 			<app_intro_amp :value="data.body" />
 			<app_casino_card_amp :value="data.body" />
-			<app_close_disclaimer_amp
-				v-if="data.body.close === 1"
-				:value="data.body.title"
-			/>
-			<app_casino_loop_amp
-				:value="data.body.popular_casino"
-				v-if="data.body.close === 1"
-			/>
+			<app_close_disclaimer_amp v-if="data.body.close === 1" :value="data.body.title" />
+			<app_casino_loop_amp :value="data.body.popular_casino" v-if="data.body.close === 1" />
 			<app_casino_detail_amp :value="data.body" />
 			<app_casino_slots_amp :value="data.body.slots" :title="data.body.title" />
 			<AuthorLinkContainerAmp
@@ -27,10 +18,7 @@
 			<app_faq_amp :title="data.body.faq_title" :value="data.body.faq" />
 			<app_slick_button_amp :referal="data.body.ref" />
 		</main>
-		<app_footer_amp
-			:footer_menu="data.body.settings.footer_menu"
-			:footer_text="data.body.settings.footer_text"
-		/>
+		<app_footer_amp :footer_menu="data.body.settings.footer_menu" :footer_text="data.body.settings.footer_text" />
 	</div>
 </template>
 

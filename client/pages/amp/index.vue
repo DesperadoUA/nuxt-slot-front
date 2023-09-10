@@ -1,31 +1,18 @@
 <template>
 	<div>
-		<app_header_amp
-			:logo="data.body.options.logo"
-			:menu_links="data.body.settings.header_menu"
-		/>
+		<app_header_amp :logo="data.body.options.logo" :menu_links="data.body.settings.header_menu" />
 		<main class="main">
 			<app_intro_amp :value="data.body" />
 			<app_best_offer_amp :value="data.body.bonuses" />
 			<app_category_link_amp :value="data.body.category_link" />
-			<script_amp
-				:src="CasinoPathScript"
-				v-if="CasinoNumberPostOnQuery < data.body.casino.length"
-			>
-				<app_casino_loop_downloads_amp
-					:value="data.body.casino"
-					post_type="page"
-					post_url="/"
-				/>
+			<script_amp :src="CasinoPathScript" v-if="CasinoNumberPostOnQuery < data.body.casino.length">
+				<app_casino_loop_downloads_amp :value="data.body.casino" post_type="page" post_url="/" />
 			</script_amp>
 			<app_casino_loop_downloads_amp
 				:value="data.body.casino"
 				post_type="page"
 				post_url="/"
-				v-if="
-					data.body.casino.length !== 0 &&
-						CasinoNumberPostOnQuery > data.body.casino.length
-				"
+				v-if="data.body.casino.length !== 0 && CasinoNumberPostOnQuery > data.body.casino.length"
 			/>
 			<app_new_casino_amp :value="data.body.new_casino" />
 			<app_popular_slots_amp :value="data.body.popular_slots" />
@@ -38,10 +25,7 @@
 			/>
 			<app_content_amp :value="data.body.amp_content" />
 		</main>
-		<app_footer_amp
-			:footer_menu="data.body.settings.footer_menu"
-			:footer_text="data.body.settings.footer_text"
-		/>
+		<app_footer_amp :footer_menu="data.body.settings.footer_menu" :footer_text="data.body.settings.footer_text" />
 	</div>
 </template>
 

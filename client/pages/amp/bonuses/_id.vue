@@ -1,9 +1,6 @@
 <template>
 	<div>
-		<app_header_amp
-			:logo="data.body.options.logo"
-			:menu_links="data.body.settings.header_menu"
-		/>
+		<app_header_amp :logo="data.body.options.logo" :menu_links="data.body.settings.header_menu" />
 		<main class="main">
 			<app_intro_amp :value="data.body" />
 			<app_bonus_card_amp :value="data.body.card" />
@@ -15,10 +12,7 @@
 			/>
 			<app_content_amp :value="data.body.amp_content" />
 		</main>
-		<app_footer_amp
-			:footer_menu="data.body.settings.footer_menu"
-			:footer_text="data.body.settings.footer_text"
-		/>
+		<app_footer_amp :footer_menu="data.body.settings.footer_menu" :footer_text="data.body.settings.footer_text" />
 	</div>
 </template>
 

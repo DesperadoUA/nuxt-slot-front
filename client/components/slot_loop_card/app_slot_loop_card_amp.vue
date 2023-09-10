@@ -1,129 +1,96 @@
 <template>
-	<amp-script
-		layout="container"
-		:src="`${config.BASE_URL[config.LANG]}/js/amp-game.js`"
-		class="sample"
-	>
-		<div class="container casino-cards-container">
-			<div
-				class="casino-card"
-				v-for="(item, index) in currentPosts"
-				:key="index"
-			>
-				<div class="casino-card__logo">
-					<amp-img
-						:src="item.thumbnail"
-						:alt="item.title"
-						width="284"
-						height="162"
-					/>
+	<div class="container casino-cards-container">
+		<div class="casino-card" v-for="(item, index) in currentPosts" :key="index">
+			<div class="casino-card__logo">
+				<amp-img :src="item.thumbnail" :alt="item.title" width="284" height="162" />
+			</div>
+
+			<div class="casino-card__rating">
+				<div class="circle-rating">
+					<svg viewBox="0 0 36 36" class="circle-rating__chart" :style="item | classRating">
+						<path
+							class="circle-rating__circle-bg"
+							d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"
+						/>
+						<path
+							class="circle-rating__circle"
+							:stroke-dasharray="item.rating + ', 100'"
+							d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"
+						/>
+					</svg>
+					<div class="circle-rating__percentage">{{ item.rating }}</div>
+				</div>
+				<span class="casinos-rating__txt">{{ translates.RATING[config.LANG] }}</span>
+			</div>
+
+			<div class="casino-card-param">
+				<div class="casino-card-param__item">
+					<span class="casino-card-param__value">{{ item.number_rows }}</span>
+					<span class="casino-card-param__txt">{{ translates.NUMBER_ROWS[config.LANG] }}</span>
 				</div>
 
-				<div class="casino-card__rating">
-					<div class="circle-rating">
-						<svg
-							viewBox="0 0 36 36"
-							class="circle-rating__chart"
-							:style="item | classRating"
-						>
-							<path
-								class="circle-rating__circle-bg"
-								d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"
-							/>
-							<path
-								class="circle-rating__circle"
-								:stroke-dasharray="item.rating + ', 100'"
-								d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"
-							/>
-						</svg>
-						<div class="circle-rating__percentage">{{ item.rating }}</div>
-					</div>
-					<span class="casinos-rating__txt">{{
-						translates.RATING[config.LANG]
-					}}</span>
+				<div class="casino-card-param__item">
+					<span class="casino-card-param__value">{{ item.min_bet }}</span>
+					<span class="casino-card-param__txt">{{ translates.MIN_BET[config.LANG] }}</span>
 				</div>
 
-				<div class="casino-card-param">
-					<div class="casino-card-param__item">
-						<span class="casino-card-param__value">{{ item.number_rows }}</span>
-						<span class="casino-card-param__txt">{{
-							translates.NUMBER_ROWS[config.LANG]
-						}}</span>
-					</div>
-
-					<div class="casino-card-param__item">
-						<span class="casino-card-param__value">{{ item.min_bet }}</span>
-						<span class="casino-card-param__txt">{{
-							translates.MIN_BET[config.LANG]
-						}}</span>
-					</div>
-
-					<div class="casino-card-param__item">
-						<span class="casino-card-param__value">{{ item.pay_lines }}</span>
-						<span class="casino-card-param__txt">{{
-							translates.PAY_LINES[config.LANG]
-						}}</span>
-					</div>
-
-					<div class="casino-card-param__item">
-						<span class="casino-card-param__value">{{ item.reels }}</span>
-						<span class="casino-card-param__txt">{{
-							translates.WHEELS[config.LANG]
-						}}</span>
-					</div>
+				<div class="casino-card-param__item">
+					<span class="casino-card-param__value">{{ item.pay_lines }}</span>
+					<span class="casino-card-param__txt">{{ translates.PAY_LINES[config.LANG] }}</span>
 				</div>
 
-				<div class="casino-card-bonus">
-					<span class="casino-card-bonus__value" style="color: #ffe600;">{{
-						item.volatility
-					}}</span>
-					<div class="casino-card-bonus__wager">
-						{{ translates.VOLATILITY[config.LANG] }}
-					</div>
-				</div>
-
-				<div class="casino-card-bonus">
-					<span class="casino-card-bonus__value" style="color: #12d4ff;">{{
-						item.rtp
-					}}</span>
-					<div class="casino-card-bonus__wager">RTP</div>
-				</div>
-				<div class="casino-card__cta">
-					<NuxtLink
-						:to="`${config.AMP_PREFIX}${item.permalink}`"
-						no-prefetch
-						class="casino-card__cta btn-tertiary --green"
-						>{{ translates.REVIEW[config.LANG] }}
-					</NuxtLink>
-					<a class="casino-card__cta btn-tertiary" :href="getRef(item)">
-						{{ translates.PLAY[config.LANG] }}
-					</a>
+				<div class="casino-card-param__item">
+					<span class="casino-card-param__value">{{ item.reels }}</span>
+					<span class="casino-card-param__txt">{{ translates.WHEELS[config.LANG] }}</span>
 				</div>
 			</div>
-			<div class="loadContainer"></div>
-			<div class="items-more casino-card__more">
-				<button
-					v-if="value.length > numberPostOnQuery * postCurrentPage"
-					class="btn-primary loadMoreBtn"
-					:data-apiUrl="`${config.API_URL[config.LANG]}slots/search`"
-					:data-postsOnQuery="numberPostOnQuery"
-					:data-ampPrefix="config.AMP_PREFIX"
-					:data-post-type="post_type"
-					:data-post-url="post_url"
-					:data-translate-play="translates.PLAY[config.LANG]"
-					:data-translate-rating="translates.RATING[config.LANG]"
-					:data-translate-number-rows="translates.NUMBER_ROWS[config.LANG]"
-					:data-translate-min-bet="translates.MIN_BET[config.LANG]"
-					:data-translate-pay-lines="translates.PAY_LINES[config.LANG]"
-					:data-translate-wheels="translates.WHEELS[config.LANG]"
-					:data-translate-volatility="translates.VOLATILITY[config.LANG]"
-					:data-translate-review="translates.REVIEW[config.LANG]"
-				>
-					{{ translates.SHOW_MORE[config.LANG] }}
-				</button>
+
+			<div class="casino-card-bonus">
+				<span class="casino-card-bonus__value" style="color: #ffe600;">{{ item.volatility }}</span>
+				<div class="casino-card-bonus__wager">
+					{{ translates.VOLATILITY[config.LANG] }}
+				</div>
+			</div>
+
+			<div class="casino-card-bonus">
+				<span class="casino-card-bonus__value" style="color: #12d4ff;">{{ item.rtp }}</span>
+				<div class="casino-card-bonus__wager">RTP</div>
+			</div>
+			<div class="casino-card__cta">
+				<NuxtLink
+					:to="`${config.AMP_PREFIX}${item.permalink}`"
+					no-prefetch
+					class="casino-card__cta btn-tertiary --green"
+					>{{ translates.REVIEW[config.LANG] }}
+				</NuxtLink>
+				<a class="casino-card__cta btn-tertiary" :href="getRef(item)">
+					{{ translates.PLAY[config.LANG] }}
+				</a>
 			</div>
 		</div>
-	</amp-script>
+		<div class="loadContainer"></div>
+		<div class="items-more casino-card__more">
+			<button
+				v-if="value.length > numberPostOnQuery * postCurrentPage"
+				class="btn-primary loadMoreBtn"
+				:data-apiUrl="`${config.API_URL[config.LANG]}slots/search`"
+				:data-postsOnQuery="numberPostOnQuery"
+				:data-ampPrefix="config.AMP_PREFIX"
+				:data-post-type="post_type"
+				:data-post-url="post_url"
+				:data-translate-play="translates.PLAY[config.LANG]"
+				:data-translate-rating="translates.RATING[config.LANG]"
+				:data-translate-number-rows="translates.NUMBER_ROWS[config.LANG]"
+				:data-translate-min-bet="translates.MIN_BET[config.LANG]"
+				:data-translate-pay-lines="translates.PAY_LINES[config.LANG]"
+				:data-translate-wheels="translates.WHEELS[config.LANG]"
+				:data-translate-volatility="translates.VOLATILITY[config.LANG]"
+				:data-translate-review="translates.REVIEW[config.LANG]"
+			>
+				{{ translates.SHOW_MORE[config.LANG] }}
+			</button>
+		</div>
+	</div>
 </template>
 
 <script>

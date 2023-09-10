@@ -1,6 +1,6 @@
 [x] Внедрение prettier
 [] Создать amp-script
-    [] Casino
+    [x] Casino
     [] Game
     [] Bonus
     [] Blog
