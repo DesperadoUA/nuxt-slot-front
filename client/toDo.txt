@@ -3,7 +3,7 @@
     [x] Casino
     [x] Game
     [x] Bonus
-    [] Blog
+    [x] Blog
     [] News
     [] Interview
 [] Внедрить getTranslate
