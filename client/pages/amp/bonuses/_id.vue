@@ -19,7 +19,7 @@
 <script>
 import DAL_Builder from '~/DAL/builder'
 import app_intro_amp from '~/components/intro/app-intro_amp'
-import app_bonus_card_amp from '~/components/bonus-card/app_bonus_card_amp'
+import app_bonus_card_amp from '~/components/bonus_card/app_bonus_card_amp'
 import AuthorLinkContainerAmp from '~/components/author/app-author-link-container_amp'
 import pageTemplateAmp from '~/mixins/pageTemplateAmp'
 import helper from '~/helpers/helpers'

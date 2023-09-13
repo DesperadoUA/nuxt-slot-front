@@ -16,8 +16,8 @@
 <script>
 import DAL_Builder from '~/DAL/builder'
 import app_intro from '~/components/intro/app-intro'
-import app_best_offer from '~/components/best-offer/app-best-offer'
-import app_bonuses_loop from '~/components/bonuses_loop_downloads/app_bonuses_loop_downloads'
+import app_best_offer from '~/components/best_offer/app-best-offer'
+import app_bonuses_loop from '~/components/bonus_loop/app_bonuses_loop_downloads'
 import app_content from '~/components/content/app-content'
 import AuthorLinkContainer from '~/components/author/app-author-link-container'
 import translateMixin from '~/mixins/translate'

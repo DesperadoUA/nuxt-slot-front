@@ -10,7 +10,7 @@
 import DAL_Builder from '~/DAL/builder'
 import app_content from '~/components/content/app-content'
 import app_intro from '~/components/intro/app-intro'
-import app_blog_downloads from '~/components/blog_loop_downloads/app_blog_loop_downloads'
+import app_blog_downloads from '~/components/blog_loop/app_blog_loop_downloads'
 import head from '~/mixins/head'
 import Helper from '~/helpers/helpers'
 export default {

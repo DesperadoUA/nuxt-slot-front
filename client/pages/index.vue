@@ -20,9 +20,9 @@
 <script>
 import DAL_Page from '~/DAL/static_pages'
 import app_intro from '~/components/intro/app-intro'
-import app_best_offer from '~/components/best-offer/app-best-offer'
+import app_best_offer from '~/components/best_offer/app-best-offer'
 import app_category_link from '~/components/category_link/app-category_link'
-import app_casino_loop_downloads from '~/components/casino_loop_downloads/app_casino_loop_downloads'
+import app_casino_loop_downloads from '~/components/casino_loop/app_casino_loop_downloads'
 import app_new_casino from '~/components/new_casino/app-new_casino'
 import app_popular_slots from '~/components/popular_slots/app-popular_slots'
 import app_popular_offers from '~/components/popular_offers/app_popular_offers'

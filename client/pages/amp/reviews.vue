@@ -13,7 +13,7 @@
 <script>
 import DAL_Page from '~/DAL/static_pages'
 import app_intro_amp from '~/components/intro/app-intro_amp'
-import app_casino_category_amp from '~/components/casino-categories/app_casino_categories_amp'
+import app_casino_category_amp from '~/components/casino_categories/app_casino_categories_amp'
 import pageTemplateAmp from '~/mixins/pageTemplateAmp'
 import helper from '~/helpers/helpers'
 export default {

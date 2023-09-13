@@ -28,7 +28,7 @@
 <script>
 import DAL_Builder from '~/DAL/builder'
 import app_intro_amp from '~/components/intro/app-intro_amp'
-import app_casino_loop_downloads_amp from '~/components/casino_loop_downloads/app_casino_loop_downloads_amp'
+import app_casino_loop_downloads_amp from '~/components/casino_loop/app_casino_loop_downloads_amp'
 import app_category_link_amp from '~/components/category_link/app-category_link_amp'
 import AuthorLinkContainerAmp from '~/components/author/app-author-link-container_amp'
 import pageTemplateAmp from '~/mixins/pageTemplateAmp'

@@ -18,7 +18,7 @@
 <script>
 import DAL_Builder from '~/DAL/builder'
 import app_intro_amp from '~/components/intro/app-intro_amp'
-import app_interview_downloads_amp from '~/components/interview_loop_download/interview_loop_download_amp'
+import app_interview_downloads_amp from '~/components/interview_loop/interview_loop_download_amp'
 import pageTemplateAmp from '~/mixins/pageTemplateAmp'
 import helper from '~/helpers/helpers'
 import script_amp from '~/components/script_amp'

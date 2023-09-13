@@ -19,7 +19,7 @@
 import DAL_Builder from '~/DAL/builder'
 import helper from '~/helpers/helpers'
 import app_intro_amp from '~/components/intro/app-intro_amp'
-import app_blog_downloads_amp from '~/components/blog_loop_downloads/app_blog_loop_downloads_amp'
+import app_blog_downloads_amp from '~/components/blog_loop/app_blog_loop_downloads_amp'
 import pageTemplateAmp from '~/mixins/pageTemplateAmp'
 import script_amp from '~/components/script_amp'
 import { BLOG as BlogNumberPostOnQuery } from '~/config/postLoader'

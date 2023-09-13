@@ -32,9 +32,9 @@
 <script>
 import DAL_Page from '~/DAL/static_pages'
 import app_intro_amp from '~/components/intro/app-intro_amp'
-import app_best_offer_amp from '~/components/best-offer/app-best-offer_amp'
+import app_best_offer_amp from '~/components/best_offer/app-best-offer_amp'
 import app_category_link_amp from '~/components/category_link/app-category_link_amp'
-import app_casino_loop_downloads_amp from '~/components/casino_loop_downloads/app_casino_loop_downloads_amp'
+import app_casino_loop_downloads_amp from '~/components/casino_loop/app_casino_loop_downloads_amp'
 import app_new_casino_amp from '~/components/new_casino/app-new_casino_amp'
 import app_popular_slots_amp from '~/components/popular_slots/app-popular_slots_amp'
 import app_popular_offers_amp from '~/components/popular_offers/app_popular_offers_amp'
