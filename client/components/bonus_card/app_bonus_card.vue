@@ -7,11 +7,7 @@
 
 			<div class="casino-card__rating">
 				<div class="circle-rating">
-					<svg
-						viewBox="0 0 36 36"
-						class="circle-rating__chart"
-						:style="value | classRating"
-					>
+					<svg viewBox="0 0 36 36" class="circle-rating__chart" :style="value | classRating">
 						<path
 							class="circle-rating__circle-bg"
 							d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"
@@ -24,9 +20,7 @@
 					</svg>
 					<div class="circle-rating__percentage">{{ value.rating }}</div>
 				</div>
-				<span class="casinos-rating__txt">{{
-					translates.RATING[config.LANG]
-				}}</span>
+				<span class="casinos-rating__txt">{{ translates.RATING[config.LANG] }}</span>
 			</div>
 
 			<div class="casino-card__txt">
@@ -44,11 +38,7 @@
 				>
 					{{ translates.GO_TO[config.LANG] }}
 				</button>
-				<NuxtLink
-					no-prefetch
-					:to="value.casino_permalink"
-					class="casino_card_link"
-				>
+				<NuxtLink no-prefetch :to="value.casino_permalink" class="casino_card_link">
 					{{ translates.CASINO_REVIEW[config.LANG] }}
 				</NuxtLink>
 			</div>
@@ -70,10 +60,7 @@ export default {
 	},
 	mixins: [translateMixin],
 	data() {
-		return {
-			numberPostOnQuery: 10,
-			postCurrentPage: 1
-		}
+		return {}
 	},
 	filters: {
 		classRating(item) {
