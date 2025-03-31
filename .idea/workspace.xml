@@ -5,79 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="26b0153b-85f5-446b-baff-2cd02c04332d" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/client/components/guard_pop_up/amp.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/components/guard_pop_up/index.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/components/modal/index.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/components/modal/style.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/constants.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/layouts/cookies.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/middleware/getHeaders.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/pages/cookies.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/store/modal.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/assets/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/client/assets/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/assets/amp-custom.css" beforeDir="false" afterPath="$PROJECT_DIR$/client/assets/amp-custom.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/components/Logo.vue" beforeDir="false" afterPath="$PROJECT_DIR$/client/components/Logo.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/components/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/client/components/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/components/footer/app-footer.vue" beforeDir="false" afterPath="$PROJECT_DIR$/client/components/footer/app-footer.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/components/footer/app-footer_amp.vue" beforeDir="false" afterPath="$PROJECT_DIR$/client/components/footer/app-footer_amp.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/config/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/config/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/layouts/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/client/layouts/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/layouts/default.amp.vue" beforeDir="false" afterPath="$PROJECT_DIR$/client/layouts/default.amp.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/layouts/default.vue" beforeDir="false" afterPath="$PROJECT_DIR$/client/layouts/default.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/middleware/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/client/middleware/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/mixins/head.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/mixins/head.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/pages/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/client/pages/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/pages/amp/best-for-payout.vue" beforeDir="false" afterPath="$PROJECT_DIR$/client/pages/amp/best-for-payout.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/pages/amp/blog/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/client/pages/amp/blog/index.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/pages/amp/bonus-pay.vue" beforeDir="false" afterPath="$PROJECT_DIR$/client/pages/amp/bonus-pay.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/pages/amp/bonuses/_id.vue" beforeDir="false" afterPath="$PROJECT_DIR$/client/pages/amp/bonuses/_id.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/pages/amp/bonuses/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/client/pages/amp/bonuses/index.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/pages/amp/casino/_id.vue" beforeDir="false" afterPath="$PROJECT_DIR$/client/pages/amp/casino/_id.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/pages/amp/free-bonus-casino.vue" beforeDir="false" afterPath="$PROJECT_DIR$/client/pages/amp/free-bonus-casino.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/pages/amp/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/client/pages/amp/index.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/pages/amp/interview/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/client/pages/amp/interview/index.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/pages/amp/licensed-casino.vue" beforeDir="false" afterPath="$PROJECT_DIR$/client/pages/amp/licensed-casino.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/pages/amp/max-payout-casino.vue" beforeDir="false" afterPath="$PROJECT_DIR$/client/pages/amp/max-payout-casino.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/pages/amp/megaways.vue" beforeDir="false" afterPath="$PROJECT_DIR$/client/pages/amp/megaways.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/pages/amp/min-deposit-casino.vue" beforeDir="false" afterPath="$PROJECT_DIR$/client/pages/amp/min-deposit-casino.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/pages/amp/new-slots.vue" beforeDir="false" afterPath="$PROJECT_DIR$/client/pages/amp/new-slots.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/pages/amp/payments/_id.vue" beforeDir="false" afterPath="$PROJECT_DIR$/client/pages/amp/payments/_id.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/pages/amp/popular-casino.vue" beforeDir="false" afterPath="$PROJECT_DIR$/client/pages/amp/popular-casino.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/pages/amp/progressive.vue" beforeDir="false" afterPath="$PROJECT_DIR$/client/pages/amp/progressive.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/pages/amp/reviews.vue" beforeDir="false" afterPath="$PROJECT_DIR$/client/pages/amp/reviews.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/pages/amp/slots/_id.vue" beforeDir="false" afterPath="$PROJECT_DIR$/client/pages/amp/slots/_id.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/pages/amp/slots/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/client/pages/amp/slots/index.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/pages/amp/vendors/_id.vue" beforeDir="false" afterPath="$PROJECT_DIR$/client/pages/amp/vendors/_id.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/pages/best-for-payout.vue" beforeDir="false" afterPath="$PROJECT_DIR$/client/pages/best-for-payout.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/pages/blog/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/client/pages/blog/index.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/pages/bonus-pay.vue" beforeDir="false" afterPath="$PROJECT_DIR$/client/pages/bonus-pay.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/pages/bonuses/_id.vue" beforeDir="false" afterPath="$PROJECT_DIR$/client/pages/bonuses/_id.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/pages/bonuses/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/client/pages/bonuses/index.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/pages/casino/_id.vue" beforeDir="false" afterPath="$PROJECT_DIR$/client/pages/casino/_id.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/pages/free-bonus-casino.vue" beforeDir="false" afterPath="$PROJECT_DIR$/client/pages/free-bonus-casino.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/pages/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/client/pages/index.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/pages/interview/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/client/pages/interview/index.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/pages/licensed-casino.vue" beforeDir="false" afterPath="$PROJECT_DIR$/client/pages/licensed-casino.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/pages/max-payout-casino.vue" beforeDir="false" afterPath="$PROJECT_DIR$/client/pages/max-payout-casino.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/pages/megaways.vue" beforeDir="false" afterPath="$PROJECT_DIR$/client/pages/megaways.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/pages/min-deposit-casino.vue" beforeDir="false" afterPath="$PROJECT_DIR$/client/pages/min-deposit-casino.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/pages/new-slots.vue" beforeDir="false" afterPath="$PROJECT_DIR$/client/pages/new-slots.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/pages/payments/_id.vue" beforeDir="false" afterPath="$PROJECT_DIR$/client/pages/payments/_id.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/pages/popular-casino.vue" beforeDir="false" afterPath="$PROJECT_DIR$/client/pages/popular-casino.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/pages/progressive.vue" beforeDir="false" afterPath="$PROJECT_DIR$/client/pages/progressive.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/pages/reviews.vue" beforeDir="false" afterPath="$PROJECT_DIR$/client/pages/reviews.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/pages/slots/_id.vue" beforeDir="false" afterPath="$PROJECT_DIR$/client/pages/slots/_id.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/pages/slots/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/client/pages/slots/index.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/pages/vendors/_id.vue" beforeDir="false" afterPath="$PROJECT_DIR$/client/pages/vendors/_id.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/plugins/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/client/plugins/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/static/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/client/static/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/static/img/arrow.svg" beforeDir="false" afterPath="$PROJECT_DIR$/client/static/img/arrow.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/static/img/star.svg" beforeDir="false" afterPath="$PROJECT_DIR$/client/static/img/star.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/static/robots.txt" beforeDir="false" afterPath="$PROJECT_DIR$/client/static/robots.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/store/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/client/store/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/store/common.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/store/common.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/translate/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/translate/index.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -296,7 +224,7 @@
   "keyToString": {
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "git-widget-placeholder": "AMP",
-    "last_opened_file_path": "C:/OSPanel/domains/nuxt-slot-front",
+    "last_opened_file_path": "C:/OSPanel/domains/slototop-front",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -421,6 +349,7 @@
       <workItem from="1654678312809" duration="20000" />
       <workItem from="1742986951555" duration="304000" />
       <workItem from="1743404544103" duration="4195000" />
+      <workItem from="1743412071869" duration="1355000" />
     </task>
     <servers />
   </component>
