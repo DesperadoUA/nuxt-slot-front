@@ -20,18 +20,24 @@
 				<p v-html="footer_text"></p>
 			</div>
 		</div>
+        <GuardPopUp v-if="showGuardModal" />
 	</footer>
 </template>
 
 <script>
+import GuardPopUp from '~/components/guard_pop_up'
+import { GUARD_MODAL_KEY, GUARD_COOKIE_STORAGE_KEY } from '@/constants.js'
+import translateMixin from '~/mixins/translate.js'
 export default {
 	name: 'app-footer',
+    mixins: [translateMixin],
 	data() {
 		return {
 			footer_text: null,
 			footer_menu: null
 		}
 	},
+    components: { GuardPopUp },
 	computed: {
 		changeText() {
 			const settings = this.$store.getters['settings/getSettings']
@@ -50,8 +56,19 @@ export default {
 				)[0].value
 			}
 			return this.footer_menu
-		}
-	}
+		},
+        showGuardModal() {
+            return this.$store.getters['modal/getModals'][GUARD_MODAL_KEY]
+        }
+	},
+    mounted() {
+        const headers = this.$store.getters['common/getHeaders']
+        const cookie = headers.cookie || ''
+        const guardHide = !cookie.includes(GUARD_COOKIE_STORAGE_KEY) ? false : true
+        if(!guardHide) {
+            this.$store.dispatch('modal/setStateModal', { key: GUARD_MODAL_KEY, status: true })
+        }
+    }
 }
 </script>
 

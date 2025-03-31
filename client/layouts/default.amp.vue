@@ -5,6 +5,7 @@
 </template>
 <script>
 export default {
-	name: 'app_main_amp'
+	name: 'app_main_amp',
+    middleware: ['getHeaders'],
 }
 </script>

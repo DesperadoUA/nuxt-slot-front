@@ -20,11 +20,16 @@
 				<div v-html="footer_text"></div>
 			</div>
 		</div>
+        <div class="modal guard_modal" v-if="showPopUp">
+            <GuardPopUpAmp :url="currentUrl" />
+        </div>
 	</footer>
 </template>
 
 <script>
 import translateMixin from '~/mixins/translate'
+import GuardPopUpAmp from '~/components/guard_pop_up/amp'
+import { GUARD_COOKIE_STORAGE_KEY } from '@/constants.js'
 export default {
 	name: 'app-footer_amp',
 	props: {
@@ -37,9 +42,20 @@ export default {
 			default: ''
 		}
 	},
+    components: {GuardPopUpAmp},
 	mixins: [translateMixin],
 	data() {
 		return {}
-	}
+	},
+    computed: {
+        showPopUp() {
+            const headers = this.$store.getters['common/getHeaders']
+            const cookie = headers.cookie || ''
+            return cookie.includes(GUARD_COOKIE_STORAGE_KEY) ? false : true
+        },
+        currentUrl() {
+            return this.$store.getters['common/getUrl']
+        }
+    }
 }
 </script>

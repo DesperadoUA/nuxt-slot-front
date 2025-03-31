@@ -1,7 +1,9 @@
 export const state = () => ({
 	common: {
 		showSearch: false,
-		mobileMenu: false
+		mobileMenu: false,
+        headers: undefined,
+        url: undefined
 	}
 })
 export const mutations = {
@@ -10,7 +12,13 @@ export const mutations = {
 	},
 	setMobileMenu(state, data) {
 		state.common.mobileMenu = data
-	}
+	},
+    setHeaders(state, data) {
+        state.common.headers = data
+    },
+    setUrl(state, url) {
+        state.common.url = url
+    }
 }
 export const actions = {
 	setShowSearch({ commit }, data) {
@@ -18,7 +26,13 @@ export const actions = {
 	},
 	setMobileMenu({ commit }, data) {
 		commit('setMobileMenu', data)
-	}
+	},
+    setHeaders({ commit }, data) {
+        commit('setHeaders', data)
+    },
+    setUrl({ commit }, url) {
+        commit('setUrl', url)
+    }
 }
 export const getters = {
 	getShowSearch(state) {
@@ -26,5 +40,11 @@ export const getters = {
 	},
 	getMobileMenu(state) {
 		return state.common.mobileMenu
-	}
+	},
+    getHeaders(state) {
+        return state.common.headers
+    },
+    getUrl(state) {
+        return state.common.url
+    }
 }

@@ -13,7 +13,10 @@ export default {
 					content: `${this.data.body.index_seo}, ${this.data.body.follow}`
 				}
 			],
-			link: [{ rel: 'canonical', href: this.data.body.currentUrl }]
+			link: [
+				{ rel: 'canonical', href: this.data.body.currentUrl },
+				{ rel: 'amphtml', href: this.data.body.ampUrl }
+			]
 		}
 	}
 }

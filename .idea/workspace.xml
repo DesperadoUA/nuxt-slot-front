@@ -1,24 +1,84 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="26b0153b-85f5-446b-baff-2cd02c04332d" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/client/components/slick_button/app_slick_button.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/static/img/arrow.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/components/guard_pop_up/amp.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/components/guard_pop_up/index.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/components/modal/index.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/components/modal/style.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/constants.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/layouts/cookies.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/middleware/getHeaders.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/pages/cookies.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/store/modal.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/DAL/forum.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/DAL/forum.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/components/change_password/change_password.vue" beforeDir="false" afterPath="$PROJECT_DIR$/client/components/change_password/change_password.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/helpers/translate.json" beforeDir="false" afterPath="$PROJECT_DIR$/client/helpers/translate.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/layouts/login.vue" beforeDir="false" afterPath="$PROJECT_DIR$/client/layouts/login.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/layouts/registration.vue" beforeDir="false" afterPath="$PROJECT_DIR$/client/layouts/registration.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/layouts/user.vue" beforeDir="false" afterPath="$PROJECT_DIR$/client/layouts/user.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/assets/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/client/assets/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/assets/amp-custom.css" beforeDir="false" afterPath="$PROJECT_DIR$/client/assets/amp-custom.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/components/Logo.vue" beforeDir="false" afterPath="$PROJECT_DIR$/client/components/Logo.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/components/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/client/components/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/components/footer/app-footer.vue" beforeDir="false" afterPath="$PROJECT_DIR$/client/components/footer/app-footer.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/components/footer/app-footer_amp.vue" beforeDir="false" afterPath="$PROJECT_DIR$/client/components/footer/app-footer_amp.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/config/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/config/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/layouts/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/client/layouts/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/layouts/default.amp.vue" beforeDir="false" afterPath="$PROJECT_DIR$/client/layouts/default.amp.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/layouts/default.vue" beforeDir="false" afterPath="$PROJECT_DIR$/client/layouts/default.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/middleware/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/client/middleware/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/mixins/head.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/mixins/head.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/pages/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/client/pages/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/pages/amp/best-for-payout.vue" beforeDir="false" afterPath="$PROJECT_DIR$/client/pages/amp/best-for-payout.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/pages/amp/blog/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/client/pages/amp/blog/index.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/pages/amp/bonus-pay.vue" beforeDir="false" afterPath="$PROJECT_DIR$/client/pages/amp/bonus-pay.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/pages/amp/bonuses/_id.vue" beforeDir="false" afterPath="$PROJECT_DIR$/client/pages/amp/bonuses/_id.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/pages/amp/bonuses/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/client/pages/amp/bonuses/index.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/pages/amp/casino/_id.vue" beforeDir="false" afterPath="$PROJECT_DIR$/client/pages/amp/casino/_id.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/pages/amp/free-bonus-casino.vue" beforeDir="false" afterPath="$PROJECT_DIR$/client/pages/amp/free-bonus-casino.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/pages/amp/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/client/pages/amp/index.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/pages/amp/interview/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/client/pages/amp/interview/index.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/pages/amp/licensed-casino.vue" beforeDir="false" afterPath="$PROJECT_DIR$/client/pages/amp/licensed-casino.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/pages/amp/max-payout-casino.vue" beforeDir="false" afterPath="$PROJECT_DIR$/client/pages/amp/max-payout-casino.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/pages/amp/megaways.vue" beforeDir="false" afterPath="$PROJECT_DIR$/client/pages/amp/megaways.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/pages/amp/min-deposit-casino.vue" beforeDir="false" afterPath="$PROJECT_DIR$/client/pages/amp/min-deposit-casino.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/pages/amp/new-slots.vue" beforeDir="false" afterPath="$PROJECT_DIR$/client/pages/amp/new-slots.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/pages/amp/payments/_id.vue" beforeDir="false" afterPath="$PROJECT_DIR$/client/pages/amp/payments/_id.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/pages/amp/popular-casino.vue" beforeDir="false" afterPath="$PROJECT_DIR$/client/pages/amp/popular-casino.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/pages/amp/progressive.vue" beforeDir="false" afterPath="$PROJECT_DIR$/client/pages/amp/progressive.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/pages/amp/reviews.vue" beforeDir="false" afterPath="$PROJECT_DIR$/client/pages/amp/reviews.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/pages/amp/slots/_id.vue" beforeDir="false" afterPath="$PROJECT_DIR$/client/pages/amp/slots/_id.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/pages/amp/slots/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/client/pages/amp/slots/index.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/pages/amp/vendors/_id.vue" beforeDir="false" afterPath="$PROJECT_DIR$/client/pages/amp/vendors/_id.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/pages/best-for-payout.vue" beforeDir="false" afterPath="$PROJECT_DIR$/client/pages/best-for-payout.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/pages/blog/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/client/pages/blog/index.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/pages/bonus-pay.vue" beforeDir="false" afterPath="$PROJECT_DIR$/client/pages/bonus-pay.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/pages/bonuses/_id.vue" beforeDir="false" afterPath="$PROJECT_DIR$/client/pages/bonuses/_id.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/pages/bonuses/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/client/pages/bonuses/index.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/pages/casino/_id.vue" beforeDir="false" afterPath="$PROJECT_DIR$/client/pages/casino/_id.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/pages/login.vue" beforeDir="false" afterPath="$PROJECT_DIR$/client/pages/login.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/pages/registration.vue" beforeDir="false" afterPath="$PROJECT_DIR$/client/pages/registration.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/pages/user/_id.vue" beforeDir="false" afterPath="$PROJECT_DIR$/client/pages/user/_id.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/store/user-activity.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/store/user-activity.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/store/user.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/store/user.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/pages/free-bonus-casino.vue" beforeDir="false" afterPath="$PROJECT_DIR$/client/pages/free-bonus-casino.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/pages/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/client/pages/index.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/pages/interview/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/client/pages/interview/index.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/pages/licensed-casino.vue" beforeDir="false" afterPath="$PROJECT_DIR$/client/pages/licensed-casino.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/pages/max-payout-casino.vue" beforeDir="false" afterPath="$PROJECT_DIR$/client/pages/max-payout-casino.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/pages/megaways.vue" beforeDir="false" afterPath="$PROJECT_DIR$/client/pages/megaways.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/pages/min-deposit-casino.vue" beforeDir="false" afterPath="$PROJECT_DIR$/client/pages/min-deposit-casino.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/pages/new-slots.vue" beforeDir="false" afterPath="$PROJECT_DIR$/client/pages/new-slots.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/pages/payments/_id.vue" beforeDir="false" afterPath="$PROJECT_DIR$/client/pages/payments/_id.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/pages/popular-casino.vue" beforeDir="false" afterPath="$PROJECT_DIR$/client/pages/popular-casino.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/pages/progressive.vue" beforeDir="false" afterPath="$PROJECT_DIR$/client/pages/progressive.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/pages/reviews.vue" beforeDir="false" afterPath="$PROJECT_DIR$/client/pages/reviews.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/pages/slots/_id.vue" beforeDir="false" afterPath="$PROJECT_DIR$/client/pages/slots/_id.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/pages/slots/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/client/pages/slots/index.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/pages/vendors/_id.vue" beforeDir="false" afterPath="$PROJECT_DIR$/client/pages/vendors/_id.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/plugins/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/client/plugins/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/static/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/client/static/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/static/img/arrow.svg" beforeDir="false" afterPath="$PROJECT_DIR$/client/static/img/arrow.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/static/img/star.svg" beforeDir="false" afterPath="$PROJECT_DIR$/client/static/img/star.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/static/robots.txt" beforeDir="false" afterPath="$PROJECT_DIR$/client/static/robots.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/store/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/client/store/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/store/common.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/store/common.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/translate/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/translate/index.js" afterDir="false" />
     </list>
-    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -200,17 +260,15 @@
       </list>
     </option>
   </component>
-  <component name="JsFlowSettings">
-    <service-enabled>true</service-enabled>
-    <exe-path />
-    <other-services-enabled>true</other-services-enabled>
-    <auto-save>true</auto-save>
-  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 6
+}</component>
   <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="415" />
     <option name="width" value="1160" />
     <option name="height" value="1050" />
   </component>
+  <component name="ProjectId" id="2uqrTFfi5rNaKo5K0qwulIN0dJI" />
   <component name="ProjectView">
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
@@ -230,21 +288,25 @@
       <pane id="Scope" />
     </panes>
   </component>
-  <component name="PropertiesComponent">
-    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="WebServerToolWindowFactoryState" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../russian-ship" />
-    <property name="node.js.detected.package.eslint" value="true" />
-    <property name="node.js.detected.package.tslint" value="true" />
-    <property name="node.js.path.for.package.eslint" value="project" />
-    <property name="node.js.path.for.package.tslint" value="project" />
-    <property name="node.js.selected.package.eslint" value="(autodetect)" />
-    <property name="node.js.selected.package.tslint" value="(autodetect)" />
-    <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
-    <property name="nodejs_npm_path_reset_for_default_project" value="true" />
-    <property name="nodejs_package_manager_path" value="npm" />
-    <property name="settings.editor.selected.configurable" value="Settings.JavaScript" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
   </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "AMP",
+    "last_opened_file_path": "C:/OSPanel/domains/nuxt-slot-front",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "ts.external.directory.path": "C:\\Program Files\\JetBrains\\WebStorm 2024.2.4\\plugins\\javascript-plugin\\jsLanguageServicesImpl\\external",
+    "vue.rearranger.settings.migration": "true",
+    "vuejs.nuxt.types-notification-shown": "true"
+  }
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\OpenServer\OSPanel\domains\nuxt-slot-front\client\static\img" />
@@ -257,18 +319,14 @@
       <recent name="D:\OpenServer\OSPanel\domains\nuxt-slot-front\client\pages\blog" />
     </key>
   </component>
-  <component name="RunDashboard">
-    <option name="ruleStates">
-      <list>
-        <RuleState>
-          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
-        </RuleState>
-        <RuleState>
-          <option name="name" value="StatusDashboardGroupingRule" />
-        </RuleState>
-      </list>
-    </option>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-js-predefined-d6986cc7102b-5c90d61e3bab-JavaScript-WS-242.23726.96" />
+      </set>
+    </attachedChunks>
   </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -361,6 +419,8 @@
       <workItem from="1644826246476" duration="2798000" />
       <workItem from="1654065265957" duration="684000" />
       <workItem from="1654678312809" duration="20000" />
+      <workItem from="1742986951555" duration="304000" />
+      <workItem from="1743404544103" duration="4195000" />
     </task>
     <servers />
   </component>
@@ -394,7 +454,7 @@
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="1" />
+    <option name="version" value="3" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/client/pages/payments/_id.vue">
